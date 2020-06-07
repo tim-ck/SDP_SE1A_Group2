@@ -83,9 +83,29 @@ namespace SDP_SE1A_Group2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_username_100_1 {
+        internal static System.Drawing.Bitmap lock_blue {
             get {
-                object obj = ResourceManager.GetObject("icons8-username-100 1", resourceCulture);
+                object obj = ResourceManager.GetObject("lock-blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user {
+            get {
+                object obj = ResourceManager.GetObject("user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_blue {
+            get {
+                object obj = ResourceManager.GetObject("user-blue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

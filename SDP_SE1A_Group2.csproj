@@ -84,10 +84,16 @@
     <None Include="Resources\cubeLogo1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-username-100 1.png" />
+    <None Include="Resources\iconmonstr-lock-3-240.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\iconmonstr-lock-3-240.png" />
+    <None Include="Resources\lock-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-blue.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
