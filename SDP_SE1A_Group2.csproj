@@ -52,6 +52,18 @@
     <Compile Include="Account\ForgotPasswordForm.Designer.cs">
       <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\BrowseItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\BrowseItems.designer.cs">
+      <DependentUpon>BrowseItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\customerMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\customerMain.designer.cs">
+      <DependentUpon>customerMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +74,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Account\ForgotPasswordForm.resx">
       <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\BrowseItems.resx">
+      <DependentUpon>BrowseItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\customerMain.resx">
+      <DependentUpon>customerMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>

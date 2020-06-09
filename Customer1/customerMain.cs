@@ -12,12 +12,10 @@ namespace SDP_SE1A_Group2.Customer
 {
     public partial class CustomerMain : Form
     {
-        Form opener;
         private Form activeForm = null;
-        public CustomerMain(Form parentForm, String username)
+        public CustomerMain()
         {
             InitializeComponent();
-            opener = parentForm;
         }
 
        
@@ -45,12 +43,6 @@ namespace SDP_SE1A_Group2.Customer
         {
             BrowseItems browseItemForm = new BrowseItems();
             openChildForm(browseItemForm);
-        }
-
-        private void lblCloseButton_Click(object sender, EventArgs e)
-        {
-            opener.Close();
-            this.Close();
         }
     }
 }

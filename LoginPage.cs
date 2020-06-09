@@ -26,7 +26,6 @@ namespace SDP_SE1A_Group2
         {
             String username = txtUsername.Text;
             String password = txtPassword.Text;
-            var userAcct;
             if (username == "")
             {
                 txtErrMsg.Text = "Enter a Username";
@@ -77,7 +76,7 @@ namespace SDP_SE1A_Group2
                 txtErrMsg.Text = "The Username / Password is incorrect";
             */
             this.Hide();
-            Customer.CustomerMain cus = new Customer.CustomerMain(username); //!!!!!!!!!!!!!!!!!!!!!
+            Customer.CustomerMain cus = new Customer.CustomerMain(this, username); //!!!!!!!!!!!!!!!!!!!!!
             cus.Show();
 
 
