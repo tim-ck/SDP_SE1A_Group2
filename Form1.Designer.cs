@@ -53,7 +53,7 @@
             this.textBox1.Location = new System.Drawing.Point(98, 321);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(432, 54);
+            this.textBox1.Size = new System.Drawing.Size(432, 36);
             this.textBox1.TabIndex = 2;
             this.textBox1.Text = "Username12345678";
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
@@ -84,7 +84,7 @@
             this.textBox3.Location = new System.Drawing.Point(98, 436);
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(432, 54);
+            this.textBox3.Size = new System.Drawing.Size(432, 36);
             this.textBox3.TabIndex = 7;
             this.textBox3.TabStop = false;
             this.textBox3.Text = "Password";
@@ -97,7 +97,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.label3.Location = new System.Drawing.Point(12, 214);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(793, 62);
+            this.label3.Size = new System.Drawing.Size(535, 42);
             this.label3.TabIndex = 9;
             this.label3.Text = "Welcome to Hong Kong Cube Shop";
             // 
@@ -146,6 +146,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Image = global::SDP_SE1A_Group2.Properties.Resources.iconmonstr_lock_3_240;
             this.pictureBox3.Location = new System.Drawing.Point(34, 419);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
@@ -156,6 +157,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Image = global::SDP_SE1A_Group2.Properties.Resources.user;
             this.pictureBox2.Location = new System.Drawing.Point(34, 301);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
@@ -167,6 +169,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Image = global::SDP_SE1A_Group2.Properties.Resources.cubeLogo1;
             this.pictureBox1.Location = new System.Drawing.Point(207, 35);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
@@ -177,7 +180,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(555, 817);
