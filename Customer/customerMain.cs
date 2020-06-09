@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SDP_SE1A_Group2.Customer
 {
-    public partial class customerMain : Form
+    public partial class CustomerMain : Form
     {
-        public customerMain()
+        public CustomerMain()
         {
             InitializeComponent();
         }

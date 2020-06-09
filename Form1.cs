@@ -20,7 +20,7 @@ namespace SDP_SE1A_Group2
    
         private void button1_Click(object sender, EventArgs e)
         {
-            Customer.customerMain f = new Customer.customerMain();
+            Customer.CustomerMain f = new Customer.CustomerMain();
             f.Show();
             Hide();
         }
