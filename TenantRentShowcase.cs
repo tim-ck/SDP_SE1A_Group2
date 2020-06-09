@@ -8,7 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+<<<<<<< Updated upstream
 namespace Form2
+=======
+namespace SDP_SE1A_Group2
+>>>>>>> Stashed changes
 {
     public partial class TenantRentShowcase : Form
     {
