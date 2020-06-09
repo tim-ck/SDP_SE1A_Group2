@@ -1,6 +1,6 @@
 ﻿namespace SDP_SE1A_Group2
 {
-    partial class LoginPage
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -33,14 +33,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnSignIn = new System.Windows.Forms.Button();
-            this.btnRegister = new System.Windows.Forms.Button();
-            this.btnForgotPassword = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblCloseButton = new System.Windows.Forms.Label();
-            this.txtErrMsg = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,7 +70,7 @@
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(30, 468);
+            this.label2.Location = new System.Drawing.Point(30, 482);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(500, 2);
             this.label2.TabIndex = 8;
@@ -83,7 +82,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.txtPassword.ForeColor = System.Drawing.Color.White;
             this.txtPassword.HideSelection = false;
-            this.txtPassword.Location = new System.Drawing.Point(98, 422);
+            this.txtPassword.Location = new System.Drawing.Point(98, 436);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(432, 36);
@@ -103,57 +102,52 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Welcome to Hong Kong Cube Shop";
             // 
-            // btnSignIn
+            // button1
             // 
-            this.btnSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.btnSignIn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignIn.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.btnSignIn.Location = new System.Drawing.Point(40, 529);
-            this.btnSignIn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new System.Drawing.Size(490, 82);
-            this.btnSignIn.TabIndex = 10;
-            this.btnSignIn.Text = "Sign In";
-            this.btnSignIn.UseVisualStyleBackColor = false;
-            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.button1.Location = new System.Drawing.Point(40, 529);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(490, 82);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Sign In";
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // btnRegister
+            // button2
             // 
-            this.btnRegister.BackColor = System.Drawing.Color.White;
-            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.btnRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.btnRegister.Location = new System.Drawing.Point(228, 709);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(302, 63);
-            this.btnRegister.TabIndex = 11;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = false;
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.button2.Location = new System.Drawing.Point(228, 709);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(302, 63);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "register";
+            this.button2.UseVisualStyleBackColor = false;
             // 
-            // btnForgotPassword
+            // button4
             // 
-            this.btnForgotPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.btnForgotPassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnForgotPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnForgotPassword.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.btnForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.btnForgotPassword.Location = new System.Drawing.Point(228, 639);
-            this.btnForgotPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnForgotPassword.Name = "btnForgotPassword";
-            this.btnForgotPassword.Size = new System.Drawing.Size(302, 52);
-            this.btnForgotPassword.TabIndex = 13;
-            this.btnForgotPassword.Text = "Forgot passord?";
-            this.btnForgotPassword.UseVisualStyleBackColor = false;
-            this.btnForgotPassword.Click += new System.EventHandler(this.btnForgotPassword_Click);
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.button4.Location = new System.Drawing.Point(228, 639);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(302, 52);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "Forget passord?";
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::SDP_SE1A_Group2.Properties.Resources.iconmonstr_lock_3_240;
-            this.pictureBox3.Location = new System.Drawing.Point(34, 405);
+            this.pictureBox3.Location = new System.Drawing.Point(34, 419);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(57, 59);
@@ -184,42 +178,25 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // lblCloseButton
+            // label4
             // 
-            this.lblCloseButton.AutoSize = true;
-            this.lblCloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCloseButton.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCloseButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.lblCloseButton.Location = new System.Drawing.Point(530, 0);
-            this.lblCloseButton.Name = "lblCloseButton";
-            this.lblCloseButton.Size = new System.Drawing.Size(34, 40);
-            this.lblCloseButton.TabIndex = 14;
-            this.lblCloseButton.Text = "X";
-            this.lblCloseButton.Click += new System.EventHandler(this.lblCloseButton_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(496, 13);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "label4";
             // 
-            // txtErrMsg
-            // 
-            this.txtErrMsg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.txtErrMsg.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtErrMsg.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.txtErrMsg.ForeColor = System.Drawing.Color.Red;
-            this.txtErrMsg.Location = new System.Drawing.Point(57, 485);
-            this.txtErrMsg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtErrMsg.Name = "txtErrMsg";
-            this.txtErrMsg.Size = new System.Drawing.Size(432, 36);
-            this.txtErrMsg.TabIndex = 15;
-            // 
-            // LoginPage
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(564, 811);
-            this.Controls.Add(this.txtErrMsg);
-            this.Controls.Add(this.lblCloseButton);
-            this.Controls.Add(this.btnForgotPassword);
-            this.Controls.Add(this.btnRegister);
-            this.Controls.Add(this.btnSignIn);
+            this.ClientSize = new System.Drawing.Size(555, 817);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label2);
@@ -231,7 +208,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "LoginPage";
+            this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.TopMost = true;
@@ -253,11 +230,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnSignIn;
-        private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.Button btnForgotPassword;
-        private System.Windows.Forms.Label lblCloseButton;
-        private System.Windows.Forms.TextBox txtErrMsg;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label4;
     }
 }
 
