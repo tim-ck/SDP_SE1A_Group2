@@ -33,29 +33,35 @@
             this.button6 = new System.Windows.Forms.Button();
             this.btnRentShowcase = new System.Windows.Forms.Button();
             this.panelSideMenu = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnShowcase = new System.Windows.Forms.Button();
-            this.panelShowcaseSubMenu = new System.Windows.Forms.Panel();
-            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.btnSalesItem = new System.Windows.Forms.Button();
-            this.panelSalesItemSubMenu = new System.Windows.Forms.Panel();
-            this.btnStockInItem = new System.Windows.Forms.Button();
-            this.btnMySalesItem = new System.Windows.Forms.Button();
+            this.panelLogOut = new System.Windows.Forms.Panel();
             this.panelRecordSubMenu = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.btnRecord = new System.Windows.Forms.Button();
-            this.panelLogOut = new System.Windows.Forms.Panel();
+            this.panelSalesItemSubMenu = new System.Windows.Forms.Panel();
+            this.btnStockInItem = new System.Windows.Forms.Button();
+            this.btnMySalesItem = new System.Windows.Forms.Button();
+            this.btnSalesItem = new System.Windows.Forms.Button();
+            this.panelShowcaseSubMenu = new System.Windows.Forms.Panel();
+            this.btnShowcase = new System.Windows.Forms.Button();
+            this.panelLogo = new System.Windows.Forms.Panel();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.panelConent = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.panelWelcome = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnCustomerPage = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
-            this.panelLogo.SuspendLayout();
-            this.panelShowcaseSubMenu.SuspendLayout();
-            this.panelSalesItemSubMenu.SuspendLayout();
-            this.panelRecordSubMenu.SuspendLayout();
             this.panelLogOut.SuspendLayout();
+            this.panelRecordSubMenu.SuspendLayout();
+            this.panelSalesItemSubMenu.SuspendLayout();
+            this.panelShowcaseSubMenu.SuspendLayout();
+            this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.panelConent.SuspendLayout();
+            this.panelWelcome.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnMyShowcase
@@ -96,7 +102,6 @@
             // 
             this.btnRentShowcase.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRentShowcase.FlatAppearance.BorderSize = 0;
-            this.btnRentShowcase.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.btnRentShowcase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRentShowcase.ForeColor = System.Drawing.Color.LightGray;
             this.btnRentShowcase.Location = new System.Drawing.Point(0, 0);
@@ -124,107 +129,17 @@
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(250, 695);
+            this.panelSideMenu.Size = new System.Drawing.Size(250, 811);
             this.panelSideMenu.TabIndex = 17;
             // 
-            // panelLogo
+            // panelLogOut
             // 
-            this.panelLogo.Controls.Add(this.picLogo);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(250, 100);
-            this.panelLogo.TabIndex = 18;
-            // 
-            // btnShowcase
-            // 
-            this.btnShowcase.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnShowcase.FlatAppearance.BorderSize = 0;
-            this.btnShowcase.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
-            this.btnShowcase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowcase.ForeColor = System.Drawing.Color.LightGray;
-            this.btnShowcase.Location = new System.Drawing.Point(0, 100);
-            this.btnShowcase.Name = "btnShowcase";
-            this.btnShowcase.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnShowcase.Size = new System.Drawing.Size(250, 45);
-            this.btnShowcase.TabIndex = 19;
-            this.btnShowcase.Text = "Showcase";
-            this.btnShowcase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShowcase.UseVisualStyleBackColor = true;
-            this.btnShowcase.Click += new System.EventHandler(this.btnShowcase_Click);
-            // 
-            // panelShowcaseSubMenu
-            // 
-            this.panelShowcaseSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelShowcaseSubMenu.Controls.Add(this.btnMyShowcase);
-            this.panelShowcaseSubMenu.Controls.Add(this.btnRentShowcase);
-            this.panelShowcaseSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelShowcaseSubMenu.Location = new System.Drawing.Point(0, 145);
-            this.panelShowcaseSubMenu.Name = "panelShowcaseSubMenu";
-            this.panelShowcaseSubMenu.Size = new System.Drawing.Size(250, 85);
-            this.panelShowcaseSubMenu.TabIndex = 20;
-            this.panelShowcaseSubMenu.Visible = false;
-            // 
-            // btnSalesItem
-            // 
-            this.btnSalesItem.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSalesItem.FlatAppearance.BorderSize = 0;
-            this.btnSalesItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
-            this.btnSalesItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalesItem.ForeColor = System.Drawing.Color.LightGray;
-            this.btnSalesItem.Location = new System.Drawing.Point(0, 230);
-            this.btnSalesItem.Name = "btnSalesItem";
-            this.btnSalesItem.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnSalesItem.Size = new System.Drawing.Size(250, 45);
-            this.btnSalesItem.TabIndex = 21;
-            this.btnSalesItem.Text = "Sales Item";
-            this.btnSalesItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalesItem.UseVisualStyleBackColor = true;
-            this.btnSalesItem.Click += new System.EventHandler(this.btnSalesItem_Click);
-            // 
-            // panelSalesItemSubMenu
-            // 
-            this.panelSalesItemSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelSalesItemSubMenu.Controls.Add(this.btnStockInItem);
-            this.panelSalesItemSubMenu.Controls.Add(this.btnMySalesItem);
-            this.panelSalesItemSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSalesItemSubMenu.Location = new System.Drawing.Point(0, 275);
-            this.panelSalesItemSubMenu.Name = "panelSalesItemSubMenu";
-            this.panelSalesItemSubMenu.Size = new System.Drawing.Size(250, 85);
-            this.panelSalesItemSubMenu.TabIndex = 22;
-            this.panelSalesItemSubMenu.Visible = false;
-            // 
-            // btnStockInItem
-            // 
-            this.btnStockInItem.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStockInItem.FlatAppearance.BorderSize = 0;
-            this.btnStockInItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
-            this.btnStockInItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStockInItem.ForeColor = System.Drawing.Color.LightGray;
-            this.btnStockInItem.Location = new System.Drawing.Point(0, 40);
-            this.btnStockInItem.Name = "btnStockInItem";
-            this.btnStockInItem.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnStockInItem.Size = new System.Drawing.Size(250, 40);
-            this.btnStockInItem.TabIndex = 0;
-            this.btnStockInItem.Text = "Stock-in Item";
-            this.btnStockInItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStockInItem.UseVisualStyleBackColor = true;
-            // 
-            // btnMySalesItem
-            // 
-            this.btnMySalesItem.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMySalesItem.FlatAppearance.BorderSize = 0;
-            this.btnMySalesItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnMySalesItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMySalesItem.ForeColor = System.Drawing.Color.LightGray;
-            this.btnMySalesItem.Location = new System.Drawing.Point(0, 0);
-            this.btnMySalesItem.Name = "btnMySalesItem";
-            this.btnMySalesItem.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnMySalesItem.Size = new System.Drawing.Size(250, 40);
-            this.btnMySalesItem.TabIndex = 8;
-            this.btnMySalesItem.Text = "My Sales Item";
-            this.btnMySalesItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMySalesItem.UseVisualStyleBackColor = true;
+            this.panelLogOut.Controls.Add(this.button6);
+            this.panelLogOut.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogOut.Location = new System.Drawing.Point(0, 490);
+            this.panelLogOut.Name = "panelLogOut";
+            this.panelLogOut.Size = new System.Drawing.Size(250, 67);
+            this.panelLogOut.TabIndex = 25;
             // 
             // panelRecordSubMenu
             // 
@@ -287,17 +202,109 @@
             this.btnRecord.UseVisualStyleBackColor = true;
             this.btnRecord.Click += new System.EventHandler(this.btnRecord_Click);
             // 
-            // panelLogOut
+            // panelSalesItemSubMenu
             // 
-            this.panelLogOut.Controls.Add(this.button6);
-            this.panelLogOut.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogOut.Location = new System.Drawing.Point(0, 490);
-            this.panelLogOut.Name = "panelLogOut";
-            this.panelLogOut.Size = new System.Drawing.Size(250, 67);
-            this.panelLogOut.TabIndex = 25;
+            this.panelSalesItemSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.panelSalesItemSubMenu.Controls.Add(this.btnStockInItem);
+            this.panelSalesItemSubMenu.Controls.Add(this.btnMySalesItem);
+            this.panelSalesItemSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSalesItemSubMenu.Location = new System.Drawing.Point(0, 275);
+            this.panelSalesItemSubMenu.Name = "panelSalesItemSubMenu";
+            this.panelSalesItemSubMenu.Size = new System.Drawing.Size(250, 85);
+            this.panelSalesItemSubMenu.TabIndex = 22;
+            this.panelSalesItemSubMenu.Visible = false;
+            // 
+            // btnStockInItem
+            // 
+            this.btnStockInItem.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStockInItem.FlatAppearance.BorderSize = 0;
+            this.btnStockInItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
+            this.btnStockInItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStockInItem.ForeColor = System.Drawing.Color.LightGray;
+            this.btnStockInItem.Location = new System.Drawing.Point(0, 40);
+            this.btnStockInItem.Name = "btnStockInItem";
+            this.btnStockInItem.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnStockInItem.Size = new System.Drawing.Size(250, 40);
+            this.btnStockInItem.TabIndex = 0;
+            this.btnStockInItem.Text = "Stock-in Item";
+            this.btnStockInItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStockInItem.UseVisualStyleBackColor = true;
+            // 
+            // btnMySalesItem
+            // 
+            this.btnMySalesItem.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMySalesItem.FlatAppearance.BorderSize = 0;
+            this.btnMySalesItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.btnMySalesItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMySalesItem.ForeColor = System.Drawing.Color.LightGray;
+            this.btnMySalesItem.Location = new System.Drawing.Point(0, 0);
+            this.btnMySalesItem.Name = "btnMySalesItem";
+            this.btnMySalesItem.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnMySalesItem.Size = new System.Drawing.Size(250, 40);
+            this.btnMySalesItem.TabIndex = 8;
+            this.btnMySalesItem.Text = "My Sales Item";
+            this.btnMySalesItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMySalesItem.UseVisualStyleBackColor = true;
+            this.btnMySalesItem.Click += new System.EventHandler(this.btnMySalesItem_Click);
+            // 
+            // btnSalesItem
+            // 
+            this.btnSalesItem.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSalesItem.FlatAppearance.BorderSize = 0;
+            this.btnSalesItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
+            this.btnSalesItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalesItem.ForeColor = System.Drawing.Color.LightGray;
+            this.btnSalesItem.Location = new System.Drawing.Point(0, 230);
+            this.btnSalesItem.Name = "btnSalesItem";
+            this.btnSalesItem.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnSalesItem.Size = new System.Drawing.Size(250, 45);
+            this.btnSalesItem.TabIndex = 21;
+            this.btnSalesItem.Text = "Sales Item";
+            this.btnSalesItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalesItem.UseVisualStyleBackColor = true;
+            this.btnSalesItem.Click += new System.EventHandler(this.btnSalesItem_Click);
+            // 
+            // panelShowcaseSubMenu
+            // 
+            this.panelShowcaseSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.panelShowcaseSubMenu.Controls.Add(this.btnMyShowcase);
+            this.panelShowcaseSubMenu.Controls.Add(this.btnRentShowcase);
+            this.panelShowcaseSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelShowcaseSubMenu.Location = new System.Drawing.Point(0, 145);
+            this.panelShowcaseSubMenu.Name = "panelShowcaseSubMenu";
+            this.panelShowcaseSubMenu.Size = new System.Drawing.Size(250, 85);
+            this.panelShowcaseSubMenu.TabIndex = 20;
+            this.panelShowcaseSubMenu.Visible = false;
+            // 
+            // btnShowcase
+            // 
+            this.btnShowcase.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnShowcase.FlatAppearance.BorderSize = 0;
+            this.btnShowcase.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
+            this.btnShowcase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowcase.ForeColor = System.Drawing.Color.LightGray;
+            this.btnShowcase.Location = new System.Drawing.Point(0, 100);
+            this.btnShowcase.Name = "btnShowcase";
+            this.btnShowcase.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnShowcase.Size = new System.Drawing.Size(250, 45);
+            this.btnShowcase.TabIndex = 19;
+            this.btnShowcase.Text = "Showcase";
+            this.btnShowcase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowcase.UseVisualStyleBackColor = true;
+            this.btnShowcase.Click += new System.EventHandler(this.btnShowcase_Click);
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.picLogo);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(250, 100);
+            this.panelLogo.TabIndex = 18;
             // 
             // picLogo
             // 
+            this.picLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.picLogo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
             this.picLogo.Location = new System.Drawing.Point(0, 0);
@@ -307,33 +314,81 @@
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
             // 
+            // panelConent
+            // 
+            this.panelConent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(24)))));
+            this.panelConent.Controls.Add(this.panelChildForm);
+            this.panelConent.Controls.Add(this.panelWelcome);
+            this.panelConent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelConent.Location = new System.Drawing.Point(250, 0);
+            this.panelConent.Name = "panelConent";
+            this.panelConent.Size = new System.Drawing.Size(1134, 811);
+            this.panelConent.TabIndex = 18;
+            // 
             // panelChildForm
             // 
-            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(250, 0);
+            this.panelChildForm.Location = new System.Drawing.Point(0, 100);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(962, 695);
-            this.panelChildForm.TabIndex = 18;
+            this.panelChildForm.Size = new System.Drawing.Size(1134, 711);
+            this.panelChildForm.TabIndex = 20;
             // 
-            // Form2
+            // panelWelcome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+            this.panelWelcome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.panelWelcome.Controls.Add(this.label1);
+            this.panelWelcome.Controls.Add(this.btnCustomerPage);
+            this.panelWelcome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelWelcome.Location = new System.Drawing.Point(0, 0);
+            this.panelWelcome.Name = "panelWelcome";
+            this.panelWelcome.Size = new System.Drawing.Size(1134, 100);
+            this.panelWelcome.TabIndex = 19;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("PMingLiU", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.ForeColor = System.Drawing.Color.LightGray;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
+            this.label1.Size = new System.Drawing.Size(220, 57);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Welcome ";
+            // 
+            // btnCustomerPage
+            // 
+            this.btnCustomerPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCustomerPage.Location = new System.Drawing.Point(882, 23);
+            this.btnCustomerPage.Name = "btnCustomerPage";
+            this.btnCustomerPage.Size = new System.Drawing.Size(206, 34);
+            this.btnCustomerPage.TabIndex = 0;
+            this.btnCustomerPage.Text = "Go to Customer Page";
+            this.btnCustomerPage.UseVisualStyleBackColor = true;
+            // 
+            // TenantMain
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1212, 695);
-            this.Controls.Add(this.panelChildForm);
+            this.ClientSize = new System.Drawing.Size(1384, 811);
+            this.Controls.Add(this.panelConent);
             this.Controls.Add(this.panelSideMenu);
             this.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Name = "Form2";
+            this.Name = "TenantMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tenant";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelSideMenu.ResumeLayout(false);
-            this.panelLogo.ResumeLayout(false);
-            this.panelShowcaseSubMenu.ResumeLayout(false);
-            this.panelSalesItemSubMenu.ResumeLayout(false);
-            this.panelRecordSubMenu.ResumeLayout(false);
             this.panelLogOut.ResumeLayout(false);
+            this.panelRecordSubMenu.ResumeLayout(false);
+            this.panelSalesItemSubMenu.ResumeLayout(false);
+            this.panelShowcaseSubMenu.ResumeLayout(false);
+            this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            this.panelConent.ResumeLayout(false);
+            this.panelWelcome.ResumeLayout(false);
+            this.panelWelcome.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -359,6 +414,10 @@
         private System.Windows.Forms.Button btnMySalesItem;
         private System.Windows.Forms.Button btnSalesItem;
         private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.Panel panelConent;
+        private System.Windows.Forms.Panel panelWelcome;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCustomerPage;
         private System.Windows.Forms.Panel panelChildForm;
     }
 }

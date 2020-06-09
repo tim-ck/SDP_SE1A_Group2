@@ -54,23 +54,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tenant\TenantMain.cs">
+    <Compile Include="Tenant\Tenant_Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tenant\TenantMain.designer.cs">
-      <DependentUpon>TenantMain.cs</DependentUpon>
+    <Compile Include="Tenant\Tenant_Main.designer.cs">
+      <DependentUpon>Tenant_Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tenant\TenantMyShowcase.cs">
+    <Compile Include="Tenant\Tenant_MyShowcase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tenant\TenantMyShowcase.designer.cs">
-      <DependentUpon>TenantMyShowcase.cs</DependentUpon>
+    <Compile Include="Tenant\Tenant_MyShowcase.designer.cs">
+      <DependentUpon>Tenant_MyShowcase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tenant\TenantRentShowcase.cs">
+    <Compile Include="Tenant\Tenant_RentShowcase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tenant\TenantRentShowcase.designer.cs">
-      <DependentUpon>TenantRentShowcase.cs</DependentUpon>
+    <Compile Include="Tenant\Tenant_RentShowcase.designer.cs">
+      <DependentUpon>Tenant_RentShowcase.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -80,14 +80,14 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tenant\TenantMain.resx">
-      <DependentUpon>TenantMain.cs</DependentUpon>
+    <EmbeddedResource Include="Tenant\Tenant_Main.resx">
+      <DependentUpon>Tenant_Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tenant\TenantMyShowcase.resx">
-      <DependentUpon>TenantMyShowcase.cs</DependentUpon>
+    <EmbeddedResource Include="Tenant\Tenant_MyShowcase.resx">
+      <DependentUpon>Tenant_MyShowcase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tenant\TenantRentShowcase.resx">
-      <DependentUpon>TenantRentShowcase.cs</DependentUpon>
+    <EmbeddedResource Include="Tenant\Tenant_RentShowcase.resx">
+      <DependentUpon>Tenant_RentShowcase.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

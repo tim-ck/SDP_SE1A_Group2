@@ -20,7 +20,9 @@ namespace SDP_SE1A_Group2
    
         private void button1_Click(object sender, EventArgs e)
         {
-
+            TenantMain tenantMain = new TenantMain();
+            this.Hide();
+            tenantMain.Show();
         }
 
         private void textBox1_Click(object sender, EventArgs e)

@@ -86,5 +86,11 @@ namespace SDP_SE1A_Group2
             childForm.Show();
         }
         #endregion
+
+        private void btnMySalesItem_Click(object sender, EventArgs e)
+        {
+            
+      
+        }
     }
 }
