@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace SDP_SE1A_Group2
 {
-    public partial class Form2 : Form
+    public partial class TenantMySalesItem : Form
     {
-        public Form2()
+        public TenantMySalesItem()
         {
             InitializeComponent();
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

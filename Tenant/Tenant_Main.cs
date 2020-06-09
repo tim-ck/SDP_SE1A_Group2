@@ -59,14 +59,12 @@ namespace SDP_SE1A_Group2
 
         private void btnMyShowcase_Click(object sender, EventArgs e)
         {
-            hideSubMenu();
             TenantMyShowcase form2myShowcase = new TenantMyShowcase();
             openChildForm(form2myShowcase);
         }
 
         private void btnRentShowcase_Click(object sender, EventArgs e)
         {
-            hideSubMenu();
             TenantRentShowcase form2rentShowcase = new TenantRentShowcase();
             openChildForm(form2rentShowcase);
         }
@@ -89,7 +87,8 @@ namespace SDP_SE1A_Group2
 
         private void btnMySalesItem_Click(object sender, EventArgs e)
         {
-            
+            TenantMySalesItem tenantMySalesItem = new TenantMySalesItem();
+            openChildForm(tenantMySalesItem);
       
         }
     }

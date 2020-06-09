@@ -60,17 +60,23 @@
     <Compile Include="Tenant\Tenant_Main.designer.cs">
       <DependentUpon>Tenant_Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tenant\Tenant_MyShowcase.cs">
+    <Compile Include="Tenant\Showcase\Tenant_MyShowcase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tenant\Tenant_MyShowcase.designer.cs">
+    <Compile Include="Tenant\Showcase\Tenant_MyShowcase.designer.cs">
       <DependentUpon>Tenant_MyShowcase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tenant\Tenant_RentShowcase.cs">
+    <Compile Include="Tenant\Showcase\Tenant_RentShowcase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tenant\Tenant_RentShowcase.designer.cs">
+    <Compile Include="Tenant\Showcase\Tenant_RentShowcase.designer.cs">
       <DependentUpon>Tenant_RentShowcase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tenant\SalesItem\Tenant_MySalesItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\SalesItem\Tenant_MySalesItem.Designer.cs">
+      <DependentUpon>Tenant_MySalesItem.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -83,11 +89,14 @@
     <EmbeddedResource Include="Tenant\Tenant_Main.resx">
       <DependentUpon>Tenant_Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tenant\Tenant_MyShowcase.resx">
+    <EmbeddedResource Include="Tenant\Showcase\Tenant_MyShowcase.resx">
       <DependentUpon>Tenant_MyShowcase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tenant\Tenant_RentShowcase.resx">
+    <EmbeddedResource Include="Tenant\Showcase\Tenant_RentShowcase.resx">
       <DependentUpon>Tenant_RentShowcase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\SalesItem\Tenant_MySalesItem.resx">
+      <DependentUpon>Tenant_MySalesItem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

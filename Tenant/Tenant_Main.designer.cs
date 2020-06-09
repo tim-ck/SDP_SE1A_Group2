@@ -353,7 +353,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
-            this.label1.Size = new System.Drawing.Size(220, 57);
+            this.label1.Size = new System.Drawing.Size(271, 69);
             this.label1.TabIndex = 1;
             this.label1.Text = "Welcome ";
             // 
@@ -369,7 +369,7 @@
             // 
             // TenantMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1384, 811);
             this.Controls.Add(this.panelConent);
