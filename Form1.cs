@@ -22,7 +22,7 @@ namespace SDP_SE1A_Group2
         {
             Customer.CustomerMain f = new Customer.CustomerMain();
             f.Show();
-            Form1.Close();
+            Hide();
         }
 
         private void textBox1_Click(object sender, EventArgs e)
