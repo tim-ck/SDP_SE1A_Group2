@@ -28,123 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnShoppingCartPage = new System.Windows.Forms.Button();
             this.btnBrowseItemPage = new System.Windows.Forms.Button();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.btnGo = new System.Windows.Forms.Button();
-            this.btnShoppingCartPage = new System.Windows.Forms.Button();
-            this.btnLogOut = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnGo);
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Location = new System.Drawing.Point(200, -1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 74);
-            this.panel1.TabIndex = 0;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 101);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 539);
-            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btnLogOut);
             this.panel2.Controls.Add(this.btnShoppingCartPage);
             this.panel2.Controls.Add(this.btnBrowseItemPage);
-            this.panel2.Location = new System.Drawing.Point(0, 126);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 702);
+            this.panel2.Size = new System.Drawing.Size(250, 817);
             this.panel2.TabIndex = 1;
-            // 
-            // btnBrowseItemPage
-            // 
-            this.btnBrowseItemPage.Location = new System.Drawing.Point(0, 0);
-            this.btnBrowseItemPage.Name = "btnBrowseItemPage";
-            this.btnBrowseItemPage.Size = new System.Drawing.Size(200, 83);
-            this.btnBrowseItemPage.TabIndex = 0;
-            this.btnBrowseItemPage.Text = "Browse Item";
-            this.btnBrowseItemPage.UseVisualStyleBackColor = true;
-            this.btnBrowseItemPage.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panelChildForm
-            // 
-            this.panelChildForm.Location = new System.Drawing.Point(200, 126);
-            this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1233, 702);
-            this.panelChildForm.TabIndex = 2;
-            // 
-            // btnGo
-            // 
-            this.btnGo.Location = new System.Drawing.Point(1193, 13);
-            this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(230, 41);
-            this.btnGo.TabIndex = 2;
-            this.btnGo.Text = "Go to Tenant Page ";
-            this.btnGo.UseVisualStyleBackColor = true;
-            // 
-            // btnShoppingCartPage
-            // 
-            this.btnShoppingCartPage.Location = new System.Drawing.Point(0, 79);
-            this.btnShoppingCartPage.Name = "btnShoppingCartPage";
-            this.btnShoppingCartPage.Size = new System.Drawing.Size(200, 83);
-            this.btnShoppingCartPage.TabIndex = 1;
-            this.btnShoppingCartPage.Text = "Shopping Cart";
-            this.btnShoppingCartPage.UseVisualStyleBackColor = true;
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(0, 336);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 716);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(200, 83);
+            this.btnLogOut.Size = new System.Drawing.Size(250, 83);
             this.btnLogOut.TabIndex = 2;
             this.btnLogOut.Text = "Log out";
             this.btnLogOut.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // btnShoppingCartPage
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 3;
+            this.btnShoppingCartPage.Location = new System.Drawing.Point(0, 179);
+            this.btnShoppingCartPage.Name = "btnShoppingCartPage";
+            this.btnShoppingCartPage.Size = new System.Drawing.Size(250, 83);
+            this.btnShoppingCartPage.TabIndex = 1;
+            this.btnShoppingCartPage.Text = "Shopping Cart";
+            this.btnShoppingCartPage.UseVisualStyleBackColor = true;
+            // 
+            // btnBrowseItemPage
+            // 
+            this.btnBrowseItemPage.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.btnBrowseItemPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBrowseItemPage.Location = new System.Drawing.Point(0, 99);
+            this.btnBrowseItemPage.Name = "btnBrowseItemPage";
+            this.btnBrowseItemPage.Size = new System.Drawing.Size(250, 83);
+            this.btnBrowseItemPage.TabIndex = 0;
+            this.btnBrowseItemPage.Text = "Browse Item";
+            this.btnBrowseItemPage.UseVisualStyleBackColor = true;
+            this.btnBrowseItemPage.Click += new System.EventHandler(this.btnBrowseItemPage_Click);
+            // 
+            // panelChildForm
+            // 
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(2)))), ((int)(((byte)(50)))), ((int)(((byte)(62)))));
+            this.panelChildForm.Location = new System.Drawing.Point(250, 100);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(1135, 717);
+            this.panelChildForm.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.panel1.Location = new System.Drawing.Point(250, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1135, 100);
+            this.panel1.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.pictureBox1.Image = global::SDP_SE1A_Group2.Properties.Resources.cubeLogo1;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(250, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // CustomerMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1435, 826);
+            this.ClientSize = new System.Drawing.Size(1384, 811);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Name = "CustomerMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "customerMain";
-            this.panel1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.CustomerMain_Load);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnBrowseItemPage;
         private System.Windows.Forms.Panel panelChildForm;
-        private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnShoppingCartPage;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

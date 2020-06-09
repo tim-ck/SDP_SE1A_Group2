@@ -56,7 +56,6 @@
             this.textBox1.Size = new System.Drawing.Size(432, 36);
             this.textBox1.TabIndex = 2;
             this.textBox1.Text = "Username12345678";
-            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // label1
             // 
@@ -88,7 +87,6 @@
             this.textBox3.TabIndex = 7;
             this.textBox3.TabStop = false;
             this.textBox3.Text = "Password";
-            this.textBox3.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // label3
             // 

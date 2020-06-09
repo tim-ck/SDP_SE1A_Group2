@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SDP_SE1A_Group2
+namespace SDP_SE1A_Group2.Customer
 {
-    public partial class Form1 : Form
+    public partial class BrowseItems : Form
     {
-        public Form1()
+        public BrowseItems()
         {
             InitializeComponent();
         }
-
-   
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Customer.CustomerMain f = new Customer.CustomerMain();
-            f.Show();
-            Hide();
-        }
-
-   
     }
 }

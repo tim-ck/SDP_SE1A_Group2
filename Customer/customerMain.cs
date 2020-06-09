@@ -18,12 +18,9 @@ namespace SDP_SE1A_Group2.Customer
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void openChilForm(Form childForm)
+        private void openChildForm(Form childForm)
         {
             if (activeForm!= null)
                 activeForm.Close();
@@ -35,6 +32,17 @@ namespace SDP_SE1A_Group2.Customer
             childForm.BringToFront();
             panelChildForm.Controls.Add(childForm);
             childForm.Show();
+        }
+
+        private void CustomerMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBrowseItemPage_Click(object sender, EventArgs e)
+        {
+            BrowseItems browseItemForm = new BrowseItems();
+            openChildForm(browseItemForm);
         }
     }
 }
