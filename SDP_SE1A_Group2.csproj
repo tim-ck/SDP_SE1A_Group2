@@ -66,11 +66,35 @@
     <Compile Include="Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Staff_Attendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_Attendance.Designer.cs">
+      <DependentUpon>Staff_Attendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_Export.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_Export.Designer.cs">
+      <DependentUpon>Staff_Export.cs</DependentUpon>
+    </Compile>
     <Compile Include="Staff_POS.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Staff_POS.Designer.cs">
       <DependentUpon>Staff_POS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_Reserve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_Reserve.Designer.cs">
+      <DependentUpon>Staff_Reserve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_SalesRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_SalesRecord.Designer.cs">
+      <DependentUpon>Staff_SalesRecord.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Account\ForgotPasswordForm.resx">
       <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
