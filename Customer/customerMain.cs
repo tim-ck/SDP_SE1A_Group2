@@ -18,6 +18,7 @@ namespace SDP_SE1A_Group2.Customer
         {
             InitializeComponent();
             opener = parentForm;
+            this.Text
         }
 
        
@@ -52,5 +53,7 @@ namespace SDP_SE1A_Group2.Customer
             opener.Close();
             this.Close();
         }
+
+        
     }
 }

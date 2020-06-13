@@ -122,5 +122,44 @@
   <ItemGroup>
     <None Include="Resources\user-blue.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\item-P.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout-P.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order-p.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\nav\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart_P.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\item-P1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart-S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart-hvItem-P.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart-hvItem-S.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
