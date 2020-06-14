@@ -21,8 +21,6 @@ namespace SDP_SE1A_Group2
         {
             Staff_POS staff_pos = new Staff_POS();
             openForm(staff_pos);
-
-
         }
 
         private Form activeForm;

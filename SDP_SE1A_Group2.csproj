@@ -110,8 +110,14 @@
     <EmbeddedResource Include="Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Staff_Attendance.resx">
+      <DependentUpon>Staff_Attendance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Staff_POS.resx">
       <DependentUpon>Staff_POS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_SalesRecord.resx">
+      <DependentUpon>Staff_SalesRecord.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

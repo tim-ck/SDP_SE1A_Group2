@@ -44,98 +44,98 @@
             // lblShowCase
             // 
             this.lblShowCase.AutoSize = true;
-            this.lblShowCase.Location = new System.Drawing.Point(141, 84);
+            this.lblShowCase.Location = new System.Drawing.Point(41, 33);
             this.lblShowCase.Name = "lblShowCase";
-            this.lblShowCase.Size = new System.Drawing.Size(64, 13);
+            this.lblShowCase.Size = new System.Drawing.Size(59, 12);
             this.lblShowCase.TabIndex = 0;
             this.lblShowCase.Text = "Show Case:";
             // 
             // lblItemID
             // 
             this.lblItemID.AutoSize = true;
-            this.lblItemID.Location = new System.Drawing.Point(161, 152);
+            this.lblItemID.Location = new System.Drawing.Point(61, 95);
             this.lblItemID.Name = "lblItemID";
-            this.lblItemID.Size = new System.Drawing.Size(44, 13);
+            this.lblItemID.Size = new System.Drawing.Size(44, 12);
             this.lblItemID.TabIndex = 1;
             this.lblItemID.Text = "Item ID:";
             // 
             // lblQT
             // 
             this.lblQT.AutoSize = true;
-            this.lblQT.Location = new System.Drawing.Point(180, 213);
+            this.lblQT.Location = new System.Drawing.Point(80, 152);
             this.lblQT.Name = "lblQT";
-            this.lblQT.Size = new System.Drawing.Size(25, 13);
+            this.lblQT.Size = new System.Drawing.Size(23, 12);
             this.lblQT.TabIndex = 2;
             this.lblQT.Text = "QT:";
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(147, 278);
+            this.lblPrice.Location = new System.Drawing.Point(47, 212);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(58, 13);
+            this.lblPrice.Size = new System.Drawing.Size(56, 12);
             this.lblPrice.TabIndex = 3;
             this.lblPrice.Text = "Price(1pc):";
             // 
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(144, 342);
+            this.lblTotalPrice.Location = new System.Drawing.Point(44, 271);
             this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(61, 13);
+            this.lblTotalPrice.Size = new System.Drawing.Size(58, 12);
             this.lblTotalPrice.TabIndex = 4;
             this.lblTotalPrice.Text = "Total Price:";
             // 
             // cmbShowCase
             // 
             this.cmbShowCase.FormattingEnabled = true;
-            this.cmbShowCase.Location = new System.Drawing.Point(257, 81);
+            this.cmbShowCase.Location = new System.Drawing.Point(157, 30);
             this.cmbShowCase.Name = "cmbShowCase";
-            this.cmbShowCase.Size = new System.Drawing.Size(121, 21);
+            this.cmbShowCase.Size = new System.Drawing.Size(121, 20);
             this.cmbShowCase.TabIndex = 5;
             // 
             // txtItemID
             // 
-            this.txtItemID.Location = new System.Drawing.Point(257, 149);
+            this.txtItemID.Location = new System.Drawing.Point(157, 93);
             this.txtItemID.Name = "txtItemID";
-            this.txtItemID.Size = new System.Drawing.Size(121, 20);
+            this.txtItemID.Size = new System.Drawing.Size(121, 22);
             this.txtItemID.TabIndex = 6;
             // 
             // txtQT
             // 
-            this.txtQT.Location = new System.Drawing.Point(257, 210);
+            this.txtQT.Location = new System.Drawing.Point(157, 149);
             this.txtQT.Name = "txtQT";
-            this.txtQT.Size = new System.Drawing.Size(121, 20);
+            this.txtQT.Size = new System.Drawing.Size(121, 22);
             this.txtQT.TabIndex = 7;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(257, 275);
+            this.txtPrice.Location = new System.Drawing.Point(157, 209);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(121, 20);
+            this.txtPrice.Size = new System.Drawing.Size(121, 22);
             this.txtPrice.TabIndex = 8;
             // 
             // txtTotalPrice
             // 
-            this.txtTotalPrice.Location = new System.Drawing.Point(257, 339);
+            this.txtTotalPrice.Location = new System.Drawing.Point(157, 268);
             this.txtTotalPrice.Name = "txtTotalPrice";
-            this.txtTotalPrice.Size = new System.Drawing.Size(121, 20);
+            this.txtTotalPrice.Size = new System.Drawing.Size(121, 22);
             this.txtTotalPrice.TabIndex = 9;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(435, 337);
+            this.button1.Location = new System.Drawing.Point(328, 271);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 21);
             this.button1.TabIndex = 10;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // Staff_POS
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(799, 495);
+            this.ClientSize = new System.Drawing.Size(799, 457);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtTotalPrice);
             this.Controls.Add(this.txtPrice);
