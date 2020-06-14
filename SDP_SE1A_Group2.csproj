@@ -58,11 +58,23 @@
     <Compile Include="Customer\BrowseItems.designer.cs">
       <DependentUpon>BrowseItems.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\CartPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CartPage.Designer.cs">
+      <DependentUpon>CartPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\customerMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Customer\customerMain.designer.cs">
       <DependentUpon>customerMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Sample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Sample.Designer.cs">
+      <DependentUpon>Sample.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
