@@ -35,10 +35,15 @@
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.lblCloseButton = new System.Windows.Forms.Label();
+            this.btnTenantPage = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +81,7 @@
             this.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // btnLogOut
             // 
@@ -95,6 +101,7 @@
             this.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnCart
             // 
@@ -114,6 +121,7 @@
             this.btnCart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCart.UseVisualStyleBackColor = true;
+            this.btnCart.Click += new System.EventHandler(this.btnCart_Click);
             // 
             // btnOrder
             // 
@@ -133,6 +141,7 @@
             this.btnOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnOrder.UseVisualStyleBackColor = true;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // btnProduct
             // 
@@ -156,6 +165,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(24)))));
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -163,24 +173,39 @@
             this.panel2.Size = new System.Drawing.Size(250, 100);
             this.panel2.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::SDP_SE1A_Group2.Properties.Resources.cubeLogo1;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(250, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.panelTitleBar.Controls.Add(this.label2);
+            this.panelTitleBar.Controls.Add(this.btnTenantPage);
+            this.panelTitleBar.Controls.Add(this.lblCloseButton);
+            this.panelTitleBar.Controls.Add(this.lblTitle);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(250, 0);
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(1150, 100);
             this.panelTitleBar.TabIndex = 1;
             // 
-            // label2
+            // lblTitle
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(286, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.lblTitle.Location = new System.Drawing.Point(169, 32);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(631, 38);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "Welcome Customer (customer name)!";
             // 
             // panelChildForm
             // 
@@ -189,6 +214,27 @@
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(1150, 700);
             this.panelChildForm.TabIndex = 2;
+            // 
+            // lblCloseButton
+            // 
+            this.lblCloseButton.AutoSize = true;
+            this.lblCloseButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCloseButton.ForeColor = System.Drawing.Color.White;
+            this.lblCloseButton.Location = new System.Drawing.Point(1122, 0);
+            this.lblCloseButton.Name = "lblCloseButton";
+            this.lblCloseButton.Size = new System.Drawing.Size(25, 30);
+            this.lblCloseButton.TabIndex = 2;
+            this.lblCloseButton.Text = "X";
+            // 
+            // btnTenantPage
+            // 
+            this.btnTenantPage.Location = new System.Drawing.Point(999, 48);
+            this.btnTenantPage.Name = "btnTenantPage";
+            this.btnTenantPage.Size = new System.Drawing.Size(114, 23);
+            this.btnTenantPage.TabIndex = 3;
+            this.btnTenantPage.Text = "Go To Tenant Page";
+            this.btnTenantPage.UseVisualStyleBackColor = true;
+            this.btnTenantPage.Click += new System.EventHandler(this.btnTenantPage_Click);
             // 
             // CustomerMain
             // 
@@ -204,8 +250,9 @@
             this.Name = "CustomerMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "customerMain";
-            this.Load += new System.EventHandler(this.CustomerMain_Load);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             this.ResumeLayout(false);
@@ -222,7 +269,10 @@
         private System.Windows.Forms.Button btnCart;
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.Panel panelTitleBar;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panelChildForm;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblCloseButton;
+        private System.Windows.Forms.Button btnTenantPage;
     }
 }

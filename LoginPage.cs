@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SDP_SE1A_Group2.Customer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -58,8 +59,9 @@ namespace SDP_SE1A_Group2
             using (var notSoImportantVariable = new classicmodelsEntities())
             {
                 var userAcct =  from list in notSoImportantVariable.Customer
+                                where list.CustomerID.Equals(username)
                                 select new { list.CustomerID, list.Password };
-
+                if()
                 foreach (var user in userAcct.ToList())
                 {
                     if ((username == user.CustomerID.ToString()) && (password == user.Password.ToString()))
@@ -74,11 +76,11 @@ namespace SDP_SE1A_Group2
             }
             if(Verify == false)
                 txtErrMsg.Text = "The Username / Password is incorrect";
-            */
+            else{*/
             this.Hide();
-            Customer.CustomerMain cus = new Customer.CustomerMain(this, username); //!!!!!!!!!!!!!!!!!!!!!
+            CustomerMain cus = new CustomerMain(this, username); 
             cus.Show();
-
+            //}
 
         }
 
