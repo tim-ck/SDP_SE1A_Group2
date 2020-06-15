@@ -16,5 +16,10 @@ namespace SDP_SE1A_Group2.Tenant.SalesItem
         {
             InitializeComponent();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

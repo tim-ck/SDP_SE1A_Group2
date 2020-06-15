@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.lbInShowcase = new System.Windows.Forms.Label();
+            this.panelFilter = new System.Windows.Forms.Panel();
+            this.cbLocation = new System.Windows.Forms.ComboBox();
+            this.cbShowcaseId = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.panelDataGridView = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.rowNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,6 +44,8 @@
             this.showcaseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelFilter.SuspendLayout();
+            this.panelDataGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,11 +56,81 @@
             this.lbInShowcase.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lbInShowcase.ForeColor = System.Drawing.Color.LightGray;
             this.lbInShowcase.Location = new System.Drawing.Point(0, 0);
+            this.lbInShowcase.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbInShowcase.Name = "lbInShowcase";
-            this.lbInShowcase.Size = new System.Drawing.Size(1098, 20);
+            this.lbInShowcase.Size = new System.Drawing.Size(824, 17);
             this.lbInShowcase.TabIndex = 5;
             this.lbInShowcase.Text = "In Showcase";
             this.lbInShowcase.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panelFilter
+            // 
+            this.panelFilter.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelFilter.Controls.Add(this.btnSearch);
+            this.panelFilter.Controls.Add(this.label2);
+            this.panelFilter.Controls.Add(this.label1);
+            this.panelFilter.Controls.Add(this.cbShowcaseId);
+            this.panelFilter.Controls.Add(this.cbLocation);
+            this.panelFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelFilter.ForeColor = System.Drawing.Color.LightGray;
+            this.panelFilter.Location = new System.Drawing.Point(0, 17);
+            this.panelFilter.Name = "panelFilter";
+            this.panelFilter.Size = new System.Drawing.Size(824, 69);
+            this.panelFilter.TabIndex = 7;
+            // 
+            // cbLocation
+            // 
+            this.cbLocation.FormattingEnabled = true;
+            this.cbLocation.Location = new System.Drawing.Point(48, 23);
+            this.cbLocation.Name = "cbLocation";
+            this.cbLocation.Size = new System.Drawing.Size(121, 21);
+            this.cbLocation.TabIndex = 0;
+            // 
+            // cbShowcaseId
+            // 
+            this.cbShowcaseId.FormattingEnabled = true;
+            this.cbShowcaseId.Location = new System.Drawing.Point(337, 23);
+            this.cbShowcaseId.Name = "cbShowcaseId";
+            this.cbShowcaseId.Size = new System.Drawing.Size(121, 21);
+            this.cbShowcaseId.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(186, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Location";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(489, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Showcase ID";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(606, 11);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 38);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // panelDataGridView
+            // 
+            this.panelDataGridView.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panelDataGridView.Controls.Add(this.dataGridView1);
+            this.panelDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDataGridView.Location = new System.Drawing.Point(0, 86);
+            this.panelDataGridView.Name = "panelDataGridView";
+            this.panelDataGridView.Size = new System.Drawing.Size(824, 349);
+            this.panelDataGridView.TabIndex = 8;
             // 
             // dataGridView1
             // 
@@ -66,12 +145,14 @@
             this.qty,
             this.unitPrice});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 20);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(1098, 482);
-            this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.Size = new System.Drawing.Size(824, 349);
+            this.dataGridView1.TabIndex = 7;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // rowNumber
             // 
@@ -124,14 +205,19 @@
             // 
             // InShowcase
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1098, 502);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(824, 435);
+            this.Controls.Add(this.panelDataGridView);
+            this.Controls.Add(this.panelFilter);
             this.Controls.Add(this.lbInShowcase);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "InShowcase";
             this.Text = "In Showcase";
+            this.panelFilter.ResumeLayout(false);
+            this.panelFilter.PerformLayout();
+            this.panelDataGridView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -140,6 +226,13 @@
         #endregion
 
         private System.Windows.Forms.Label lbInShowcase;
+        private System.Windows.Forms.Panel panelFilter;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbShowcaseId;
+        private System.Windows.Forms.ComboBox cbLocation;
+        private System.Windows.Forms.Panel panelDataGridView;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn rowNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemId;
