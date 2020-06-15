@@ -16,7 +16,6 @@ namespace SDP_SE1A_Group2
         public LoginPage()
         {
             InitializeComponent();
-            btnSignIn.Focus();
         }
         private void lblCloseButton_Click(object sender, EventArgs e)
         {
@@ -78,8 +77,11 @@ namespace SDP_SE1A_Group2
                 txtErrMsg.Text = "The Username / Password is incorrect";
             else{*/
             this.Hide();
+            txtUsername.Text = "Username";
+            txtPassword.Text = "Password";
             CustomerMain cus = new CustomerMain(this, username); 
             cus.Show();
+
             //}
 
         }
@@ -111,6 +113,9 @@ namespace SDP_SE1A_Group2
             if (Verify == false)
                 txtErrMsg.Text = "The Username / Password is incorrect";
 
+            else
+            txtUsername.Text = "Username";
+            txtPassword.Text = "Password";
             */
 
 

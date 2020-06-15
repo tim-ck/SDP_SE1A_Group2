@@ -16,16 +16,14 @@ namespace SDP_SE1A_Group2.Customer
         Form opener;
         private Form activeForm = null;
         private String userId, cusName;
-        private Stack item = new Stack(); // store all item user added
-        private Stack orderInfo = new Stack(); //store all order id froom DBS
-        private int orderId; // store this order ID
+        private Stack item = new Stack(); // store all item user added        
 
         public CustomerMain(Form parentForm, String userId)
         {
             InitializeComponent();
             opener = parentForm;
             this.userId = userId;
-            orderInfo.Push("0000");
+            
             /* using (var notSoImportantVariable = new classicmodelsEntities())
              {
                 var userAcct = from list in notSoImportantVariable.Customer
@@ -36,23 +34,24 @@ namespace SDP_SE1A_Group2.Customer
                      cusName = user.CustomerName;
                  }
 
-                var order = from list in notSoImportantVariable.Oder
-                                  select list;
-                foreach (var l in order.ToList())
-                 {
-                     orderInfo.Push(l.orderfID);
-                 }
+              
 
              }*/
             cusName = userId;//test case: customer name and customer id is same. real code in comment above!
             lblTitle.Text= "Welcome Customer " + cusName + " !";
-            orderId = Convert.ToInt32(orderInfo.Peek())+1;
+            
 
 
         }
 
-        public Boolean cartHvItem() { return item.Count != 0; }
-        public void updateItem(Stack item) { this.item = item; }
+        public Boolean CartHvItem() { return item.Count != 0; }
+        public void CartAddItem(String itemID, String quantity)
+        {
+            String addToItem = itemID + quantity;
+            item.Push(addToItem);
+            //CartPage.UpdateItem(item); //!!!!!!!!!!!!!!!!!!
+        }
+
         private void openChildForm(Form childForm)
         {
             if (activeForm!= null)
@@ -67,70 +66,90 @@ namespace SDP_SE1A_Group2.Customer
             childForm.Show();
         }
 
-        private void btnBrowseItemPage_Click(object sender, EventArgs e)
+
+
+        private void btnLogOut_Click(object sender, EventArgs e)
         {
-            
-            BrowseItems browseItemForm = new BrowseItems();
-            openChildForm(browseItemForm);
-            btnProduct.Image = Properties.Resources.item_P;
-            btnProduct.ForeColor = Color.FromArgb(182, 182, 182);
-            btnOrder.Image = Properties.Resources.order_p;
-            btnOrder.ForeColor = Color.FromArgb(182, 182, 182);
-            btnCart.Image = Properties.Resources.cart_P
-            btnCart.ForeColor = Color.FromArgb(182, 182, 182);
-            btnSetting.Image = Properties.Resources
-            btnSetting.ForeColor = Color.FromArgb(182, 182, 182);
-
-
+            this.Close();
+            opener.Show();
         }
 
-        private void lblCloseButton_Click(object sender, EventArgs e)
+        private void lblCloseBtn_Click(object sender, EventArgs e)
         {
             opener.Close();
             this.Close();
         }
 
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            BrowseItems browseItemForm = new BrowseItems(userId, item);
+            openChildForm(browseItemForm);
+            btnProduct.Image = Properties.Resources.item_P1;
+            btnProduct.ForeColor = Color.FromArgb(236, 236, 236);
+            btnOrder.Image = Properties.Resources.order_p;
+            btnOrder.ForeColor = Color.FromArgb(182, 182, 182);
+            if (CartHvItem())
+                btnCart.Image = Properties.Resources.cart_hvItem_P;
+            else
+                btnCart.Image = Properties.Resources.cart_P;
+            btnCart.ForeColor = Color.FromArgb(182, 182, 182);
+            btnSetting.Image = Properties.Resources.setting;
+            btnSetting.ForeColor = Color.FromArgb(182, 182, 182);
+        }
+
+
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            BrowseItems browseItemForm = new BrowseItems();
+            BrowseItems browseItemForm = new BrowseItems(userId, item);
             openChildForm(browseItemForm);
-            btnProduct.Image = Properties.Resources
+            btnProduct.Image = Properties.Resources.item_P;
             btnProduct.ForeColor = Color.FromArgb(182, 182, 182);
-            btnOrder.Image = Properties.Resources
-            btnOrder.ForeColor = Color.FromArgb(182, 182, 182);
-            btnCart.Image = Properties.Resources
+            btnOrder.Image = Properties.Resources.order_s;
+            btnOrder.ForeColor = Color.FromArgb(236, 236, 236);
+            if (CartHvItem())
+                btnCart.Image = Properties.Resources.cart_hvItem_P;
+            else
+                btnCart.Image = Properties.Resources.cart_P;
             btnCart.ForeColor = Color.FromArgb(182, 182, 182);
-            btnSetting.Image = Properties.Resources
+            btnSetting.Image = Properties.Resources.setting;
             btnSetting.ForeColor = Color.FromArgb(182, 182, 182);
         }
 
         private void btnCart_Click(object sender, EventArgs e)
         {
-            CartPage browseItemForm = new CartPage(orderId, item);
-            openChildForm(browseItemForm);
-            btnProduct.Image = Properties.Resources
+            CartPage cartPage = new CartPage(userId, item);
+            openChildForm(cartPage);
+            btnProduct.Image = Properties.Resources.item_P;
             btnProduct.ForeColor = Color.FromArgb(182, 182, 182);
-            btnOrder.Image = Properties.Resources
+            btnOrder.Image = Properties.Resources.order_p;
             btnOrder.ForeColor = Color.FromArgb(182, 182, 182);
-            btnCart.Image = Properties.Resources
-            btnCart.ForeColor = Color.FromArgb(182, 182, 182);
-            btnSetting.Image = Properties.Resources
+            if (CartHvItem())
+                btnCart.Image = Properties.Resources.cart_hvItem_S;
+            else
+                btnCart.Image = Properties.Resources.cart_S;
+            btnCart.ForeColor = Color.FromArgb(236, 236, 236);
+            btnSetting.Image = Properties.Resources.setting;
             btnSetting.ForeColor = Color.FromArgb(182, 182, 182);
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            BrowseItems browseItemForm = new BrowseItems();
+            BrowseItems browseItemForm = new BrowseItems(userId, item);
             openChildForm(browseItemForm);
-            btnProduct.Image = Properties.Resources
+            btnProduct.Image = Properties.Resources.item_P;
             btnProduct.ForeColor = Color.FromArgb(182, 182, 182);
-            btnOrder.Image = Properties.Resources
+            btnOrder.Image = Properties.Resources.order_p;
             btnOrder.ForeColor = Color.FromArgb(182, 182, 182);
-            btnCart.Image = Properties.Resources
+            if (CartHvItem())
+                btnCart.Image = Properties.Resources.cart_hvItem_P;
+            else
+                btnCart.Image = Properties.Resources.cart_P;
             btnCart.ForeColor = Color.FromArgb(182, 182, 182);
-            btnSetting.Image = Properties.Resources
-            btnSetting.ForeColor = Color.FromArgb(182, 182, 182);
+            btnSetting.Image = Properties.Resources.setting_s;
+            btnSetting.ForeColor = Color.FromArgb(236, 236, 236);
         }
+
+        
 
         private void btnTenantPage_Click(object sender, EventArgs e)
         {
@@ -163,10 +182,8 @@ namespace SDP_SE1A_Group2.Customer
             s.Show();
         }
 
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            opener.Show();
-        }
+       
+
+        
     }
 }

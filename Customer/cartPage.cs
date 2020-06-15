@@ -14,12 +14,13 @@ namespace SDP_SE1A_Group2.Customer
     public partial class CartPage : Form
     {
         private Stack item = new Stack();
-        public CartPage(int orderId, Stack item)
+        public CartPage(String userID, Stack item)
         {
             InitializeComponent();
             this.item = item;
         }
-        public void cartAddItem() { String ItemID; }
+        public void UpdateItem(Stack item) { this.item = item;  }
+        
 
     }
 }
