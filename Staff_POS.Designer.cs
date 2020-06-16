@@ -38,7 +38,7 @@
             this.txtQT = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCount = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblShowCase
@@ -62,7 +62,7 @@
             // lblQT
             // 
             this.lblQT.AutoSize = true;
-            this.lblQT.Location = new System.Drawing.Point(80, 152);
+            this.lblQT.Location = new System.Drawing.Point(80, 217);
             this.lblQT.Name = "lblQT";
             this.lblQT.Size = new System.Drawing.Size(23, 12);
             this.lblQT.TabIndex = 2;
@@ -71,7 +71,7 @@
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(47, 212);
+            this.lblPrice.Location = new System.Drawing.Point(47, 157);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(56, 12);
             this.lblPrice.TabIndex = 3;
@@ -80,7 +80,7 @@
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(44, 271);
+            this.lblTotalPrice.Location = new System.Drawing.Point(44, 309);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(58, 12);
             this.lblTotalPrice.TabIndex = 4;
@@ -89,10 +89,16 @@
             // cmbShowCase
             // 
             this.cmbShowCase.FormattingEnabled = true;
+            this.cmbShowCase.Items.AddRange(new object[] {
+            "Causeway Bay",
+            "Mong Kok",
+            "Kwai Fong",
+            "Shatin"});
             this.cmbShowCase.Location = new System.Drawing.Point(157, 30);
             this.cmbShowCase.Name = "cmbShowCase";
             this.cmbShowCase.Size = new System.Drawing.Size(121, 20);
             this.cmbShowCase.TabIndex = 5;
+            this.cmbShowCase.SelectedIndexChanged += new System.EventHandler(this.cmbShowCase_SelectedIndexChanged);
             // 
             // txtItemID
             // 
@@ -103,40 +109,43 @@
             // 
             // txtQT
             // 
-            this.txtQT.Location = new System.Drawing.Point(157, 149);
+            this.txtQT.Location = new System.Drawing.Point(157, 214);
             this.txtQT.Name = "txtQT";
             this.txtQT.Size = new System.Drawing.Size(121, 22);
             this.txtQT.TabIndex = 7;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(157, 209);
+            this.txtPrice.Location = new System.Drawing.Point(157, 154);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(121, 22);
             this.txtPrice.TabIndex = 8;
             // 
             // txtTotalPrice
             // 
-            this.txtTotalPrice.Location = new System.Drawing.Point(157, 268);
+            this.txtTotalPrice.Location = new System.Drawing.Point(157, 306);
             this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.ReadOnly = true;
             this.txtTotalPrice.Size = new System.Drawing.Size(121, 22);
             this.txtTotalPrice.TabIndex = 9;
+            this.txtTotalPrice.TextChanged += new System.EventHandler(this.txtTotalPrice_TextChanged);
             // 
-            // button1
+            // btnCount
             // 
-            this.button1.Location = new System.Drawing.Point(328, 271);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 21);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCount.Location = new System.Drawing.Point(313, 213);
+            this.btnCount.Name = "btnCount";
+            this.btnCount.Size = new System.Drawing.Size(75, 21);
+            this.btnCount.TabIndex = 10;
+            this.btnCount.Text = "Count";
+            this.btnCount.UseVisualStyleBackColor = true;
+            this.btnCount.Click += new System.EventHandler(this.button1_Click);
             // 
             // Staff_POS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 457);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCount);
             this.Controls.Add(this.txtTotalPrice);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtQT);
@@ -148,7 +157,7 @@
             this.Controls.Add(this.lblItemID);
             this.Controls.Add(this.lblShowCase);
             this.Name = "Staff_POS";
-            this.Text = "Staff_POS";
+            this.Text = " ";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,6 +175,6 @@
         private System.Windows.Forms.TextBox txtQT;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtTotalPrice;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCount;
     }
 }
