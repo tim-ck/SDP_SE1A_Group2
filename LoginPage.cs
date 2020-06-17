@@ -60,7 +60,8 @@ namespace SDP_SE1A_Group2
                 var userAcct =  from list in notSoImportantVariable.Customer
                                 where list.CustomerID.Equals(username)
                                 select new { list.CustomerID, list.Password };
-                if()
+                if(userAcct==null){
+txtErrMsg.Text = "The Username / Password is incorrect";            }else{
                 foreach (var user in userAcct.ToList())
                 {
                     if ((username == user.CustomerID.ToString()) && (password == user.Password.ToString()))
@@ -82,7 +83,7 @@ namespace SDP_SE1A_Group2
             CustomerMain cus = new CustomerMain(this, username); 
             cus.Show();
 
-            //}
+            //}}
 
         }
 
