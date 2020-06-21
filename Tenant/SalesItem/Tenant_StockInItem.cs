@@ -8,21 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SDP_SE1A_Group2.Tenant.SalesItem
+namespace SDP_SE1A_Group2
 {
-    public partial class InShowcase : Form
+    public partial class TenantStockInItem : Form
     {
-        public InShowcase()
+        public TenantStockInItem()
         {
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void InShowcase_Load(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

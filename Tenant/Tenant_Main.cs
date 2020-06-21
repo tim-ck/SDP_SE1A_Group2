@@ -91,5 +91,11 @@ namespace SDP_SE1A_Group2
             openChildForm(tenantMySalesItem);
       
         }
+
+        private void btnStockInItem_Click(object sender, EventArgs e)
+        {
+            TenantStockInItem tenantMySalesItem = new TenantStockInItem();
+            openChildForm(tenantMySalesItem);
+        }
     }
 }

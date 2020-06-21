@@ -66,6 +66,12 @@
     <Compile Include="Tenant\SalesItem\InShowcase.Designer.cs">
       <DependentUpon>InShowcase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tenant\SalesItem\Tenant_StockInItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\SalesItem\Tenant_StockInItem.Designer.cs">
+      <DependentUpon>Tenant_StockInItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tenant\SalesItem\WaitForStockIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tenant\SalesItem\InShowcase.resx">
       <DependentUpon>InShowcase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\SalesItem\Tenant_StockInItem.resx">
+      <DependentUpon>Tenant_StockInItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tenant\SalesItem\WaitForStockIn.resx">
       <DependentUpon>WaitForStockIn.cs</DependentUpon>

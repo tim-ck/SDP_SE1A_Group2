@@ -229,6 +229,7 @@
             this.btnStockInItem.Text = "Stock-in Item";
             this.btnStockInItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStockInItem.UseVisualStyleBackColor = true;
+            this.btnStockInItem.Click += new System.EventHandler(this.btnStockInItem_Click);
             // 
             // btnMySalesItem
             // 
@@ -278,11 +279,12 @@
             // 
             // btnShowcase
             // 
+            this.btnShowcase.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnShowcase.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnShowcase.FlatAppearance.BorderSize = 0;
             this.btnShowcase.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.btnShowcase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowcase.ForeColor = System.Drawing.Color.LightGray;
+            this.btnShowcase.ForeColor = System.Drawing.Color.White;
             this.btnShowcase.Location = new System.Drawing.Point(0, 100);
             this.btnShowcase.Name = "btnShowcase";
             this.btnShowcase.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -290,7 +292,7 @@
             this.btnShowcase.TabIndex = 19;
             this.btnShowcase.Text = "Showcase";
             this.btnShowcase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShowcase.UseVisualStyleBackColor = true;
+            this.btnShowcase.UseVisualStyleBackColor = false;
             this.btnShowcase.Click += new System.EventHandler(this.btnShowcase_Click);
             // 
             // panelLogo
