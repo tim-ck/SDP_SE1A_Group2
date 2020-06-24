@@ -362,12 +362,15 @@
             // btnCustomerPage
             // 
             this.btnCustomerPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCustomerPage.Location = new System.Drawing.Point(882, 23);
+            this.btnCustomerPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.btnCustomerPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomerPage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCustomerPage.Location = new System.Drawing.Point(888, 16);
             this.btnCustomerPage.Name = "btnCustomerPage";
-            this.btnCustomerPage.Size = new System.Drawing.Size(206, 34);
+            this.btnCustomerPage.Size = new System.Drawing.Size(224, 53);
             this.btnCustomerPage.TabIndex = 0;
             this.btnCustomerPage.Text = "Go to Customer Page";
-            this.btnCustomerPage.UseVisualStyleBackColor = true;
+            this.btnCustomerPage.UseVisualStyleBackColor = false;
             // 
             // TenantMain
             // 
