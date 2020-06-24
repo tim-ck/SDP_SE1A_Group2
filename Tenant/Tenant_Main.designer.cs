@@ -45,7 +45,6 @@
             this.panelShowcaseSubMenu = new System.Windows.Forms.Panel();
             this.btnShowcase = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.picLogo = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.panelConent = new System.Windows.Forms.Panel();
@@ -53,15 +52,16 @@
             this.panelWelcome = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCustomerPage = new System.Windows.Forms.Button();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.panelSideMenu.SuspendLayout();
             this.panelLogOut.SuspendLayout();
             this.panelRecordSubMenu.SuspendLayout();
             this.panelSalesItemSubMenu.SuspendLayout();
             this.panelShowcaseSubMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panelConent.SuspendLayout();
             this.panelWelcome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMyShowcase
@@ -70,6 +70,7 @@
             this.btnMyShowcase.FlatAppearance.BorderSize = 0;
             this.btnMyShowcase.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.btnMyShowcase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMyShowcase.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnMyShowcase.ForeColor = System.Drawing.Color.LightGray;
             this.btnMyShowcase.Location = new System.Drawing.Point(0, 40);
             this.btnMyShowcase.Name = "btnMyShowcase";
@@ -88,6 +89,7 @@
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button6.ForeColor = System.Drawing.Color.LightGray;
             this.button6.Location = new System.Drawing.Point(0, 0);
             this.button6.Name = "button6";
@@ -103,6 +105,7 @@
             this.btnRentShowcase.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRentShowcase.FlatAppearance.BorderSize = 0;
             this.btnRentShowcase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRentShowcase.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnRentShowcase.ForeColor = System.Drawing.Color.LightGray;
             this.btnRentShowcase.Location = new System.Drawing.Point(0, 0);
             this.btnRentShowcase.Name = "btnRentShowcase";
@@ -159,15 +162,17 @@
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button9.ForeColor = System.Drawing.Color.LightGray;
             this.button9.Location = new System.Drawing.Point(0, 40);
             this.button9.Name = "button9";
             this.button9.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.button9.Size = new System.Drawing.Size(250, 40);
             this.button9.TabIndex = 0;
-            this.button9.Text = "Monthly Showcase";
+            this.button9.Text = "Consolidated Statement";
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -175,6 +180,7 @@
             this.button10.FlatAppearance.BorderSize = 0;
             this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button10.ForeColor = System.Drawing.Color.LightGray;
             this.button10.Location = new System.Drawing.Point(0, 0);
             this.button10.Name = "button10";
@@ -184,6 +190,7 @@
             this.button10.Text = "Showcase Sales Record";
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // btnRecord
             // 
@@ -191,6 +198,7 @@
             this.btnRecord.FlatAppearance.BorderSize = 0;
             this.btnRecord.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.btnRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecord.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnRecord.ForeColor = System.Drawing.Color.LightGray;
             this.btnRecord.Location = new System.Drawing.Point(0, 360);
             this.btnRecord.Name = "btnRecord";
@@ -220,6 +228,7 @@
             this.btnStockInItem.FlatAppearance.BorderSize = 0;
             this.btnStockInItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.btnStockInItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStockInItem.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnStockInItem.ForeColor = System.Drawing.Color.LightGray;
             this.btnStockInItem.Location = new System.Drawing.Point(0, 40);
             this.btnStockInItem.Name = "btnStockInItem";
@@ -237,6 +246,7 @@
             this.btnMySalesItem.FlatAppearance.BorderSize = 0;
             this.btnMySalesItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.btnMySalesItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMySalesItem.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnMySalesItem.ForeColor = System.Drawing.Color.LightGray;
             this.btnMySalesItem.Location = new System.Drawing.Point(0, 0);
             this.btnMySalesItem.Name = "btnMySalesItem";
@@ -254,6 +264,7 @@
             this.btnSalesItem.FlatAppearance.BorderSize = 0;
             this.btnSalesItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.btnSalesItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalesItem.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnSalesItem.ForeColor = System.Drawing.Color.LightGray;
             this.btnSalesItem.Location = new System.Drawing.Point(0, 230);
             this.btnSalesItem.Name = "btnSalesItem";
@@ -284,6 +295,7 @@
             this.btnShowcase.FlatAppearance.BorderSize = 0;
             this.btnShowcase.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.btnShowcase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowcase.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnShowcase.ForeColor = System.Drawing.Color.White;
             this.btnShowcase.Location = new System.Drawing.Point(0, 100);
             this.btnShowcase.Name = "btnShowcase";
@@ -303,18 +315,6 @@
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(250, 100);
             this.panelLogo.TabIndex = 18;
-            // 
-            // picLogo
-            // 
-            this.picLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.picLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
-            this.picLogo.Location = new System.Drawing.Point(0, 0);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(250, 100);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogo.TabIndex = 0;
-            this.picLogo.TabStop = false;
             // 
             // panelConent
             // 
@@ -372,6 +372,18 @@
             this.btnCustomerPage.Text = "Go to Customer Page";
             this.btnCustomerPage.UseVisualStyleBackColor = false;
             // 
+            // picLogo
+            // 
+            this.picLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.picLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.Location = new System.Drawing.Point(0, 0);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(250, 100);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 0;
+            this.picLogo.TabStop = false;
+            // 
             // TenantMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
@@ -390,10 +402,10 @@
             this.panelSalesItemSubMenu.ResumeLayout(false);
             this.panelShowcaseSubMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.panelConent.ResumeLayout(false);
             this.panelWelcome.ResumeLayout(false);
             this.panelWelcome.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -97,5 +97,17 @@ namespace SDP_SE1A_Group2
             TenantStockInItem tenantMySalesItem = new TenantStockInItem();
             openChildForm(tenantMySalesItem);
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            TenantShowcaseSalesRecord tenantCheckSalesRecord = new TenantShowcaseSalesRecord();
+            openChildForm(tenantCheckSalesRecord);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            TenantConsolidatedStatement tenantConsolidatedStatement = new TenantConsolidatedStatement();
+            openChildForm(tenantConsolidatedStatement);
+        }
     }
 }

@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace SDP_SE1A_Group2
 {
-    public partial class TenantStockInItem : Form
+    public partial class TenantConsolidatedStatement : Form
     {
-        public TenantStockInItem()
+        public TenantConsolidatedStatement()
         {
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void TenantStockInItem_Load(object sender, EventArgs e)
+        private void Tenant_ConsolidatedStatement_Load(object sender, EventArgs e)
         {
 
         }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SDP_SE1A_Group2.Tenant.Record
+namespace SDP_SE1A_Group2
 {
     public partial class TenantShowcaseSalesRecord : Form
     {
