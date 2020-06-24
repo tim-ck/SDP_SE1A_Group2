@@ -165,7 +165,7 @@
             this.button9.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.button9.Size = new System.Drawing.Size(250, 40);
             this.button9.TabIndex = 0;
-            this.button9.Text = "My Showcase";
+            this.button9.Text = "Monthly Showcase";
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button9.UseVisualStyleBackColor = true;
             // 
@@ -181,7 +181,7 @@
             this.button10.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.button10.Size = new System.Drawing.Size(250, 40);
             this.button10.TabIndex = 8;
-            this.button10.Text = "Check Sales Record";
+            this.button10.Text = "Showcase Sales Record";
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button10.UseVisualStyleBackColor = true;
             // 
@@ -197,7 +197,7 @@
             this.btnRecord.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnRecord.Size = new System.Drawing.Size(250, 45);
             this.btnRecord.TabIndex = 23;
-            this.btnRecord.Text = "Record";
+            this.btnRecord.Text = "Sales Record";
             this.btnRecord.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRecord.UseVisualStyleBackColor = true;
             this.btnRecord.Click += new System.EventHandler(this.btnRecord_Click);

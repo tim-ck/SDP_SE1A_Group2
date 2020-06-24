@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace SDP_SE1A_Group2.Tenant.Record
 {
-    public partial class Tenant_CheckSalesRecord : Form
+    public partial class TenantShowcaseSalesRecord : Form
     {
-        public Tenant_CheckSalesRecord()
+        public TenantShowcaseSalesRecord()
         {
             InitializeComponent();
+        }
+
+        private void TenantCheckSalesRecord_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

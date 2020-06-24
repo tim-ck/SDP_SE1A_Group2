@@ -54,28 +54,28 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tenant\Record\Tenant_CheckSalesRecord.cs">
+    <Compile Include="Tenant\Sales Record\Tenant_ShowcaseSalesRecord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tenant\Record\Tenant_CheckSalesRecord.Designer.cs">
-      <DependentUpon>Tenant_CheckSalesRecord.cs</DependentUpon>
+    <Compile Include="Tenant\Sales Record\Tenant_ShowcaseSalesRecord.Designer.cs">
+      <DependentUpon>Tenant_ShowcaseSalesRecord.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tenant\SalesItem\InShowcase.cs">
+    <Compile Include="Tenant\Sales Item\Stock-on Item\InShowcase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tenant\SalesItem\InShowcase.Designer.cs">
+    <Compile Include="Tenant\Sales Item\Stock-on Item\InShowcase.Designer.cs">
       <DependentUpon>InShowcase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tenant\SalesItem\Tenant_StockInItem.cs">
+    <Compile Include="Tenant\Sales Item\Tenant_StockInItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tenant\SalesItem\Tenant_StockInItem.Designer.cs">
+    <Compile Include="Tenant\Sales Item\Tenant_StockInItem.Designer.cs">
       <DependentUpon>Tenant_StockInItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tenant\SalesItem\WaitForStockIn.cs">
+    <Compile Include="Tenant\Sales Item\Stock-on Item\WaitForStockIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tenant\SalesItem\WaitForStockIn.Designer.cs">
+    <Compile Include="Tenant\Sales Item\Stock-on Item\WaitForStockIn.Designer.cs">
       <DependentUpon>WaitForStockIn.cs</DependentUpon>
     </Compile>
     <Compile Include="Tenant\Tenant_Main.cs">
@@ -96,10 +96,10 @@
     <Compile Include="Tenant\Showcase\Tenant_RentShowcase.designer.cs">
       <DependentUpon>Tenant_RentShowcase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tenant\SalesItem\Tenant_MySalesItem.cs">
+    <Compile Include="Tenant\Sales Item\Tenant_MySalesItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tenant\SalesItem\Tenant_MySalesItem.Designer.cs">
+    <Compile Include="Tenant\Sales Item\Tenant_MySalesItem.Designer.cs">
       <DependentUpon>Tenant_MySalesItem.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
@@ -110,14 +110,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tenant\SalesItem\InShowcase.resx">
+    <EmbeddedResource Include="Tenant\Sales Item\Stock-on Item\InShowcase.resx">
       <DependentUpon>InShowcase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tenant\SalesItem\Tenant_StockInItem.resx">
+    <EmbeddedResource Include="Tenant\Sales Item\Tenant_StockInItem.resx">
       <DependentUpon>Tenant_StockInItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tenant\SalesItem\WaitForStockIn.resx">
+    <EmbeddedResource Include="Tenant\Sales Item\Stock-on Item\WaitForStockIn.resx">
       <DependentUpon>WaitForStockIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\Sales Record\Tenant_ShowcaseSalesRecord.resx">
+      <DependentUpon>Tenant_ShowcaseSalesRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tenant\Tenant_Main.resx">
       <DependentUpon>Tenant_Main.cs</DependentUpon>
@@ -128,7 +131,7 @@
     <EmbeddedResource Include="Tenant\Showcase\Tenant_RentShowcase.resx">
       <DependentUpon>Tenant_RentShowcase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tenant\SalesItem\Tenant_MySalesItem.resx">
+    <EmbeddedResource Include="Tenant\Sales Item\Tenant_MySalesItem.resx">
       <DependentUpon>Tenant_MySalesItem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
