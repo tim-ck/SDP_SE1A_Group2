@@ -21,5 +21,12 @@ namespace SDP_SE1A_Group2
         {
 
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
     }
 }

@@ -66,7 +66,7 @@
             this.btnWaitForStockIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.btnWaitForStockIn.Location = new System.Drawing.Point(753, 3);
             this.btnWaitForStockIn.Name = "btnWaitForStockIn";
-            this.btnWaitForStockIn.Size = new System.Drawing.Size(220, 73);
+            this.btnWaitForStockIn.Size = new System.Drawing.Size(220, 75);
             this.btnWaitForStockIn.TabIndex = 1;
             this.btnWaitForStockIn.Text = "Wait for Stock-in";
             this.btnWaitForStockIn.UseVisualStyleBackColor = false;
@@ -80,7 +80,7 @@
             this.btnInShowcase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.btnInShowcase.Location = new System.Drawing.Point(323, 3);
             this.btnInShowcase.Name = "btnInShowcase";
-            this.btnInShowcase.Size = new System.Drawing.Size(220, 73);
+            this.btnInShowcase.Size = new System.Drawing.Size(220, 75);
             this.btnInShowcase.TabIndex = 0;
             this.btnInShowcase.Text = "In Showcase";
             this.btnInShowcase.UseVisualStyleBackColor = false;

@@ -44,6 +44,7 @@
             this.showcaseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panelFilter.SuspendLayout();
             this.panelDataGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -65,6 +66,7 @@
             // panelFilter
             // 
             this.panelFilter.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelFilter.Controls.Add(this.panel3);
             this.panelFilter.Controls.Add(this.btnSearch);
             this.panelFilter.Controls.Add(this.label2);
             this.panelFilter.Controls.Add(this.label1);
@@ -208,6 +210,14 @@
             this.unitPrice.Name = "unitPrice";
             this.unitPrice.Width = 125;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.panel3.Location = new System.Drawing.Point(45, 63);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(970, 3);
+            this.panel3.TabIndex = 9;
+            // 
             // InShowcase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -246,5 +256,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn showcaseId;
         private System.Windows.Forms.DataGridViewTextBoxColumn qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitPrice;
+        private System.Windows.Forms.Panel panel3;
     }
 }
