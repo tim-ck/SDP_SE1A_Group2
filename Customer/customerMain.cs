@@ -17,8 +17,9 @@ namespace SDP_SE1A_Group2.Customer
         private Form activeForm = null;
         private String userId, cusName;
         private Boolean hvItem;
-        private CartPage cartPage;
-        public static CustomerMain Form;
+        CartPage cartPage;
+        BrowseItems browseItemForm;
+        Order orderForm;
 
         public CustomerMain(Form parentForm, String userId)
         {
@@ -42,8 +43,10 @@ namespace SDP_SE1A_Group2.Customer
             cusName = userId;//test case: customer name and customer id is same. real code in comment above!
             lblTitle.Text= "Welcome Customer " + cusName + " !";
 
+            //define Form varible
             cartPage = new CartPage(this);
-
+            browseItemForm = new BrowseItems(userId);
+            orderForm = new Order();
         }
 
         public Boolean CartHvItem() { return hvItem; }
@@ -69,25 +72,25 @@ namespace SDP_SE1A_Group2.Customer
             panelChildForm.Controls.Add(childForm);
             childForm.Show();
         }
-
-
-
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            opener.Show();
-        }
-
+        //control bar START
         private void lblCloseBtn_Click(object sender, EventArgs e)
         {
             opener.Close();
             this.Close();
         }
 
+        //control bar END
+        //menu button click START
+        
+
+        
+
         private void btnProduct_Click(object sender, EventArgs e)
         {
-            BrowseItems browseItemForm = new BrowseItems(userId);
+            
             openChildForm(browseItemForm);
+
+            //active icon
             btnProduct.Image = Properties.Resources.item_P1;
             btnProduct.ForeColor = Color.FromArgb(236, 236, 236);
             btnOrder.Image = Properties.Resources.order_p;
@@ -104,8 +107,10 @@ namespace SDP_SE1A_Group2.Customer
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            Order orderForm = new Order();
+            
             openChildForm(orderForm);
+            //active icon
+
             btnProduct.Image = Properties.Resources.item_P;
             btnProduct.ForeColor = Color.FromArgb(182, 182, 182);
             btnOrder.Image = Properties.Resources.order_s;
@@ -118,11 +123,13 @@ namespace SDP_SE1A_Group2.Customer
             btnSetting.Image = Properties.Resources.setting;
             btnSetting.ForeColor = Color.FromArgb(182, 182, 182);
         }
-        //open cart
+        
         private void btnCart_Click(object sender, EventArgs e)
         {
            
             openChildForm(cartPage);
+            //active icon
+
             btnProduct.Image = Properties.Resources.item_P;
             btnProduct.ForeColor = Color.FromArgb(182, 182, 182);
             btnOrder.Image = Properties.Resources.order_p;
@@ -140,6 +147,8 @@ namespace SDP_SE1A_Group2.Customer
         {
             BrowseItems browseItemForm = new BrowseItems(userId);
             openChildForm(browseItemForm);
+            //active icon
+
             btnProduct.Image = Properties.Resources.item_P;
             btnProduct.ForeColor = Color.FromArgb(182, 182, 182);
             btnOrder.Image = Properties.Resources.order_p;
@@ -152,9 +161,16 @@ namespace SDP_SE1A_Group2.Customer
             btnSetting.Image = Properties.Resources.setting_s;
             btnSetting.ForeColor = Color.FromArgb(236, 236, 236);
         }
-
         
 
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            opener.Show();
+        }
+        //menu button End
+
+        //top bar START
         private void btnTenantPage_Click(object sender, EventArgs e)
         {
             /*Boolean isTenant = false;
@@ -185,9 +201,7 @@ namespace SDP_SE1A_Group2.Customer
             Sample s = new Sample();
             s.Show();
         }
+        //top bar end
 
-       
-
-        
     }
 }

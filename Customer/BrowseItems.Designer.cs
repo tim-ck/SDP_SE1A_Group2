@@ -37,7 +37,7 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(89, 184);
+            this.dataGridView1.Location = new System.Drawing.Point(71, 136);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(664, 460);
             this.dataGridView1.TabIndex = 0;
@@ -63,7 +63,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "BrowseItems";
             this.Text = "BrowseItem";
-            this.Load += new System.EventHandler(this.BrowseItems_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

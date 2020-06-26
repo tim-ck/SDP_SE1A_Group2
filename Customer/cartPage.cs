@@ -15,10 +15,10 @@ namespace SDP_SE1A_Group2.Customer
     public partial class CartPage : Form
     {
 
-        Form opener;
+        CustomerMain opener;
         private Stack items = new Stack();
 
-        public CartPage(Form opener)
+        public CartPage(CustomerMain opener)
         {
             InitializeComponent();
             this.opener = opener;
@@ -31,10 +31,10 @@ namespace SDP_SE1A_Group2.Customer
             if (items.Count == 0)
             //   opener.UpdateCartHvItem(true);
             items.Push(item);
-            Program.Form.UpdateCartHvItem();
+            opener.UpdateCartHvItem(true);
         }
 
-        
+       
 
     }
 }
