@@ -37,6 +37,7 @@
             this.rdoCustomerOrTenant = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rdoStaffOrManager = new System.Windows.Forms.RadioButton();
+            this.rdoTenent = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -110,15 +111,14 @@
             // 
             // rdoCustomerOrTenant
             // 
-            this.rdoCustomerOrTenant.AutoSize = true;
             this.rdoCustomerOrTenant.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.rdoCustomerOrTenant.ForeColor = System.Drawing.Color.White;
             this.rdoCustomerOrTenant.Location = new System.Drawing.Point(38, 293);
             this.rdoCustomerOrTenant.Name = "rdoCustomerOrTenant";
-            this.rdoCustomerOrTenant.Size = new System.Drawing.Size(252, 41);
+            this.rdoCustomerOrTenant.Size = new System.Drawing.Size(146, 41);
             this.rdoCustomerOrTenant.TabIndex = 22;
             this.rdoCustomerOrTenant.TabStop = true;
-            this.rdoCustomerOrTenant.Text = "Customer / Tenant";
+            this.rdoCustomerOrTenant.Text = "Customer";
             this.rdoCustomerOrTenant.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
@@ -135,16 +135,27 @@
             // 
             // rdoStaffOrManager
             // 
-            this.rdoStaffOrManager.AutoSize = true;
             this.rdoStaffOrManager.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.rdoStaffOrManager.ForeColor = System.Drawing.Color.White;
-            this.rdoStaffOrManager.Location = new System.Drawing.Point(312, 293);
+            this.rdoStaffOrManager.Location = new System.Drawing.Point(354, 293);
             this.rdoStaffOrManager.Name = "rdoStaffOrManager";
-            this.rdoStaffOrManager.Size = new System.Drawing.Size(218, 41);
+            this.rdoStaffOrManager.Size = new System.Drawing.Size(148, 41);
             this.rdoStaffOrManager.TabIndex = 24;
             this.rdoStaffOrManager.TabStop = true;
-            this.rdoStaffOrManager.Text = "Staff / Manager";
+            this.rdoStaffOrManager.Text = "Staff";
             this.rdoStaffOrManager.UseVisualStyleBackColor = true;
+            // 
+            // rdoTenent
+            // 
+            this.rdoTenent.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.rdoTenent.ForeColor = System.Drawing.Color.White;
+            this.rdoTenent.Location = new System.Drawing.Point(200, 293);
+            this.rdoTenent.Name = "rdoTenent";
+            this.rdoTenent.Size = new System.Drawing.Size(148, 41);
+            this.rdoTenent.TabIndex = 25;
+            this.rdoTenent.TabStop = true;
+            this.rdoTenent.Text = "Tenant";
+            this.rdoTenent.UseVisualStyleBackColor = true;
             // 
             // ForgotPasswordForm
             // 
@@ -152,6 +163,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(560, 810);
+            this.Controls.Add(this.rdoTenent);
             this.Controls.Add(this.rdoStaffOrManager);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.rdoCustomerOrTenant);
@@ -185,5 +197,6 @@
         private System.Windows.Forms.RadioButton rdoCustomerOrTenant;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.RadioButton rdoStaffOrManager;
+        private System.Windows.Forms.RadioButton rdoTenent;
     }
 }
