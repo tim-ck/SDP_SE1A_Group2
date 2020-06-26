@@ -11,15 +11,26 @@ using System.Windows.Forms;
 
 namespace SDP_SE1A_Group2.Customer
 {
+
     public partial class CartPage : Form
     {
-        private Stack item = new Stack();
-        public CartPage(String userID, Stack item)
+        Form opener;
+        private Stack items = new Stack();
+        public CartPage(Form opener, String[] arrayObj)
         {
             InitializeComponent();
-            this.item = item;
+            this.opener = opener;
+            foreach(String item in arrayObj)
+            {
+                items.Push(item);
+            }
         }
-        public void UpdateItem(Stack item) { this.item = item;  }
+        public void AddItem(String item) {
+            if (items.Count == 0)
+               opener.UpdateCartHvItem(true);
+            items.Push(item);
+            
+        }
         
 
     }

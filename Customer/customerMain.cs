@@ -16,7 +16,8 @@ namespace SDP_SE1A_Group2.Customer
         Form opener;
         private Form activeForm = null;
         private String userId, cusName;
-        private Stack item = new Stack(); // store all item user added        
+        private Boolean hvItem;
+        
 
         public CustomerMain(Form parentForm, String userId)
         {
@@ -44,13 +45,15 @@ namespace SDP_SE1A_Group2.Customer
 
         }
 
-        public Boolean CartHvItem() { return item.Count != 0; }
-        public void CartAddItem(String itemID, String quantity)
-        {
-            String addToItem = itemID + quantity;
-            item.Push(addToItem);
-            //CartPage.UpdateItem(item); //!!!!!!!!!!!!!!!!!!
+        public Boolean CartHvItem() { return hvItem; }
+        public void UpdateCartHvItem(Boolean hvItem) { 
+            this.hvItem = hvItem;
+            if (hvItem)
+                btnCart.Image = Properties.Resources.cart_hvItem_P;
+            else
+                btnCart.Image = Properties.Resources.cart_P;
         }
+        
 
         private void openChildForm(Form childForm)
         {
@@ -100,8 +103,8 @@ namespace SDP_SE1A_Group2.Customer
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            BrowseItems browseItemForm = new BrowseItems(userId, item);
-            openChildForm(browseItemForm);
+            Order orderForm = new Order();
+            openChildForm(orderForm);
             btnProduct.Image = Properties.Resources.item_P;
             btnProduct.ForeColor = Color.FromArgb(182, 182, 182);
             btnOrder.Image = Properties.Resources.order_s;
@@ -117,7 +120,7 @@ namespace SDP_SE1A_Group2.Customer
 
         private void btnCart_Click(object sender, EventArgs e)
         {
-            CartPage cartPage = new CartPage(userId, item);
+            CartPage cartPage = new CartPage(this, arrayObj);
             openChildForm(cartPage);
             btnProduct.Image = Properties.Resources.item_P;
             btnProduct.ForeColor = Color.FromArgb(182, 182, 182);

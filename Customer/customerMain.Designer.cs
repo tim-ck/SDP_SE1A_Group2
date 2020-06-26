@@ -37,11 +37,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.lblCloseBtn = new System.Windows.Forms.Label();
             this.btnTenantPage = new System.Windows.Forms.Button();
             this.lblCloseButton = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.lblCloseBtn = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -118,7 +118,7 @@
             this.btnCart.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnCart.Size = new System.Drawing.Size(250, 100);
             this.btnCart.TabIndex = 3;
-            this.btnCart.Text = "Product";
+            this.btnCart.Text = "Cart";
             this.btnCart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCart.UseVisualStyleBackColor = true;
@@ -199,6 +199,19 @@
             this.panelTitleBar.Size = new System.Drawing.Size(1114, 100);
             this.panelTitleBar.TabIndex = 1;
             // 
+            // lblCloseBtn
+            // 
+            this.lblCloseBtn.AutoSize = true;
+            this.lblCloseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblCloseBtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCloseBtn.ForeColor = System.Drawing.Color.White;
+            this.lblCloseBtn.Location = new System.Drawing.Point(1084, 0);
+            this.lblCloseBtn.Name = "lblCloseBtn";
+            this.lblCloseBtn.Size = new System.Drawing.Size(29, 32);
+            this.lblCloseBtn.TabIndex = 4;
+            this.lblCloseBtn.Text = "X";
+            this.lblCloseBtn.Click += new System.EventHandler(this.lblCloseBtn_Click);
+            // 
             // btnTenantPage
             // 
             this.btnTenantPage.Location = new System.Drawing.Point(999, 48);
@@ -238,19 +251,6 @@
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(1114, 700);
             this.panelChildForm.TabIndex = 2;
-            // 
-            // lblCloseBtn
-            // 
-            this.lblCloseBtn.AutoSize = true;
-            this.lblCloseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCloseBtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCloseBtn.ForeColor = System.Drawing.Color.White;
-            this.lblCloseBtn.Location = new System.Drawing.Point(1084, 0);
-            this.lblCloseBtn.Name = "lblCloseBtn";
-            this.lblCloseBtn.Size = new System.Drawing.Size(29, 32);
-            this.lblCloseBtn.TabIndex = 4;
-            this.lblCloseBtn.Text = "X";
-            this.lblCloseBtn.Click += new System.EventHandler(this.lblCloseBtn_Click);
             // 
             // CustomerMain
             // 
