@@ -31,5 +31,10 @@ namespace SDP_SE1A_Group2.Account
         {
 
         }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

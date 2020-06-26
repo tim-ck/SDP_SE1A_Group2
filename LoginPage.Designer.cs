@@ -41,6 +41,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblCloseButton = new System.Windows.Forms.Label();
             this.txtErrMsg = new System.Windows.Forms.TextBox();
+            this.rdoTenent = new System.Windows.Forms.RadioButton();
+            this.rdoStaffOrManager = new System.Windows.Forms.RadioButton();
+            this.rdoCustomerOrTenant = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -52,7 +55,7 @@
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.txtUsername.ForeColor = System.Drawing.Color.White;
-            this.txtUsername.Location = new System.Drawing.Point(98, 321);
+            this.txtUsername.Location = new System.Drawing.Point(98, 344);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(432, 36);
@@ -63,7 +66,7 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.label1.Location = new System.Drawing.Point(30, 361);
+            this.label1.Location = new System.Drawing.Point(30, 384);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(500, 2);
             this.label1.TabIndex = 3;
@@ -71,7 +74,7 @@
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(30, 468);
+            this.label2.Location = new System.Drawing.Point(30, 491);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(500, 2);
             this.label2.TabIndex = 8;
@@ -83,7 +86,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.txtPassword.ForeColor = System.Drawing.Color.White;
             this.txtPassword.HideSelection = false;
-            this.txtPassword.Location = new System.Drawing.Point(98, 422);
+            this.txtPassword.Location = new System.Drawing.Point(98, 445);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(432, 36);
@@ -110,7 +113,7 @@
             this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignIn.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.btnSignIn.Location = new System.Drawing.Point(40, 529);
+            this.btnSignIn.Location = new System.Drawing.Point(40, 549);
             this.btnSignIn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(490, 82);
@@ -126,7 +129,7 @@
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.btnRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.btnRegister.Location = new System.Drawing.Point(228, 709);
+            this.btnRegister.Location = new System.Drawing.Point(228, 719);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(302, 63);
@@ -141,7 +144,7 @@
             this.btnForgotPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnForgotPassword.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.btnForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.btnForgotPassword.Location = new System.Drawing.Point(228, 639);
+            this.btnForgotPassword.Location = new System.Drawing.Point(228, 648);
             this.btnForgotPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnForgotPassword.Name = "btnForgotPassword";
             this.btnForgotPassword.Size = new System.Drawing.Size(302, 52);
@@ -153,7 +156,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::SDP_SE1A_Group2.Properties.Resources.iconmonstr_lock_3_240;
-            this.pictureBox3.Location = new System.Drawing.Point(34, 405);
+            this.pictureBox3.Location = new System.Drawing.Point(34, 428);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(57, 59);
@@ -164,7 +167,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::SDP_SE1A_Group2.Properties.Resources.user;
-            this.pictureBox2.Location = new System.Drawing.Point(34, 301);
+            this.pictureBox2.Location = new System.Drawing.Point(34, 324);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(58, 62);
@@ -203,11 +206,47 @@
             this.txtErrMsg.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtErrMsg.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.txtErrMsg.ForeColor = System.Drawing.Color.Red;
-            this.txtErrMsg.Location = new System.Drawing.Point(57, 485);
+            this.txtErrMsg.Location = new System.Drawing.Point(34, 505);
             this.txtErrMsg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtErrMsg.Name = "txtErrMsg";
             this.txtErrMsg.Size = new System.Drawing.Size(432, 36);
             this.txtErrMsg.TabIndex = 15;
+            // 
+            // rdoTenent
+            // 
+            this.rdoTenent.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.rdoTenent.ForeColor = System.Drawing.Color.White;
+            this.rdoTenent.Location = new System.Drawing.Point(215, 270);
+            this.rdoTenent.Name = "rdoTenent";
+            this.rdoTenent.Size = new System.Drawing.Size(148, 41);
+            this.rdoTenent.TabIndex = 38;
+            this.rdoTenent.TabStop = true;
+            this.rdoTenent.Text = "Tenant";
+            this.rdoTenent.UseVisualStyleBackColor = true;
+            // 
+            // rdoStaffOrManager
+            // 
+            this.rdoStaffOrManager.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.rdoStaffOrManager.ForeColor = System.Drawing.Color.White;
+            this.rdoStaffOrManager.Location = new System.Drawing.Point(369, 270);
+            this.rdoStaffOrManager.Name = "rdoStaffOrManager";
+            this.rdoStaffOrManager.Size = new System.Drawing.Size(148, 41);
+            this.rdoStaffOrManager.TabIndex = 37;
+            this.rdoStaffOrManager.TabStop = true;
+            this.rdoStaffOrManager.Text = "Staff";
+            this.rdoStaffOrManager.UseVisualStyleBackColor = true;
+            // 
+            // rdoCustomerOrTenant
+            // 
+            this.rdoCustomerOrTenant.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.rdoCustomerOrTenant.ForeColor = System.Drawing.Color.White;
+            this.rdoCustomerOrTenant.Location = new System.Drawing.Point(53, 270);
+            this.rdoCustomerOrTenant.Name = "rdoCustomerOrTenant";
+            this.rdoCustomerOrTenant.Size = new System.Drawing.Size(146, 41);
+            this.rdoCustomerOrTenant.TabIndex = 36;
+            this.rdoCustomerOrTenant.TabStop = true;
+            this.rdoCustomerOrTenant.Text = "Customer";
+            this.rdoCustomerOrTenant.UseVisualStyleBackColor = true;
             // 
             // LoginPage
             // 
@@ -215,6 +254,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(564, 811);
+            this.Controls.Add(this.rdoTenent);
+            this.Controls.Add(this.rdoStaffOrManager);
+            this.Controls.Add(this.rdoCustomerOrTenant);
             this.Controls.Add(this.txtErrMsg);
             this.Controls.Add(this.lblCloseButton);
             this.Controls.Add(this.btnForgotPassword);
@@ -258,6 +300,9 @@
         private System.Windows.Forms.Button btnForgotPassword;
         private System.Windows.Forms.Label lblCloseButton;
         private System.Windows.Forms.TextBox txtErrMsg;
+        private System.Windows.Forms.RadioButton rdoTenent;
+        private System.Windows.Forms.RadioButton rdoStaffOrManager;
+        private System.Windows.Forms.RadioButton rdoCustomerOrTenant;
     }
 }
 
