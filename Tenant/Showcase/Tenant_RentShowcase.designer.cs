@@ -31,6 +31,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -44,7 +45,6 @@
             this.size = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pricePerDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -91,6 +91,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1095, 115);
             this.panel1.TabIndex = 16;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.panel4.Location = new System.Drawing.Point(35, 89);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(970, 3);
+            this.panel4.TabIndex = 18;
             // 
             // comboBox3
             // 
@@ -226,14 +234,6 @@
             this.status.Name = "status";
             this.status.ReadOnly = true;
             this.status.Width = 125;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.panel4.Location = new System.Drawing.Point(35, 89);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(970, 3);
-            this.panel4.TabIndex = 18;
             // 
             // TenantRentShowcase
             // 

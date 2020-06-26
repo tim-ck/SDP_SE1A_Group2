@@ -30,13 +30,14 @@
         {
             this.lbInShowcase = new System.Windows.Forms.Label();
             this.panelFilter = new System.Windows.Forms.Panel();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbShowcaseId = new System.Windows.Forms.ComboBox();
             this.cbLocation = new System.Windows.Forms.ComboBox();
             this.panelDataGridView = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnImport = new System.Windows.Forms.Button();
             this.rowNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,7 +45,6 @@
             this.showcaseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panelFilter.SuspendLayout();
             this.panelDataGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -54,7 +54,7 @@
             // 
             this.lbInShowcase.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lbInShowcase.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbInShowcase.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbInShowcase.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lbInShowcase.ForeColor = System.Drawing.Color.LightGray;
             this.lbInShowcase.Location = new System.Drawing.Point(0, 0);
             this.lbInShowcase.Name = "lbInShowcase";
@@ -66,8 +66,8 @@
             // panelFilter
             // 
             this.panelFilter.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelFilter.Controls.Add(this.btnImport);
             this.panelFilter.Controls.Add(this.panel3);
-            this.panelFilter.Controls.Add(this.btnSearch);
             this.panelFilter.Controls.Add(this.label2);
             this.panelFilter.Controls.Add(this.label1);
             this.panelFilter.Controls.Add(this.cbShowcaseId);
@@ -80,34 +80,33 @@
             this.panelFilter.Size = new System.Drawing.Size(1099, 80);
             this.panelFilter.TabIndex = 7;
             // 
-            // btnSearch
+            // panel3
             // 
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(808, 13);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 44);
-            this.btnSearch.TabIndex = 4;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.panel3.Location = new System.Drawing.Point(45, 63);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(970, 3);
+            this.panel3.TabIndex = 9;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(652, 30);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(617, 27);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 15);
+            this.label2.Size = new System.Drawing.Size(110, 23);
             this.label2.TabIndex = 3;
             this.label2.Text = "Showcase ID";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(248, 30);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(232, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 15);
+            this.label1.Size = new System.Drawing.Size(78, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "Location";
             // 
@@ -131,7 +130,8 @@
             // 
             // panelDataGridView
             // 
-            this.panelDataGridView.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panelDataGridView.AutoScroll = true;
+            this.panelDataGridView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(24)))));
             this.panelDataGridView.Controls.Add(this.dataGridView1);
             this.panelDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDataGridView.Location = new System.Drawing.Point(0, 100);
@@ -152,28 +152,40 @@
             this.showcaseId,
             this.qty,
             this.unitPrice});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(147, 24);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(1099, 402);
+            this.dataGridView1.Size = new System.Drawing.Size(844, 660);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // btnImport
+            // 
+            this.btnImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImport.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.btnImport.Location = new System.Drawing.Point(813, 7);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(178, 56);
+            this.btnImport.TabIndex = 10;
+            this.btnImport.Text = "Search";
+            this.btnImport.UseVisualStyleBackColor = false;
             // 
             // rowNumber
             // 
             this.rowNumber.HeaderText = "No.";
             this.rowNumber.MinimumWidth = 6;
             this.rowNumber.Name = "rowNumber";
-            this.rowNumber.Width = 125;
+            this.rowNumber.Width = 75;
             // 
             // itemId
             // 
             this.itemId.HeaderText = "Item ID";
             this.itemId.MinimumWidth = 6;
             this.itemId.Name = "itemId";
-            this.itemId.Width = 125;
+            this.itemId.Width = 80;
             // 
             // itemName
             // 
@@ -201,7 +213,7 @@
             this.qty.HeaderText = "Qty";
             this.qty.MinimumWidth = 6;
             this.qty.Name = "qty";
-            this.qty.Width = 125;
+            this.qty.Width = 75;
             // 
             // unitPrice
             // 
@@ -209,14 +221,6 @@
             this.unitPrice.MinimumWidth = 6;
             this.unitPrice.Name = "unitPrice";
             this.unitPrice.Width = 125;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.panel3.Location = new System.Drawing.Point(45, 63);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(970, 3);
-            this.panel3.TabIndex = 9;
             // 
             // InShowcase
             // 
@@ -242,13 +246,14 @@
 
         private System.Windows.Forms.Label lbInShowcase;
         private System.Windows.Forms.Panel panelFilter;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbShowcaseId;
         private System.Windows.Forms.ComboBox cbLocation;
         private System.Windows.Forms.Panel panelDataGridView;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.DataGridViewTextBoxColumn rowNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemId;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemName;
@@ -256,6 +261,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn showcaseId;
         private System.Windows.Forms.DataGridViewTextBoxColumn qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitPrice;
-        private System.Windows.Forms.Panel panel3;
     }
 }
