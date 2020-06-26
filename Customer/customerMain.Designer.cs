@@ -214,7 +214,7 @@
             // 
             // btnTenantPage
             // 
-            this.btnTenantPage.Location = new System.Drawing.Point(999, 48);
+            this.btnTenantPage.Location = new System.Drawing.Point(970, 47);
             this.btnTenantPage.Name = "btnTenantPage";
             this.btnTenantPage.Size = new System.Drawing.Size(114, 23);
             this.btnTenantPage.TabIndex = 3;

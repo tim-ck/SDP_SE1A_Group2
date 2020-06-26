@@ -13,10 +13,11 @@ namespace SDP_SE1A_Group2.Customer
 {
     public partial class CustomerMain : Form
     {
-        Form opener;
+       
         private Form activeForm = null;
         private String userId, cusName;
         private Boolean hvItem;
+        Form opener;
         CartPage cartPage;
         BrowseItems browseItemForm;
         Order orderForm;
@@ -45,10 +46,13 @@ namespace SDP_SE1A_Group2.Customer
 
             //define Form varible
             cartPage = new CartPage(this);
-            browseItemForm = new BrowseItems(userId);
+            browseItemForm = new BrowseItems(this);
             orderForm = new Order();
         }
 
+
+
+        //control cart item START
         public Boolean CartHvItem() { return hvItem; }
         public void UpdateCartHvItem(Boolean hvItem) { 
             this.hvItem = hvItem;
@@ -58,11 +62,19 @@ namespace SDP_SE1A_Group2.Customer
                 btnCart.Image = Properties.Resources.cart_P;
         }
         
+        public void addItem(String itemID, String qty)
+        {
+            cartPage.AddItem(itemID,qty);
+        }
 
+
+        //control cart item End
+        
+        //open child form
         private void openChildForm(Form childForm)
         {
             if (activeForm!= null)
-                activeForm.Close();
+                activeForm.Hide();
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -72,25 +84,23 @@ namespace SDP_SE1A_Group2.Customer
             panelChildForm.Controls.Add(childForm);
             childForm.Show();
         }
-        //control bar START
+
+        //Title bar START
         private void lblCloseBtn_Click(object sender, EventArgs e)
         {
             opener.Close();
             this.Close();
         }
 
-        //control bar END
+        //Title bar END
+
         //menu button click START
         
-
-        
-
         private void btnProduct_Click(object sender, EventArgs e)
         {
             
             openChildForm(browseItemForm);
-
-            //active icon
+            //UI
             btnProduct.Image = Properties.Resources.item_P1;
             btnProduct.ForeColor = Color.FromArgb(236, 236, 236);
             btnOrder.Image = Properties.Resources.order_p;
@@ -109,8 +119,7 @@ namespace SDP_SE1A_Group2.Customer
         {
             
             openChildForm(orderForm);
-            //active icon
-
+            //UI
             btnProduct.Image = Properties.Resources.item_P;
             btnProduct.ForeColor = Color.FromArgb(182, 182, 182);
             btnOrder.Image = Properties.Resources.order_s;
@@ -128,8 +137,7 @@ namespace SDP_SE1A_Group2.Customer
         {
            
             openChildForm(cartPage);
-            //active icon
-
+            //UI
             btnProduct.Image = Properties.Resources.item_P;
             btnProduct.ForeColor = Color.FromArgb(182, 182, 182);
             btnOrder.Image = Properties.Resources.order_p;
@@ -145,10 +153,9 @@ namespace SDP_SE1A_Group2.Customer
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            BrowseItems browseItemForm = new BrowseItems(userId);
+            BrowseItems browseItemForm = new BrowseItems(this);
             openChildForm(browseItemForm);
-            //active icon
-
+            //UI
             btnProduct.Image = Properties.Resources.item_P;
             btnProduct.ForeColor = Color.FromArgb(182, 182, 182);
             btnOrder.Image = Properties.Resources.order_p;
@@ -171,9 +178,9 @@ namespace SDP_SE1A_Group2.Customer
         //menu button End
 
         //top bar START
-        private void btnTenantPage_Click(object sender, EventArgs e)
+        /*private void btnTenantPage_Click(object sender, EventArgs e)
         {
-            /*Boolean isTenant = false;
+            Boolean isTenant = false;
             using (var notSoImportantVariable = new classicmodelsEntities())
             {
                 var acct =  from list in notSoImportantVariable.Tenant
@@ -194,13 +201,13 @@ namespace SDP_SE1A_Group2.Customer
             }
             if(Verify == false)
                 txtErrMsg.Text = "The Username / Password is incorrect";
-            else{*/
+            else{
             this.Close();
-            //Tenant_Main tm = new Tenant_Main(opener,orderId, item); //!!!!!!!!!!!!!!!!!!!!!
-            //tm.Show();
+            Tenant_Main tm = new Tenant_Main(opener,orderId, item); //!!!!!!!!!!!!!!!!!!!!!
+            tm.Show();
             Sample s = new Sample();
             s.Show();
-        }
+        }*/
         //top bar end
 
     }

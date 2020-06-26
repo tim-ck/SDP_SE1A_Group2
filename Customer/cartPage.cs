@@ -22,14 +22,12 @@ namespace SDP_SE1A_Group2.Customer
         {
             InitializeComponent();
             this.opener = opener;
-            //foreach(String item in arrayObj)
-            //{
-            //    items.Push(item);
-            //}
+            
         }
-        public void AddItem(String item) {
+        public void AddItem(String itemID,String qty) {
             if (items.Count == 0)
-            //   opener.UpdateCartHvItem(true);
+               opener.UpdateCartHvItem(true);
+            String item=itemID
             items.Push(item);
             opener.UpdateCartHvItem(true);
         }

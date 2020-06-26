@@ -16,13 +16,13 @@ namespace SDP_SE1A_Group2.Customer
 {
     public partial class BrowseItems : Form
     {
-        private String userID;
+        CustomerMain opener;
         private String iteamID; // store  item id user added        
         private readonly DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-        public BrowseItems(String userID)
+        public BrowseItems(CustomerMain opener)
         {
             InitializeComponent();
-
+            this.opener = opener;
             //C# S1E4: DataGridView with Actionbutton and Onclick
             
           
@@ -39,6 +39,9 @@ namespace SDP_SE1A_Group2.Customer
             label1.Text= dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(); //get Item ID
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            opener.addItem("abc");
+        }
     }
 }
