@@ -16,11 +16,11 @@ namespace SDP_SE1A_Group2.Customer
         private String userID;
         private String iteamID; // store  item id user added        
 
-        public BrowseItems(String userID, Stack item)
+        public BrowseItems(String userID)
         {
             InitializeComponent();
             this.userID = userID;
-            this.item = item;
+            
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -17,7 +17,8 @@ namespace SDP_SE1A_Group2.Customer
         private Form activeForm = null;
         private String userId, cusName;
         private Boolean hvItem;
-        
+        private CartPage cartPage;
+        public static CustomerMain Form;
 
         public CustomerMain(Form parentForm, String userId)
         {
@@ -40,8 +41,8 @@ namespace SDP_SE1A_Group2.Customer
              }*/
             cusName = userId;//test case: customer name and customer id is same. real code in comment above!
             lblTitle.Text= "Welcome Customer " + cusName + " !";
-            
 
+            cartPage = new CartPage(this);
 
         }
 
@@ -85,7 +86,7 @@ namespace SDP_SE1A_Group2.Customer
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
-            BrowseItems browseItemForm = new BrowseItems(userId, item);
+            BrowseItems browseItemForm = new BrowseItems(userId);
             openChildForm(browseItemForm);
             btnProduct.Image = Properties.Resources.item_P1;
             btnProduct.ForeColor = Color.FromArgb(236, 236, 236);
@@ -117,10 +118,10 @@ namespace SDP_SE1A_Group2.Customer
             btnSetting.Image = Properties.Resources.setting;
             btnSetting.ForeColor = Color.FromArgb(182, 182, 182);
         }
-
+        //open cart
         private void btnCart_Click(object sender, EventArgs e)
         {
-            CartPage cartPage = new CartPage(this, arrayObj);
+           
             openChildForm(cartPage);
             btnProduct.Image = Properties.Resources.item_P;
             btnProduct.ForeColor = Color.FromArgb(182, 182, 182);
@@ -137,7 +138,7 @@ namespace SDP_SE1A_Group2.Customer
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            BrowseItems browseItemForm = new BrowseItems(userId, item);
+            BrowseItems browseItemForm = new BrowseItems(userId);
             openChildForm(browseItemForm);
             btnProduct.Image = Properties.Resources.item_P;
             btnProduct.ForeColor = Color.FromArgb(182, 182, 182);

@@ -14,23 +14,26 @@ namespace SDP_SE1A_Group2.Customer
 
     public partial class CartPage : Form
     {
+
         Form opener;
         private Stack items = new Stack();
-        public CartPage(Form opener, String[] arrayObj)
+
+        public CartPage(Form opener)
         {
             InitializeComponent();
             this.opener = opener;
-            foreach(String item in arrayObj)
-            {
-                items.Push(item);
-            }
+            //foreach(String item in arrayObj)
+            //{
+            //    items.Push(item);
+            //}
         }
         public void AddItem(String item) {
             if (items.Count == 0)
-               opener.UpdateCartHvItem(true);
+            //   opener.UpdateCartHvItem(true);
             items.Push(item);
-            
+            Program.Form.UpdateCartHvItem();
         }
+
         
 
     }

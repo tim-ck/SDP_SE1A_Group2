@@ -76,6 +76,12 @@
     <Compile Include="Customer\customerMain.designer.cs">
       <DependentUpon>customerMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Order.Designer.cs">
+      <DependentUpon>Order.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\Sample.cs">
       <SubType>Form</SubType>
     </Compile>
