@@ -48,14 +48,19 @@
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // rdoTenent
@@ -177,7 +182,7 @@
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.label4.Location = new System.Drawing.Point(30, 692);
+            this.label4.Location = new System.Drawing.Point(30, 690);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(500, 2);
             this.label4.TabIndex = 38;
@@ -188,7 +193,7 @@
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.txtUsername.ForeColor = System.Drawing.Color.White;
-            this.txtUsername.Location = new System.Drawing.Point(98, 652);
+            this.txtUsername.Location = new System.Drawing.Point(98, 650);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(432, 36);
@@ -198,7 +203,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::SDP_SE1A_Group2.Properties.Resources.user;
-            this.pictureBox2.Location = new System.Drawing.Point(34, 632);
+            this.pictureBox2.Location = new System.Drawing.Point(34, 630);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(58, 62);
@@ -244,7 +249,7 @@
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.label6.Location = new System.Drawing.Point(30, 517);
+            this.label6.Location = new System.Drawing.Point(30, 499);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(500, 2);
             this.label6.TabIndex = 47;
@@ -255,7 +260,7 @@
             this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLastName.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.txtLastName.ForeColor = System.Drawing.Color.White;
-            this.txtLastName.Location = new System.Drawing.Point(98, 477);
+            this.txtLastName.Location = new System.Drawing.Point(98, 459);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(432, 36);
@@ -265,7 +270,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::SDP_SE1A_Group2.Properties.Resources.user;
-            this.pictureBox5.Location = new System.Drawing.Point(34, 457);
+            this.pictureBox5.Location = new System.Drawing.Point(34, 439);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(58, 62);
@@ -276,28 +281,29 @@
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.label7.Location = new System.Drawing.Point(29, 598);
+            this.label7.Location = new System.Drawing.Point(30, 566);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(500, 2);
             this.label7.TabIndex = 50;
             // 
-            // textBox1
+            // txtPhoneNumber
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(97, 558);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(432, 36);
-            this.textBox1.TabIndex = 49;
-            this.textBox1.Text = "Last Name";
+            this.txtPhoneNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.txtPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.txtPhoneNumber.ForeColor = System.Drawing.Color.White;
+            this.txtPhoneNumber.Location = new System.Drawing.Point(98, 526);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(432, 36);
+            this.txtPhoneNumber.TabIndex = 49;
+            this.txtPhoneNumber.Text = "Phone Numebr";
+            this.txtPhoneNumber.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // pictureBox6
             // 
             this.pictureBox6.Image = global::SDP_SE1A_Group2.Properties.Resources.user;
-            this.pictureBox6.Location = new System.Drawing.Point(33, 538);
+            this.pictureBox6.Location = new System.Drawing.Point(34, 506);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(58, 62);
@@ -305,14 +311,61 @@
             this.pictureBox6.TabIndex = 48;
             this.pictureBox6.TabStop = false;
             // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.label8.Location = new System.Drawing.Point(58, 961);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(500, 2);
+            this.label8.TabIndex = 53;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(126, 921);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(432, 36);
+            this.textBox1.TabIndex = 52;
+            this.textBox1.Text = "Phone Numebr";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::SDP_SE1A_Group2.Properties.Resources.user;
+            this.pictureBox7.Location = new System.Drawing.Point(62, 901);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(58, 62);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 51;
+            this.pictureBox7.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(38, 576);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(170, 21);
+            this.label9.TabIndex = 54;
+            this.label9.Text = "PhoneNumebr Require";
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(576, 1007);
-            this.Controls.Add(this.label7);
+            this.ClientSize = new System.Drawing.Size(576, 841);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtPhoneNumber);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtLastName);
@@ -345,6 +398,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,7 +426,11 @@
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label label9;
     }
 }
