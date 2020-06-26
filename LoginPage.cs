@@ -22,7 +22,7 @@ namespace SDP_SE1A_Group2
             Close();
         }
 
-        private void btnSignIn_Click(object sender,S EventArgs e)
+        private void btnSignIn_Click(object sender, EventArgs e)
         {
             String username = txtUsername.Text;
             String password = txtPassword.Text;
