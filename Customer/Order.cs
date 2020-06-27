@@ -12,10 +12,12 @@ namespace SDP_SE1A_Group2.Customer
 {
     public partial class Order : Form
     {
-        public Order()
+        private CustomerMain opener;
+        public Order(CustomerMain opener,String cusName)
         {
             InitializeComponent();
-            
+            this.opener = opener;
+            lblTitle.Text = "Welcome Customer " + cusName;
         }
     }
 }

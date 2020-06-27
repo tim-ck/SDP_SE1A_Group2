@@ -32,7 +32,6 @@
             this.btnSetting = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnCart = new System.Windows.Forms.Button();
-            this.btnOrder = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -41,6 +40,7 @@
             this.lblCloseBtn = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.btnOrder = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -50,10 +50,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.btnOrder);
             this.panel1.Controls.Add(this.btnSetting);
             this.panel1.Controls.Add(this.btnLogOut);
             this.panel1.Controls.Add(this.btnCart);
-            this.panel1.Controls.Add(this.btnOrder);
             this.panel1.Controls.Add(this.btnProduct);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -111,7 +111,7 @@
             this.btnCart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
             this.btnCart.Image = global::SDP_SE1A_Group2.Properties.Resources.cart_P;
             this.btnCart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCart.Location = new System.Drawing.Point(0, 300);
+            this.btnCart.Location = new System.Drawing.Point(0, 200);
             this.btnCart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCart.Name = "btnCart";
             this.btnCart.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
@@ -122,26 +122,6 @@
             this.btnCart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCart.UseVisualStyleBackColor = true;
             this.btnCart.Click += new System.EventHandler(this.btnCart_Click);
-            // 
-            // btnOrder
-            // 
-            this.btnOrder.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrder.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
-            this.btnOrder.Image = global::SDP_SE1A_Group2.Properties.Resources.order_p;
-            this.btnOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrder.Location = new System.Drawing.Point(0, 200);
-            this.btnOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnOrder.Size = new System.Drawing.Size(250, 100);
-            this.btnOrder.TabIndex = 2;
-            this.btnOrder.Text = "  Orders";
-            this.btnOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnOrder.UseVisualStyleBackColor = true;
-            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // btnProduct
             // 
@@ -176,6 +156,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(111)))));
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::SDP_SE1A_Group2.Properties.Resources.cubeLogo1;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
@@ -187,7 +168,7 @@
             // 
             // panelTitleBar
             // 
-            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(111)))));
             this.panelTitleBar.Controls.Add(this.lblMinBtn);
             this.panelTitleBar.Controls.Add(this.lblCloseBtn);
             this.panelTitleBar.Controls.Add(this.lblTitle);
@@ -204,7 +185,7 @@
             this.lblMinBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblMinBtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMinBtn.ForeColor = System.Drawing.Color.White;
-            this.lblMinBtn.Location = new System.Drawing.Point(1043, -2);
+            this.lblMinBtn.Location = new System.Drawing.Point(1143, 0);
             this.lblMinBtn.Name = "lblMinBtn";
             this.lblMinBtn.Size = new System.Drawing.Size(35, 32);
             this.lblMinBtn.TabIndex = 5;
@@ -238,11 +219,33 @@
             // 
             // panelChildForm
             // 
+            this.panelChildForm.BackgroundImage = global::SDP_SE1A_Group2.Properties.Resources.cubeLogo1;
+            this.panelChildForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(250, 100);
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(1214, 800);
             this.panelChildForm.TabIndex = 2;
+            // 
+            // btnOrder
+            // 
+            this.btnOrder.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrder.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
+            this.btnOrder.Image = global::SDP_SE1A_Group2.Properties.Resources.order_p;
+            this.btnOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrder.Location = new System.Drawing.Point(0, 300);
+            this.btnOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnOrder.Size = new System.Drawing.Size(250, 100);
+            this.btnOrder.TabIndex = 6;
+            this.btnOrder.Text = "  Orders";
+            this.btnOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOrder.UseVisualStyleBackColor = true;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click_1);
             // 
             // CustomerMain
             // 
@@ -275,12 +278,12 @@
         private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnCart;
-        private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblCloseBtn;
         private System.Windows.Forms.Label lblMinBtn;
+        private System.Windows.Forms.Button btnOrder;
     }
 }

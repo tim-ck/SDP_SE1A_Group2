@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,6 +23,10 @@ namespace SDP_SE1A_Group2.Customer
         CartPage cartPage;
         BrowseItems browseItemForm;
         Order orderForm;
+        Bitmap cart_P = Properties.Resources.cart_P;
+        Bitmap cart_S = Properties.Resources.cart_S;
+        Bitmap cart_hvItem_P = Properties.Resources.cart_hvItem_P;
+        Bitmap cart_hvItem_S = Properties.Resources.cart_hvItem_S;
 
         public CustomerMain(Form parentForm, String userId)
         {
@@ -42,17 +47,20 @@ namespace SDP_SE1A_Group2.Customer
               
 
              }*/
-            cusName = userId;//test case: customer name and customer id is same. real code in comment above!
-            lblTitle.Text= "Welcome Customer " + cusName + " !";
+            cusName = userId;// real code in comment above!
+            lblTitle.Text= "Welcome Customer " + cusName ;
 
             //define Form varible
-            cartPage = new CartPage(this);
-            browseItemForm = new BrowseItems(this);
-            orderForm = new Order();
+            cartPage = new CartPage(this, cusName);
+            browseItemForm = new BrowseItems(this, cusName);
+            orderForm = new Order(this, cusName);
 
             //UI hide border
             this.Text = string.Empty;
             this.ControlBox = false;
+
+            //UI icon
+            btnCart.Image = cart_P;
         }
 
         //Title bar START
@@ -78,23 +86,56 @@ namespace SDP_SE1A_Group2.Customer
 
 
         //control cart item START
+        
         public Boolean CartHvItem() { return hvItem; }
-        public void UpdateCartHvItem(Boolean hvItem) { 
-            this.hvItem = hvItem;
+        public void UpdateCartHvItem(Boolean hvItem) { this.hvItem = hvItem; UpdateIcon(); }
+        public void addItem(String itemID, String qty){ cartPage.AddItem(itemID,qty); }
+        public void ClearCart() { cartPage.ClearCart(); UpdateIcon(); }
+
+        public void UpdateIcon() {
             if (hvItem)
-                btnCart.Image = Properties.Resources.cart_hvItem_P;
+            {
+                if (btnCart.Image == cart_S)
+                    btnCart.Image = cart_hvItem_S;
+                else
+                    btnCart.Image = cart_hvItem_P;
+
+            }
             else
-                btnCart.Image = Properties.Resources.cart_P;
+            {
+                if(btnCart.Image == cart_hvItem_P)
+                    btnCart.Image = cart_P;
+                else
+                    btnCart.Image =cart_S;
+            }
+                
         }
-        
-        public void addItem(String itemID, String qty)
+
+        public String GetStoreName(int storeIndex)
         {
-            cartPage.AddItem(itemID,qty);
+            String storeName="";
+            switch (storeIndex)
+            {
+                case 0:
+                    storeName = "cwb";
+                    break;
+                case 1:
+                    storeName = "mka";
+                    break;
+                case 2:
+                    storeName = "mkb";
+                    break;
+                case 3:
+                    storeName = "kwf";
+                    break;
+                case 4:
+                    storeName = "sht";
+                    break;
+            }
+            return storeName;
         }
-
-
         //control cart item End
-        
+
         //open child form
         private void openChildForm(Form childForm)
         {
@@ -116,7 +157,7 @@ namespace SDP_SE1A_Group2.Customer
         
         private void btnProduct_Click(object sender, EventArgs e)
         {
-            
+            lblTitle.Text = "Product Page";
             openChildForm(browseItemForm);
             //UI
             btnProduct.Image = Properties.Resources.item_P1;
@@ -124,16 +165,32 @@ namespace SDP_SE1A_Group2.Customer
             btnOrder.Image = Properties.Resources.order_p;
             btnOrder.ForeColor = Color.FromArgb(182, 182, 182);
             if (CartHvItem())
-                btnCart.Image = Properties.Resources.cart_hvItem_P;
+                btnCart.Image = cart_hvItem_P;
             else
-                btnCart.Image = Properties.Resources.cart_P;
+                btnCart.Image = cart_P;
             btnCart.ForeColor = Color.FromArgb(182, 182, 182);
             btnSetting.Image = Properties.Resources.setting;
             btnSetting.ForeColor = Color.FromArgb(182, 182, 182);
         }
 
+        private void btnCart_Click(object sender, EventArgs e)
+        {
 
-        private void btnOrder_Click(object sender, EventArgs e)
+            openChildForm(cartPage);
+            //UI
+            btnProduct.Image = Properties.Resources.item_P;
+            btnProduct.ForeColor = Color.FromArgb(182, 182, 182);
+            btnOrder.Image = Properties.Resources.order_p;
+            btnOrder.ForeColor = Color.FromArgb(182, 182, 182);
+            if (CartHvItem())
+                btnCart.Image = cart_hvItem_S;
+            else
+                btnCart.Image = cart_S;
+            btnCart.ForeColor = Color.FromArgb(236, 236, 236);
+            btnSetting.Image = Properties.Resources.setting;
+            btnSetting.ForeColor = Color.FromArgb(182, 182, 182);
+        }
+        private void btnOrder_Click_1(object sender, EventArgs e)
         {
             
             openChildForm(orderForm);
@@ -143,35 +200,21 @@ namespace SDP_SE1A_Group2.Customer
             btnOrder.Image = Properties.Resources.order_s;
             btnOrder.ForeColor = Color.FromArgb(236, 236, 236);
             if (CartHvItem())
-                btnCart.Image = Properties.Resources.cart_hvItem_P;
+                btnCart.Image = cart_hvItem_P;
             else
-                btnCart.Image = Properties.Resources.cart_P;
+                btnCart.Image = cart_P;
             btnCart.ForeColor = Color.FromArgb(182, 182, 182);
             btnSetting.Image = Properties.Resources.setting;
             btnSetting.ForeColor = Color.FromArgb(182, 182, 182);
         }
         
-        private void btnCart_Click(object sender, EventArgs e)
-        {
-           
-            openChildForm(cartPage);
-            //UI
-            btnProduct.Image = Properties.Resources.item_P;
-            btnProduct.ForeColor = Color.FromArgb(182, 182, 182);
-            btnOrder.Image = Properties.Resources.order_p;
-            btnOrder.ForeColor = Color.FromArgb(182, 182, 182);
-            if (CartHvItem())
-                btnCart.Image = Properties.Resources.cart_hvItem_S;
-            else
-                btnCart.Image = Properties.Resources.cart_S;
-            btnCart.ForeColor = Color.FromArgb(236, 236, 236);
-            btnSetting.Image = Properties.Resources.setting;
-            btnSetting.ForeColor = Color.FromArgb(182, 182, 182);
-        }
+       
+
+        
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            BrowseItems browseItemForm = new BrowseItems(this);
+            
             openChildForm(browseItemForm);
             //UI
             btnProduct.Image = Properties.Resources.item_P;
@@ -179,9 +222,9 @@ namespace SDP_SE1A_Group2.Customer
             btnOrder.Image = Properties.Resources.order_p;
             btnOrder.ForeColor = Color.FromArgb(182, 182, 182);
             if (CartHvItem())
-                btnCart.Image = Properties.Resources.cart_hvItem_P;
+                btnCart.Image =cart_hvItem_P;
             else
-                btnCart.Image = Properties.Resources.cart_P;
+                btnCart.Image = cart_P;
             btnCart.ForeColor = Color.FromArgb(182, 182, 182);
             btnSetting.Image = Properties.Resources.setting_s;
             btnSetting.ForeColor = Color.FromArgb(236, 236, 236);
@@ -191,6 +234,8 @@ namespace SDP_SE1A_Group2.Customer
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {

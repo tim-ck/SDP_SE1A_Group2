@@ -18,7 +18,7 @@ namespace SDP_SE1A_Group2.Customer
         CustomerMain opener;
         private Stack items = new Stack();
 
-        public CartPage(CustomerMain opener)
+        public CartPage(CustomerMain opener, String cusName)
         {
             InitializeComponent();
             this.opener = opener;
@@ -35,7 +35,20 @@ namespace SDP_SE1A_Group2.Customer
 
         }
 
-       
+        public void ClearCart()
+        {
+            dataGridView1.Rows.Clear();
+            opener.UpdateCartHvItem(false);
+        }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Are you sure to clear the cart?", "", MessageBoxButtons.OKCancel);
+            if (confirmResult == DialogResult.OK)
+                ClearCart();
+            else
+                return;
+            
+        }
     }
 }
