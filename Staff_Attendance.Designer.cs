@@ -89,6 +89,7 @@
             this.Controls.Add(this.lblStaffID);
             this.Name = "Staff_Attendance";
             this.Text = "Staff_Attendance";
+            this.Load += new System.EventHandler(this.Staff_Attendance_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -24,20 +24,21 @@ namespace SDP_SE1A_Group2
             /*
             using (var classicContext = new classicmodelsEntities())
             {
-                
-                var insertAttendance = "INSERT into tbl_staff (staffID,workHour) VALUES (id,hour)";
+                var insertAttendance = "INSERT INTO (table name) (staffID,workHour) VALUES (id,hour)";
 
                 using (SqlCommand querySaveStaff = new SqlCommand(insertAttendance))
                 {
-                    querySaveStaff.Connection = openCon;
-                    querySaveStaff.Parameters.Add("@staffName", SqlDbType.VarChar, 30).Value = name;
-                    .....
-                    openCon.Open();
-
-                    querySaveStaff.ExecuteNonQuery();
+                    
                 }
             }
             */
+
+            MessageBox.Show("Staff ID:"+id+"\r\n"+"Hour: "+hour + "\r\n"+"Submitted Successfully");
+        }
+
+        private void Staff_Attendance_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
