@@ -34,10 +34,7 @@ namespace SDP_SE1A_Group2.Customer
 
         private void addButtonColumn() { }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            label1.Text= dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(); //get Item ID
-        }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {

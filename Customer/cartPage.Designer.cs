@@ -34,6 +34,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(146)))), ((int)(((byte)(178)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(148, 159);
             this.dataGridView1.Name = "dataGridView1";
@@ -49,7 +50,7 @@
             this.ClientSize = new System.Drawing.Size(1114, 700);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CartPage";
             this.Text = "cartPage";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

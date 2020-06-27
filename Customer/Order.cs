@@ -15,6 +15,7 @@ namespace SDP_SE1A_Group2.Customer
         public Order()
         {
             InitializeComponent();
+            
         }
     }
 }
