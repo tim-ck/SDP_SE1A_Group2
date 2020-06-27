@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,12 +18,27 @@ namespace SDP_SE1A_Group2
         {
             InitializeComponent();
         }
-        //Border BAr control start
+        //Titile Bar control start
         private void lblCloseButton_Click(object sender, EventArgs e)
         {
             Close();
         }
-        //Border BAr control END
+        
+
+        //drag form 
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void LoginPage_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        //Title Bar control END
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
@@ -38,20 +54,27 @@ namespace SDP_SE1A_Group2
                 txtErrMsg.Text = "Enter a Password";
                 return;
             }
-            switch (username[0])
+            
+            if (rdoCustomer.Checked)
             {
-                case 'C':
-                   CustomerVerify(username, password);
-                   break;
-                case 'S':
-                    StaffVerify(username, password);
-                   break;
-                default:
-                   txtErrMsg.Text = "The Username is incorrect";
-                   return;
+                CustomerVerify(username, password);
+
+            }
+            else if (rdoTenent.Checked)
+            {
+                TenantVerify(username, password);
+            }
+            else if (rdoStaff.Checked)
+            {
+                StaffVerify(username, password);
+            }
+            else
+            {
+                txtErrMsg.Text = "Choose your account type";
+                return;
             }
 
-            
+
         }
 
         //verify start
@@ -281,6 +304,8 @@ namespace SDP_SE1A_Group2
             label1.BackColor = Color.White;
             txtUsername.ForeColor = Color.White;
         }
+
+       
         //UI END
 
 

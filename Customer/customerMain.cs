@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -48,8 +49,32 @@ namespace SDP_SE1A_Group2.Customer
             cartPage = new CartPage(this);
             browseItemForm = new BrowseItems(this);
             orderForm = new Order();
+
+            //UI hide border
+            this.Text = string.Empty;
+            this.ControlBox = false;
         }
 
+        //Title bar START
+        private void lblCloseBtn_Click(object sender, EventArgs e)
+        {
+            opener.Close();
+            this.Close();
+        }
+        
+        //Drag From Control 
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        //Title bar END
 
 
         //control cart item START
@@ -85,14 +110,7 @@ namespace SDP_SE1A_Group2.Customer
             childForm.Show();
         }
 
-        //Title bar START
-        private void lblCloseBtn_Click(object sender, EventArgs e)
-        {
-            opener.Close();
-            this.Close();
-        }
-
-        //Title bar END
+        
 
         //menu button click START
         
@@ -168,7 +186,11 @@ namespace SDP_SE1A_Group2.Customer
             btnSetting.Image = Properties.Resources.setting_s;
             btnSetting.ForeColor = Color.FromArgb(236, 236, 236);
         }
-        
+
+        private void lblMinBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {

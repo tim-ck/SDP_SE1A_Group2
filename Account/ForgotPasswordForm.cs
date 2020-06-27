@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,6 +30,22 @@ namespace SDP_SE1A_Group2.Account
         }
 
         //Border BAr control End
+
+
+        //drag form start
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void ForgotPasswordForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        //drag form END
 
 
         //input textbox UI Start
@@ -158,6 +175,7 @@ namespace SDP_SE1A_Group2.Account
             opener.Show();
             this.Close();
         }
+     
         //Send Email Control END
 
 

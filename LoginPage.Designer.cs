@@ -36,14 +36,14 @@
             this.btnSignIn = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnForgotPassword = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblCloseButton = new System.Windows.Forms.Label();
             this.txtErrMsg = new System.Windows.Forms.TextBox();
             this.rdoTenent = new System.Windows.Forms.RadioButton();
-            this.rdoStaffOrManager = new System.Windows.Forms.RadioButton();
-            this.rdoCustomerOrTenant = new System.Windows.Forms.RadioButton();
+            this.rdoStaff = new System.Windows.Forms.RadioButton();
+            this.rdoCustomer = new System.Windows.Forms.RadioButton();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -153,40 +153,6 @@
             this.btnForgotPassword.UseVisualStyleBackColor = false;
             this.btnForgotPassword.Click += new System.EventHandler(this.btnForgotPassword_Click);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::SDP_SE1A_Group2.Properties.Resources.iconmonstr_lock_3_240;
-            this.pictureBox3.Location = new System.Drawing.Point(34, 428);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(57, 59);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::SDP_SE1A_Group2.Properties.Resources.user;
-            this.pictureBox2.Location = new System.Drawing.Point(34, 324);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(58, 62);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Image = global::SDP_SE1A_Group2.Properties.Resources.cubeLogo1;
-            this.pictureBox1.Location = new System.Drawing.Point(207, 35);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(152, 175);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // lblCloseButton
             // 
             this.lblCloseButton.AutoSize = true;
@@ -224,29 +190,63 @@
             this.rdoTenent.Text = "Tenant";
             this.rdoTenent.UseVisualStyleBackColor = true;
             // 
-            // rdoStaffOrManager
+            // rdoStaff
             // 
-            this.rdoStaffOrManager.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.rdoStaffOrManager.ForeColor = System.Drawing.Color.White;
-            this.rdoStaffOrManager.Location = new System.Drawing.Point(369, 270);
-            this.rdoStaffOrManager.Name = "rdoStaffOrManager";
-            this.rdoStaffOrManager.Size = new System.Drawing.Size(148, 41);
-            this.rdoStaffOrManager.TabIndex = 37;
-            this.rdoStaffOrManager.TabStop = true;
-            this.rdoStaffOrManager.Text = "Staff";
-            this.rdoStaffOrManager.UseVisualStyleBackColor = true;
+            this.rdoStaff.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.rdoStaff.ForeColor = System.Drawing.Color.White;
+            this.rdoStaff.Location = new System.Drawing.Point(369, 270);
+            this.rdoStaff.Name = "rdoStaff";
+            this.rdoStaff.Size = new System.Drawing.Size(148, 41);
+            this.rdoStaff.TabIndex = 37;
+            this.rdoStaff.TabStop = true;
+            this.rdoStaff.Text = "Staff";
+            this.rdoStaff.UseVisualStyleBackColor = true;
             // 
-            // rdoCustomerOrTenant
+            // rdoCustomer
             // 
-            this.rdoCustomerOrTenant.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.rdoCustomerOrTenant.ForeColor = System.Drawing.Color.White;
-            this.rdoCustomerOrTenant.Location = new System.Drawing.Point(53, 270);
-            this.rdoCustomerOrTenant.Name = "rdoCustomerOrTenant";
-            this.rdoCustomerOrTenant.Size = new System.Drawing.Size(146, 41);
-            this.rdoCustomerOrTenant.TabIndex = 36;
-            this.rdoCustomerOrTenant.TabStop = true;
-            this.rdoCustomerOrTenant.Text = "Customer";
-            this.rdoCustomerOrTenant.UseVisualStyleBackColor = true;
+            this.rdoCustomer.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.rdoCustomer.ForeColor = System.Drawing.Color.White;
+            this.rdoCustomer.Location = new System.Drawing.Point(53, 270);
+            this.rdoCustomer.Name = "rdoCustomer";
+            this.rdoCustomer.Size = new System.Drawing.Size(146, 41);
+            this.rdoCustomer.TabIndex = 36;
+            this.rdoCustomer.TabStop = true;
+            this.rdoCustomer.Text = "Customer";
+            this.rdoCustomer.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::SDP_SE1A_Group2.Properties.Resources.iconmonstr_lock_3_240;
+            this.pictureBox3.Location = new System.Drawing.Point(34, 428);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(57, 59);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 4;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SDP_SE1A_Group2.Properties.Resources.user;
+            this.pictureBox2.Location = new System.Drawing.Point(34, 324);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(58, 62);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Image = global::SDP_SE1A_Group2.Properties.Resources.cubeLogo1;
+            this.pictureBox1.Location = new System.Drawing.Point(207, 35);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(152, 175);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // LoginPage
             // 
@@ -255,8 +255,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(564, 811);
             this.Controls.Add(this.rdoTenent);
-            this.Controls.Add(this.rdoStaffOrManager);
-            this.Controls.Add(this.rdoCustomerOrTenant);
+            this.Controls.Add(this.rdoStaff);
+            this.Controls.Add(this.rdoCustomer);
             this.Controls.Add(this.txtErrMsg);
             this.Controls.Add(this.lblCloseButton);
             this.Controls.Add(this.btnForgotPassword);
@@ -277,6 +277,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.TopMost = true;
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LoginPage_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -301,8 +302,8 @@
         private System.Windows.Forms.Label lblCloseButton;
         private System.Windows.Forms.TextBox txtErrMsg;
         private System.Windows.Forms.RadioButton rdoTenent;
-        private System.Windows.Forms.RadioButton rdoStaffOrManager;
-        private System.Windows.Forms.RadioButton rdoCustomerOrTenant;
+        private System.Windows.Forms.RadioButton rdoStaff;
+        private System.Windows.Forms.RadioButton rdoCustomer;
     }
 }
 

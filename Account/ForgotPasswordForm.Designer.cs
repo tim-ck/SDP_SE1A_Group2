@@ -234,6 +234,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ForgotPassword";
             this.TopMost = true;
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ForgotPasswordForm_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
