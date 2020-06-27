@@ -39,19 +39,21 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(335, 34);
+            this.dataGridView1.Location = new System.Drawing.Point(325, 13);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(743, 614);
+            this.dataGridView1.Size = new System.Drawing.Size(867, 768);
             this.dataGridView1.TabIndex = 0;
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(40, 75);
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(18, 57);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(243, 460);
+            this.listBox1.Size = new System.Drawing.Size(260, 589);
             this.listBox1.TabIndex = 1;
             // 
             // btnShowOrderDetail
@@ -62,10 +64,10 @@
             this.btnShowOrderDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowOrderDetail.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.btnShowOrderDetail.ForeColor = System.Drawing.Color.White;
-            this.btnShowOrderDetail.Location = new System.Drawing.Point(40, 565);
-            this.btnShowOrderDetail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnShowOrderDetail.Location = new System.Drawing.Point(18, 669);
+            this.btnShowOrderDetail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnShowOrderDetail.Name = "btnShowOrderDetail";
-            this.btnShowOrderDetail.Size = new System.Drawing.Size(276, 47);
+            this.btnShowOrderDetail.Size = new System.Drawing.Size(276, 59);
             this.btnShowOrderDetail.TabIndex = 12;
             this.btnShowOrderDetail.Text = "Show Order Detail >>";
             this.btnShowOrderDetail.UseVisualStyleBackColor = false;
@@ -73,25 +75,27 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 18F);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(36, 51);
+            this.label3.Location = new System.Drawing.Point(12, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 21);
+            this.label3.Size = new System.Drawing.Size(111, 32);
             this.label3.TabIndex = 13;
             this.label3.Text = "OrderID :";
             // 
             // Order
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(189)))), ((int)(((byte)(215)))));
-            this.ClientSize = new System.Drawing.Size(1114, 700);
+            this.ClientSize = new System.Drawing.Size(1214, 800);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnShowOrderDetail);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.dataGridView1);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Order";
             this.Text = "Order";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -41,10 +41,10 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(179)))), ((int)(((byte)(211)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 101);
+            this.dataGridView1.Location = new System.Drawing.Point(48, 124);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1090, 559);
+            this.dataGridView1.Size = new System.Drawing.Size(1103, 616);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnShowShopItem
@@ -55,7 +55,7 @@
             this.btnShowShopItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowShopItem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.btnShowShopItem.ForeColor = System.Drawing.Color.White;
-            this.btnShowShopItem.Location = new System.Drawing.Point(811, 10);
+            this.btnShowShopItem.Location = new System.Drawing.Point(934, 10);
             this.btnShowShopItem.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnShowShopItem.Name = "btnShowShopItem";
             this.btnShowShopItem.Size = new System.Drawing.Size(128, 62);
@@ -73,7 +73,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1114, 82);
+            this.panel1.Size = new System.Drawing.Size(1214, 82);
             this.panel1.TabIndex = 14;
             // 
             // label3
@@ -81,7 +81,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.label3.Location = new System.Drawing.Point(51, 27);
+            this.label3.Location = new System.Drawing.Point(60, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(165, 30);
             this.label3.TabIndex = 14;
@@ -93,7 +93,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "MK-Mong Kok"});
-            this.comboBox1.Location = new System.Drawing.Point(265, 29);
+            this.comboBox1.Location = new System.Drawing.Point(298, 27);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(427, 31);
@@ -104,7 +104,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(24)))));
-            this.ClientSize = new System.Drawing.Size(1114, 700);
+            this.ClientSize = new System.Drawing.Size(1214, 800);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);

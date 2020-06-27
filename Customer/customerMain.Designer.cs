@@ -60,7 +60,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 800);
+            this.panel1.Size = new System.Drawing.Size(250, 900);
             this.panel1.TabIndex = 0;
             // 
             // btnSetting
@@ -71,7 +71,7 @@
             this.btnSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
             this.btnSetting.Image = global::SDP_SE1A_Group2.Properties.Resources.setting;
             this.btnSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSetting.Location = new System.Drawing.Point(0, 660);
+            this.btnSetting.Location = new System.Drawing.Point(0, 760);
             this.btnSetting.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
@@ -91,7 +91,7 @@
             this.btnLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
             this.btnLogOut.Image = global::SDP_SE1A_Group2.Properties.Resources.logout_s;
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogOut.Location = new System.Drawing.Point(0, 730);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 830);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
@@ -194,7 +194,7 @@
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(250, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1114, 100);
+            this.panelTitleBar.Size = new System.Drawing.Size(1214, 100);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -218,7 +218,7 @@
             this.lblCloseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblCloseBtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCloseBtn.ForeColor = System.Drawing.Color.White;
-            this.lblCloseBtn.Location = new System.Drawing.Point(1084, 0);
+            this.lblCloseBtn.Location = new System.Drawing.Point(1184, 0);
             this.lblCloseBtn.Name = "lblCloseBtn";
             this.lblCloseBtn.Size = new System.Drawing.Size(29, 32);
             this.lblCloseBtn.TabIndex = 4;
@@ -241,14 +241,14 @@
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(250, 100);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1114, 700);
+            this.panelChildForm.Size = new System.Drawing.Size(1214, 800);
             this.panelChildForm.TabIndex = 2;
             // 
             // CustomerMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1364, 800);
+            this.ClientSize = new System.Drawing.Size(1464, 900);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panel1);
