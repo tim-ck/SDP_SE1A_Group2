@@ -17,10 +17,12 @@ namespace SDP_SE1A_Group2
         {
             InitializeComponent();
         }
+        //Border BAr control start
         private void lblCloseButton_Click(object sender, EventArgs e)
         {
             Close();
         }
+        //Border BAr control END
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
@@ -52,7 +54,8 @@ namespace SDP_SE1A_Group2
             
         }
 
-        private void CustomerVerify(String username, String password)
+        //verify start
+        public void CustomerVerify(String username, String password)
         {
             /*Boolean Verify = false;
             using (var notSoImportantVariable = new classicmodelsEntities())
@@ -61,7 +64,7 @@ namespace SDP_SE1A_Group2
                                 where list.CustomerID.Equals(username)
                                 select new { list.CustomerID, list.Password };
                 if(userAcct==null){
-txtErrMsg.Text = "The Username / Password is incorrect";            }else{
+            txtErrMsg.Text = "The Username / Password is incorrect";            }else{
                 foreach (var user in userAcct.ToList())
                 {
                     if ((username == user.CustomerID.ToString()) && (password == user.Password.ToString()))
@@ -87,16 +90,55 @@ txtErrMsg.Text = "The Username / Password is incorrect";            }else{
 
         }
 
+        public void TenantVerify(String username, String password)
+        {
+            /*Boolean Verify = false;
+            using (var notSoImportantVariable = new classicmodelsEntities())
+            {
+                var userAcct =  from list in notSoImportantVariable.Customer
+                                where list.TenantID.Equals(username)
+                                select new { list.TenantID, list.Password };
+                if(userAcct==null){
+                    txtErrMsg.Text = "The Username / Password is incorrect";            }
+                else{
+                foreach (var user in userAcct.ToList())
+                {
+                    if ((username == user.CustomerID.ToString()) && (password == user.Password.ToString()))
+                    {
+                        Verify = true;
+                        this.Hide();
+                        Customer.CustomerMain cus = new Customer.CustomerMain(username); //!!!!!!!!!!!!!!!!!!!!!
+                        cus.Show();
+                        return;
+                    }
+                }
+            }
+            if(Verify == false)
+                txtErrMsg.Text = "The Username / Password is incorrect";
+            else{*/
+            this.Hide();
+            txtUsername.Text = "Username";
+            txtPassword.Text = "Password";
+            CustomerMain cus = new CustomerMain(this, username);
+            cus.Show();
 
-        private void StaffVerify(String username, String password)
+            //}}
+
+        }
+
+        public void StaffVerify(String username, String password)
         {
             /*
             Boolean Verify = false;
             using (var notSoImportantVariable = new classicmodelsEntities())
             {
                 var userAcct = from list in notSoImportantVariable.Staff
+                                where list.StaffID.Equals(username)
                                select new { list.StaffID, list.Password };
-
+                if(userAcct==null){
+                    txtErrMsg.Text = "The Username / Password is incorrect";            
+                }
+                else{
 
                 foreach (var user in userAcct.ToList())
                 {
@@ -122,8 +164,84 @@ txtErrMsg.Text = "The Username / Password is incorrect";            }else{
 
         }
 
+        public Boolean CustomerEmailVerify(String email)
+        {
+            /*Boolean verify = false;
+            using (var notSoImportantVariable = new classicmodelsEntities())
+            {
+                var e = from list in notSoImportantVariable.Customer
+                               where list.Email.Equals(email)
+                               select new { list.Email };
+                if (e == null) { return false; }
 
-        private void btnForgotPassword_Click(object sender, EventArgs e)
+                foreach (var user in email.ToList())
+                {
+                    if (email == user.email.ToString())
+                    {
+                        verify = true;
+
+                        return verify;
+                    }
+                }
+            }
+            return verify;*/
+            return true;//plz delete this when added sql
+
+        }
+        public Boolean TenantEmailVerify(String email)
+        {
+            /*Boolean verify = false;
+            using (var notSoImportantVariable = new classicmodelsEntities())
+            {
+                var e = from list in notSoImportantVariable.Tenant
+                               where list.Email.Equals(email)
+                               select new { list.Email };
+                if (e == null) { return false; }
+
+                foreach (var user in email.ToList())
+                {
+                    if (email == user.email.ToString())
+                    {
+                        verify = true;
+
+                        return verify;
+                    }
+                }
+            }
+            return verify;*/
+            return true;//plz delete this when added sql
+
+        }
+
+        public Boolean StaffEmailVerify(String email)
+        {
+            /*Boolean verify = false;
+            using (var notSoImportantVariable = new classicmodelsEntities())
+            {
+                var e = from list in notSoImportantVariable.Staff
+                               where list.Email.Equals(email)
+                               select new { list.Email };
+                if (e == null) { return false; }
+
+                foreach (var user in email.ToList())
+                {
+                    if (email == user.email.ToString())
+                    {
+                        verify = true;
+
+                        return verify;
+                    }
+                }
+            }
+            return verify;*/
+            return true;//plz delete this when added sql
+
+        }
+
+        //verify ENd
+
+
+        public void btnForgotPassword_Click(object sender, EventArgs e)
         {
             this.Hide();
             Account.ForgotPasswordForm forgot = new Account.ForgotPasswordForm(this);
@@ -133,7 +251,7 @@ txtErrMsg.Text = "The Username / Password is incorrect";            }else{
 
         
 
-
+        //UI START
         private void txtUsername_Click(object sender, EventArgs e)
         {
             if(txtUsername.Text== "Username")
@@ -163,6 +281,8 @@ txtErrMsg.Text = "The Username / Password is incorrect";            }else{
             label1.BackColor = Color.White;
             txtUsername.ForeColor = Color.White;
         }
+        //UI END
+
 
     }
 }

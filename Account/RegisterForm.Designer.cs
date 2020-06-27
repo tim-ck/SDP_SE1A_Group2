@@ -30,37 +30,39 @@
         {
             this.rdoTenent = new System.Windows.Forms.RadioButton();
             this.rdoStaffOrManager = new System.Windows.Forms.RadioButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rdoCustomerOrTenant = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblCloseButton = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtLastName = new System.Windows.Forms.TextBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnForgotPassword = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // rdoTenent
@@ -86,18 +88,6 @@
             this.rdoStaffOrManager.TabStop = true;
             this.rdoStaffOrManager.Text = "Staff";
             this.rdoStaffOrManager.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Image = global::SDP_SE1A_Group2.Properties.Resources.cubeLogo1;
-            this.pictureBox1.Location = new System.Drawing.Point(200, 13);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 160);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 33;
-            this.pictureBox1.TabStop = false;
             // 
             // rdoCustomerOrTenant
             // 
@@ -168,17 +158,6 @@
             this.label1.Size = new System.Drawing.Size(500, 2);
             this.label1.TabIndex = 41;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::SDP_SE1A_Group2.Properties.Resources.iconmonstr_lock_3_240;
-            this.pictureBox3.Location = new System.Drawing.Point(34, 736);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(57, 59);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 39;
-            this.pictureBox3.TabStop = false;
-            // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
@@ -199,17 +178,6 @@
             this.txtUsername.Size = new System.Drawing.Size(432, 36);
             this.txtUsername.TabIndex = 37;
             this.txtUsername.Text = "Username";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::SDP_SE1A_Group2.Properties.Resources.user;
-            this.pictureBox2.Location = new System.Drawing.Point(34, 630);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(58, 62);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 36;
-            this.pictureBox2.TabStop = false;
             // 
             // label5
             // 
@@ -234,18 +202,6 @@
             this.txtFirstName.Text = "First Name";
             this.txtFirstName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::SDP_SE1A_Group2.Properties.Resources.user;
-            this.pictureBox4.Location = new System.Drawing.Point(34, 366);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(58, 62);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 42;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
@@ -266,17 +222,6 @@
             this.txtLastName.Size = new System.Drawing.Size(432, 36);
             this.txtLastName.TabIndex = 46;
             this.txtLastName.Text = "Last Name";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::SDP_SE1A_Group2.Properties.Resources.user;
-            this.pictureBox5.Location = new System.Drawing.Point(34, 439);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(58, 62);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 45;
-            this.pictureBox5.TabStop = false;
             // 
             // label7
             // 
@@ -300,17 +245,6 @@
             this.txtPhoneNumber.Text = "Phone Numebr";
             this.txtPhoneNumber.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::SDP_SE1A_Group2.Properties.Resources.user;
-            this.pictureBox6.Location = new System.Drawing.Point(34, 506);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(58, 62);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 48;
-            this.pictureBox6.TabStop = false;
-            // 
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
@@ -332,17 +266,6 @@
             this.textBox1.TabIndex = 52;
             this.textBox1.Text = "Phone Numebr";
             // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::SDP_SE1A_Group2.Properties.Resources.user;
-            this.pictureBox7.Location = new System.Drawing.Point(62, 901);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(58, 62);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 51;
-            this.pictureBox7.TabStop = false;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -354,12 +277,119 @@
             this.label9.TabIndex = 54;
             this.label9.Text = "PhoneNumebr Require";
             // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::SDP_SE1A_Group2.Properties.Resources.user;
+            this.pictureBox7.Location = new System.Drawing.Point(62, 901);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(58, 62);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 51;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::SDP_SE1A_Group2.Properties.Resources.user;
+            this.pictureBox6.Location = new System.Drawing.Point(34, 506);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(58, 62);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 48;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::SDP_SE1A_Group2.Properties.Resources.user;
+            this.pictureBox5.Location = new System.Drawing.Point(34, 439);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(58, 62);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 45;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::SDP_SE1A_Group2.Properties.Resources.user;
+            this.pictureBox4.Location = new System.Drawing.Point(34, 366);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(58, 62);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 42;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::SDP_SE1A_Group2.Properties.Resources.iconmonstr_lock_3_240;
+            this.pictureBox3.Location = new System.Drawing.Point(34, 736);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(57, 59);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 39;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SDP_SE1A_Group2.Properties.Resources.user;
+            this.pictureBox2.Location = new System.Drawing.Point(34, 630);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(58, 62);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 36;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Image = global::SDP_SE1A_Group2.Properties.Resources.cubeLogo1;
+            this.pictureBox1.Location = new System.Drawing.Point(200, 13);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 160);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 25F);
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(53, 825);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(288, 46);
+            this.label10.TabIndex = 56;
+            this.label10.Text = "Have an Account?";
+            // 
+            // btnForgotPassword
+            // 
+            this.btnForgotPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.btnForgotPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnForgotPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnForgotPassword.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.btnForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnForgotPassword.Location = new System.Drawing.Point(354, 825);
+            this.btnForgotPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnForgotPassword.Name = "btnForgotPassword";
+            this.btnForgotPassword.Size = new System.Drawing.Size(192, 46);
+            this.btnForgotPassword.TabIndex = 57;
+            this.btnForgotPassword.Text = "Sign In";
+            this.btnForgotPassword.UseVisualStyleBackColor = false;
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(576, 841);
+            this.ClientSize = new System.Drawing.Size(599, 1037);
+            this.Controls.Add(this.btnForgotPassword);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox1);
@@ -392,13 +422,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "RegisterForm";
             this.TopMost = true;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -432,5 +462,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnForgotPassword;
     }
 }

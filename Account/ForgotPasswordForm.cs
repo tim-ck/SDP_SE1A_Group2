@@ -14,38 +14,153 @@ namespace SDP_SE1A_Group2.Account
 {
     public partial class ForgotPasswordForm : Form
     {
-        Form opener;
-        public ForgotPasswordForm(Form parentForm)
+        LoginPage opener;
+        public ForgotPasswordForm(LoginPage parentForm)
         {
             InitializeComponent();
             opener = parentForm;
         }
 
+        //Border BAr control start
         private void lblCloseButton_Click(object sender, EventArgs e)
         {
             opener.Close();
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //Border BAr control End
+
+
+        //input textbox UI Start
+        private void txtEmail_Click(object sender, EventArgs e)
         {
+            if (txtEmail.Text == "Email")
+                txtEmail.Clear(); ;
+            pictureBox2.Image = Properties.Resources.email_S;
+            label1.BackColor = Color.FromArgb(230, 126, 34);
+            txtEmail.ForeColor = Color.FromArgb(230, 126, 34);
+        }
+
+        private void rdoT_Click(object sender, EventArgs e)
+        {
+            pictureBox2.Image = Properties.Resources.email_P;
+            label1.BackColor = Color.White;
+            txtEmail.ForeColor = Color.White;
+        }
+        //input textbox UI END
+
+
+        //Send Email Control START
+        private void btnSendemail_Click(object sender, EventArgs e)
+        {
+            String userEmail = txtEmail.Text;
             String email = "tim.ck.project.email@gmail.com";
+            var mailMessage = new MailMessage { };
             var smtpClinet = new SmtpClient("smtp.gmail.com")
             {
                 Port = 587,
-                Credentials = new NetworkCredential("tim.ck.project.email@gmail.com", "Abc123698745"),
+                Credentials = new NetworkCredential(email, "Abc123698745"),
                 EnableSsl = true,
             };
 
-            var mailMessage = new MailMessage
+            //UI
+            pictureBox2.Image = Properties.Resources.email_P;
+            label1.BackColor = Color.White;
+            txtEmail.ForeColor = Color.White;
+            
+
+            //send email
+            if (userEmail == "")
             {
-                From = new MailAddress(email),
-                Subject = "testing",
-                Body = "<h1>Your pwd is...</h1>",
-                IsBodyHtml = true,
-            };
-            mailMessage.To.Add("tim.ckchow@gmail.com");
+                txtErrMsg.Text = "Enter your Email";
+                return;
+            }
+            if (rdoC.Checked)
+            {
+                if (opener.CustomerEmailVerify(userEmail))
+                {
+                    mailMessage = new MailMessage
+                    {
+                        From = new MailAddress(email),
+                        Subject = "Customer testing",
+                        Body = "<h1>The Hong Kong Cube Shop</h1>" +
+                    "<h2>Password Recovery</h2>" +
+                    "<p>Below is your account username and password:</p>" +
+                    " <p >Username :...</p>" +
+                    "<p >Passowrd :...</p>",
+                        IsBodyHtml = true,
+                    };
+                }
+                else
+                {
+                    txtErrMsg.Text = "Incorrect Email";
+                    return;
+                }
+                 
+            }else if(rdoT.Checked){
+                if (opener.TenantEmailVerify(userEmail))
+                {
+                    mailMessage = new MailMessage
+                    {
+                        From = new MailAddress(email),
+                        Subject = "Tenant testing",
+                        Body = "<h1>The Hong Kong Cube Shop</h1>" +
+                    "<h2>Password Recovery</h2>" +
+                    "<p>Below is your account username and password:</p>" +
+                    " <p >Username :...</p>" +
+                    "<p >Passowrd :...</p>",
+                        IsBodyHtml = true,
+                    };
+                }
+                else
+                {
+                    txtErrMsg.Text = "Incorrect Email";
+                    return;
+                }
+            }
+            else if (rdoS.Checked)
+            {
+                if (opener.StaffEmailVerify(userEmail))
+                {
+                    mailMessage = new MailMessage
+                    {
+                        From = new MailAddress(email),
+                        Subject = "Customer testing",
+                        Body = "<h1>The Hong Kong Cube Shop</h1>" +
+                    "<h2>Password Recovery</h2>" +
+                    "<p>Below is your account username and password:</p>" +
+                    " <p >Username :...</p>" +
+                    "<p >Passowrd :...</p>",
+                        IsBodyHtml = true,
+                    };
+                }
+                else
+                {
+                    txtErrMsg.Text = "Incorrect Email";
+                    return;
+                }
+            }
+            else
+            {
+                txtErrMsg.Text = "Choose your account type";
+                return;
+            }
+
+            mailMessage.To.Add(userEmail);
             smtpClinet.Send(mailMessage);
+            txtErrMsg.Text = "Email was sent successfully. Didn't recieve?";
+            btnSendemail.Text = "Send Again";
+
         }
+
+        private void btnForgotPassword_Click(object sender, EventArgs e)
+        {
+            opener.Show();
+            this.Close();
+        }
+        //Send Email Control END
+
+
+
     }
 }

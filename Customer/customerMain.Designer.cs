@@ -220,7 +220,6 @@
             this.btnTenantPage.TabIndex = 3;
             this.btnTenantPage.Text = "Go To Tenant Page";
             this.btnTenantPage.UseVisualStyleBackColor = true;
-            this.btnTenantPage.Click += new System.EventHandler(this.btnTenantPage_Click);
             // 
             // lblCloseButton
             // 

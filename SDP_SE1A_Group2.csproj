@@ -105,6 +105,9 @@
     <EmbeddedResource Include="Customer\BrowseItems.resx">
       <DependentUpon>BrowseItems.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customer\cartPage.resx">
+      <DependentUpon>CartPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer\customerMain.resx">
       <DependentUpon>customerMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,6 +190,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cart-hvItem-S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email-P.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email-S.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

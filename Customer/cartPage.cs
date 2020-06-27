@@ -22,14 +22,17 @@ namespace SDP_SE1A_Group2.Customer
         {
             InitializeComponent();
             this.opener = opener;
-            
+            dataGridView1.Columns.Add("itemID", "ID");
+            dataGridView1.Columns.Add("qty", "Quantity");
         }
         public void AddItem(String itemID,String qty) {
             if (items.Count == 0)
                opener.UpdateCartHvItem(true);
-            String item=itemID
+            String[] item = { itemID, qty };
             items.Push(item);
             opener.UpdateCartHvItem(true);
+            dataGridView1.Rows.Add(item[0], item[1]);
+
         }
 
        

@@ -113,6 +113,26 @@ namespace SDP_SE1A_Group2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap email_P {
+            get {
+                object obj = ResourceManager.GetObject("email-P", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap email_S {
+            get {
+                object obj = ResourceManager.GetObject("email-S", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconmonstr_lock_3_240 {
             get {
                 object obj = ResourceManager.GetObject("iconmonstr-lock-3-240", resourceCulture);

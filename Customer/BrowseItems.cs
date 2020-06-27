@@ -41,7 +41,7 @@ namespace SDP_SE1A_Group2.Customer
 
         private void button1_Click(object sender, EventArgs e)
         {
-            opener.addItem("abc");
+            opener.addItem("abc","2");
         }
     }
 }
