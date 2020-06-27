@@ -43,9 +43,11 @@ namespace SDP_SE1A_Group2.Customer
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Are you sure to clear the cart?", "", MessageBoxButtons.OKCancel);
-            if (confirmResult == DialogResult.OK)
-                ClearCart();
+            if (opener.CartHvItem()) {
+                var confirmResult = MessageBox.Show("Are you sure to clear the cart?", "", MessageBoxButtons.OKCancel);
+                if (confirmResult == DialogResult.OK)
+                    ClearCart();
+            }
             else
                 return;
             

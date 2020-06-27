@@ -35,31 +35,26 @@ namespace SDP_SE1A_Group2.Customer
 
         }
 
-        private void btnShowShopItem_Click(object sender, EventArgs e)
+        private void cmbStore_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
             if (opener.CartHvItem())
             {
                 var confirmResult = MessageBox.Show("If you switch location now, your cart will be clear.", "", MessageBoxButtons.OKCancel);
-                if(confirmResult == DialogResult.OK)
+                if (confirmResult == DialogResult.OK)
                 {
                     opener.ClearCart();
-                    dataGridView1.Rows.Clear();
-                    addRows(opener.GetStoreName(cmbStore.SelectedIndex));
+                    
                 }
                 else
                 {
                     return;
                 }
             }
-            else
-            {
-                dataGridView1.Rows.Clear();
-                addRows(opener.GetStoreName(cmbStore.SelectedIndex));
-
-
-            }
-
+        }
+        private void btnShowShopItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            addRows(opener.GetStoreName(cmbStore.SelectedIndex));
         }
 
 
@@ -114,10 +109,6 @@ namespace SDP_SE1A_Group2.Customer
                 opener.addItem("abc123", "3");
         }
 
-
-
-        
-
-        
+       
     }
 }

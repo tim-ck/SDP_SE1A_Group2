@@ -95,7 +95,7 @@ namespace SDP_SE1A_Group2.Customer
         public void UpdateIcon() {
             if (hvItem)
             {
-                if (btnCart.Image == cart_S)
+                if (btnCart.Image == cart_S|| btnCart.Image == cart_hvItem_S)
                     btnCart.Image = cart_hvItem_S;
                 else
                     btnCart.Image = cart_hvItem_P;
@@ -103,10 +103,10 @@ namespace SDP_SE1A_Group2.Customer
             }
             else
             {
-                if(btnCart.Image == cart_hvItem_P)
-                    btnCart.Image = cart_P;
+                if(btnCart.Image == cart_hvItem_S|| btnCart.Image == cart_S)
+                    btnCart.Image = cart_S;
                 else
-                    btnCart.Image =cart_S;
+                    btnCart.Image =cart_P;
             }
                 
         }
