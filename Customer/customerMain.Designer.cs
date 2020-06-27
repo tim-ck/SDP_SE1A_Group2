@@ -110,7 +110,7 @@
             this.btnCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCart.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
-            this.btnCart.Image = global::SDP_SE1A_Group2.Properties.Resources.cart_hvItem_P;
+            this.btnCart.Image = global::SDP_SE1A_Group2.Properties.Resources.cart_P;
             this.btnCart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCart.Location = new System.Drawing.Point(0, 300);
             this.btnCart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
