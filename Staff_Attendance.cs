@@ -19,22 +19,23 @@ namespace SDP_SE1A_Group2
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-
-            /* (connect database part)
-            string constring = "database=[db name];port=[...];username=[...]";
-            string sql = "INSERT INTO [db table name] VALUES []";
-            SqlConnection conDataBase = new MySqlConnection(conString);
-            SqlCommand cmdDataBase = new MySqlCommand(Query,conDataBase);
-            MySqlDataReader myReader;
-            try{
-                conDataBase.Open();
-                myReader = cmdDataBase.ExecuteReader('"+this.txtStaffID.Text+"','"+this.txtWorkHour.Text"');
-                    MessageBox.Show("Uploaded");
-                while(myReader.Read()){
+            String id = txtStaffID.Text;
+            int hour = int.Parse(txtWorkHour.Text);
+            /*
+            using (var classicContext = new classicmodelsEntities())
+            {
                 
-                }
-            }catch(Exception e){
+                var insertAttendance = "INSERT into tbl_staff (staffID,workHour) VALUES (id,hour)";
 
+                using (SqlCommand querySaveStaff = new SqlCommand(insertAttendance))
+                {
+                    querySaveStaff.Connection = openCon;
+                    querySaveStaff.Parameters.Add("@staffName", SqlDbType.VarChar, 30).Value = name;
+                    .....
+                    openCon.Open();
+
+                    querySaveStaff.ExecuteNonQuery();
+                }
             }
             */
         }
