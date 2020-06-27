@@ -70,7 +70,7 @@
             this.btnMyShowcase.FlatAppearance.BorderSize = 0;
             this.btnMyShowcase.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.btnMyShowcase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMyShowcase.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnMyShowcase.Font = new System.Drawing.Font("新細明體", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnMyShowcase.ForeColor = System.Drawing.Color.LightGray;
             this.btnMyShowcase.Location = new System.Drawing.Point(0, 40);
             this.btnMyShowcase.Name = "btnMyShowcase";
@@ -89,7 +89,7 @@
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button6.Font = new System.Drawing.Font("新細明體", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button6.ForeColor = System.Drawing.Color.LightGray;
             this.button6.Location = new System.Drawing.Point(0, 0);
             this.button6.Name = "button6";
@@ -105,7 +105,7 @@
             this.btnRentShowcase.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRentShowcase.FlatAppearance.BorderSize = 0;
             this.btnRentShowcase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRentShowcase.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnRentShowcase.Font = new System.Drawing.Font("新細明體", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnRentShowcase.ForeColor = System.Drawing.Color.LightGray;
             this.btnRentShowcase.Location = new System.Drawing.Point(0, 0);
             this.btnRentShowcase.Name = "btnRentShowcase";
@@ -162,7 +162,7 @@
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button9.Font = new System.Drawing.Font("新細明體", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button9.ForeColor = System.Drawing.Color.LightGray;
             this.button9.Location = new System.Drawing.Point(0, 40);
             this.button9.Name = "button9";
@@ -180,7 +180,7 @@
             this.button10.FlatAppearance.BorderSize = 0;
             this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button10.Font = new System.Drawing.Font("新細明體", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.button10.ForeColor = System.Drawing.Color.LightGray;
             this.button10.Location = new System.Drawing.Point(0, 0);
             this.button10.Name = "button10";
@@ -198,7 +198,7 @@
             this.btnRecord.FlatAppearance.BorderSize = 0;
             this.btnRecord.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.btnRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecord.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnRecord.Font = new System.Drawing.Font("新細明體", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnRecord.ForeColor = System.Drawing.Color.LightGray;
             this.btnRecord.Location = new System.Drawing.Point(0, 360);
             this.btnRecord.Name = "btnRecord";
@@ -228,7 +228,7 @@
             this.btnStockInItem.FlatAppearance.BorderSize = 0;
             this.btnStockInItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.btnStockInItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStockInItem.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnStockInItem.Font = new System.Drawing.Font("新細明體", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnStockInItem.ForeColor = System.Drawing.Color.LightGray;
             this.btnStockInItem.Location = new System.Drawing.Point(0, 40);
             this.btnStockInItem.Name = "btnStockInItem";
@@ -246,7 +246,7 @@
             this.btnMySalesItem.FlatAppearance.BorderSize = 0;
             this.btnMySalesItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.btnMySalesItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMySalesItem.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnMySalesItem.Font = new System.Drawing.Font("新細明體", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnMySalesItem.ForeColor = System.Drawing.Color.LightGray;
             this.btnMySalesItem.Location = new System.Drawing.Point(0, 0);
             this.btnMySalesItem.Name = "btnMySalesItem";
@@ -264,7 +264,7 @@
             this.btnSalesItem.FlatAppearance.BorderSize = 0;
             this.btnSalesItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.btnSalesItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalesItem.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnSalesItem.Font = new System.Drawing.Font("新細明體", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnSalesItem.ForeColor = System.Drawing.Color.LightGray;
             this.btnSalesItem.Location = new System.Drawing.Point(0, 230);
             this.btnSalesItem.Name = "btnSalesItem";
@@ -295,7 +295,7 @@
             this.btnShowcase.FlatAppearance.BorderSize = 0;
             this.btnShowcase.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.btnShowcase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowcase.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnShowcase.Font = new System.Drawing.Font("新細明體", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnShowcase.ForeColor = System.Drawing.Color.White;
             this.btnShowcase.Location = new System.Drawing.Point(0, 100);
             this.btnShowcase.Name = "btnShowcase";
@@ -362,12 +362,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("PMingLiU", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Font = new System.Drawing.Font("新細明體", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.ForeColor = System.Drawing.Color.LightGray;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
-            this.label1.Size = new System.Drawing.Size(271, 69);
+            this.label1.Size = new System.Drawing.Size(220, 57);
             this.label1.TabIndex = 1;
             this.label1.Text = "Welcome ";
             // 
@@ -386,12 +386,12 @@
             // 
             // TenantMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1384, 811);
             this.Controls.Add(this.panelConent);
             this.Controls.Add(this.panelSideMenu);
-            this.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Font = new System.Drawing.Font("新細明體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Name = "TenantMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tenant";
