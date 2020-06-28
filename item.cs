@@ -17,10 +17,12 @@ namespace SDP_SE1A_Group2
         public item()
         {
             this.itemimage = new HashSet<itemimage>();
+            this.showcaseitem = new HashSet<showcaseitem>();
+            this.suborder = new HashSet<suborder>();
         }
     
-        public int itemID { get; set; }
-        public int tenantID { get; set; }
+        public string itemID { get; set; }
+        public string tenantID { get; set; }
         public string itemName { get; set; }
         public string itemDesc { get; set; }
         public int itemQty { get; set; }
@@ -29,5 +31,7 @@ namespace SDP_SE1A_Group2
     
         public virtual tenant tenant { get; set; }
         public virtual ICollection<itemimage> itemimage { get; set; }
+        public virtual ICollection<showcaseitem> showcaseitem { get; set; }
+        public virtual ICollection<suborder> suborder { get; set; }
     }
 }

@@ -13,18 +13,19 @@ namespace SDP_SE1A_Group2
     public partial class TenantMain : Form
     {
         public static String tenantID;
-        public String getTenantID()
+        public static String tenantName;
+        public void getTenantInfo()
         {
-            using (var classicContext = new spdEntities())
+            using (var db = new spdEntities())
             {
-                var tID = (from list in classicContext.tenant
-                           where list.email.Contains(Form1.useremail)
-                           select list);
-                foreach (var row in tID.ToList())
+                var e = from list in db.tenant
+                        where list.email.Equals(Form1.useremail)
+                        select new { list.tenantID, list.tenantName};
+                foreach (var row in e.ToList())
                 {
-                    tenantID = row.tenantID.ToString(); ;
+                    tenantID = row.tenantID;
+                    tenantName = row.tenantName;
                 }
-                return tenantID;
             }
         }
 
@@ -35,7 +36,11 @@ namespace SDP_SE1A_Group2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            lblWelcome.Text = getTenantID();
+            getTenantInfo();
+            lblWelcome.Text = "Welcome " + tenantName;
+
+            
+
         }
         #region Hide/ShowSubMenu
         private void hideSubMenu()

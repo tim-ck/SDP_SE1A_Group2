@@ -14,9 +14,18 @@ namespace SDP_SE1A_Group2
     
     public partial class showcase
     {
+        public showcase()
+        {
+            this.rentinfo = new HashSet<rentinfo>();
+            this.reservation = new HashSet<reservation>();
+        }
+    
         public string showcaseid { get; set; }
         public int size { get; set; }
         public float rental { get; set; }
         public string status { get; set; }
+    
+        public virtual ICollection<rentinfo> rentinfo { get; set; }
+        public virtual ICollection<reservation> reservation { get; set; }
     }
 }

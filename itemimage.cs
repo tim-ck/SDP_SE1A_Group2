@@ -14,10 +14,10 @@ namespace SDP_SE1A_Group2
     
     public partial class itemimage
     {
-        public int itemImageID { get; set; }
+        public string itemImageID { get; set; }
         public string filename { get; set; }
         public byte[] picture { get; set; }
-        public int itemID { get; set; }
+        public string itemID { get; set; }
     
         public virtual item item { get; set; }
     }

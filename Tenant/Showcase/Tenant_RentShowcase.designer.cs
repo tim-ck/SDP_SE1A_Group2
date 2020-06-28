@@ -231,6 +231,7 @@
             this.showcaseId.HeaderText = "Showcase ID";
             this.showcaseId.MinimumWidth = 6;
             this.showcaseId.Name = "showcaseId";
+            this.showcaseId.ReadOnly = true;
             this.showcaseId.Width = 125;
             // 
             // size

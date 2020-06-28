@@ -20,7 +20,7 @@ namespace SDP_SE1A_Group2
             this.rentinfo = new HashSet<rentinfo>();
         }
     
-        public int tenantID { get; set; }
+        public string tenantID { get; set; }
         public string tenantName { get; set; }
         public string email { get; set; }
     

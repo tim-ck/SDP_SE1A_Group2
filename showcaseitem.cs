@@ -12,17 +12,12 @@ namespace SDP_SE1A_Group2
     using System;
     using System.Collections.Generic;
     
-    public partial class order
+    public partial class showcaseitem
     {
-        public order()
-        {
-            this.suborder = new HashSet<suborder>();
-        }
+        public string showcaseItemid { get; set; }
+        public string itemid { get; set; }
+        public int qty { get; set; }
     
-        public string orderID { get; set; }
-        public string customerID { get; set; }
-        public System.DateTime orderDate { get; set; }
-    
-        public virtual ICollection<suborder> suborder { get; set; }
+        public virtual item item { get; set; }
     }
 }

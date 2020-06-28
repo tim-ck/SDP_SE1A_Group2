@@ -25,7 +25,15 @@ namespace SDP_SE1A_Group2 {
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             //rent or reserve
-            RentShowcase rentShowcase = new RentShowcase();
+            string showcaseID = "";
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                showcaseID = row.Cells[0].Value.ToString();
+            }
+
+
+            RentShowcase rentShowcase = new RentShowcase(showcaseID);
+
             rentShowcase.Show();
         }
 
@@ -59,5 +67,7 @@ namespace SDP_SE1A_Group2 {
 
 
         }
+
+
     }
 }

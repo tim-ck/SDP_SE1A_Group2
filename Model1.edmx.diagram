@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="931a9731b798417297da6fa623e734d8" Name="Diagram1">
+        <EntityTypeShape EntityType="spdModel.customer" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="spdModel.item" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="spdModel.itemimage" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="spdModel.order" Width="1.5" PointX="6" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="spdModel.rentinfo" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="spdModel.reservation" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="spdModel.showcase" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="spdModel.showcaseitem" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="spdModel.suborder" Width="1.5" PointX="8.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="spdModel.tenant" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <AssociationConnector Association="spdModel.item_tenantid_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="spdModel.itemimage_itemid_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="spdModel.showcaseitem_itemid_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="spdModel.suborder_itemid_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="spdModel.suborder_orderid_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="spdModel.rentinfo_showcaseid_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="spdModel.rentinfo_tenantid_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="spdModel.reservation_rentid_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="spdModel.reservation_showcaseid_fk" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

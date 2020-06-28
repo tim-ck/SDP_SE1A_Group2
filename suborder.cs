@@ -14,11 +14,12 @@ namespace SDP_SE1A_Group2
     
     public partial class suborder
     {
-        public int orderID { get; set; }
-        public int suborderID { get; set; }
-        public int itemID { get; set; }
+        public string orderID { get; set; }
+        public string suborderID { get; set; }
+        public string itemID { get; set; }
         public string qty { get; set; }
     
+        public virtual item item { get; set; }
         public virtual order order { get; set; }
     }
 }

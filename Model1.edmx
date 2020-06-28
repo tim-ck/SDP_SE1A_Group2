@@ -4,13 +4,20 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="spdModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="spdModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="customerID" />
+          </Key>
+          <Property Name="customerID" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="customername" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
         <EntityType Name="item">
           <Key>
             <PropertyRef Name="itemID" />
           </Key>
-          <Property Name="itemID" Type="int" Nullable="false" />
-          <Property Name="tenantID" Type="int" Nullable="false" />
+          <Property Name="itemID" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="tenantID" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="itemName" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="itemDesc" Type="varchar" MaxLength="45" />
           <Property Name="itemQty" Type="int" Nullable="false" />
@@ -21,28 +28,36 @@
           <Key>
             <PropertyRef Name="itemImageID" />
           </Key>
-          <Property Name="itemImageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="itemImageID" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="filename" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="picture" Type="blob" Nullable="false" />
-          <Property Name="itemID" Type="int" Nullable="false" />
+          <Property Name="itemID" Type="varchar" MaxLength="15" Nullable="false" />
         </EntityType>
         <EntityType Name="order">
           <Key>
             <PropertyRef Name="orderID" />
           </Key>
-          <Property Name="orderID" Type="int" Nullable="false" />
-          <Property Name="customerID" Type="int" Nullable="false" />
+          <Property Name="orderID" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="customerID" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="orderDate" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="rentinfo">
           <Key>
             <PropertyRef Name="rentID" />
           </Key>
-          <Property Name="rentID" Type="int" Nullable="false" />
-          <Property Name="tenantID" Type="int" Nullable="false" />
+          <Property Name="rentID" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="tenantID" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="startDate" Type="date" Nullable="false" />
           <Property Name="duration" Type="int" Nullable="false" />
           <Property Name="showcaseid" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="reservation">
+          <Key>
+            <PropertyRef Name="reservationid" />
+          </Key>
+          <Property Name="reservationid" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="showcaseid" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="rentid" Type="varchar" MaxLength="15" Nullable="false" />
         </EntityType>
         <EntityType Name="showcase">
           <Key>
@@ -53,21 +68,29 @@
           <Property Name="rental" Type="float" Nullable="false" />
           <Property Name="status" Type="varchar" MaxLength="15" Nullable="false" />
         </EntityType>
+        <EntityType Name="showcaseitem">
+          <Key>
+            <PropertyRef Name="showcaseItemid" />
+          </Key>
+          <Property Name="showcaseItemid" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="itemid" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="qty" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="suborder">
           <Key>
             <PropertyRef Name="orderID" />
             <PropertyRef Name="suborderID" />
           </Key>
-          <Property Name="orderID" Type="int" Nullable="false" />
-          <Property Name="suborderID" Type="int" Nullable="false" />
-          <Property Name="itemID" Type="int" Nullable="false" />
+          <Property Name="orderID" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="suborderID" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="itemID" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="qty" Type="varchar" MaxLength="45" Nullable="false" />
         </EntityType>
         <EntityType Name="tenant">
           <Key>
             <PropertyRef Name="tenantID" />
           </Key>
-          <Property Name="tenantID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tenantID" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="tenantName" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="45" Nullable="false" />
         </EntityType>
@@ -95,6 +118,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="rentinfo_showcaseid_fk">
+          <End Role="showcase" Type="Self.showcase" Multiplicity="1" />
+          <End Role="rentinfo" Type="Self.rentinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="showcase">
+              <PropertyRef Name="showcaseid" />
+            </Principal>
+            <Dependent Role="rentinfo">
+              <PropertyRef Name="showcaseid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="rentinfo_tenantid_fk">
           <End Role="tenant" Type="Self.tenant" Multiplicity="1" />
           <End Role="rentinfo" Type="Self.rentinfo" Multiplicity="*" />
@@ -104,6 +139,54 @@
             </Principal>
             <Dependent Role="rentinfo">
               <PropertyRef Name="tenantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="reservation_rentid_fk">
+          <End Role="rentinfo" Type="Self.rentinfo" Multiplicity="1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rentinfo">
+              <PropertyRef Name="rentID" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="rentid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="reservation_showcaseid_fk">
+          <End Role="showcase" Type="Self.showcase" Multiplicity="1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="showcase">
+              <PropertyRef Name="showcaseid" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="showcaseid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="showcaseitem_itemid_fk">
+          <End Role="item" Type="Self.item" Multiplicity="1" />
+          <End Role="showcaseitem" Type="Self.showcaseitem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="item">
+              <PropertyRef Name="itemID" />
+            </Principal>
+            <Dependent Role="showcaseitem">
+              <PropertyRef Name="itemid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="suborder_itemid_fk">
+          <End Role="item" Type="Self.item" Multiplicity="1" />
+          <End Role="suborder" Type="Self.suborder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="item">
+              <PropertyRef Name="itemID" />
+            </Principal>
+            <Dependent Role="suborder">
+              <PropertyRef Name="itemID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -120,11 +203,14 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="spdModelStoreContainer">
+          <EntitySet Name="customer" EntityType="Self.customer" Schema="spd" store:Type="Tables" />
           <EntitySet Name="item" EntityType="Self.item" Schema="spd" store:Type="Tables" />
           <EntitySet Name="itemimage" EntityType="Self.itemimage" Schema="spd" store:Type="Tables" />
           <EntitySet Name="order" EntityType="Self.order" Schema="spd" store:Type="Tables" />
           <EntitySet Name="rentinfo" EntityType="Self.rentinfo" Schema="spd" store:Type="Tables" />
+          <EntitySet Name="reservation" EntityType="Self.reservation" Schema="spd" store:Type="Tables" />
           <EntitySet Name="showcase" EntityType="Self.showcase" Schema="spd" store:Type="Tables" />
+          <EntitySet Name="showcaseitem" EntityType="Self.showcaseitem" Schema="spd" store:Type="Tables" />
           <EntitySet Name="suborder" EntityType="Self.suborder" Schema="spd" store:Type="Tables" />
           <EntitySet Name="tenant" EntityType="Self.tenant" Schema="spd" store:Type="Tables" />
           <AssociationSet Name="item_tenantid_fk" Association="Self.item_tenantid_fk">
@@ -135,25 +221,53 @@
             <End Role="item" EntitySet="item" />
             <End Role="itemimage" EntitySet="itemimage" />
           </AssociationSet>
+          <AssociationSet Name="rentinfo_showcaseid_fk" Association="Self.rentinfo_showcaseid_fk">
+            <End Role="showcase" EntitySet="showcase" />
+            <End Role="rentinfo" EntitySet="rentinfo" />
+          </AssociationSet>
           <AssociationSet Name="rentinfo_tenantid_fk" Association="Self.rentinfo_tenantid_fk">
             <End Role="tenant" EntitySet="tenant" />
             <End Role="rentinfo" EntitySet="rentinfo" />
+          </AssociationSet>
+          <AssociationSet Name="reservation_rentid_fk" Association="Self.reservation_rentid_fk">
+            <End Role="rentinfo" EntitySet="rentinfo" />
+            <End Role="reservation" EntitySet="reservation" />
+          </AssociationSet>
+          <AssociationSet Name="reservation_showcaseid_fk" Association="Self.reservation_showcaseid_fk">
+            <End Role="showcase" EntitySet="showcase" />
+            <End Role="reservation" EntitySet="reservation" />
+          </AssociationSet>
+          <AssociationSet Name="showcaseitem_itemid_fk" Association="Self.showcaseitem_itemid_fk">
+            <End Role="item" EntitySet="item" />
+            <End Role="showcaseitem" EntitySet="showcaseitem" />
+          </AssociationSet>
+          <AssociationSet Name="suborder_itemid_fk" Association="Self.suborder_itemid_fk">
+            <End Role="item" EntitySet="item" />
+            <End Role="suborder" EntitySet="suborder" />
           </AssociationSet>
           <AssociationSet Name="suborder_orderid_fk" Association="Self.suborder_orderid_fk">
             <End Role="order" EntitySet="order" />
             <End Role="suborder" EntitySet="suborder" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="spdModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="customerID" />
+          </Key>
+          <Property Name="customerID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="customername" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
         <EntityType Name="item">
           <Key>
             <PropertyRef Name="itemID" />
           </Key>
-          <Property Name="itemID" Type="Int32" Nullable="false" />
-          <Property Name="tenantID" Type="Int32" Nullable="false" />
+          <Property Name="itemID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tenantID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="itemName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="itemDesc" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="itemQty" Type="Int32" Nullable="false" />
@@ -161,23 +275,25 @@
           <Property Name="availability" Type="SByte" Nullable="false" />
           <NavigationProperty Name="tenant" Relationship="Self.item_tenantid_fk" FromRole="item" ToRole="tenant" />
           <NavigationProperty Name="itemimage" Relationship="Self.itemimage_itemid_fk" FromRole="item" ToRole="itemimage" />
+          <NavigationProperty Name="showcaseitem" Relationship="Self.showcaseitem_itemid_fk" FromRole="item" ToRole="showcaseitem" />
+          <NavigationProperty Name="suborder" Relationship="Self.suborder_itemid_fk" FromRole="item" ToRole="suborder" />
         </EntityType>
         <EntityType Name="itemimage">
           <Key>
             <PropertyRef Name="itemImageID" />
           </Key>
-          <Property Name="itemImageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="itemImageID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="filename" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="picture" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-          <Property Name="itemID" Type="Int32" Nullable="false" />
+          <Property Name="itemID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="item" Relationship="Self.itemimage_itemid_fk" FromRole="itemimage" ToRole="item" />
         </EntityType>
         <EntityType Name="order">
           <Key>
             <PropertyRef Name="orderID" />
           </Key>
-          <Property Name="orderID" Type="Int32" Nullable="false" />
-          <Property Name="customerID" Type="Int32" Nullable="false" />
+          <Property Name="orderID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="customerID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="orderDate" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="suborder" Relationship="Self.suborder_orderid_fk" FromRole="order" ToRole="suborder" />
         </EntityType>
@@ -185,12 +301,24 @@
           <Key>
             <PropertyRef Name="rentID" />
           </Key>
-          <Property Name="rentID" Type="Int32" Nullable="false" />
-          <Property Name="tenantID" Type="Int32" Nullable="false" />
+          <Property Name="rentID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tenantID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="startDate" Type="DateTime" Nullable="false" />
           <Property Name="duration" Type="Int32" Nullable="false" />
           <Property Name="showcaseid" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="showcase" Relationship="Self.rentinfo_showcaseid_fk" FromRole="rentinfo" ToRole="showcase" />
           <NavigationProperty Name="tenant" Relationship="Self.rentinfo_tenantid_fk" FromRole="rentinfo" ToRole="tenant" />
+          <NavigationProperty Name="reservation" Relationship="Self.reservation_rentid_fk" FromRole="rentinfo" ToRole="reservation" />
+        </EntityType>
+        <EntityType Name="reservation">
+          <Key>
+            <PropertyRef Name="reservationid" />
+          </Key>
+          <Property Name="reservationid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="showcaseid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rentid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="rentinfo" Relationship="Self.reservation_rentid_fk" FromRole="reservation" ToRole="rentinfo" />
+          <NavigationProperty Name="showcase" Relationship="Self.reservation_showcaseid_fk" FromRole="reservation" ToRole="showcase" />
         </EntityType>
         <EntityType Name="showcase">
           <Key>
@@ -200,27 +328,39 @@
           <Property Name="size" Type="Int32" Nullable="false" />
           <Property Name="rental" Type="Single" Nullable="false" />
           <Property Name="status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="rentinfo" Relationship="Self.rentinfo_showcaseid_fk" FromRole="showcase" ToRole="rentinfo" />
+          <NavigationProperty Name="reservation" Relationship="Self.reservation_showcaseid_fk" FromRole="showcase" ToRole="reservation" />
+        </EntityType>
+        <EntityType Name="showcaseitem">
+          <Key>
+            <PropertyRef Name="showcaseItemid" />
+          </Key>
+          <Property Name="showcaseItemid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="itemid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="qty" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="item" Relationship="Self.showcaseitem_itemid_fk" FromRole="showcaseitem" ToRole="item" />
         </EntityType>
         <EntityType Name="suborder">
           <Key>
             <PropertyRef Name="orderID" />
             <PropertyRef Name="suborderID" />
           </Key>
-          <Property Name="orderID" Type="Int32" Nullable="false" />
-          <Property Name="suborderID" Type="Int32" Nullable="false" />
-          <Property Name="itemID" Type="Int32" Nullable="false" />
+          <Property Name="orderID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="suborderID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="itemID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="qty" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="item" Relationship="Self.suborder_itemid_fk" FromRole="suborder" ToRole="item" />
           <NavigationProperty Name="order" Relationship="Self.suborder_orderid_fk" FromRole="suborder" ToRole="order" />
         </EntityType>
         <EntityType Name="tenant">
           <Key>
             <PropertyRef Name="tenantID" />
           </Key>
-          <Property Name="tenantID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tenantID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="tenantName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="item" Relationship="Self.item_tenantid_fk" FromRole="tenant" ToRole="item" />
           <NavigationProperty Name="rentinfo" Relationship="Self.rentinfo_tenantid_fk" FromRole="tenant" ToRole="rentinfo" />
-          <Property Name="email" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="item_tenantid_fk">
           <End Role="tenant" Type="Self.tenant" Multiplicity="1" />
@@ -246,6 +386,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="showcaseitem_itemid_fk">
+          <End Role="item" Type="Self.item" Multiplicity="1" />
+          <End Role="showcaseitem" Type="Self.showcaseitem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="item">
+              <PropertyRef Name="itemID" />
+            </Principal>
+            <Dependent Role="showcaseitem">
+              <PropertyRef Name="itemid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="suborder_itemid_fk">
+          <End Role="item" Type="Self.item" Multiplicity="1" />
+          <End Role="suborder" Type="Self.suborder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="item">
+              <PropertyRef Name="itemID" />
+            </Principal>
+            <Dependent Role="suborder">
+              <PropertyRef Name="itemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="suborder_orderid_fk">
           <End Role="order" Type="Self.order" Multiplicity="1" />
           <End Role="suborder" Type="Self.suborder" Multiplicity="*" />
@@ -255,6 +419,18 @@
             </Principal>
             <Dependent Role="suborder">
               <PropertyRef Name="orderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="rentinfo_showcaseid_fk">
+          <End Role="showcase" Type="Self.showcase" Multiplicity="1" />
+          <End Role="rentinfo" Type="Self.rentinfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="showcase">
+              <PropertyRef Name="showcaseid" />
+            </Principal>
+            <Dependent Role="rentinfo">
+              <PropertyRef Name="showcaseid" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -270,12 +446,39 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="reservation_rentid_fk">
+          <End Role="rentinfo" Type="Self.rentinfo" Multiplicity="1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rentinfo">
+              <PropertyRef Name="rentID" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="rentid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="reservation_showcaseid_fk">
+          <End Role="showcase" Type="Self.showcase" Multiplicity="1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="showcase">
+              <PropertyRef Name="showcaseid" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="showcaseid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="spdEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="customer" EntityType="Self.customer" />
           <EntitySet Name="item" EntityType="Self.item" />
           <EntitySet Name="itemimage" EntityType="Self.itemimage" />
           <EntitySet Name="order" EntityType="Self.order" />
           <EntitySet Name="rentinfo" EntityType="Self.rentinfo" />
+          <EntitySet Name="reservation" EntityType="Self.reservation" />
           <EntitySet Name="showcase" EntityType="Self.showcase" />
+          <EntitySet Name="showcaseitem" EntityType="Self.showcaseitem" />
           <EntitySet Name="suborder" EntityType="Self.suborder" />
           <EntitySet Name="tenant" EntityType="Self.tenant" />
           <AssociationSet Name="item_tenantid_fk" Association="Self.item_tenantid_fk">
@@ -286,13 +489,33 @@
             <End Role="item" EntitySet="item" />
             <End Role="itemimage" EntitySet="itemimage" />
           </AssociationSet>
+          <AssociationSet Name="showcaseitem_itemid_fk" Association="Self.showcaseitem_itemid_fk">
+            <End Role="item" EntitySet="item" />
+            <End Role="showcaseitem" EntitySet="showcaseitem" />
+          </AssociationSet>
+          <AssociationSet Name="suborder_itemid_fk" Association="Self.suborder_itemid_fk">
+            <End Role="item" EntitySet="item" />
+            <End Role="suborder" EntitySet="suborder" />
+          </AssociationSet>
           <AssociationSet Name="suborder_orderid_fk" Association="Self.suborder_orderid_fk">
             <End Role="order" EntitySet="order" />
             <End Role="suborder" EntitySet="suborder" />
           </AssociationSet>
+          <AssociationSet Name="rentinfo_showcaseid_fk" Association="Self.rentinfo_showcaseid_fk">
+            <End Role="showcase" EntitySet="showcase" />
+            <End Role="rentinfo" EntitySet="rentinfo" />
+          </AssociationSet>
           <AssociationSet Name="rentinfo_tenantid_fk" Association="Self.rentinfo_tenantid_fk">
             <End Role="tenant" EntitySet="tenant" />
             <End Role="rentinfo" EntitySet="rentinfo" />
+          </AssociationSet>
+          <AssociationSet Name="reservation_rentid_fk" Association="Self.reservation_rentid_fk">
+            <End Role="rentinfo" EntitySet="rentinfo" />
+            <End Role="reservation" EntitySet="reservation" />
+          </AssociationSet>
+          <AssociationSet Name="reservation_showcaseid_fk" Association="Self.reservation_showcaseid_fk">
+            <End Role="showcase" EntitySet="showcase" />
+            <End Role="reservation" EntitySet="reservation" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -301,6 +524,14 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="spdModelStoreContainer" CdmEntityContainer="spdEntities">
+          <EntitySetMapping Name="customer">
+            <EntityTypeMapping TypeName="spdModel.customer">
+              <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="customerID" ColumnName="customerID" />
+                <ScalarProperty Name="customername" ColumnName="customername" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="item">
             <EntityTypeMapping TypeName="spdModel.item">
               <MappingFragment StoreEntitySet="item">
@@ -344,6 +575,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="reservation">
+            <EntityTypeMapping TypeName="spdModel.reservation">
+              <MappingFragment StoreEntitySet="reservation">
+                <ScalarProperty Name="reservationid" ColumnName="reservationid" />
+                <ScalarProperty Name="showcaseid" ColumnName="showcaseid" />
+                <ScalarProperty Name="rentid" ColumnName="rentid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="showcase">
             <EntityTypeMapping TypeName="spdModel.showcase">
               <MappingFragment StoreEntitySet="showcase">
@@ -351,6 +591,15 @@
                 <ScalarProperty Name="size" ColumnName="size" />
                 <ScalarProperty Name="rental" ColumnName="rental" />
                 <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="showcaseitem">
+            <EntityTypeMapping TypeName="spdModel.showcaseitem">
+              <MappingFragment StoreEntitySet="showcaseitem">
+                <ScalarProperty Name="showcaseItemid" ColumnName="showcaseItemid" />
+                <ScalarProperty Name="itemid" ColumnName="itemid" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -367,9 +616,9 @@
           <EntitySetMapping Name="tenant">
             <EntityTypeMapping TypeName="spdModel.tenant">
               <MappingFragment StoreEntitySet="tenant">
-                <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="tenantID" ColumnName="tenantID" />
                 <ScalarProperty Name="tenantName" ColumnName="tenantName" />
+                <ScalarProperty Name="email" ColumnName="email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

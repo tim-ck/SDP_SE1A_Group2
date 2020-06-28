@@ -12,17 +12,13 @@ namespace SDP_SE1A_Group2
     using System;
     using System.Collections.Generic;
     
-    public partial class order
+    public partial class reservation
     {
-        public order()
-        {
-            this.suborder = new HashSet<suborder>();
-        }
+        public string reservationid { get; set; }
+        public string showcaseid { get; set; }
+        public string rentid { get; set; }
     
-        public string orderID { get; set; }
-        public string customerID { get; set; }
-        public System.DateTime orderDate { get; set; }
-    
-        public virtual ICollection<suborder> suborder { get; set; }
+        public virtual rentinfo rentinfo { get; set; }
+        public virtual showcase showcase { get; set; }
     }
 }

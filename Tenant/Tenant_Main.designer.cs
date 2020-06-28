@@ -362,12 +362,12 @@
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblWelcome.Font = new System.Drawing.Font("PMingLiU", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblWelcome.Font = new System.Drawing.Font("PMingLiU", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblWelcome.ForeColor = System.Drawing.Color.LightGray;
             this.lblWelcome.Location = new System.Drawing.Point(0, 0);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
-            this.lblWelcome.Size = new System.Drawing.Size(80, 24);
+            this.lblWelcome.Size = new System.Drawing.Size(271, 69);
             this.lblWelcome.TabIndex = 1;
             this.lblWelcome.Text = "Welcome ";
             // 
