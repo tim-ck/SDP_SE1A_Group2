@@ -54,8 +54,8 @@ namespace SDP_SE1A_Group2.Account
             if (txtusername.Text == "Username")
                 txtusername.Clear(); ;
             pictureBox2.Image = Properties.Resources.user_blue;
-            label1.BackColor = Color.FromArgb(230, 126, 34);
-            txtusername.ForeColor = Color.FromArgb(230, 126, 34);
+            label1.BackColor = Color.FromArgb(110, 200, 255);
+            txtusername.ForeColor = Color.FromArgb(110, 200, 255);
         }
 
         private void rdoT_Click(object sender, EventArgs e)
