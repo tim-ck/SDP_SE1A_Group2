@@ -68,7 +68,7 @@
             this.btnWaitForStockIn.Name = "btnWaitForStockIn";
             this.btnWaitForStockIn.Size = new System.Drawing.Size(220, 75);
             this.btnWaitForStockIn.TabIndex = 1;
-            this.btnWaitForStockIn.Text = "To Be Imported";
+            this.btnWaitForStockIn.Text = "Pre-Import";
             this.btnWaitForStockIn.UseVisualStyleBackColor = false;
             this.btnWaitForStockIn.Click += new System.EventHandler(this.btnWaitForStockIn_Click);
             // 
@@ -89,6 +89,7 @@
             // panelChildForm
             // 
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.ForeColor = System.Drawing.Color.Coral;
             this.panelChildForm.Location = new System.Drawing.Point(0, 114);
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(1116, 549);

@@ -135,6 +135,12 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Causeway Bay",
+            "Kwai Fong",
+            "Monk Kok 1",
+            "Monk Kok 2 ",
+            "Shatin"});
             this.comboBox1.Location = new System.Drawing.Point(161, 32);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 23);
@@ -186,9 +192,11 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1095, 786);
             this.panel3.TabIndex = 17;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(24)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -202,8 +210,10 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1095, 383);
             this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // showcaseId
             // 
@@ -217,6 +227,7 @@
             this.size.HeaderText = "Size";
             this.size.MinimumWidth = 6;
             this.size.Name = "size";
+            this.size.ReadOnly = true;
             this.size.Width = 125;
             // 
             // pricePerDay
@@ -248,6 +259,7 @@
             this.ForeColor = System.Drawing.Color.LightGray;
             this.Name = "TenantRentShowcase";
             this.Text = "Form2RentShowcase";
+            this.Load += new System.EventHandler(this.TenantRentShowcase_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -267,14 +279,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn showcaseId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn size;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pricePerDay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn showcaseId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn size;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pricePerDay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
     }
 }

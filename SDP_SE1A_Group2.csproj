@@ -33,8 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,8 +59,50 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="item.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="itemimage.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="order.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rentinfo.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="showcase.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="suborder.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tenant.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tenant\Showcase\RentShowcase\RentShowcase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\Showcase\RentShowcase\RentShowcase.Designer.cs">
+      <DependentUpon>RentShowcase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tenant\Sales Record\Tenant_ConsolidatedStatement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,11 +127,11 @@
     <Compile Include="Tenant\Sales Item\Tenant_StockInItem.Designer.cs">
       <DependentUpon>Tenant_StockInItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tenant\Sales Item\My Sales Item\ImportItem.cs">
+    <Compile Include="Tenant\Sales Item\My Sales Item\PreImportItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tenant\Sales Item\My Sales Item\ImportItem.Designer.cs">
-      <DependentUpon>ImportItem.cs</DependentUpon>
+    <Compile Include="Tenant\Sales Item\My Sales Item\PreImportItem.Designer.cs">
+      <DependentUpon>PreImportItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Tenant\Tenant_Main.cs">
       <SubType>Form</SubType>
@@ -128,14 +177,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\Showcase\RentShowcase\RentShowcase.resx">
+      <DependentUpon>RentShowcase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tenant\Sales Item\My Sales Item\InShowcase.resx">
       <DependentUpon>InShowcase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tenant\Sales Item\Tenant_StockInItem.resx">
       <DependentUpon>Tenant_StockInItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tenant\Sales Item\My Sales Item\ImportItem.resx">
-      <DependentUpon>ImportItem.cs</DependentUpon>
+    <EmbeddedResource Include="Tenant\Sales Item\My Sales Item\PreImportItem.resx">
+      <DependentUpon>PreImportItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tenant\Sales Record\Tenant_ConsolidatedStatement.resx">
       <DependentUpon>Tenant_ConsolidatedStatement.cs</DependentUpon>
@@ -161,6 +213,14 @@
     <EmbeddedResource Include="Tenant\Sales Item\My Sales Item\Update Item\UpdateImportItem.resx">
       <DependentUpon>UpdateImportItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -193,6 +253,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

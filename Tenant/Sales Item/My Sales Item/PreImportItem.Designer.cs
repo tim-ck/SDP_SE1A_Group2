@@ -53,7 +53,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1099, 35);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Items To Be Imported";
+            this.label1.Text = "Pre-Import Items";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
