@@ -30,12 +30,13 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSalesRecord = new System.Windows.Forms.Button();
+            this.btnReserve = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.btnAttendance = new System.Windows.Forms.Button();
             this.btnPOS = new System.Windows.Forms.Button();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.btnAttendance = new System.Windows.Forms.Button();
-            this.btnExport = new System.Windows.Forms.Button();
-            this.btnReserve = new System.Windows.Forms.Button();
-            this.btnSalesRecord = new System.Windows.Forms.Button();
+            this.btnStatus = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +50,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnStatus);
             this.panel2.Controls.Add(this.btnSalesRecord);
             this.panel2.Controls.Add(this.btnReserve);
             this.panel2.Controls.Add(this.btnExport);
@@ -59,6 +61,46 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(250, 630);
             this.panel2.TabIndex = 1;
+            // 
+            // btnSalesRecord
+            // 
+            this.btnSalesRecord.Location = new System.Drawing.Point(0, 352);
+            this.btnSalesRecord.Name = "btnSalesRecord";
+            this.btnSalesRecord.Size = new System.Drawing.Size(250, 90);
+            this.btnSalesRecord.TabIndex = 6;
+            this.btnSalesRecord.Text = "Sales Record";
+            this.btnSalesRecord.UseVisualStyleBackColor = true;
+            this.btnSalesRecord.Click += new System.EventHandler(this.btnSalesRecord_Click);
+            // 
+            // btnReserve
+            // 
+            this.btnReserve.Location = new System.Drawing.Point(0, 265);
+            this.btnReserve.Name = "btnReserve";
+            this.btnReserve.Size = new System.Drawing.Size(250, 90);
+            this.btnReserve.TabIndex = 5;
+            this.btnReserve.Text = "Reserve";
+            this.btnReserve.UseVisualStyleBackColor = true;
+            this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
+            // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(0, 177);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(250, 90);
+            this.btnExport.TabIndex = 4;
+            this.btnExport.Text = "Export";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // btnAttendance
+            // 
+            this.btnAttendance.Location = new System.Drawing.Point(0, 89);
+            this.btnAttendance.Name = "btnAttendance";
+            this.btnAttendance.Size = new System.Drawing.Size(250, 90);
+            this.btnAttendance.TabIndex = 3;
+            this.btnAttendance.Text = "Attendance";
+            this.btnAttendance.UseVisualStyleBackColor = true;
+            this.btnAttendance.Click += new System.EventHandler(this.btnAttendance_Click);
             // 
             // btnPOS
             // 
@@ -78,45 +120,14 @@
             this.panelChildForm.Size = new System.Drawing.Size(1173, 630);
             this.panelChildForm.TabIndex = 2;
             // 
-            // btnAttendance
+            // btnStatus
             // 
-            this.btnAttendance.Location = new System.Drawing.Point(0, 89);
-            this.btnAttendance.Name = "btnAttendance";
-            this.btnAttendance.Size = new System.Drawing.Size(250, 90);
-            this.btnAttendance.TabIndex = 3;
-            this.btnAttendance.Text = "Attendance";
-            this.btnAttendance.UseVisualStyleBackColor = true;
-            this.btnAttendance.Click += new System.EventHandler(this.btnAttendance_Click);
-            // 
-            // btnExport
-            // 
-            this.btnExport.Location = new System.Drawing.Point(0, 177);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(250, 90);
-            this.btnExport.TabIndex = 4;
-            this.btnExport.Text = "Export";
-            this.btnExport.UseVisualStyleBackColor = true;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
-            // 
-            // btnReserve
-            // 
-            this.btnReserve.Location = new System.Drawing.Point(0, 265);
-            this.btnReserve.Name = "btnReserve";
-            this.btnReserve.Size = new System.Drawing.Size(250, 90);
-            this.btnReserve.TabIndex = 5;
-            this.btnReserve.Text = "Reserve";
-            this.btnReserve.UseVisualStyleBackColor = true;
-            this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
-            // 
-            // btnSalesRecord
-            // 
-            this.btnSalesRecord.Location = new System.Drawing.Point(0, 352);
-            this.btnSalesRecord.Name = "btnSalesRecord";
-            this.btnSalesRecord.Size = new System.Drawing.Size(250, 90);
-            this.btnSalesRecord.TabIndex = 6;
-            this.btnSalesRecord.Text = "Sales Record";
-            this.btnSalesRecord.UseVisualStyleBackColor = true;
-            this.btnSalesRecord.Click += new System.EventHandler(this.btnSalesRecord_Click);
+            this.btnStatus.Location = new System.Drawing.Point(0, 440);
+            this.btnStatus.Name = "btnStatus";
+            this.btnStatus.Size = new System.Drawing.Size(250, 90);
+            this.btnStatus.TabIndex = 7;
+            this.btnStatus.Text = "Show Case records and Status";
+            this.btnStatus.UseVisualStyleBackColor = true;
             // 
             // Staff
             // 
@@ -143,5 +154,6 @@
         private System.Windows.Forms.Button btnReserve;
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Button btnAttendance;
+        private System.Windows.Forms.Button btnStatus;
     }
 }

@@ -37,7 +37,7 @@ namespace SDP_SE1A_Group2
 
         private void Staff_Attendance_Load(object sender, EventArgs e)
         {
-            using (DBEntities1 print = new DBEntities1())
+            using (DBEntities print = new DBEntities())
             {
                 var atten = (from list in print.pt_workinghours
                              select list);    // select * from employees

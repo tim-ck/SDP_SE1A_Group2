@@ -38,7 +38,10 @@
             this.txtQT = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
+            this.btnPay = new System.Windows.Forms.Button();
             this.btnCount = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblShowCase
@@ -80,7 +83,7 @@
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(44, 309);
+            this.lblTotalPrice.Location = new System.Drawing.Point(44, 275);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(58, 12);
             this.lblTotalPrice.TabIndex = 4;
@@ -123,29 +126,50 @@
             // 
             // txtTotalPrice
             // 
-            this.txtTotalPrice.Location = new System.Drawing.Point(157, 306);
+            this.txtTotalPrice.Location = new System.Drawing.Point(157, 272);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.ReadOnly = true;
             this.txtTotalPrice.Size = new System.Drawing.Size(121, 22);
             this.txtTotalPrice.TabIndex = 9;
             this.txtTotalPrice.TextChanged += new System.EventHandler(this.txtTotalPrice_TextChanged);
             // 
+            // btnPay
+            // 
+            this.btnPay.Location = new System.Drawing.Point(46, 329);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(75, 21);
+            this.btnPay.TabIndex = 10;
+            this.btnPay.Text = "Pay";
+            this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnCount
             // 
-            this.btnCount.Location = new System.Drawing.Point(313, 213);
+            this.btnCount.Location = new System.Drawing.Point(303, 275);
             this.btnCount.Name = "btnCount";
             this.btnCount.Size = new System.Drawing.Size(75, 21);
-            this.btnCount.TabIndex = 10;
+            this.btnCount.TabIndex = 11;
             this.btnCount.Text = "Count";
             this.btnCount.UseVisualStyleBackColor = true;
-            this.btnCount.Click += new System.EventHandler(this.button1_Click);
+            this.btnCount.Click += new System.EventHandler(this.btnCount_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(313, 33);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 12;
             // 
             // Staff_POS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 457);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnCount);
+            this.Controls.Add(this.btnPay);
             this.Controls.Add(this.txtTotalPrice);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtQT);
@@ -158,6 +182,7 @@
             this.Controls.Add(this.lblShowCase);
             this.Name = "Staff_POS";
             this.Text = " ";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,6 +200,8 @@
         private System.Windows.Forms.TextBox txtQT;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtTotalPrice;
+        private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.Button btnCount;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

@@ -141,6 +141,9 @@
     <EmbeddedResource Include="Staff_POS.resx">
       <DependentUpon>Staff_POS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Staff_Reserve.resx">
+      <DependentUpon>Staff_Reserve.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Staff_SalesRecord.resx">
       <DependentUpon>Staff_SalesRecord.cs</DependentUpon>
     </EmbeddedResource>
