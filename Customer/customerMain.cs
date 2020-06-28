@@ -25,6 +25,7 @@ namespace SDP_SE1A_Group2.Customer
         CartPage cartPage;
         BrowseItems browseItemForm;
         Order orderForm;
+        Staff.ShowcaseManagement peter ;
         Bitmap cart_P = Properties.Resources.cart_P;
         Bitmap cart_S = Properties.Resources.cart_S;
         Bitmap cart_hvItem_P = Properties.Resources.cart_hvItem_P;
@@ -36,20 +37,21 @@ namespace SDP_SE1A_Group2.Customer
             opener = parentForm;
             this.userId = userId;
 
-            /* using (var notSoImportantVariable = new classicmodelsEntities())
+            using (var db = new classicmodelsEntities())
              {
-                var userAcct = from list in notSoImportantVariable.Customer
-                                where list.CustomerID.Equals(userId)
+                var userAcct = from list in db.customers
+                                where list.customerUsername.Equals(userId)
                                 select list;
                 foreach (var user in userAcct.ToList())
                  {
-                     cusEmail = user.email;
-                 }
+                        cusEmail = user.email;
+                        cusName= user.email;
+                }
 
               
 
-             }*/
-            cusName = userId;// real code in comment above!
+             }
+            
             lblTitle.Text= "Welcome Customer " + cusName ;
 
             //define Form varible
@@ -57,6 +59,9 @@ namespace SDP_SE1A_Group2.Customer
             browseItemForm = new BrowseItems(this, cusName);
             orderForm = new Order(this, cusName);
 
+            //PETER
+            peter = new Staff.ShowcaseManagement();
+            openChildForm(peter);
             //UI hide border
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -140,7 +145,7 @@ namespace SDP_SE1A_Group2.Customer
 //Email start
 public void sendEmail(String subject, String message)
         {
-            cusEmail = "cck001117@gmail.com"; //!!!!!!!!!!!!!!!!!!!!!!!!!!!test case
+             
             String sender = "tim.ck.project.email@gmail.com";
             var mailMessage = new MailMessage { };
             var smtpClinet = new SmtpClient("smtp.gmail.com")

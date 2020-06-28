@@ -62,7 +62,7 @@ namespace SDP_SE1A_Group2.Customer
         private void addRows(String storeName)
         {
            
-            dataGridView1.Rows.Add("123",storeName, "akc123",  "itemName", "idk",30,100);numOfItem = dataGridView1.Rows.Count;
+            /*dataGridView1.Rows.Add("123",storeName, "akc123",  "itemName", "idk",30,100);numOfItem = dataGridView1.Rows.Count;
             DataGridViewComboBoxCell cmb = 
                 (DataGridViewComboBoxCell)(dataGridView1.Rows[0].Cells["qty"]);
             String[] qty = new String[31];
@@ -71,11 +71,11 @@ namespace SDP_SE1A_Group2.Customer
                 qty[a] = a.ToString();
             }
             cmb.DataSource = qty;
-            dataGridView1.Rows[0].Cells["qty"].Value = "0";
-            /*using (var notSoImportantVariable = new classicmodelsEntities())
+            dataGridView1.Rows[0].Cells["qty"].Value = "0";*/
+            using (var db = new classicmodelsEntities())
             {
-                var item = from items in notSoImportantVariable.item
-                           from showcaseItem in notSoImportantVariable.showcase_item
+                var item = from items in db.item
+                           from showcaseItem in db.showcase_item
                            where showcaseItem.showcaseID.Contains(storeName) && items.itemID == showcaseItem.itemID
                            select new
                            {
@@ -90,24 +90,29 @@ namespace SDP_SE1A_Group2.Customer
                 foreach (var i in item.tolist())
                 {
                     dataGridView1.Rows.Add(i.showcaseItem.itemID,
+                                    storeName,
                                    i.showcaseItem.showCaseID,
-                                   i.showcaseItem.availableQuantity,
+                                   
                                    i.items.itemName,
                                    i.items.description,
+                                   i.showcaseItem.availableQuantity,
                                    i.items.UnitPrice);
                     DataGridViewComboBoxCell cmb = 
                         (DataGridViewComboBoxCell)(dataGridView1.Rows[count].Cells["qty"]);
                     String[] qty = new string[i.showcaseItem.availableQuantity] ;
-                    for(int a =0; a<i.showcaseItem.availableQuantity;a++){
-                        qty[a]=a;
+                    for(int a =0; a<=i.showcaseItem.availableQuantity;a++){
+                        qty[a] = a.ToString();
                     }
                     cmb.DataSource = qty;
+                    dataGridView1.Rows[count].Cells["qty"].Value = "0";
                     count++;
-                }numOfItem = dataGridView1.Rows.Count;
+                    
+                }
+                numOfItem = dataGridView1.Rows.Count;
 
 
-                //get item from SQl and Rows.add foreach
-            }*/
+                
+            }
         }
 
 
