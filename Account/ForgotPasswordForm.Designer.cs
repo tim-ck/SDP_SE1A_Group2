@@ -30,7 +30,7 @@
         {
             this.lblCloseButton = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtusername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.rdoC = new System.Windows.Forms.RadioButton();
@@ -54,31 +54,31 @@
             this.lblCloseButton.Location = new System.Drawing.Point(527, -1);
             this.lblCloseButton.Name = "lblCloseButton";
             this.lblCloseButton.Size = new System.Drawing.Size(34, 40);
-            this.lblCloseButton.TabIndex = 15;
+            this.lblCloseButton.TabIndex = 7;
             this.lblCloseButton.Text = "X";
             this.lblCloseButton.Click += new System.EventHandler(this.lblCloseButton_Click);
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.label1.Location = new System.Drawing.Point(30, 457);
+            this.label1.Location = new System.Drawing.Point(30, 436);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(500, 2);
             this.label1.TabIndex = 18;
             // 
-            // txtEmail
+            // txtusername
             // 
-            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.txtEmail.ForeColor = System.Drawing.Color.White;
-            this.txtEmail.Location = new System.Drawing.Point(98, 417);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(432, 36);
-            this.txtEmail.TabIndex = 17;
-            this.txtEmail.Text = "cck001117@gmail.com";
-            this.txtEmail.Click += new System.EventHandler(this.txtEmail_Click);
+            this.txtusername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.txtusername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtusername.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.txtusername.ForeColor = System.Drawing.Color.White;
+            this.txtusername.Location = new System.Drawing.Point(98, 396);
+            this.txtusername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtusername.Name = "txtusername";
+            this.txtusername.Size = new System.Drawing.Size(432, 36);
+            this.txtusername.TabIndex = 4;
+            this.txtusername.Text = "Username";
+            this.txtusername.Click += new System.EventHandler(this.txtEmail_Click);
             // 
             // label3
             // 
@@ -106,10 +106,10 @@
             // 
             this.rdoC.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.rdoC.ForeColor = System.Drawing.Color.White;
-            this.rdoC.Location = new System.Drawing.Point(24, 316);
+            this.rdoC.Location = new System.Drawing.Point(24, 283);
             this.rdoC.Name = "rdoC";
             this.rdoC.Size = new System.Drawing.Size(146, 41);
-            this.rdoC.TabIndex = 22;
+            this.rdoC.TabIndex = 1;
             this.rdoC.TabStop = true;
             this.rdoC.Text = "Customer";
             this.rdoC.UseVisualStyleBackColor = true;
@@ -119,10 +119,10 @@
             // 
             this.rdoS.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.rdoS.ForeColor = System.Drawing.Color.White;
-            this.rdoS.Location = new System.Drawing.Point(382, 316);
+            this.rdoS.Location = new System.Drawing.Point(382, 283);
             this.rdoS.Name = "rdoS";
             this.rdoS.Size = new System.Drawing.Size(148, 41);
-            this.rdoS.TabIndex = 24;
+            this.rdoS.TabIndex = 3;
             this.rdoS.TabStop = true;
             this.rdoS.Text = "Staff";
             this.rdoS.UseVisualStyleBackColor = true;
@@ -132,10 +132,10 @@
             // 
             this.rdoT.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.rdoT.ForeColor = System.Drawing.Color.White;
-            this.rdoT.Location = new System.Drawing.Point(202, 316);
+            this.rdoT.Location = new System.Drawing.Point(202, 283);
             this.rdoT.Name = "rdoT";
             this.rdoT.Size = new System.Drawing.Size(148, 41);
-            this.rdoT.TabIndex = 25;
+            this.rdoT.TabIndex = 2;
             this.rdoT.TabStop = true;
             this.rdoT.Text = "Tenant";
             this.rdoT.UseVisualStyleBackColor = true;
@@ -148,11 +148,11 @@
             this.btnSendemail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSendemail.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSendemail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.btnSendemail.Location = new System.Drawing.Point(34, 557);
+            this.btnSendemail.Location = new System.Drawing.Point(34, 531);
             this.btnSendemail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSendemail.Name = "btnSendemail";
             this.btnSendemail.Size = new System.Drawing.Size(490, 82);
-            this.btnSendemail.TabIndex = 27;
+            this.btnSendemail.TabIndex = 5;
             this.btnSendemail.Text = "Find my Password";
             this.btnSendemail.UseVisualStyleBackColor = false;
             this.btnSendemail.Click += new System.EventHandler(this.btnSendemail_Click);
@@ -168,10 +168,10 @@
             this.btnBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(260, 46);
-            this.btnBack.TabIndex = 56;
+            this.btnBack.TabIndex = 6;
             this.btnBack.Text = "Back To Sign In Page";
             this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnForgotPassword_Click);
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // txtErrMsg
             // 
@@ -179,7 +179,7 @@
             this.txtErrMsg.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtErrMsg.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.txtErrMsg.ForeColor = System.Drawing.Color.Red;
-            this.txtErrMsg.Location = new System.Drawing.Point(22, 472);
+            this.txtErrMsg.Location = new System.Drawing.Point(24, 446);
             this.txtErrMsg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtErrMsg.Multiline = true;
             this.txtErrMsg.Name = "txtErrMsg";
@@ -200,8 +200,8 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::SDP_SE1A_Group2.Properties.Resources.email_P;
-            this.pictureBox2.Location = new System.Drawing.Point(34, 397);
+            this.pictureBox2.Image = global::SDP_SE1A_Group2.Properties.Resources.user;
+            this.pictureBox2.Location = new System.Drawing.Point(34, 376);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(58, 62);
@@ -225,7 +225,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtusername);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lblCloseButton);
             this.Font = new System.Drawing.Font("Segoe UI", 8F);
@@ -246,7 +246,7 @@
 
         private System.Windows.Forms.Label lblCloseButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtusername;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

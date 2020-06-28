@@ -61,7 +61,7 @@
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(432, 36);
-            this.txtUsername.TabIndex = 2;
+            this.txtUsername.TabIndex = 4;
             this.txtUsername.TabStop = false;
             this.txtUsername.Text = "Username";
             this.txtUsername.Click += new System.EventHandler(this.txtUsername_Click);
@@ -93,7 +93,7 @@
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(432, 36);
-            this.txtPassword.TabIndex = 7;
+            this.txtPassword.TabIndex = 5;
             this.txtPassword.TabStop = false;
             this.txtPassword.Text = "Password";
             this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
@@ -124,7 +124,7 @@
             this.btnSignIn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(490, 82);
-            this.btnSignIn.TabIndex = 10;
+            this.btnSignIn.TabIndex = 6;
             this.btnSignIn.Tag = "85, 195, 245";
             this.btnSignIn.Text = "Sign In";
             this.btnSignIn.UseVisualStyleBackColor = false;
@@ -141,7 +141,7 @@
             this.btnRegister.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(302, 63);
-            this.btnRegister.TabIndex = 11;
+            this.btnRegister.TabIndex = 8;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
@@ -157,7 +157,7 @@
             this.btnForgotPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnForgotPassword.Name = "btnForgotPassword";
             this.btnForgotPassword.Size = new System.Drawing.Size(302, 52);
-            this.btnForgotPassword.TabIndex = 13;
+            this.btnForgotPassword.TabIndex = 7;
             this.btnForgotPassword.Text = "Forgot passord?";
             this.btnForgotPassword.UseVisualStyleBackColor = false;
             this.btnForgotPassword.Click += new System.EventHandler(this.btnForgotPassword_Click);
@@ -171,7 +171,7 @@
             this.lblCloseButton.Location = new System.Drawing.Point(530, 0);
             this.lblCloseButton.Name = "lblCloseButton";
             this.lblCloseButton.Size = new System.Drawing.Size(34, 40);
-            this.lblCloseButton.TabIndex = 14;
+            this.lblCloseButton.TabIndex = 9;
             this.lblCloseButton.Text = "X";
             this.lblCloseButton.Click += new System.EventHandler(this.lblCloseButton_Click);
             // 
@@ -179,6 +179,7 @@
             // 
             this.txtErrMsg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.txtErrMsg.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtErrMsg.Enabled = false;
             this.txtErrMsg.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.txtErrMsg.ForeColor = System.Drawing.Color.Red;
             this.txtErrMsg.Location = new System.Drawing.Point(34, 505);
@@ -194,7 +195,7 @@
             this.rdoTenent.Location = new System.Drawing.Point(215, 270);
             this.rdoTenent.Name = "rdoTenent";
             this.rdoTenent.Size = new System.Drawing.Size(148, 41);
-            this.rdoTenent.TabIndex = 38;
+            this.rdoTenent.TabIndex = 2;
             this.rdoTenent.TabStop = true;
             this.rdoTenent.Text = "Tenant";
             this.rdoTenent.UseVisualStyleBackColor = true;
@@ -206,7 +207,7 @@
             this.rdoStaff.Location = new System.Drawing.Point(369, 270);
             this.rdoStaff.Name = "rdoStaff";
             this.rdoStaff.Size = new System.Drawing.Size(148, 41);
-            this.rdoStaff.TabIndex = 37;
+            this.rdoStaff.TabIndex = 3;
             this.rdoStaff.TabStop = true;
             this.rdoStaff.Text = "Staff";
             this.rdoStaff.UseVisualStyleBackColor = true;
@@ -218,7 +219,7 @@
             this.rdoCustomer.Location = new System.Drawing.Point(53, 270);
             this.rdoCustomer.Name = "rdoCustomer";
             this.rdoCustomer.Size = new System.Drawing.Size(146, 41);
-            this.rdoCustomer.TabIndex = 36;
+            this.rdoCustomer.TabIndex = 1;
             this.rdoCustomer.TabStop = true;
             this.rdoCustomer.Text = "Customer";
             this.rdoCustomer.UseVisualStyleBackColor = true;

@@ -51,18 +51,18 @@ namespace SDP_SE1A_Group2.Account
         //input textbox UI Start
         private void txtEmail_Click(object sender, EventArgs e)
         {
-            if (txtEmail.Text == "Email")
-                txtEmail.Clear(); ;
-            pictureBox2.Image = Properties.Resources.email_S;
+            if (txtusername.Text == "Username")
+                txtusername.Clear(); ;
+            pictureBox2.Image = Properties.Resources.user_blue;
             label1.BackColor = Color.FromArgb(230, 126, 34);
-            txtEmail.ForeColor = Color.FromArgb(230, 126, 34);
+            txtusername.ForeColor = Color.FromArgb(230, 126, 34);
         }
 
         private void rdoT_Click(object sender, EventArgs e)
         {
-            pictureBox2.Image = Properties.Resources.email_P;
+            pictureBox2.Image = Properties.Resources.user;
             label1.BackColor = Color.White;
-            txtEmail.ForeColor = Color.White;
+            txtusername.ForeColor = Color.White;
         }
         //input textbox UI END
 
@@ -70,8 +70,9 @@ namespace SDP_SE1A_Group2.Account
         //Send Email Control START
         private void btnSendemail_Click(object sender, EventArgs e)
         {
-            String userEmail = txtEmail.Text;
+            String username = txtusername.Text;
             String email = "tim.ck.project.email@gmail.com";
+            String[] acctDetail = new String[2];
             var mailMessage = new MailMessage { };
             var smtpClinet = new SmtpClient("smtp.gmail.com")
             {
@@ -81,101 +82,66 @@ namespace SDP_SE1A_Group2.Account
             };
 
             //UI
-            pictureBox2.Image = Properties.Resources.email_P;
+            pictureBox2.Image = Properties.Resources.user;
             label1.BackColor = Color.White;
-            txtEmail.ForeColor = Color.White;
-            
+            txtusername.ForeColor = Color.White;
 
-            //send email
-            if (userEmail == "")
+
+//send email
+            if (username == ""|| username == "UserName")
             {
-                txtErrMsg.Text = "Enter your Email";
+                label1.BackColor = Color.Red;
+                txtErrMsg.Text = "Enter your UserName";
                 return;
             }
             if (rdoC.Checked)
             {
-                if (opener.CustomerEmailVerify(userEmail))
+
+                acctDetail = opener.GetCusEmail(username); //get email, password
+                if (acctDetail != null) 
                 {
                     mailMessage = new MailMessage
                     {
                         From = new MailAddress(email),
-                        Subject = "Customer testing",
+                        Subject = "Password Recovery - The Hong Kong Cube Shop",
                         Body = "<h1>The Hong Kong Cube Shop</h1>" +
-                    "<h2>Password Recovery</h2>" +
-                    "<p>Below is your account username and password:</p>" +
-                    " <p >Username :...</p>" +
-                    "<p >Passowrd :...</p>",
+                                "<h2>Password Recovery</h2>" +
+                                "<p>Below is your account username and password:</p>" +
+                                " <p >Username :</p>" + username+
+                                "<p >Passowrd :</p>" + acctDetail[1],
                         IsBodyHtml = true,
                     };
+                   
                 }
-                else
+                else //error
                 {
-                    txtErrMsg.Text = "Incorrect Email";
+                    txtErrMsg.Text = "Incorrect username";
                     return;
                 }
                  
-            }else if(rdoT.Checked){
-                if (opener.TenantEmailVerify(userEmail))
-                {
-                    mailMessage = new MailMessage
-                    {
-                        From = new MailAddress(email),
-                        Subject = "Tenant testing",
-                        Body = "<h1>The Hong Kong Cube Shop</h1>" +
-                    "<h2>Password Recovery</h2>" +
-                    "<p>Below is your account username and password:</p>" +
-                    " <p >Username :...</p>" +
-                    "<p >Passowrd :...</p>",
-                        IsBodyHtml = true,
-                    };
-                }
-                else
-                {
-                    txtErrMsg.Text = "Incorrect Email";
-                    return;
-                }
-            }
-            else if (rdoS.Checked)
-            {
-                if (opener.StaffEmailVerify(userEmail))
-                {
-                    mailMessage = new MailMessage
-                    {
-                        From = new MailAddress(email),
-                        Subject = "Customer testing",
-                        Body = "<h1>The Hong Kong Cube Shop</h1>" +
-                    "<h2>Password Recovery</h2>" +
-                    "<p>Below is your account username and password:</p>" +
-                    " <p >Username :...</p>" +
-                    "<p >Passowrd :...</p>",
-                        IsBodyHtml = true,
-                    };
-                }
-                else
-                {
-                    txtErrMsg.Text = "Incorrect Email";
-                    return;
-                }
             }
             else
             {
                 txtErrMsg.Text = "Choose your account type";
                 return;
             }
-
-            mailMessage.To.Add(userEmail);
+            mailMessage.To.Add(acctDetail[0]);
             smtpClinet.Send(mailMessage);
             txtErrMsg.Text = "Email was sent successfully. Didn't recieve?";
             btnSendemail.Text = "Send Again";
 
         }
 
-        private void btnForgotPassword_Click(object sender, EventArgs e)
+        
+
+        private void btnBack_Click(object sender, EventArgs e)
         {
             opener.Show();
             this.Close();
         }
-     
+
+
+
         //Send Email Control END
 
 

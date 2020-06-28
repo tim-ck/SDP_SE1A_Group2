@@ -154,7 +154,7 @@ namespace SDP_SE1A_Group2.Customer
                         "<td colspan='2'></td></tr></table>";
 
                     opener.sendEmail(subject, msg);
-                    opener.CreateOrder()
+                    //opener.CreateOrder()
                     MessageBox.Show("The Order detail had sent to your Email successfully. Order created");
                 }
                     

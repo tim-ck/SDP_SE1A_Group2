@@ -18,15 +18,16 @@ namespace SDP_SE1A_Group2
         public LoginPage()
         {
             InitializeComponent();
+            
         }
-        //Titile Bar control start
+
         private void lblCloseButton_Click(object sender, EventArgs e)
         {
             Close();
         }
         
 
-        //drag form 
+//drag form 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
@@ -39,19 +40,22 @@ namespace SDP_SE1A_Group2
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        //Title Bar control END
+        
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             String username = txtUsername.Text;
             String password = txtPassword.Text;
-            if (username == "")
+            if (username == ""|| username == "Username")
             {
+                label1.BackColor = Color.Red;
                 txtErrMsg.Text = "Enter a Username";
+
                 return;
             }
-            if (password == "")
+            if (password == "" || password == "Password")
             {
+                label2.BackColor = Color.Red;
                 txtErrMsg.Text = "Enter a Password";
                 return;
             }
@@ -78,39 +82,41 @@ namespace SDP_SE1A_Group2
 
         }
 
-        //verify start
+//verify start
         public void CustomerVerify(String username, String password)
         {
-            /*Boolean Verify = false;
-            using (var notSoImportantVariable = new classicmodelsEntities())
+            Boolean Verify = false;
+            using (var db = new classicmodelsEntities())
             {
-                var userAcct =  from list in notSoImportantVariable.Customer
-                                where list.CustomerID.Equals(username)
-                                select new { list.CustomerID, list.Password };
+                var userAcct =  from list in db.customers
+                                where list.customerUsername.Equals(username)
+                                select new { list.customerUsername, list.customerpwd };
                 if(userAcct==null){
-            txtErrMsg.Text = "The Username / Password is incorrect";            }else{
-                foreach (var user in userAcct.ToList())
-                {
-                    if ((username == user.CustomerID.ToString()) && (password == user.Password.ToString()))
+                    txtErrMsg.Text = "The Username / Password is incorrect";            
+                }else{
+                    foreach (var user in userAcct.ToList())
                     {
-                        Verify = true;
-                        this.Hide();
-                        Customer.CustomerMain cus = new Customer.CustomerMain(username); //!!!!!!!!!!!!!!!!!!!!!
-                        cus.Show();
-                        return;
+                        if ((username == user.customerUsername.ToString()) && (password == user.customerpwd.ToString()))
+                        {
+                            Verify = true;
+                            this.Hide();
+                            txtUsername.Text = "Username";
+                            txtPassword.Text = "Password";
+                            CustomerMain cus = new CustomerMain(this, username); 
+                            cus.Show();
+                            return;
+                        }
                     }
                 }
+                if(Verify == false)
+                 {
+                    label2.BackColor = Color.Red;
+                    label1.BackColor = Color.Red;
+                    txtErrMsg.Text = "The Username / Password is incorrect";
+                    return;
+                }
+                
             }
-            if(Verify == false)
-                txtErrMsg.Text = "The Username / Password is incorrect";
-            else{*/
-            this.Hide();
-            txtUsername.Text = "Username";
-            txtPassword.Text = "Password";
-            CustomerMain cus = new CustomerMain(this, username); 
-            cus.Show();
-
-            //}}
 
         }
 
@@ -188,31 +194,31 @@ namespace SDP_SE1A_Group2
 
         }
 
-        public Boolean CustomerEmailVerify(String email)
+//username verify
+        public String[] GetCusEmail(String username)
         {
-            /*Boolean verify = false;
-            using (var notSoImportantVariable = new classicmodelsEntities())
+            
+            using (var db = new classicmodelsEntities())
             {
-                var e = from list in notSoImportantVariable.Customer
-                               where list.Email.Equals(email)
-                               select new { list.Email };
-                if (e == null) { return false; }
-
-                foreach (var user in email.ToList())
+                var e = from list in db.customers
+                               where list.customerUsername.Equals(username)
+                               select new { list.customerUsername,list.email,list.customerpwd };
+                if (e == null) {  return null; } else
                 {
-                    if (email == user.email.ToString())
+                    foreach (var user in e.ToList())
                     {
-                        verify = true;
-
-                        return verify;
+                        String[] act = { user.email.ToString(), user.customerpwd.ToString() };
+                        return act;
                     }
                 }
+
+                return null;
             }
-            return verify;*/
-            return true;//plz delete this when added sql
+            
+            
 
         }
-        public Boolean TenantEmailVerify(String email)
+        public Boolean TenantUsernameVerify(String email)
         {
             /*Boolean verify = false;
             using (var notSoImportantVariable = new classicmodelsEntities())
@@ -237,7 +243,7 @@ namespace SDP_SE1A_Group2
 
         }
 
-        public Boolean StaffEmailVerify(String email)
+        public Boolean StaffUsernameVerify(String email)
         {
             /*Boolean verify = false;
             using (var notSoImportantVariable = new classicmodelsEntities())
@@ -261,8 +267,9 @@ namespace SDP_SE1A_Group2
             return true;//plz delete this when added sql
 
         }
+//username verify ENd
 
-        //verify ENd
+//verify ENd
 
 
         public void btnForgotPassword_Click(object sender, EventArgs e)
@@ -280,7 +287,7 @@ namespace SDP_SE1A_Group2
             register.Show();
         }
 
-        //UI START
+//UI START
         private void txtUsername_Click(object sender, EventArgs e)
         {
             if(txtUsername.Text== "Username")
@@ -311,11 +318,7 @@ namespace SDP_SE1A_Group2
             txtUsername.ForeColor = Color.White;
         }
 
-       
-
-
-
-
+        
         //UI END
 
 
