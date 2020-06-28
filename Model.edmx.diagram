@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2f2509574250435ca40e91ecaa139c4f" Name="Diagram1">
+      <Diagram DiagramId="6e15c032867846c6b0df234e3bbd0784" Name="Diagram1">
         <EntityTypeShape EntityType="spdModel.item" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="spdModel.itemimage" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="spdModel.order" Width="1.5" PointX="5.75" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="spdModel.rentinfo" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="spdModel.showcase" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="spdModel.suborder" Width="1.5" PointX="8" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="spdModel.tenant" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="spdModel.tenant" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
         <AssociationConnector Association="spdModel.item_tenantid_fk" ManuallyRouted="false" />
         <AssociationConnector Association="spdModel.itemimage_itemid_fk" ManuallyRouted="false" />
         <AssociationConnector Association="spdModel.suborder_orderid_fk" ManuallyRouted="false" />

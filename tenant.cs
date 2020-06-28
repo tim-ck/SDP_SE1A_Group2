@@ -22,6 +22,7 @@ namespace SDP_SE1A_Group2
     
         public int tenantID { get; set; }
         public string tenantName { get; set; }
+        public string email { get; set; }
     
         public virtual ICollection<item> item { get; set; }
         public virtual ICollection<rentinfo> rentinfo { get; set; }

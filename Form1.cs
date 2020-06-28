@@ -12,6 +12,7 @@ namespace SDP_SE1A_Group2
 {
     public partial class Form1 : Form
     {
+        public static String useremail;
         public Form1()
         {
             InitializeComponent();
@@ -20,6 +21,7 @@ namespace SDP_SE1A_Group2
    
         private void button1_Click(object sender, EventArgs e)
         {
+            useremail = textBox1.Text;
             TenantMain tenantMain = new TenantMain();
             this.Hide();
             tenantMain.Show();

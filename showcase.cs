@@ -14,9 +14,9 @@ namespace SDP_SE1A_Group2
     
     public partial class showcase
     {
-        public int showcaseid { get; set; }
-        public string status { get; set; }
-        public int dailyrental { get; set; }
+        public string showcaseid { get; set; }
         public int size { get; set; }
+        public float rental { get; set; }
+        public string status { get; set; }
     }
 }

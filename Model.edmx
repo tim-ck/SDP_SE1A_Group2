@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="spdModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="spdModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="item">
           <Key>
             <PropertyRef Name="itemID" />
@@ -42,15 +42,16 @@
           <Property Name="tenantID" Type="int" Nullable="false" />
           <Property Name="startDate" Type="date" Nullable="false" />
           <Property Name="duration" Type="int" Nullable="false" />
+          <Property Name="showcaseid" Type="varchar" MaxLength="45" Nullable="false" />
         </EntityType>
         <EntityType Name="showcase">
           <Key>
             <PropertyRef Name="showcaseid" />
           </Key>
-          <Property Name="showcaseid" Type="int" Nullable="false" />
-          <Property Name="status" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="dailyrental" Type="int" Nullable="false" />
+          <Property Name="showcaseid" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="size" Type="int" Nullable="false" />
+          <Property Name="rental" Type="float" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="15" Nullable="false" />
         </EntityType>
         <EntityType Name="suborder">
           <Key>
@@ -68,6 +69,7 @@
           </Key>
           <Property Name="tenantID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="tenantName" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="45" Nullable="false" />
         </EntityType>
         <Association Name="item_tenantid_fk">
           <End Role="tenant" Type="Self.tenant" Multiplicity="1" />
@@ -142,8 +144,7 @@
             <End Role="suborder" EntitySet="suborder" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="spdModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -188,16 +189,17 @@
           <Property Name="tenantID" Type="Int32" Nullable="false" />
           <Property Name="startDate" Type="DateTime" Nullable="false" />
           <Property Name="duration" Type="Int32" Nullable="false" />
+          <Property Name="showcaseid" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tenant" Relationship="Self.rentinfo_tenantid_fk" FromRole="rentinfo" ToRole="tenant" />
         </EntityType>
         <EntityType Name="showcase">
           <Key>
             <PropertyRef Name="showcaseid" />
           </Key>
-          <Property Name="showcaseid" Type="Int32" Nullable="false" />
-          <Property Name="status" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="dailyrental" Type="Int32" Nullable="false" />
+          <Property Name="showcaseid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="size" Type="Int32" Nullable="false" />
+          <Property Name="rental" Type="Single" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="suborder">
           <Key>
@@ -218,6 +220,7 @@
           <Property Name="tenantName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="item" Relationship="Self.item_tenantid_fk" FromRole="tenant" ToRole="item" />
           <NavigationProperty Name="rentinfo" Relationship="Self.rentinfo_tenantid_fk" FromRole="tenant" ToRole="rentinfo" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="item_tenantid_fk">
           <End Role="tenant" Type="Self.tenant" Multiplicity="1" />
@@ -337,6 +340,7 @@
                 <ScalarProperty Name="tenantID" ColumnName="tenantID" />
                 <ScalarProperty Name="startDate" ColumnName="startDate" />
                 <ScalarProperty Name="duration" ColumnName="duration" />
+                <ScalarProperty Name="showcaseid" ColumnName="showcaseid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -344,9 +348,9 @@
             <EntityTypeMapping TypeName="spdModel.showcase">
               <MappingFragment StoreEntitySet="showcase">
                 <ScalarProperty Name="showcaseid" ColumnName="showcaseid" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="dailyrental" ColumnName="dailyrental" />
                 <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="rental" ColumnName="rental" />
+                <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -363,6 +367,7 @@
           <EntitySetMapping Name="tenant">
             <EntityTypeMapping TypeName="spdModel.tenant">
               <MappingFragment StoreEntitySet="tenant">
+                <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="tenantID" ColumnName="tenantID" />
                 <ScalarProperty Name="tenantName" ColumnName="tenantName" />
               </MappingFragment>

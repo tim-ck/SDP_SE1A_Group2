@@ -32,10 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cboStatus = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboSize = new System.Windows.Forms.ComboBox();
+            this.cboLocation = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -78,10 +78,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(24)))));
             this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.comboBox3);
+            this.panel1.Controls.Add(this.cboStatus);
             this.panel1.Controls.Add(this.btnSearch);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cboSize);
+            this.panel1.Controls.Add(this.cboLocation);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -100,13 +100,18 @@
             this.panel4.Size = new System.Drawing.Size(970, 3);
             this.panel4.TabIndex = 18;
             // 
-            // comboBox3
+            // cboStatus
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(667, 32);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 23);
-            this.comboBox3.TabIndex = 9;
+            this.cboStatus.FormattingEnabled = true;
+            this.cboStatus.Items.AddRange(new object[] {
+            "All",
+            "Available",
+            "Occupied",
+            "Reserved"});
+            this.cboStatus.Location = new System.Drawing.Point(679, 32);
+            this.cboStatus.Name = "cboStatus";
+            this.cboStatus.Size = new System.Drawing.Size(121, 23);
+            this.cboStatus.TabIndex = 9;
             // 
             // btnSearch
             // 
@@ -124,34 +129,40 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
-            // comboBox2
+            // cboSize
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(394, 32);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 23);
-            this.comboBox2.TabIndex = 8;
+            this.cboSize.FormattingEnabled = true;
+            this.cboSize.Items.AddRange(new object[] {
+            "All",
+            "30000",
+            "40000",
+            "50000"});
+            this.cboSize.Location = new System.Drawing.Point(448, 30);
+            this.cboSize.Name = "cboSize";
+            this.cboSize.Size = new System.Drawing.Size(121, 23);
+            this.cboSize.TabIndex = 8;
             // 
-            // comboBox1
+            // cboLocation
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cboLocation.FormattingEnabled = true;
+            this.cboLocation.Items.AddRange(new object[] {
+            "All",
             "Causeway Bay",
             "Kwai Fong",
             "Monk Kok 1",
             "Monk Kok 2 ",
             "Shatin"});
-            this.comboBox1.Location = new System.Drawing.Point(161, 32);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 7;
+            this.cboLocation.Location = new System.Drawing.Point(161, 32);
+            this.cboLocation.Name = "cboLocation";
+            this.cboLocation.Size = new System.Drawing.Size(121, 23);
+            this.cboLocation.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(586, 30);
+            this.label4.Location = new System.Drawing.Point(598, 30);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 25);
@@ -163,12 +174,12 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(332, 30);
+            this.label3.Location = new System.Drawing.Point(326, 30);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 25);
+            this.label3.Size = new System.Drawing.Size(125, 25);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Size";
+            this.label3.Text = "Size (cm^3)";
             // 
             // label2
             // 
@@ -280,9 +291,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboStatus;
+        private System.Windows.Forms.ComboBox cboSize;
+        private System.Windows.Forms.ComboBox cboLocation;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridViewTextBoxColumn showcaseId;
         private System.Windows.Forms.DataGridViewTextBoxColumn size;

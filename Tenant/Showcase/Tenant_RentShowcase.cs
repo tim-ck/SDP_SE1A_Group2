@@ -36,7 +36,10 @@ namespace SDP_SE1A_Group2 {
 
         private void TenantRentShowcase_Load(object sender, EventArgs e)
         {
-
+            //Set dafault value
+            cboLocation.SelectedIndex = 0;
+            cboSize.SelectedIndex = 0;
+            cboStatus.SelectedIndex = 0;
 
             //Load showcase data from db
             this.dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
@@ -47,9 +50,13 @@ namespace SDP_SE1A_Group2 {
 
                 foreach (var row in showcase.ToList())
                 {
-                    dataGridView1.Rows.Add(row.showcaseid, row.size, row.dailyrental, row.status);
+                    dataGridView1.Rows.Add(row.showcaseid, row.size, row.rental, row.status);
                 }
             }
+
+
+            //Filter selected
+
 
         }
     }

@@ -18,6 +18,7 @@ namespace SDP_SE1A_Group2
         public int tenantID { get; set; }
         public System.DateTime startDate { get; set; }
         public int duration { get; set; }
+        public string showcaseid { get; set; }
     
         public virtual tenant tenant { get; set; }
     }

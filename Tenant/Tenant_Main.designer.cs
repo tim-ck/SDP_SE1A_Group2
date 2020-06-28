@@ -51,7 +51,7 @@
             this.panelConent = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelWelcome = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.btnCustomerPage = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.panelLogOut.SuspendLayout();
@@ -350,7 +350,7 @@
             // panelWelcome
             // 
             this.panelWelcome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.panelWelcome.Controls.Add(this.label1);
+            this.panelWelcome.Controls.Add(this.lblWelcome);
             this.panelWelcome.Controls.Add(this.btnCustomerPage);
             this.panelWelcome.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelWelcome.Location = new System.Drawing.Point(0, 0);
@@ -358,18 +358,18 @@
             this.panelWelcome.Size = new System.Drawing.Size(1134, 100);
             this.panelWelcome.TabIndex = 19;
             // 
-            // label1
+            // lblWelcome
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("PMingLiU", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
-            this.label1.Size = new System.Drawing.Size(271, 69);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Welcome ";
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblWelcome.Font = new System.Drawing.Font("PMingLiU", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblWelcome.ForeColor = System.Drawing.Color.LightGray;
+            this.lblWelcome.Location = new System.Drawing.Point(0, 0);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
+            this.lblWelcome.Size = new System.Drawing.Size(80, 24);
+            this.lblWelcome.TabIndex = 1;
+            this.lblWelcome.Text = "Welcome ";
             // 
             // btnCustomerPage
             // 
@@ -433,7 +433,7 @@
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Panel panelConent;
         private System.Windows.Forms.Panel panelWelcome;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button btnCustomerPage;
         private System.Windows.Forms.Panel panelChildForm;
     }
