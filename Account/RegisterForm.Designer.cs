@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rdoTenent = new System.Windows.Forms.RadioButton();
-            this.rdoStaffOrManager = new System.Windows.Forms.RadioButton();
-            this.rdoCustomerOrTenant = new System.Windows.Forms.RadioButton();
+            this.rdoT = new System.Windows.Forms.RadioButton();
+            this.rdoS = new System.Windows.Forms.RadioButton();
+            this.rdoC = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblCloseButton = new System.Windows.Forms.Label();
@@ -61,41 +61,41 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // rdoTenent
+            // rdoT
             // 
-            this.rdoTenent.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.rdoTenent.ForeColor = System.Drawing.Color.White;
-            this.rdoTenent.Location = new System.Drawing.Point(200, 211);
-            this.rdoTenent.Name = "rdoTenent";
-            this.rdoTenent.Size = new System.Drawing.Size(148, 41);
-            this.rdoTenent.TabIndex = 35;
-            this.rdoTenent.TabStop = true;
-            this.rdoTenent.Text = "Tenant";
-            this.rdoTenent.UseVisualStyleBackColor = true;
+            this.rdoT.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.rdoT.ForeColor = System.Drawing.Color.White;
+            this.rdoT.Location = new System.Drawing.Point(200, 211);
+            this.rdoT.Name = "rdoT";
+            this.rdoT.Size = new System.Drawing.Size(148, 41);
+            this.rdoT.TabIndex = 35;
+            this.rdoT.TabStop = true;
+            this.rdoT.Text = "Tenant";
+            this.rdoT.UseVisualStyleBackColor = true;
             // 
-            // rdoStaffOrManager
+            // rdoS
             // 
-            this.rdoStaffOrManager.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.rdoStaffOrManager.ForeColor = System.Drawing.Color.White;
-            this.rdoStaffOrManager.Location = new System.Drawing.Point(354, 211);
-            this.rdoStaffOrManager.Name = "rdoStaffOrManager";
-            this.rdoStaffOrManager.Size = new System.Drawing.Size(148, 41);
-            this.rdoStaffOrManager.TabIndex = 34;
-            this.rdoStaffOrManager.TabStop = true;
-            this.rdoStaffOrManager.Text = "Staff";
-            this.rdoStaffOrManager.UseVisualStyleBackColor = true;
+            this.rdoS.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.rdoS.ForeColor = System.Drawing.Color.White;
+            this.rdoS.Location = new System.Drawing.Point(354, 211);
+            this.rdoS.Name = "rdoS";
+            this.rdoS.Size = new System.Drawing.Size(148, 41);
+            this.rdoS.TabIndex = 34;
+            this.rdoS.TabStop = true;
+            this.rdoS.Text = "Staff";
+            this.rdoS.UseVisualStyleBackColor = true;
             // 
-            // rdoCustomerOrTenant
+            // rdoC
             // 
-            this.rdoCustomerOrTenant.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.rdoCustomerOrTenant.ForeColor = System.Drawing.Color.White;
-            this.rdoCustomerOrTenant.Location = new System.Drawing.Point(38, 211);
-            this.rdoCustomerOrTenant.Name = "rdoCustomerOrTenant";
-            this.rdoCustomerOrTenant.Size = new System.Drawing.Size(146, 41);
-            this.rdoCustomerOrTenant.TabIndex = 32;
-            this.rdoCustomerOrTenant.TabStop = true;
-            this.rdoCustomerOrTenant.Text = "Customer";
-            this.rdoCustomerOrTenant.UseVisualStyleBackColor = true;
+            this.rdoC.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.rdoC.ForeColor = System.Drawing.Color.White;
+            this.rdoC.Location = new System.Drawing.Point(38, 211);
+            this.rdoC.Name = "rdoC";
+            this.rdoC.Size = new System.Drawing.Size(146, 41);
+            this.rdoC.TabIndex = 32;
+            this.rdoC.TabStop = true;
+            this.rdoC.Text = "Customer";
+            this.rdoC.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -420,10 +420,10 @@
             this.Controls.Add(this.lbluserName);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.rdoTenent);
-            this.Controls.Add(this.rdoStaffOrManager);
+            this.Controls.Add(this.rdoT);
+            this.Controls.Add(this.rdoS);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.rdoCustomerOrTenant);
+            this.Controls.Add(this.rdoC);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblCloseButton);
@@ -444,10 +444,10 @@
 
         #endregion
 
-        private System.Windows.Forms.RadioButton rdoTenent;
-        private System.Windows.Forms.RadioButton rdoStaffOrManager;
+        private System.Windows.Forms.RadioButton rdoT;
+        private System.Windows.Forms.RadioButton rdoS;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.RadioButton rdoCustomerOrTenant;
+        private System.Windows.Forms.RadioButton rdoC;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblCloseButton;

@@ -85,51 +85,51 @@ namespace SDP_SE1A_Group2.Account
             pictureBox2.Image = Properties.Resources.user;
             label1.BackColor = Color.White;
             txtusername.ForeColor = Color.White;
-
-
-//send email
-            if (username == ""|| username == "UserName")
+            if (username == "" || username == "UserName")
             {
                 label1.BackColor = Color.Red;
                 txtErrMsg.Text = "Enter your UserName";
                 return;
             }
-            if (rdoC.Checked)
-            {
 
-                acctDetail = opener.GetCusEmail(username); //get email, password
-                if (acctDetail != null) 
-                {
-                    mailMessage = new MailMessage
-                    {
-                        From = new MailAddress(email),
-                        Subject = "Password Recovery - The Hong Kong Cube Shop",
-                        Body = "<h1>The Hong Kong Cube Shop</h1>" +
-                                "<h2>Password Recovery</h2>" +
-                                "<p>Below is your account username and password:</p>" +
-                                " <p >Username :</p>" + username+
-                                "<p >Passowrd :</p>" + acctDetail[1],
-                        IsBodyHtml = true,
-                    };
-                   
-                }
-                else //error
-                {
-                    txtErrMsg.Text = "Incorrect username";
-                    return;
-                }
-                 
-            }
+           
+            //get email and password
+            if (rdoC.Checked){acctDetail = opener.GetCustomerEmail(username); }
+            else  if (rdoT.Checked) { acctDetail = opener.GetTenatEmail(username); } 
+            else if (rdoS.Checked) { acctDetail = opener.GetStaffEmail(username); }
             else
             {
                 txtErrMsg.Text = "Choose your account type";
                 return;
             }
+            //send email
+            if (acctDetail != null)
+            {
+                mailMessage = new MailMessage
+                {
+                    From = new MailAddress(email),
+                    Subject = "Password Recovery - The Hong Kong Cube Shop",
+                    Body = "<h1>The Hong Kong Cube Shop</h1>" +
+                            "<h2>Password Recovery</h2>" +
+                            "<p>Below is your account username and password:</p>" +
+                            " <p >Username :" + username +
+                            "<p >Passowrd :" + acctDetail[1],
+                    IsBodyHtml = true,
+                };
+
+            }
+            else //error
+            {
+                txtErrMsg.Text = "Incorrect username";
+                return;
+            }
+
             mailMessage.To.Add(acctDetail[0]);
             smtpClinet.Send(mailMessage);
             txtErrMsg.Text = "Email was sent successfully. Didn't recieve?";
             btnSendemail.Text = "Send Again";
-
+            
+           
         }
 
         

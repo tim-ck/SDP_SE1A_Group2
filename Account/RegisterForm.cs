@@ -182,42 +182,112 @@ namespace SDP_SE1A_Group2.Account
             if (txtUsername.TextLength < 6 || txtUsername.TextLength > 20) { txtErrMsg.Text = " username should not less than 8 charater and not more than 20 charater"; lbluserName.BackColor = Color.Red; return; }
             if (txtPassword.Text == "Password" || txtPassword.Text == "") { txtErrMsg.Text = "Enter Password"; lblPwd.BackColor = Color.Red; return; }
             if (txtPassword.TextLength<6 || txtPassword.TextLength > 20) { txtErrMsg.Text = " Password should not less than 8 charater and not more than 20 charater"; lblPwd.BackColor = Color.Red; return; }
-           
-            try
-            {
-                using (var db = new classicmodelsEntities())
+            if (rdoC.Checked) {
+                try
                 {
-                    var acct = new customer()
+                    using (var db = new classicmodelsEntities())
                     {
-                        customerUsername = txtUsername.Text,
-                        customerpwd = txtPassword.Text,
-                        customerName = txtFirstName.Text,
-                        email = txtEmail.Text,
-                        phone = txtPhoneNumber.Text
-                    };
-                    db.customers.Add(acct);
-                    db.SaveChanges();
+                        var acct = new customer()
+                        {
+                            customerUsername = txtUsername.Text,
+                            customerpwd = txtPassword.Text,
+                            customerName = txtFirstName.Text,
+                            email = txtEmail.Text,
+                            phone = txtPhoneNumber.Text
+                        };
+                        db.customers.Add(acct);
+                        db.SaveChanges();
+                    }
                 }
+                catch (System.Data.Entity.Infrastructure.DbUpdateException)
+                {
+                    txtErrMsg.Text = "username used";
+                    return;
+                }
+                catch
+                {
+                    txtErrMsg.Text = "SQL err";
+                    return;
+                }
+                MessageBox.Show("Successgully registered");
+                this.Close();
+                opener.Show();
             }
-            catch(System.Data.Entity.Infrastructure.DbUpdateException)
+            else if (rdoT.Checked) { //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                try
+                {
+                    using (var db = new classicmodelsEntities())
+                    {
+                        var acct = new customer()
+                        {
+                            customerUsername = txtUsername.Text,
+                            customerpwd = txtPassword.Text,
+                            customerName = txtFirstName.Text,
+                            email = txtEmail.Text,
+                            phone = txtPhoneNumber.Text
+                        };
+                        db.customers.Add(acct);
+                        db.SaveChanges();
+                    }
+                }
+                catch (System.Data.Entity.Infrastructure.DbUpdateException)
+                {
+                    txtErrMsg.Text = "username used";
+                    return;
+                }
+                catch
+                {
+                    txtErrMsg.Text = "SQL err";
+                    return;
+                }
+                MessageBox.Show("Successgully registered");
+                this.Close();
+                opener.Show();
+            }
+            else if (rdoS.Checked)
+            {//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                try
+                {
+                    using (var db = new classicmodelsEntities())
+                    {
+                        var acct = new customer()
+                        {
+                            customerUsername = txtUsername.Text,
+                            customerpwd = txtPassword.Text,
+                            customerName = txtFirstName.Text,
+                            email = txtEmail.Text,
+                            phone = txtPhoneNumber.Text
+                        };
+                        db.customers.Add(acct);
+                        db.SaveChanges();
+                    }
+                }
+                catch (System.Data.Entity.Infrastructure.DbUpdateException)
+                {
+                    txtErrMsg.Text = "username used";
+                    return;
+                }
+                catch
+                {
+                    txtErrMsg.Text = "SQL err";
+                    return;
+                }
+                MessageBox.Show("Successgully registered");
+                this.Close();
+                opener.Show();
+            }
+            else
             {
-                txtErrMsg.Text = "username used";
+                txtErrMsg.Text = "Choose a account type";
                 return;
             }
-            catch
-            {
-                txtErrMsg.Text = "SQL err";
-                return;
-            }
-            MessageBox.Show("Successgully registered");
-            this.Close();
-            opener.Show();
+            
             
         }
 
 
 
-
+        //
 
         /*
          * txtErrMsg.Text

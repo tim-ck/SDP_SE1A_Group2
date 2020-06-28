@@ -122,80 +122,87 @@ namespace SDP_SE1A_Group2
 
         public void TenantVerify(String username, String password)
         {
-            /*Boolean Verify = false;
-            using (var notSoImportantVariable = new classicmodelsEntities())
+            Boolean Verify = false;
+            using (var db = new classicmodelsEntities())
             {
-                var userAcct =  from list in notSoImportantVariable.Customer
-                                where list.TenantID.Equals(username)
-                                select new { list.TenantID, list.Password };
-                if(userAcct==null){
-                    txtErrMsg.Text = "The Username / Password is incorrect";            }
-                else{
-                foreach (var user in userAcct.ToList())
+                var userAcct = from list in db.customers
+                               where list.customerUsername.Equals(username)
+                               select new { list.customerUsername, list.customerpwd };
+                if (userAcct == null)
                 {
-                    if ((username == user.CustomerID.ToString()) && (password == user.Password.ToString()))
+                    txtErrMsg.Text = "The Username / Password is incorrect";
+                }
+                else
+                {
+                    foreach (var user in userAcct.ToList())
                     {
-                        Verify = true;
-                        this.Hide();
-                        Customer.CustomerMain cus = new Customer.CustomerMain(username); //!!!!!!!!!!!!!!!!!!!!!
-                        cus.Show();
-                        return;
+                        if ((username == user.customerUsername.ToString()) && (password == user.customerpwd.ToString()))
+                        {
+                            Verify = true;
+                            this.Hide();
+                            txtUsername.Text = "Username";
+                            txtPassword.Text = "Password";
+                            CustomerMain cus = new CustomerMain(this, username);
+                            cus.Show();
+                            return;
+                        }
                     }
                 }
-            }
-            if(Verify == false)
-                txtErrMsg.Text = "The Username / Password is incorrect";
-            else{*/
-            this.Hide();
-            txtUsername.Text = "Username";
-            txtPassword.Text = "Password";
-            CustomerMain cus = new CustomerMain(this, username);
-            cus.Show();
+                if (Verify == false)
+                {
+                    label2.BackColor = Color.Red;
+                    label1.BackColor = Color.Red;
+                    txtErrMsg.Text = "The Username / Password is incorrect";
+                    return;
+                }
 
-            //}}
+            }
 
         }
 
         public void StaffVerify(String username, String password)
         {
-            /*
             Boolean Verify = false;
-            using (var notSoImportantVariable = new classicmodelsEntities())
+            using (var db = new classicmodelsEntities())
             {
-                var userAcct = from list in notSoImportantVariable.Staff
-                                where list.StaffID.Equals(username)
-                               select new { list.StaffID, list.Password };
-                if(userAcct==null){
-                    txtErrMsg.Text = "The Username / Password is incorrect";            
-                }
-                else{
-
-                foreach (var user in userAcct.ToList())
+                var userAcct = from list in db.customers
+                               where list.customerUsername.Equals(username)
+                               select new { list.customerUsername, list.customerpwd };
+                if (userAcct == null)
                 {
-                    if ((username == user.StaffID.ToString()) && (password == user.Password.ToString()))
+                    txtErrMsg.Text = "The Username / Password is incorrect";
+                }
+                else
+                {
+                    foreach (var user in userAcct.ToList())
                     {
-                        Verify = true;
-                        this.Hide();
-                        Staff s = new Staff(); //!!!!!!!!!!!!!!!!!!
-                        s.Show();
-                        return;
+                        if ((username == user.customerUsername.ToString()) && (password == user.customerpwd.ToString()))
+                        {
+                            Verify = true;
+                            this.Hide();
+                            txtUsername.Text = "Username";
+                            txtPassword.Text = "Password";
+                            CustomerMain cus = new CustomerMain(this, username);
+                            cus.Show();
+                            return;
+                        }
                     }
                 }
+                if (Verify == false)
+                {
+                    label2.BackColor = Color.Red;
+                    label1.BackColor = Color.Red;
+                    txtErrMsg.Text = "The Username / Password is incorrect";
+                    return;
+                }
+
             }
-
-            if (Verify == false)
-                txtErrMsg.Text = "The Username / Password is incorrect";
-
-            else
-            txtUsername.Text = "Username";
-            txtPassword.Text = "Password";
-            */
 
 
         }
 
 //username verify
-        public String[] GetCusEmail(String username)
+        public String[] GetCustomerEmail(String username)
         {
             
             using (var db = new classicmodelsEntities())
@@ -218,53 +225,50 @@ namespace SDP_SE1A_Group2
             
 
         }
-        public Boolean TenantUsernameVerify(String email)
+        public String[] GetTenatEmail(String username)
         {
-            /*Boolean verify = false;
-            using (var notSoImportantVariable = new classicmodelsEntities())
+
+            using (var db = new classicmodelsEntities())
             {
-                var e = from list in notSoImportantVariable.Tenant
-                               where list.Email.Equals(email)
-                               select new { list.Email };
-                if (e == null) { return false; }
-
-                foreach (var user in email.ToList())
+                var e = from list in db.customers
+                        where list.customerUsername.Equals(username)
+                        select new { list.customerUsername, list.email, list.customerpwd };
+                if (e == null) { return null; }
+                else
                 {
-                    if (email == user.email.ToString())
+                    foreach (var user in e.ToList())
                     {
-                        verify = true;
-
-                        return verify;
+                        String[] act = { user.email.ToString(), user.customerpwd.ToString() };
+                        return act;
                     }
                 }
+
+                return null;
             }
-            return verify;*/
-            return true;//plz delete this when added sql
+
 
         }
 
-        public Boolean StaffUsernameVerify(String email)
+        public String[] GetStaffEmail(String username)
         {
-            /*Boolean verify = false;
-            using (var notSoImportantVariable = new classicmodelsEntities())
+            using (var db = new classicmodelsEntities())
             {
-                var e = from list in notSoImportantVariable.Staff
-                               where list.Email.Equals(email)
-                               select new { list.Email };
-                if (e == null) { return false; }
-
-                foreach (var user in email.ToList())
+                var e = from list in db.customers
+                        where list.customerUsername.Equals(username)
+                        select new { list.customerUsername, list.email, list.customerpwd };
+                if (e == null) { return null; }
+                else
                 {
-                    if (email == user.email.ToString())
+                    foreach (var user in e.ToList())
                     {
-                        verify = true;
-
-                        return verify;
+                        String[] act = { user.email.ToString(), user.customerpwd.ToString() };
+                        return act;
                     }
                 }
+
+                return null;
             }
-            return verify;*/
-            return true;//plz delete this when added sql
+
 
         }
 //username verify ENd
