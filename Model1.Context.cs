@@ -13,10 +13,10 @@ namespace SDP_SE1A_Group2
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class classicmodelsEntities : DbContext
+    public partial class DBEntities1 : DbContext
     {
-        public classicmodelsEntities()
-            : base("name=classicmodelsEntities")
+        public DBEntities1()
+            : base("name=DBEntities1")
         {
         }
     
@@ -25,13 +25,6 @@ namespace SDP_SE1A_Group2
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<customers> customers { get; set; }
-        public DbSet<employees> employees { get; set; }
-        public DbSet<offices> offices { get; set; }
-        public DbSet<orderdetails> orderdetails { get; set; }
-        public DbSet<orders> orders { get; set; }
-        public DbSet<payments> payments { get; set; }
-        public DbSet<productlines> productlines { get; set; }
-        public DbSet<products> products { get; set; }
+        public DbSet<pt_workinghours> pt_workinghours { get; set; }
     }
 }

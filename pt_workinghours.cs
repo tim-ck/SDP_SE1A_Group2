@@ -12,15 +12,10 @@ namespace SDP_SE1A_Group2
     using System;
     using System.Collections.Generic;
     
-    public partial class orderdetails
+    public partial class pt_workinghours
     {
-        public int orderNumber { get; set; }
-        public string productCode { get; set; }
-        public int quantityOrdered { get; set; }
-        public double priceEach { get; set; }
-        public short orderLineNumber { get; set; }
-    
-        public virtual orders orders { get; set; }
-        public virtual products products { get; set; }
+        public string staffID { get; set; }
+        public int month { get; set; }
+        public int hour { get; set; }
     }
 }

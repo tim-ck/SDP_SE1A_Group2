@@ -12,6 +12,7 @@ namespace SDP_SE1A_Group2
 {
     public partial class Staff_Attendance : Form
     {
+        pt_workinghours attendance = new pt_workinghours();
         public Staff_Attendance()
         {
             InitializeComponent();
@@ -19,26 +20,35 @@ namespace SDP_SE1A_Group2
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            String id = txtStaffID.Text;
-            int hour = int.Parse(txtWorkHour.Text);
-            /*
-            using (var classicContext = new classicmodelsEntities())
+            attendance.staffID = txtStaffID.Text.Trim();
+            attendance.month = int.Parse(txtMonth.Text.Trim());
+            attendance.hour = int.Parse(txtWorkHour.Text.Trim());
+
+            using(DBEntities1 db = new DBEntities1())
             {
-                var insertAttendance = "INSERT INTO (table name) (staffID,workHour) VALUES (id,hour)";
-
-                using (SqlCommand querySaveStaff = new SqlCommand(insertAttendance))
-                {
-                    
-                }
+                db.pt_workinghours.Add(attendance);
+                db.SaveChanges();
             }
-            */
 
-            MessageBox.Show("Staff ID:"+id+"\r\n"+"Hour: "+hour + "\r\n"+"Submitted Successfully");
+            MessageBox.Show("Submitted Successfully");
+
+            
         }
 
         private void Staff_Attendance_Load(object sender, EventArgs e)
         {
+            using (DBEntities1 print = new DBEntities1())
+            {
+                var atten = (from list in print.pt_workinghours
+                             select list);    // select * from employees
 
+                foreach (var atten2 in atten.ToList())
+                {
+                    dataGridView1.Rows.Add(atten2.staffID, atten2.month, atten2.hour);
+                }
+            }
         }
+
+
     }
 }

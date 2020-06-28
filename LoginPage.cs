@@ -159,5 +159,9 @@ namespace SDP_SE1A_Group2
             txtUsername.ForeColor = Color.White;
         }
 
+        private void LoginPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -33,6 +33,13 @@
             this.txtStaffID = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.txtWorkHour = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.staffID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.month = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hour = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblMonth = new System.Windows.Forms.Label();
+            this.txtMonth = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblStaffID
@@ -47,7 +54,7 @@
             // lblWorkHour
             // 
             this.lblWorkHour.AutoSize = true;
-            this.lblWorkHour.Location = new System.Drawing.Point(45, 86);
+            this.lblWorkHour.Location = new System.Drawing.Point(45, 126);
             this.lblWorkHour.Name = "lblWorkHour";
             this.lblWorkHour.Size = new System.Drawing.Size(66, 12);
             this.lblWorkHour.TabIndex = 1;
@@ -62,7 +69,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(241, 136);
+            this.btnSubmit.Location = new System.Drawing.Point(241, 176);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 4;
@@ -72,16 +79,63 @@
             // 
             // txtWorkHour
             // 
-            this.txtWorkHour.Location = new System.Drawing.Point(195, 83);
+            this.txtWorkHour.Location = new System.Drawing.Point(195, 123);
             this.txtWorkHour.Name = "txtWorkHour";
             this.txtWorkHour.Size = new System.Drawing.Size(121, 22);
             this.txtWorkHour.TabIndex = 5;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.staffID,
+            this.month,
+            this.hour});
+            this.dataGridView1.Location = new System.Drawing.Point(12, 237);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(304, 150);
+            this.dataGridView1.TabIndex = 6;
+            // 
+            // staffID
+            // 
+            this.staffID.HeaderText = "staffID";
+            this.staffID.Name = "staffID";
+            // 
+            // month
+            // 
+            this.month.HeaderText = "month";
+            this.month.Name = "month";
+            // 
+            // hour
+            // 
+            this.hour.HeaderText = "hour";
+            this.hour.Name = "hour";
+            // 
+            // lblMonth
+            // 
+            this.lblMonth.AutoSize = true;
+            this.lblMonth.Location = new System.Drawing.Point(69, 82);
+            this.lblMonth.Name = "lblMonth";
+            this.lblMonth.Size = new System.Drawing.Size(39, 12);
+            this.lblMonth.TabIndex = 7;
+            this.lblMonth.Text = "Month:";
+            // 
+            // txtMonth
+            // 
+            this.txtMonth.Location = new System.Drawing.Point(195, 82);
+            this.txtMonth.Name = "txtMonth";
+            this.txtMonth.Size = new System.Drawing.Size(121, 22);
+            this.txtMonth.TabIndex = 8;
             // 
             // Staff_Attendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 594);
+            this.Controls.Add(this.txtMonth);
+            this.Controls.Add(this.lblMonth);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtWorkHour);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtStaffID);
@@ -90,6 +144,7 @@
             this.Name = "Staff_Attendance";
             this.Text = "Staff_Attendance";
             this.Load += new System.EventHandler(this.Staff_Attendance_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +157,11 @@
         private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.TextBox txtWorkHour;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staffID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn month;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hour;
+        private System.Windows.Forms.Label lblMonth;
+        private System.Windows.Forms.TextBox txtMonth;
     }
 }
