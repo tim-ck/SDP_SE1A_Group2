@@ -5,6 +5,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -17,7 +19,7 @@ namespace SDP_SE1A_Group2.Customer
     {
        
         private Form activeForm = null;
-        private String userId, cusName;
+        private String userId, cusName,cusEmail;
         private Boolean hvItem;
         Form opener;
         CartPage cartPage;
@@ -33,7 +35,7 @@ namespace SDP_SE1A_Group2.Customer
             InitializeComponent();
             opener = parentForm;
             this.userId = userId;
-            
+
             /* using (var notSoImportantVariable = new classicmodelsEntities())
              {
                 var userAcct = from list in notSoImportantVariable.Customer
@@ -41,7 +43,7 @@ namespace SDP_SE1A_Group2.Customer
                                 select list;
                 foreach (var user in userAcct.ToList())
                  {
-                     cusName = user.CustomerName;
+                     cusEmail = user.email;
                  }
 
               
@@ -63,14 +65,14 @@ namespace SDP_SE1A_Group2.Customer
             btnCart.Image = cart_P;
         }
 
-        //Title bar START
+//Title bar START
         private void lblCloseBtn_Click(object sender, EventArgs e)
         {
             opener.Close();
             this.Close();
         }
         
-        //Drag From Control 
+    //Drag From Control 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
@@ -82,14 +84,14 @@ namespace SDP_SE1A_Group2.Customer
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        //Title bar END
+//Title bar END
 
 
-        //control cart item START
-        
+//control cart item START
+        public void UpdateStore(int store) { cartPage.UpdateStore(store); }
         public Boolean CartHvItem() { return hvItem; }
         public void UpdateCartHvItem(Boolean hvItem) { this.hvItem = hvItem; UpdateIcon(); }
-        public void addItem(String itemID, String qty){ cartPage.AddItem(itemID,qty); }
+        public void addItem(String itemID, String itemName, String description, int qty, int qtyRemain, int unitPrice, int totalPrice) { cartPage.AddItem(itemID, itemName, description, qty, qtyRemain, unitPrice, totalPrice); }
         public void ClearCart() { cartPage.ClearCart(); UpdateIcon(); }
 
         public void UpdateIcon() {
@@ -134,9 +136,32 @@ namespace SDP_SE1A_Group2.Customer
             }
             return storeName;
         }
-        //control cart item End
+//control cart item End
+//Email start
+public void sendEmail(String subject, String message)
+        {
+            cusEmail = "cck001117@gmail.com"; //!!!!!!!!!!!!!!!!!!!!!!!!!!!test case
+            String sender = "tim.ck.project.email@gmail.com";
+            var mailMessage = new MailMessage { };
+            var smtpClinet = new SmtpClient("smtp.gmail.com")
+            {
+                Port = 587,
+                Credentials = new NetworkCredential(sender, "Abc123698745"),
+                EnableSsl = true,
+            };
+            mailMessage = new MailMessage
+            {
+                From = new MailAddress(sender),
+                Subject = subject,
+                Body = message,
+                IsBodyHtml = true,
+            };
+            mailMessage.To.Add(cusEmail);
+            smtpClinet.Send(mailMessage);
+        }
+//Email End
 
-        //open child form
+    //open child form
         private void openChildForm(Form childForm)
         {
             if (activeForm!= null)
@@ -153,7 +178,7 @@ namespace SDP_SE1A_Group2.Customer
 
         
 
-        //menu button click START
+//menu button click START
         
         private void btnProduct_Click(object sender, EventArgs e)
         {
@@ -175,7 +200,7 @@ namespace SDP_SE1A_Group2.Customer
 
         private void btnCart_Click(object sender, EventArgs e)
         {
-
+            lblTitle.Text = "Cart Page";
             openChildForm(cartPage);
             //UI
             btnProduct.Image = Properties.Resources.item_P;
@@ -192,7 +217,7 @@ namespace SDP_SE1A_Group2.Customer
         }
         private void btnOrder_Click_1(object sender, EventArgs e)
         {
-            
+            lblTitle.Text = "Order Page";
             openChildForm(orderForm);
             //UI
             btnProduct.Image = Properties.Resources.item_P;
@@ -235,16 +260,23 @@ namespace SDP_SE1A_Group2.Customer
             this.WindowState = FormWindowState.Minimized;
         }
 
-        
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            //show home page
+            lblTitle.Text = "Welcome Customer " + cusName;
+            if (activeForm != null)
+                activeForm.Hide();
+        }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             this.Close();
             opener.Show();
         }
-        //menu button End
+//menu button End
 
-        //top bar START
+//top bar START(if needed)
         /*private void btnTenantPage_Click(object sender, EventArgs e)
         {
             Boolean isTenant = false;
@@ -275,7 +307,7 @@ namespace SDP_SE1A_Group2.Customer
             Sample s = new Sample();
             s.Show();
         }*/
-        //top bar end
+//top bar end
 
     }
 }

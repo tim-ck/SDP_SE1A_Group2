@@ -1,4 +1,5 @@
-﻿using SDP_SE1A_Group2.Customer;
+﻿using SDP_SE1A_Group2.Account;
+using SDP_SE1A_Group2.Customer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -267,12 +268,17 @@ namespace SDP_SE1A_Group2
         public void btnForgotPassword_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Account.ForgotPasswordForm forgot = new Account.ForgotPasswordForm(this);
+            ForgotPasswordForm forgot = new ForgotPasswordForm(this);
             forgot.Show();
 
         }
 
-        
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RegisterForm register = new RegisterForm(this);
+            register.Show();
+        }
 
         //UI START
         private void txtUsername_Click(object sender, EventArgs e)
@@ -306,6 +312,8 @@ namespace SDP_SE1A_Group2
         }
 
        
+
+
 
 
         //UI END

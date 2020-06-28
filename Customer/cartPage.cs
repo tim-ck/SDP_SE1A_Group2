@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,31 +17,91 @@ namespace SDP_SE1A_Group2.Customer
     {
 
         CustomerMain opener;
-        private Stack items = new Stack();
+        private int itemsCount=0;
 
         public CartPage(CustomerMain opener, String cusName)
         {
             InitializeComponent();
             this.opener = opener;
-            dataGridView1.Columns.Add("itemID", "ID");
-            dataGridView1.Columns.Add("qty", "Quantity");
         }
-        public void AddItem(String itemID,String qty) {
-            if (items.Count == 0)
+
+        public void UpdateStore(int storeIndex) {
+            String storeID = "StoreID : ";
+            String storeName = "Store Name: ";
+
+            switch (storeIndex)
+            {
+                case 0:
+                    storeID += "cwb"; 
+                    storeName += "UG03, ABC Mall";
+                    break;
+                case 1:
+                    storeID += "mka";
+                    storeName+= "LG22, DEF Commercial Centre";
+                    break;
+                case 2:
+                    storeID += "mkb";
+                    storeName += "203, G.H.I Mall";
+                    break;
+                case 3:
+                    storeID += "kwf";
+                    storeName += "LG123, Kwai Fong Plaza";
+                    break;
+                case 4:
+                    storeID += "sht";
+                    storeName += "888, New ST Plaza";
+                    break;
+            }
+            txtStoreID.Text = storeID;
+            txtStoreAddress.Text = storeName;
+        }
+
+        //add
+        public void AddItem(String itemID, String itemName, String description, int quantity, int qtyRemain, int unitPrice, int totalPrice) {
+            if (itemsCount == 0)
                opener.UpdateCartHvItem(true);
-            String[] item = { itemID, qty };
-            items.Push(item);
-            opener.UpdateCartHvItem(true);
-            dataGridView1.Rows.Add(item[0], item[1]);
+            ++itemsCount;
+            dataGridView1.Rows.Add(itemID, itemName, description, unitPrice);
+            
+
+            //modify combox qty colums
+            DataGridViewComboBoxCell cmb =
+                (DataGridViewComboBoxCell)(dataGridView1.Rows[itemsCount - 1].Cells["qty"]);
+            String[] qty = new String[qtyRemain];
+            for (int a=1; a <= qtyRemain; a++)
+            {
+                qty[a-1] = a.ToString();
+            }
+            cmb.DataSource = qty;
+            cmb.Value = quantity.ToString();
+            dataGridView1.Rows[itemsCount - 1].Cells["totalPrice"].Value = totalPrice;
+
+
 
         }
-
+        //remove
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int colum = e.ColumnIndex;
+            int row = e.RowIndex;
+            if (colum == dataGridView1.Rows[row].Cells["btnRemoveItem"].ColumnIndex && row < itemsCount)
+            {
+                itemsCount--;
+                if (itemsCount == 0)
+                    opener.UpdateCartHvItem(false);
+                dataGridView1.Rows.Remove(dataGridView1.Rows[row]);
+            }
+                
+        }
+        //clear
         public void ClearCart()
         {
             dataGridView1.Rows.Clear();
+            itemsCount = 0;
             opener.UpdateCartHvItem(false);
         }
 
+        //btn
         private void btnBack_Click(object sender, EventArgs e)
         {
             if (opener.CartHvItem()) {
@@ -48,8 +109,56 @@ namespace SDP_SE1A_Group2.Customer
                 if (confirmResult == DialogResult.OK)
                     ClearCart();
             }
-            else
-                return;
+            
+            
+        }
+
+        private void dataGridView2_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView1.Rows[e.RowIndex].Cells["qty"].ColumnIndex)
+            {
+                {
+                    if (dataGridView1.Rows[e.RowIndex].Cells["qty"].Value != null)
+                    {
+                        var qty = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["qty"].Value.ToString());
+                        var unitPrice = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["UnitPrice"].Value.ToString());
+                        dataGridView1.Rows[e.RowIndex].Cells["totalPrice"].Value = (qty * unitPrice);
+                    }
+                }
+            }
+        }
+
+        private void btnShowShopItem_Click(object sender, EventArgs e)
+        {
+            if (opener.CartHvItem())
+            {
+                var confirmResult = MessageBox.Show("Are you sure to create Order?", "", MessageBoxButtons.OKCancel);
+                if (confirmResult == DialogResult.OK)
+                {
+                    int orderID = 001;//!!!!!!!!!sql
+                    var culture = new CultureInfo("en-GB");
+                    String subject = "Order Detail for your order #" + orderID;
+                    String msg = "<h1>The Hong Kong Cube Shop</h1>" +
+                        "<h2>Your order is ready.</h2>" +
+                        "order id:" + orderID +
+                        "<br>order date:" + DateTime.Now.ToString(culture) +
+                        "<hr>Store ID : " + txtStoreID.Text + "<br>" +
+                        "Store Address : " + txtStoreAddress.Text + "<br>" +
+                        "Opening hours: 10:00am-09:00pm <p>" +
+                        "Contact our staff inside the store mention above. We will check your email and customer account,<br> and we will prepare items of your order." +
+                        "<hr>" +
+                        "<table bgcolor='#80b3d3' width='100%' border='1' >" +
+                        "<tr><th>ItemID</th><th>Item Name</th><th>Description</th><th>Unit Price</th><th>Quantity</th><th>Total Price</th></tr>" +
+                        "<tr>" +
+                        "<td colspan='4'>Total Price</td>" +
+                        "<td colspan='2'></td></tr></table>";
+
+                    opener.sendEmail(subject, msg);
+                    opener.CreateOrder()
+                    MessageBox.Show("The Order detail had sent to your Email successfully. Order created");
+                }
+                    
+            }
             
         }
     }
