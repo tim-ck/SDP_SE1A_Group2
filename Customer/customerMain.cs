@@ -37,15 +37,15 @@ namespace SDP_SE1A_Group2.Customer
             opener = parentForm;
             this.userId = userId;
 
-            using (var db = new classicmodelsEntities())
+            using (var db = new sdpEntities1())
              {
                 var userAcct = from list in db.customers
-                                where list.customerUsername.Equals(userId)
+                                where list.customerID.Equals(userId)
                                 select list;
                 foreach (var user in userAcct.ToList())
                  {
                         cusEmail = user.email;
-                        cusName= user.email;
+                        cusName= user.customername;
                 }
 
               

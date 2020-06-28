@@ -72,35 +72,35 @@ namespace SDP_SE1A_Group2.Customer
             }
             cmb.DataSource = qty;
             dataGridView1.Rows[0].Cells["qty"].Value = "0";*/
-            using (var db = new classicmodelsEntities())
+            using (var db = new sdpEntities1())
             {
-                var item = from items in db.item
-                           from showcaseItem in db.showcase_item
-                           where showcaseItem.showcaseID.Contains(storeName) && items.itemID == showcaseItem.itemID
+                var item = from items in db.items
+                           from showcaseItem in db.showcaseitems
+                           where showcaseItem.showcaseid.Contains(storeName) && items.itemID == showcaseItem.itemid
                            select new
                            {
-                               showcaseItem.itemID,
-                               showcaseItem.showCaseID,
-                               showcaseItem.availableQuantity,
+                               showcaseItem.itemid,
+                               showcaseItem.showcaseid,
+                               showcaseItem.avalibleQty,
                                items.itemName,
-                               items.description,
-                               items.UnitPrice
+                               items.itemDesc,
+                               items.unitPrice
                            };
                 int count=0;
-                foreach (var i in item.tolist())
+                foreach (var i in item.ToList())
                 {
-                    dataGridView1.Rows.Add(i.showcaseItem.itemID,
+                    dataGridView1.Rows.Add(i.itemid,
                                     storeName,
-                                   i.showcaseItem.showCaseID,
+                                   i.showcaseid,
                                    
-                                   i.items.itemName,
-                                   i.items.description,
-                                   i.showcaseItem.availableQuantity,
-                                   i.items.UnitPrice);
+                                   i.itemName,
+                                   i.itemDesc,
+                                   i.avalibleQty,
+                                   i.unitPrice);
                     DataGridViewComboBoxCell cmb = 
                         (DataGridViewComboBoxCell)(dataGridView1.Rows[count].Cells["qty"]);
-                    String[] qty = new string[i.showcaseItem.availableQuantity] ;
-                    for(int a =0; a<=i.showcaseItem.availableQuantity;a++){
+                    String[] qty = new string[i.avalibleQty+1] ;
+                    for(int a =0; a<=i.avalibleQty; a++){
                         qty[a] = a.ToString();
                     }
                     cmb.DataSource = qty;

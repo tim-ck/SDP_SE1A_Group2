@@ -86,17 +86,17 @@ namespace SDP_SE1A_Group2
         public void CustomerVerify(String username, String password)
         {
             Boolean Verify = false;
-            using (var db = new classicmodelsEntities())
+            using (var db = new sdpEntities1())
             {
                 var userAcct =  from list in db.customers
-                                where list.customerUsername.Equals(username)
-                                select new { list.customerUsername, list.customerpwd };
+                                where list.customerID.Equals(username)
+                                select new { list.customerID, list.customerpwd };
                 if(userAcct==null){
                     txtErrMsg.Text = "The Username / Password is incorrect";            
                 }else{
                     foreach (var user in userAcct.ToList())
                     {
-                        if ((username == user.customerUsername.ToString()) && (password == user.customerpwd.ToString()))
+                        if ((username == user.customerID.ToString()) && (password == user.customerpwd.ToString()))
                         {
                             Verify = true;
                             this.Hide();
@@ -123,11 +123,11 @@ namespace SDP_SE1A_Group2
         public void TenantVerify(String username, String password)
         {
             Boolean Verify = false;
-            using (var db = new classicmodelsEntities())
+            using (var db = new sdpEntities1())
             {
                 var userAcct = from list in db.customers
-                               where list.customerUsername.Equals(username)
-                               select new { list.customerUsername, list.customerpwd };
+                               where list.customerID.Equals(username)
+                               select new { list.customerID, list.customerpwd };
                 if (userAcct == null)
                 {
                     txtErrMsg.Text = "The Username / Password is incorrect";
@@ -136,7 +136,7 @@ namespace SDP_SE1A_Group2
                 {
                     foreach (var user in userAcct.ToList())
                     {
-                        if ((username == user.customerUsername.ToString()) && (password == user.customerpwd.ToString()))
+                        if ((username == user.customerID.ToString()) && (password == user.customerpwd.ToString()))
                         {
                             Verify = true;
                             this.Hide();
@@ -163,11 +163,11 @@ namespace SDP_SE1A_Group2
         public void StaffVerify(String username, String password)
         {
             Boolean Verify = false;
-            using (var db = new classicmodelsEntities())
+            using (var db = new sdpEntities1())
             {
                 var userAcct = from list in db.customers
-                               where list.customerUsername.Equals(username)
-                               select new { list.customerUsername, list.customerpwd };
+                               where list.customerID.Equals(username)
+                               select new { list.customerID, list.customerpwd };
                 if (userAcct == null)
                 {
                     txtErrMsg.Text = "The Username / Password is incorrect";
@@ -176,7 +176,7 @@ namespace SDP_SE1A_Group2
                 {
                     foreach (var user in userAcct.ToList())
                     {
-                        if ((username == user.customerUsername.ToString()) && (password == user.customerpwd.ToString()))
+                        if ((username == user.customerID.ToString()) && (password == user.customerpwd.ToString()))
                         {
                             Verify = true;
                             this.Hide();
@@ -205,11 +205,11 @@ namespace SDP_SE1A_Group2
         public String[] GetCustomerEmail(String username)
         {
             
-            using (var db = new classicmodelsEntities())
+            using (var db = new sdpEntities1())
             {
                 var e = from list in db.customers
-                               where list.customerUsername.Equals(username)
-                               select new { list.customerUsername,list.email,list.customerpwd };
+                               where list.customerID.Equals(username)
+                               select new { list.customerID, list.email,list.customerpwd };
                 if (e == null) {  return null; } else
                 {
                     foreach (var user in e.ToList())
@@ -228,11 +228,11 @@ namespace SDP_SE1A_Group2
         public String[] GetTenatEmail(String username)
         {
 
-            using (var db = new classicmodelsEntities())
+            using (var db = new sdpEntities1())
             {
                 var e = from list in db.customers
-                        where list.customerUsername.Equals(username)
-                        select new { list.customerUsername, list.email, list.customerpwd };
+                        where list.customerID.Equals(username)
+                        select new { list.customerID, list.email, list.customerpwd };
                 if (e == null) { return null; }
                 else
                 {
@@ -251,11 +251,11 @@ namespace SDP_SE1A_Group2
 
         public String[] GetStaffEmail(String username)
         {
-            using (var db = new classicmodelsEntities())
+            using (var db = new sdpEntities1())
             {
                 var e = from list in db.customers
-                        where list.customerUsername.Equals(username)
-                        select new { list.customerUsername, list.email, list.customerpwd };
+                        where list.customerID.Equals(username)
+                        select new { list.customerID, list.email, list.customerpwd };
                 if (e == null) { return null; }
                 else
                 {

@@ -185,13 +185,13 @@ namespace SDP_SE1A_Group2.Account
             if (rdoC.Checked) {
                 try
                 {
-                    using (var db = new classicmodelsEntities())
+                    using (var db = new sdpEntities1())
                     {
                         var acct = new customer()
                         {
-                            customerUsername = txtUsername.Text,
+                            customerID = txtUsername.Text,
                             customerpwd = txtPassword.Text,
-                            customerName = txtFirstName.Text,
+                            customername = txtFirstName.Text,
                             email = txtEmail.Text,
                             phone = txtPhoneNumber.Text
                         };
@@ -216,13 +216,13 @@ namespace SDP_SE1A_Group2.Account
             else if (rdoT.Checked) { //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 try
                 {
-                    using (var db = new classicmodelsEntities())
+                    using (var db = new sdpEntities1())
                     {
                         var acct = new customer()
                         {
-                            customerUsername = txtUsername.Text,
+                            customerID = txtUsername.Text,
                             customerpwd = txtPassword.Text,
-                            customerName = txtFirstName.Text,
+                            customername = txtFirstName.Text,
                             email = txtEmail.Text,
                             phone = txtPhoneNumber.Text
                         };
@@ -248,13 +248,13 @@ namespace SDP_SE1A_Group2.Account
             {//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 try
                 {
-                    using (var db = new classicmodelsEntities())
+                    using (var db = new sdpEntities1())
                     {
                         var acct = new customer()
                         {
-                            customerUsername = txtUsername.Text,
+                            customerID = txtUsername.Text,
                             customerpwd = txtPassword.Text,
-                            customerName = txtFirstName.Text,
+                            customername = txtFirstName.Text,
                             email = txtEmail.Text,
                             phone = txtPhoneNumber.Text
                         };

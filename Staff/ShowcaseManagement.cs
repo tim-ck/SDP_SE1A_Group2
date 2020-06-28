@@ -21,14 +21,14 @@ namespace SDP_SE1A_Group2.Staff
 
         private void importShowcase()
         {
-            using (var db = new classicmodelsEntities())
+            using (var db = new sdpEntities1())
             {
-                var showcases = (from list in db.showcase
+                var showcases = (from list in db.showcases
                                  select list);
                 count = 0;
-                foreach (var i in emp.ToList())
+                foreach (var i in showcases.ToList())
                 {
-                    dataGridView1.Rows.Add(i.showcaseID,i.size,i.rental,i.status);
+                    dataGridView1.Rows.Add(i.showcaseid,i.size,i.rental,i.status);
                     count++;
                 }
             }
@@ -40,7 +40,7 @@ namespace SDP_SE1A_Group2.Staff
             int row = e.RowIndex;
             if (colum == dataGridView1.Rows[row].Cells["btnRent"].ColumnIndex && row < count)
             {
-               MessageBox.Show("")
+                MessageBox.Show("");
 
             }
 
