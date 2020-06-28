@@ -117,28 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="showcaseId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="size.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="rentalPerDay.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="status.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="showcaseId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="size.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="rentalPerDay.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="status.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
 </root>

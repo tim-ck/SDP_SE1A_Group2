@@ -68,7 +68,7 @@
             this.btnWaitForStockIn.Name = "btnWaitForStockIn";
             this.btnWaitForStockIn.Size = new System.Drawing.Size(220, 75);
             this.btnWaitForStockIn.TabIndex = 1;
-            this.btnWaitForStockIn.Text = "Wait for Stock-in";
+            this.btnWaitForStockIn.Text = "To Be Imported";
             this.btnWaitForStockIn.UseVisualStyleBackColor = false;
             this.btnWaitForStockIn.Click += new System.EventHandler(this.btnWaitForStockIn_Click);
             // 

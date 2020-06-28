@@ -27,6 +27,11 @@ namespace SDP_SE1A_Group2.Tenant.SalesItem
 
         }
 
-
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            //Update Item info
+            UpdateShowcaseItem updateShowcaseItem = new UpdateShowcaseItem();
+            updateShowcaseItem.Show();
+        }
     }
 }

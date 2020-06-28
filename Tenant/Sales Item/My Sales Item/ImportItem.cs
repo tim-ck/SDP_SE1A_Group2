@@ -16,5 +16,12 @@ namespace SDP_SE1A_Group2.Tenant.SalesItem
         {
             InitializeComponent();
         }
+
+        private void dataGridView2_DoubleClick(object sender, EventArgs e)
+        {
+            // update item info
+            UpdateImportItem updateImportItem = new UpdateImportItem();
+            updateImportItem.Show();
+        }
     }
 }

@@ -66,10 +66,10 @@
     <Compile Include="Tenant\Sales Record\Tenant_ShowcaseSalesRecord.Designer.cs">
       <DependentUpon>Tenant_ShowcaseSalesRecord.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tenant\Sales Item\Stock-on Item\InShowcase.cs">
+    <Compile Include="Tenant\Sales Item\My Sales Item\InShowcase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tenant\Sales Item\Stock-on Item\InShowcase.Designer.cs">
+    <Compile Include="Tenant\Sales Item\My Sales Item\InShowcase.Designer.cs">
       <DependentUpon>InShowcase.cs</DependentUpon>
     </Compile>
     <Compile Include="Tenant\Sales Item\Tenant_StockInItem.cs">
@@ -78,11 +78,11 @@
     <Compile Include="Tenant\Sales Item\Tenant_StockInItem.Designer.cs">
       <DependentUpon>Tenant_StockInItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tenant\Sales Item\Stock-on Item\WaitForStockIn.cs">
+    <Compile Include="Tenant\Sales Item\My Sales Item\ImportItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tenant\Sales Item\Stock-on Item\WaitForStockIn.Designer.cs">
-      <DependentUpon>WaitForStockIn.cs</DependentUpon>
+    <Compile Include="Tenant\Sales Item\My Sales Item\ImportItem.Designer.cs">
+      <DependentUpon>ImportItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Tenant\Tenant_Main.cs">
       <SubType>Form</SubType>
@@ -108,6 +108,18 @@
     <Compile Include="Tenant\Sales Item\Tenant_MySalesItem.Designer.cs">
       <DependentUpon>Tenant_MySalesItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tenant\Sales Item\My Sales Item\Update Item\UpdateShowcaseItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\Sales Item\My Sales Item\Update Item\UpdateShowcaseItem.Designer.cs">
+      <DependentUpon>UpdateShowcaseItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tenant\Sales Item\My Sales Item\Update Item\UpdateImportItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\Sales Item\My Sales Item\Update Item\UpdateImportItem.Designer.cs">
+      <DependentUpon>UpdateImportItem.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,14 +128,14 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tenant\Sales Item\Stock-on Item\InShowcase.resx">
+    <EmbeddedResource Include="Tenant\Sales Item\My Sales Item\InShowcase.resx">
       <DependentUpon>InShowcase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tenant\Sales Item\Tenant_StockInItem.resx">
       <DependentUpon>Tenant_StockInItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tenant\Sales Item\Stock-on Item\WaitForStockIn.resx">
-      <DependentUpon>WaitForStockIn.cs</DependentUpon>
+    <EmbeddedResource Include="Tenant\Sales Item\My Sales Item\ImportItem.resx">
+      <DependentUpon>ImportItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tenant\Sales Record\Tenant_ConsolidatedStatement.resx">
       <DependentUpon>Tenant_ConsolidatedStatement.cs</DependentUpon>
@@ -142,6 +154,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tenant\Sales Item\Tenant_MySalesItem.resx">
       <DependentUpon>Tenant_MySalesItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\Sales Item\My Sales Item\Update Item\UpdateShowcaseItem.resx">
+      <DependentUpon>UpdateShowcaseItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\Sales Item\My Sales Item\Update Item\UpdateImportItem.resx">
+      <DependentUpon>UpdateImportItem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
