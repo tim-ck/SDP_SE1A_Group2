@@ -21,7 +21,7 @@ namespace SDP_SE1A_Group2.Staff
 
         private void importShowcase()
         {
-            using (var db = new sdpEntities1())
+            using (var db = new sdpEntities())
             {
                 var showcases = (from list in db.showcases
                                  select list);
