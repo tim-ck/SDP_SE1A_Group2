@@ -12,7 +12,7 @@ namespace SDP_SE1A_Group2
 {
     public partial class Staff_POS : Form
     {
-        order_detail item = new order_detail();
+        showcase_item item = new showcase_item();
         public int qt;
         public double price;
         public double totalPrice;
@@ -42,8 +42,13 @@ namespace SDP_SE1A_Group2
 
             using (var context = new DBEntities2())
             {
+<<<<<<< HEAD
                 var qty = context.order_detail.First<order_detail>();
                 qty.qty = qt;
+=======
+                var qty = context.showcase_item.First<showcase_item>();
+                qty.salesqty = qt;
+>>>>>>> parent of 8fcec7f... DIU
                 context.SaveChanges();
             }
 
