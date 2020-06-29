@@ -12,7 +12,7 @@ namespace SDP_SE1A_Group2
 {
     public partial class Staff_POS : Form
     {
-        showcase_item item = new showcase_item();
+        
         public int qt;
         public double price;
         public double totalPrice;
@@ -33,19 +33,7 @@ namespace SDP_SE1A_Group2
             id = txtItemID.Text;
             qt = int.Parse(txtQT.Text);
 
-            using (var context = new DBEntities())
-            {
-                var query = from sci in context.showcase_item
-                            where sci.itemId == id
-                            select sci;
-            }
-
-            using (var context = new DBEntities())
-            {
-                var qty = context.showcase_item.First<showcase_item>();
-                qty.salesqty = qt;
-                context.SaveChanges();
-            }
+            
 
             //receipt
             string[] receipt = {id,qt.ToString(),totalPrice.ToString()};

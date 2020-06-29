@@ -38,7 +38,7 @@
             this.month = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblMonth = new System.Windows.Forms.Label();
-            this.txtMonth = new System.Windows.Forms.TextBox();
+            this.dtpMonth = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,19 +121,21 @@
             this.lblMonth.TabIndex = 7;
             this.lblMonth.Text = "Month:";
             // 
-            // txtMonth
+            // dtpMonth
             // 
-            this.txtMonth.Location = new System.Drawing.Point(195, 82);
-            this.txtMonth.Name = "txtMonth";
-            this.txtMonth.Size = new System.Drawing.Size(121, 22);
-            this.txtMonth.TabIndex = 8;
+            this.dtpMonth.CustomFormat = "yyyy-MM-dd";
+            this.dtpMonth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpMonth.Location = new System.Drawing.Point(195, 82);
+            this.dtpMonth.Name = "dtpMonth";
+            this.dtpMonth.Size = new System.Drawing.Size(121, 22);
+            this.dtpMonth.TabIndex = 9;
             // 
             // Staff_Attendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 594);
-            this.Controls.Add(this.txtMonth);
+            this.Controls.Add(this.dtpMonth);
             this.Controls.Add(this.lblMonth);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtWorkHour);
@@ -162,6 +164,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn month;
         private System.Windows.Forms.DataGridViewTextBoxColumn hour;
         private System.Windows.Forms.Label lblMonth;
-        private System.Windows.Forms.TextBox txtMonth;
+        private System.Windows.Forms.DateTimePicker dtpMonth;
     }
 }
