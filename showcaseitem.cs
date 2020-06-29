@@ -12,21 +12,15 @@ namespace SDP_SE1A_Group2
     using System;
     using System.Collections.Generic;
     
-    public partial class staff
+    public partial class showcaseitem
     {
-        public staff()
-        {
-            this.attendences = new HashSet<attendence>();
-        }
+        public string showcaseid { get; set; }
+        public string itemid { get; set; }
+        public int avalibleQty { get; set; }
+        public int soldQty { get; set; }
+        public int TotalQty { get; set; }
     
-        public int staffID { get; set; }
-        public string tenantpwd { get; set; }
-        public string email { get; set; }
-        public string name { get; set; }
-        public string staffType { get; set; }
-        public Nullable<int> reportsTo { get; set; }
-        public float salary { get; set; }
-    
-        public virtual ICollection<attendence> attendences { get; set; }
+        public virtual item item { get; set; }
+        public virtual showcase showcase { get; set; }
     }
 }

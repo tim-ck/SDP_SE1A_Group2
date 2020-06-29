@@ -1,6 +1,6 @@
 ﻿namespace SDP_SE1A_Group2
 {
-    partial class Staff
+    partial class staff
     {
         /// <summary>
         /// Required designer variable.

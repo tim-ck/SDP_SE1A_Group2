@@ -12,21 +12,21 @@ namespace SDP_SE1A_Group2
     using System;
     using System.Collections.Generic;
     
-    public partial class staff
+    public partial class tenant
     {
-        public staff()
+        public tenant()
         {
-            this.attendences = new HashSet<attendence>();
+            this.items = new HashSet<item>();
+            this.rentinfoes = new HashSet<rentinfo>();
         }
     
-        public int staffID { get; set; }
+        public string tenantID { get; set; }
         public string tenantpwd { get; set; }
+        public string tenantName { get; set; }
         public string email { get; set; }
-        public string name { get; set; }
-        public string staffType { get; set; }
-        public Nullable<int> reportsTo { get; set; }
-        public float salary { get; set; }
+        public string phone { get; set; }
     
-        public virtual ICollection<attendence> attendences { get; set; }
+        public virtual ICollection<item> items { get; set; }
+        public virtual ICollection<rentinfo> rentinfoes { get; set; }
     }
 }
