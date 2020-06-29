@@ -41,6 +41,17 @@
           <Property Name="customerID" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="orderDate" Type="date" Nullable="false" />
         </EntityType>
+        <EntityType Name="preinputitem">
+          <Key>
+            <PropertyRef Name="preinputitemid" />
+          </Key>
+          <Property Name="preinputitemid" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="itemname" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="itemqty" Type="int" Nullable="false" />
+          <Property Name="itemdesc" Type="varchar" MaxLength="45" />
+          <Property Name="itemunitprice" Type="float" Nullable="false" />
+          <Property Name="tenantid" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
         <EntityType Name="rentinfo">
           <Key>
             <PropertyRef Name="rentID" />
@@ -115,6 +126,18 @@
             </Principal>
             <Dependent Role="itemimage">
               <PropertyRef Name="itemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="preinputitem_tenantid_fk">
+          <End Role="tenant" Type="Self.tenant" Multiplicity="1" />
+          <End Role="preinputitem" Type="Self.preinputitem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tenant">
+              <PropertyRef Name="tenantID" />
+            </Principal>
+            <Dependent Role="preinputitem">
+              <PropertyRef Name="tenantid" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -207,6 +230,7 @@
           <EntitySet Name="item" EntityType="Self.item" Schema="spd" store:Type="Tables" />
           <EntitySet Name="itemimage" EntityType="Self.itemimage" Schema="spd" store:Type="Tables" />
           <EntitySet Name="order" EntityType="Self.order" Schema="spd" store:Type="Tables" />
+          <EntitySet Name="preinputitem" EntityType="Self.preinputitem" Schema="spd" store:Type="Tables" />
           <EntitySet Name="rentinfo" EntityType="Self.rentinfo" Schema="spd" store:Type="Tables" />
           <EntitySet Name="reservation" EntityType="Self.reservation" Schema="spd" store:Type="Tables" />
           <EntitySet Name="showcase" EntityType="Self.showcase" Schema="spd" store:Type="Tables" />
@@ -220,6 +244,10 @@
           <AssociationSet Name="itemimage_itemid_fk" Association="Self.itemimage_itemid_fk">
             <End Role="item" EntitySet="item" />
             <End Role="itemimage" EntitySet="itemimage" />
+          </AssociationSet>
+          <AssociationSet Name="preinputitem_tenantid_fk" Association="Self.preinputitem_tenantid_fk">
+            <End Role="tenant" EntitySet="tenant" />
+            <End Role="preinputitem" EntitySet="preinputitem" />
           </AssociationSet>
           <AssociationSet Name="rentinfo_showcaseid_fk" Association="Self.rentinfo_showcaseid_fk">
             <End Role="showcase" EntitySet="showcase" />
@@ -297,6 +325,18 @@
           <Property Name="orderDate" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="suborder" Relationship="Self.suborder_orderid_fk" FromRole="order" ToRole="suborder" />
         </EntityType>
+        <EntityType Name="preinputitem">
+          <Key>
+            <PropertyRef Name="preinputitemid" />
+          </Key>
+          <Property Name="preinputitemid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="itemname" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="itemqty" Type="Int32" Nullable="false" />
+          <Property Name="itemdesc" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="itemunitprice" Type="Single" Nullable="false" />
+          <Property Name="tenantid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tenant" Relationship="Self.preinputitem_tenantid_fk" FromRole="preinputitem" ToRole="tenant" />
+        </EntityType>
         <EntityType Name="rentinfo">
           <Key>
             <PropertyRef Name="rentID" />
@@ -360,6 +400,7 @@
           <Property Name="tenantName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="item" Relationship="Self.item_tenantid_fk" FromRole="tenant" ToRole="item" />
+          <NavigationProperty Name="preinputitem" Relationship="Self.preinputitem_tenantid_fk" FromRole="tenant" ToRole="preinputitem" />
           <NavigationProperty Name="rentinfo" Relationship="Self.rentinfo_tenantid_fk" FromRole="tenant" ToRole="rentinfo" />
         </EntityType>
         <Association Name="item_tenantid_fk">
@@ -422,6 +463,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="preinputitem_tenantid_fk">
+          <End Role="tenant" Type="Self.tenant" Multiplicity="1" />
+          <End Role="preinputitem" Type="Self.preinputitem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tenant">
+              <PropertyRef Name="tenantID" />
+            </Principal>
+            <Dependent Role="preinputitem">
+              <PropertyRef Name="tenantid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="rentinfo_showcaseid_fk">
           <End Role="showcase" Type="Self.showcase" Multiplicity="1" />
           <End Role="rentinfo" Type="Self.rentinfo" Multiplicity="*" />
@@ -475,6 +528,7 @@
           <EntitySet Name="item" EntityType="Self.item" />
           <EntitySet Name="itemimage" EntityType="Self.itemimage" />
           <EntitySet Name="order" EntityType="Self.order" />
+          <EntitySet Name="preinputitem" EntityType="Self.preinputitem" />
           <EntitySet Name="rentinfo" EntityType="Self.rentinfo" />
           <EntitySet Name="reservation" EntityType="Self.reservation" />
           <EntitySet Name="showcase" EntityType="Self.showcase" />
@@ -500,6 +554,10 @@
           <AssociationSet Name="suborder_orderid_fk" Association="Self.suborder_orderid_fk">
             <End Role="order" EntitySet="order" />
             <End Role="suborder" EntitySet="suborder" />
+          </AssociationSet>
+          <AssociationSet Name="preinputitem_tenantid_fk" Association="Self.preinputitem_tenantid_fk">
+            <End Role="tenant" EntitySet="tenant" />
+            <End Role="preinputitem" EntitySet="preinputitem" />
           </AssociationSet>
           <AssociationSet Name="rentinfo_showcaseid_fk" Association="Self.rentinfo_showcaseid_fk">
             <End Role="showcase" EntitySet="showcase" />
@@ -561,6 +619,18 @@
                 <ScalarProperty Name="orderID" ColumnName="orderID" />
                 <ScalarProperty Name="customerID" ColumnName="customerID" />
                 <ScalarProperty Name="orderDate" ColumnName="orderDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="preinputitem">
+            <EntityTypeMapping TypeName="spdModel.preinputitem">
+              <MappingFragment StoreEntitySet="preinputitem">
+                <ScalarProperty Name="preinputitemid" ColumnName="preinputitemid" />
+                <ScalarProperty Name="itemname" ColumnName="itemname" />
+                <ScalarProperty Name="itemqty" ColumnName="itemqty" />
+                <ScalarProperty Name="itemdesc" ColumnName="itemdesc" />
+                <ScalarProperty Name="itemunitprice" ColumnName="itemunitprice" />
+                <ScalarProperty Name="tenantid" ColumnName="tenantid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

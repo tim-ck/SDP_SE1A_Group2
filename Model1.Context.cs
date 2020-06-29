@@ -29,6 +29,7 @@ namespace SDP_SE1A_Group2
         public DbSet<item> item { get; set; }
         public DbSet<itemimage> itemimage { get; set; }
         public DbSet<order> order { get; set; }
+        public DbSet<preinputitem> preinputitem { get; set; }
         public DbSet<rentinfo> rentinfo { get; set; }
         public DbSet<reservation> reservation { get; set; }
         public DbSet<showcase> showcase { get; set; }
