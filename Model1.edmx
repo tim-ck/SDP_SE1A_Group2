@@ -4,7 +4,19 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
+<<<<<<< HEAD
       <Schema Namespace="sdpModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+=======
+<<<<<<< HEAD
+      <Schema Namespace="sdpModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+=======
+<<<<<<< HEAD
+      <Schema Namespace="sdpModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+=======
+    <Schema Namespace="sdpModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+>>>>>>> 86a7e108aff4187150d4572977d6ece7e395f0d5
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
         <EntityType Name="attendence">
           <Key>
             <PropertyRef Name="staffID" />
@@ -328,8 +340,22 @@
             <End Role="showcaseitem" EntitySet="showcaseitem" />
           </AssociationSet>
         </EntityContainer>
+<<<<<<< HEAD
       </Schema>
     </edmx:StorageModels>
+=======
+<<<<<<< HEAD
+      </Schema>
+    </edmx:StorageModels>
+=======
+<<<<<<< HEAD
+      </Schema>
+    </edmx:StorageModels>
+=======
+      </Schema></edmx:StorageModels>
+>>>>>>> 86a7e108aff4187150d4572977d6ece7e395f0d5
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="sdpModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -352,7 +378,19 @@
           <Property Name="customername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+<<<<<<< HEAD
           <NavigationProperty Name="order" Relationship="Self.order_customerID_fk" FromRole="customer" ToRole="order" />
+=======
+<<<<<<< HEAD
+          <NavigationProperty Name="order" Relationship="Self.order_customerID_fk" FromRole="customer" ToRole="order" />
+=======
+<<<<<<< HEAD
+          <NavigationProperty Name="order" Relationship="Self.order_customerID_fk" FromRole="customer" ToRole="order" />
+=======
+          <NavigationProperty Name="orders" Relationship="Self.order_customerID_fk" FromRole="customer" ToRole="order" />
+>>>>>>> 86a7e108aff4187150d4572977d6ece7e395f0d5
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
         </EntityType>
         <EntityType Name="item">
           <Key>
@@ -364,9 +402,27 @@
           <Property Name="itemDesc" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="unitPrice" Type="Single" Nullable="false" />
           <NavigationProperty Name="tenant" Relationship="Self.item_tenantid_fk" FromRole="item" ToRole="tenant" />
+<<<<<<< HEAD
           <NavigationProperty Name="itemimage" Relationship="Self.itemimage_itemid_fk" FromRole="item" ToRole="itemimage" />
           <NavigationProperty Name="order_detail" Relationship="Self.order_customerID_fk2" FromRole="item" ToRole="order_detail" />
           <NavigationProperty Name="showcaseitem" Relationship="Self.showcaseitem_itemid_fk" FromRole="item" ToRole="showcaseitem" />
+=======
+<<<<<<< HEAD
+          <NavigationProperty Name="itemimage" Relationship="Self.itemimage_itemid_fk" FromRole="item" ToRole="itemimage" />
+          <NavigationProperty Name="order_detail" Relationship="Self.order_customerID_fk2" FromRole="item" ToRole="order_detail" />
+          <NavigationProperty Name="showcaseitem" Relationship="Self.showcaseitem_itemid_fk" FromRole="item" ToRole="showcaseitem" />
+=======
+<<<<<<< HEAD
+          <NavigationProperty Name="itemimage" Relationship="Self.itemimage_itemid_fk" FromRole="item" ToRole="itemimage" />
+          <NavigationProperty Name="order_detail" Relationship="Self.order_customerID_fk2" FromRole="item" ToRole="order_detail" />
+          <NavigationProperty Name="showcaseitem" Relationship="Self.showcaseitem_itemid_fk" FromRole="item" ToRole="showcaseitem" />
+=======
+          <NavigationProperty Name="itemimages" Relationship="Self.itemimage_itemid_fk" FromRole="item" ToRole="itemimage" />
+          <NavigationProperty Name="order_detail" Relationship="Self.order_customerID_fk2" FromRole="item" ToRole="order_detail" />
+          <NavigationProperty Name="showcaseitems" Relationship="Self.showcaseitem_itemid_fk" FromRole="item" ToRole="showcaseitem" />
+>>>>>>> 86a7e108aff4187150d4572977d6ece7e395f0d5
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
         </EntityType>
         <EntityType Name="itemimage">
           <Key>
@@ -412,7 +468,19 @@
           <Property Name="showcaseid" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="showcase" Relationship="Self.rentinfo_showcaseid_fk" FromRole="rentinfo" ToRole="showcase" />
           <NavigationProperty Name="tenant" Relationship="Self.rentinfo_tenantid_fk" FromRole="rentinfo" ToRole="tenant" />
+<<<<<<< HEAD
           <NavigationProperty Name="reservation" Relationship="Self.reservation_rentid_fk" FromRole="rentinfo" ToRole="reservation" />
+=======
+<<<<<<< HEAD
+          <NavigationProperty Name="reservation" Relationship="Self.reservation_rentid_fk" FromRole="rentinfo" ToRole="reservation" />
+=======
+<<<<<<< HEAD
+          <NavigationProperty Name="reservation" Relationship="Self.reservation_rentid_fk" FromRole="rentinfo" ToRole="reservation" />
+=======
+          <NavigationProperty Name="reservations" Relationship="Self.reservation_rentid_fk" FromRole="rentinfo" ToRole="reservation" />
+>>>>>>> 86a7e108aff4187150d4572977d6ece7e395f0d5
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
         </EntityType>
         <EntityType Name="reservation">
           <Key>
@@ -432,9 +500,27 @@
           <Property Name="size" Type="Int32" Nullable="false" />
           <Property Name="rental" Type="Single" Nullable="false" />
           <Property Name="status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+<<<<<<< HEAD
           <NavigationProperty Name="rentinfo" Relationship="Self.rentinfo_showcaseid_fk" FromRole="showcase" ToRole="rentinfo" />
           <NavigationProperty Name="reservation" Relationship="Self.reservation_showcaseid_fk" FromRole="showcase" ToRole="reservation" />
           <NavigationProperty Name="showcaseitem" Relationship="Self.showcaseitem_showcaseId_fk" FromRole="showcase" ToRole="showcaseitem" />
+=======
+<<<<<<< HEAD
+          <NavigationProperty Name="rentinfo" Relationship="Self.rentinfo_showcaseid_fk" FromRole="showcase" ToRole="rentinfo" />
+          <NavigationProperty Name="reservation" Relationship="Self.reservation_showcaseid_fk" FromRole="showcase" ToRole="reservation" />
+          <NavigationProperty Name="showcaseitem" Relationship="Self.showcaseitem_showcaseId_fk" FromRole="showcase" ToRole="showcaseitem" />
+=======
+<<<<<<< HEAD
+          <NavigationProperty Name="rentinfo" Relationship="Self.rentinfo_showcaseid_fk" FromRole="showcase" ToRole="rentinfo" />
+          <NavigationProperty Name="reservation" Relationship="Self.reservation_showcaseid_fk" FromRole="showcase" ToRole="reservation" />
+          <NavigationProperty Name="showcaseitem" Relationship="Self.showcaseitem_showcaseId_fk" FromRole="showcase" ToRole="showcaseitem" />
+=======
+          <NavigationProperty Name="rentinfoes" Relationship="Self.rentinfo_showcaseid_fk" FromRole="showcase" ToRole="rentinfo" />
+          <NavigationProperty Name="reservations" Relationship="Self.reservation_showcaseid_fk" FromRole="showcase" ToRole="reservation" />
+          <NavigationProperty Name="showcaseitems" Relationship="Self.showcaseitem_showcaseId_fk" FromRole="showcase" ToRole="showcaseitem" />
+>>>>>>> 86a7e108aff4187150d4572977d6ece7e395f0d5
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
         </EntityType>
         <EntityType Name="showcaseitem">
           <Key>
@@ -460,7 +546,19 @@
           <Property Name="staffType" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="reportsTo" Type="Int32" />
           <Property Name="salary" Type="Single" Nullable="false" />
+<<<<<<< HEAD
           <NavigationProperty Name="attendence" Relationship="Self.attendence_ibfk_2" FromRole="staff" ToRole="attendence" />
+=======
+<<<<<<< HEAD
+          <NavigationProperty Name="attendence" Relationship="Self.attendence_ibfk_2" FromRole="staff" ToRole="attendence" />
+=======
+<<<<<<< HEAD
+          <NavigationProperty Name="attendence" Relationship="Self.attendence_ibfk_2" FromRole="staff" ToRole="attendence" />
+=======
+          <NavigationProperty Name="attendences" Relationship="Self.attendence_ibfk_2" FromRole="staff" ToRole="attendence" />
+>>>>>>> 86a7e108aff4187150d4572977d6ece7e395f0d5
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
         </EntityType>
         <EntityType Name="tenant">
           <Key>
@@ -471,8 +569,23 @@
           <Property Name="tenantName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+<<<<<<< HEAD
           <NavigationProperty Name="item" Relationship="Self.item_tenantid_fk" FromRole="tenant" ToRole="item" />
           <NavigationProperty Name="rentinfo" Relationship="Self.rentinfo_tenantid_fk" FromRole="tenant" ToRole="rentinfo" />
+=======
+<<<<<<< HEAD
+          <NavigationProperty Name="item" Relationship="Self.item_tenantid_fk" FromRole="tenant" ToRole="item" />
+          <NavigationProperty Name="rentinfo" Relationship="Self.rentinfo_tenantid_fk" FromRole="tenant" ToRole="rentinfo" />
+=======
+<<<<<<< HEAD
+          <NavigationProperty Name="item" Relationship="Self.item_tenantid_fk" FromRole="tenant" ToRole="item" />
+          <NavigationProperty Name="rentinfo" Relationship="Self.rentinfo_tenantid_fk" FromRole="tenant" ToRole="rentinfo" />
+=======
+          <NavigationProperty Name="items" Relationship="Self.item_tenantid_fk" FromRole="tenant" ToRole="item" />
+          <NavigationProperty Name="rentinfoes" Relationship="Self.rentinfo_tenantid_fk" FromRole="tenant" ToRole="rentinfo" />
+>>>>>>> 86a7e108aff4187150d4572977d6ece7e395f0d5
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
         </EntityType>
         <Association Name="attendence_ibfk_2">
           <End Role="staff" Type="Self.staff" Multiplicity="1" />
@@ -618,6 +731,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
         <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="attendence" EntityType="Self.attendence" />
           <EntitySet Name="customer" EntityType="Self.customer" />
@@ -678,6 +798,74 @@
           <AssociationSet Name="showcaseitem_showcaseId_fk" Association="Self.showcaseitem_showcaseId_fk">
             <End Role="showcase" EntitySet="showcase" />
             <End Role="showcaseitem" EntitySet="showcaseitem" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+        <EntityContainer Name="DBEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="attendences" EntityType="Self.attendence" />
+          <EntitySet Name="customers" EntityType="Self.customer" />
+          <EntitySet Name="items" EntityType="Self.item" />
+          <EntitySet Name="itemimages" EntityType="Self.itemimage" />
+          <EntitySet Name="orders" EntityType="Self.order" />
+          <EntitySet Name="order_detail" EntityType="Self.order_detail" />
+          <EntitySet Name="rentinfoes" EntityType="Self.rentinfo" />
+          <EntitySet Name="reservations" EntityType="Self.reservation" />
+          <EntitySet Name="showcases" EntityType="Self.showcase" />
+          <EntitySet Name="showcaseitems" EntityType="Self.showcaseitem" />
+          <EntitySet Name="staffs" EntityType="Self.staff" />
+          <EntitySet Name="tenants" EntityType="Self.tenant" />
+          <AssociationSet Name="attendence_ibfk_2" Association="Self.attendence_ibfk_2">
+            <End Role="staff" EntitySet="staffs" />
+            <End Role="attendence" EntitySet="attendences" />
+          </AssociationSet>
+          <AssociationSet Name="order_customerID_fk" Association="Self.order_customerID_fk">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="order" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="item_tenantid_fk" Association="Self.item_tenantid_fk">
+            <End Role="tenant" EntitySet="tenants" />
+            <End Role="item" EntitySet="items" />
+          </AssociationSet>
+          <AssociationSet Name="itemimage_itemid_fk" Association="Self.itemimage_itemid_fk">
+            <End Role="item" EntitySet="items" />
+            <End Role="itemimage" EntitySet="itemimages" />
+          </AssociationSet>
+          <AssociationSet Name="order_customerID_fk2" Association="Self.order_customerID_fk2">
+            <End Role="item" EntitySet="items" />
+            <End Role="order_detail" EntitySet="order_detail" />
+          </AssociationSet>
+          <AssociationSet Name="showcaseitem_itemid_fk" Association="Self.showcaseitem_itemid_fk">
+            <End Role="item" EntitySet="items" />
+            <End Role="showcaseitem" EntitySet="showcaseitems" />
+          </AssociationSet>
+          <AssociationSet Name="order_customerID_fk1" Association="Self.order_customerID_fk1">
+            <End Role="order" EntitySet="orders" />
+            <End Role="order_detail" EntitySet="order_detail" />
+          </AssociationSet>
+          <AssociationSet Name="rentinfo_showcaseid_fk" Association="Self.rentinfo_showcaseid_fk">
+            <End Role="showcase" EntitySet="showcases" />
+            <End Role="rentinfo" EntitySet="rentinfoes" />
+          </AssociationSet>
+          <AssociationSet Name="rentinfo_tenantid_fk" Association="Self.rentinfo_tenantid_fk">
+            <End Role="tenant" EntitySet="tenants" />
+            <End Role="rentinfo" EntitySet="rentinfoes" />
+          </AssociationSet>
+          <AssociationSet Name="reservation_rentid_fk" Association="Self.reservation_rentid_fk">
+            <End Role="rentinfo" EntitySet="rentinfoes" />
+            <End Role="reservation" EntitySet="reservations" />
+          </AssociationSet>
+          <AssociationSet Name="reservation_showcaseid_fk" Association="Self.reservation_showcaseid_fk">
+            <End Role="showcase" EntitySet="showcases" />
+            <End Role="reservation" EntitySet="reservations" />
+          </AssociationSet>
+          <AssociationSet Name="showcaseitem_showcaseId_fk" Association="Self.showcaseitem_showcaseId_fk">
+            <End Role="showcase" EntitySet="showcases" />
+            <End Role="showcaseitem" EntitySet="showcaseitems" />
+>>>>>>> 86a7e108aff4187150d4572977d6ece7e395f0d5
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -685,8 +873,23 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+<<<<<<< HEAD
         <EntityContainerMapping StorageEntityContainer="sdpModelStoreContainer" CdmEntityContainer="DBEntities">
           <EntitySetMapping Name="attendence">
+=======
+<<<<<<< HEAD
+        <EntityContainerMapping StorageEntityContainer="sdpModelStoreContainer" CdmEntityContainer="DBEntities">
+          <EntitySetMapping Name="attendence">
+=======
+<<<<<<< HEAD
+        <EntityContainerMapping StorageEntityContainer="sdpModelStoreContainer" CdmEntityContainer="DBEntities">
+          <EntitySetMapping Name="attendence">
+=======
+        <EntityContainerMapping StorageEntityContainer="sdpModelStoreContainer" CdmEntityContainer="DBEntities2">
+          <EntitySetMapping Name="attendences">
+>>>>>>> 86a7e108aff4187150d4572977d6ece7e395f0d5
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
             <EntityTypeMapping TypeName="sdpModel.attendence">
               <MappingFragment StoreEntitySet="attendence">
                 <ScalarProperty Name="staffID" ColumnName="staffID" />
@@ -695,7 +898,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+<<<<<<< HEAD
           <EntitySetMapping Name="customer">
+=======
+<<<<<<< HEAD
+          <EntitySetMapping Name="customer">
+=======
+<<<<<<< HEAD
+          <EntitySetMapping Name="customer">
+=======
+          <EntitySetMapping Name="customers">
+>>>>>>> 86a7e108aff4187150d4572977d6ece7e395f0d5
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
             <EntityTypeMapping TypeName="sdpModel.customer">
               <MappingFragment StoreEntitySet="customer">
                 <ScalarProperty Name="customerID" ColumnName="customerID" />
@@ -706,7 +921,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+<<<<<<< HEAD
           <EntitySetMapping Name="item">
+=======
+<<<<<<< HEAD
+          <EntitySetMapping Name="item">
+=======
+<<<<<<< HEAD
+          <EntitySetMapping Name="item">
+=======
+          <EntitySetMapping Name="items">
+>>>>>>> 86a7e108aff4187150d4572977d6ece7e395f0d5
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
             <EntityTypeMapping TypeName="sdpModel.item">
               <MappingFragment StoreEntitySet="item">
                 <ScalarProperty Name="itemID" ColumnName="itemID" />
@@ -717,7 +944,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+<<<<<<< HEAD
           <EntitySetMapping Name="itemimage">
+=======
+<<<<<<< HEAD
+          <EntitySetMapping Name="itemimage">
+=======
+<<<<<<< HEAD
+          <EntitySetMapping Name="itemimage">
+=======
+          <EntitySetMapping Name="itemimages">
+>>>>>>> 86a7e108aff4187150d4572977d6ece7e395f0d5
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
             <EntityTypeMapping TypeName="sdpModel.itemimage">
               <MappingFragment StoreEntitySet="itemimage">
                 <ScalarProperty Name="itemImageID" ColumnName="itemImageID" />
@@ -727,7 +966,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+<<<<<<< HEAD
           <EntitySetMapping Name="order">
+=======
+<<<<<<< HEAD
+          <EntitySetMapping Name="order">
+=======
+<<<<<<< HEAD
+          <EntitySetMapping Name="order">
+=======
+          <EntitySetMapping Name="orders">
+>>>>>>> 86a7e108aff4187150d4572977d6ece7e395f0d5
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
             <EntityTypeMapping TypeName="sdpModel.order">
               <MappingFragment StoreEntitySet="order">
                 <ScalarProperty Name="orderID" ColumnName="orderID" />
@@ -747,7 +998,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+<<<<<<< HEAD
           <EntitySetMapping Name="rentinfo">
+=======
+<<<<<<< HEAD
+          <EntitySetMapping Name="rentinfo">
+=======
+<<<<<<< HEAD
+          <EntitySetMapping Name="rentinfo">
+=======
+          <EntitySetMapping Name="rentinfoes">
+>>>>>>> 86a7e108aff4187150d4572977d6ece7e395f0d5
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
             <EntityTypeMapping TypeName="sdpModel.rentinfo">
               <MappingFragment StoreEntitySet="rentinfo">
                 <ScalarProperty Name="rentID" ColumnName="rentID" />
@@ -758,7 +1021,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+<<<<<<< HEAD
           <EntitySetMapping Name="reservation">
+=======
+<<<<<<< HEAD
+          <EntitySetMapping Name="reservation">
+=======
+<<<<<<< HEAD
+          <EntitySetMapping Name="reservation">
+=======
+          <EntitySetMapping Name="reservations">
+>>>>>>> 86a7e108aff4187150d4572977d6ece7e395f0d5
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
             <EntityTypeMapping TypeName="sdpModel.reservation">
               <MappingFragment StoreEntitySet="reservation">
                 <ScalarProperty Name="reservationid" ColumnName="reservationid" />
@@ -767,7 +1042,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+<<<<<<< HEAD
           <EntitySetMapping Name="showcase">
+=======
+<<<<<<< HEAD
+          <EntitySetMapping Name="showcase">
+=======
+<<<<<<< HEAD
+          <EntitySetMapping Name="showcase">
+=======
+          <EntitySetMapping Name="showcases">
+>>>>>>> 86a7e108aff4187150d4572977d6ece7e395f0d5
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
             <EntityTypeMapping TypeName="sdpModel.showcase">
               <MappingFragment StoreEntitySet="showcase">
                 <ScalarProperty Name="showcaseid" ColumnName="showcaseid" />
@@ -777,7 +1064,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+<<<<<<< HEAD
           <EntitySetMapping Name="showcaseitem">
+=======
+<<<<<<< HEAD
+          <EntitySetMapping Name="showcaseitem">
+=======
+<<<<<<< HEAD
+          <EntitySetMapping Name="showcaseitem">
+=======
+          <EntitySetMapping Name="showcaseitems">
+>>>>>>> 86a7e108aff4187150d4572977d6ece7e395f0d5
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
             <EntityTypeMapping TypeName="sdpModel.showcaseitem">
               <MappingFragment StoreEntitySet="showcaseitem">
                 <ScalarProperty Name="showcaseid" ColumnName="showcaseid" />
@@ -788,7 +1087,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+<<<<<<< HEAD
           <EntitySetMapping Name="staff">
+=======
+<<<<<<< HEAD
+          <EntitySetMapping Name="staff">
+=======
+<<<<<<< HEAD
+          <EntitySetMapping Name="staff">
+=======
+          <EntitySetMapping Name="staffs">
+>>>>>>> 86a7e108aff4187150d4572977d6ece7e395f0d5
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
             <EntityTypeMapping TypeName="sdpModel.staff">
               <MappingFragment StoreEntitySet="staff">
                 <ScalarProperty Name="staffID" ColumnName="staffID" />
@@ -801,7 +1112,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+<<<<<<< HEAD
           <EntitySetMapping Name="tenant">
+=======
+<<<<<<< HEAD
+          <EntitySetMapping Name="tenant">
+=======
+<<<<<<< HEAD
+          <EntitySetMapping Name="tenant">
+=======
+          <EntitySetMapping Name="tenants">
+>>>>>>> 86a7e108aff4187150d4572977d6ece7e395f0d5
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
             <EntityTypeMapping TypeName="sdpModel.tenant">
               <MappingFragment StoreEntitySet="tenant">
                 <ScalarProperty Name="tenantID" ColumnName="tenantID" />
@@ -826,10 +1149,29 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="true" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+>>>>>>> 86a7e108aff4187150d4572977d6ece7e395f0d5
+>>>>>>> 6626d60d629ad973d7b36d5f325b4c02a2a8fba4
+>>>>>>> f26c573c3b95628bf880775a52af7ab2d81432f3
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
