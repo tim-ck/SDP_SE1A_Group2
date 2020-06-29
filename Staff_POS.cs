@@ -33,16 +33,16 @@ namespace SDP_SE1A_Group2
             id = txtItemID.Text;
             qt = int.Parse(txtQT.Text);
 
-            using (var context = new DBEntities())
+            using (var context = new DBEntities2())
             {
-                var query = from sci in context.showcase_item
-                            where sci.itemId == id
+                var query = from sci in context.order_detail
+                            where sci.itemID == id
                             select sci;
             }
 
-            using (var context = new DBEntities())
+            using (var context = new DBEntities2())
             {
-                var qty = context.item.First<order_detail>();
+                var qty = context.order_detail.First<order_detail>();
                 qty.qty = qt;
                 context.SaveChanges();
             }

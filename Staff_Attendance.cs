@@ -20,11 +20,11 @@ namespace SDP_SE1A_Group2
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            attendence.staffID = txtStaffID.Text.Trim();
-            attendence.month = int.Parse(txtMonth.Text.Trim());
+            attendence.staffID = int.Parse(txtStaffID.Text.Trim());
+            attendence.month = DateTime.Parse(txtMonth.Text.Trim());
             attendence.hour = int.Parse(txtWorkHour.Text.Trim());
 
-            using(DBEntities db = new DBEntities())
+            using(DBEntities2 db = new DBEntities2())
             {
                 db.attendence.Add(attendence);
                 db.SaveChanges();
@@ -37,7 +37,7 @@ namespace SDP_SE1A_Group2
 
         private void Staff_Attendance_Load(object sender, EventArgs e)
         {
-            using (DBEntities print = new DBEntities())
+            using (DBEntities2 print = new DBEntities2())
             {
                 var atten = (from list in print.attendence
                              select list);    // select * from employees
