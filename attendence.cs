@@ -12,18 +12,12 @@ namespace SDP_SE1A_Group2
     using System;
     using System.Collections.Generic;
     
-    public partial class order
+    public partial class attendence
     {
-        public order()
-        {
-            this.order_detail = new HashSet<order_detail>();
-        }
+        public int staffID { get; set; }
+        public System.DateTime month { get; set; }
+        public int hour { get; set; }
     
-        public string orderID { get; set; }
-        public string customerID { get; set; }
-        public System.DateTime orderDate { get; set; }
-    
-        public virtual customer customer { get; set; }
-        public virtual ICollection<order_detail> order_detail { get; set; }
+        public virtual staff staff { get; set; }
     }
 }

@@ -13,10 +13,10 @@ namespace SDP_SE1A_Group2
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class spdEntities : DbContext
+    public partial class sdpEntities : DbContext
     {
-        public spdEntities()
-            : base("name=spdEntities")
+        public sdpEntities()
+            : base("name=sdpEntities")
         {
         }
     
@@ -25,16 +25,18 @@ namespace SDP_SE1A_Group2
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<attendence> attendence { get; set; }
         public DbSet<customer> customer { get; set; }
         public DbSet<item> item { get; set; }
         public DbSet<itemimage> itemimage { get; set; }
         public DbSet<order> order { get; set; }
+        public DbSet<order_detail> order_detail { get; set; }
         public DbSet<preinputitem> preinputitem { get; set; }
         public DbSet<rentinfo> rentinfo { get; set; }
         public DbSet<reservation> reservation { get; set; }
         public DbSet<showcase> showcase { get; set; }
         public DbSet<showcaseitem> showcaseitem { get; set; }
-        public DbSet<suborder> suborder { get; set; }
+        public DbSet<staff> staff { get; set; }
         public DbSet<tenant> tenant { get; set; }
     }
 }

@@ -22,8 +22,10 @@ namespace SDP_SE1A_Group2
         }
     
         public string tenantID { get; set; }
+        public string tenantpwd { get; set; }
         public string tenantName { get; set; }
         public string email { get; set; }
+        public string phone { get; set; }
     
         public virtual ICollection<item> item { get; set; }
         public virtual ICollection<preinputitem> preinputitem { get; set; }

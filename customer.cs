@@ -14,7 +14,17 @@ namespace SDP_SE1A_Group2
     
     public partial class customer
     {
+        public customer()
+        {
+            this.order = new HashSet<order>();
+        }
+    
         public string customerID { get; set; }
+        public string customerpwd { get; set; }
         public string customername { get; set; }
+        public string email { get; set; }
+        public string phone { get; set; }
+    
+        public virtual ICollection<order> order { get; set; }
     }
 }

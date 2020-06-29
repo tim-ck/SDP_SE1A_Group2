@@ -12,18 +12,15 @@ namespace SDP_SE1A_Group2
     using System;
     using System.Collections.Generic;
     
-    public partial class order
+    public partial class order_detail
     {
-        public order()
-        {
-            this.order_detail = new HashSet<order_detail>();
-        }
-    
         public string orderID { get; set; }
-        public string customerID { get; set; }
-        public System.DateTime orderDate { get; set; }
+        public string itemID { get; set; }
+        public float unitPrice { get; set; }
+        public int qty { get; set; }
+        public float totalPrice { get; set; }
     
-        public virtual customer customer { get; set; }
-        public virtual ICollection<order_detail> order_detail { get; set; }
+        public virtual item item { get; set; }
+        public virtual order order { get; set; }
     }
 }

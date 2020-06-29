@@ -12,32 +12,21 @@ namespace SDP_SE1A_Group2
 {
     public partial class TenantMain : Form
     {
-        public static String tenantID;
-        public static String tenantName;
-        public void getTenantInfo()
-        {
-            using (var db = new spdEntities())
-            {
-                var e = from list in db.tenant
-                        where list.email.Equals(Form1.useremail)
-                        select new { list.tenantID, list.tenantName};
-                foreach (var row in e.ToList())
-                {
-                    tenantID = row.tenantID;
-                    tenantName = row.tenantName;
-                }
-            }
-        }
+        //public static String tenantID;
+        //public static String tenantName;
+        public string TenantID { get; private set; }
+        public string TenantName { get; private set; }
 
-        public TenantMain()
+        public TenantMain(String id, String name)
         {
             InitializeComponent();
+            TenantID = id;
+            TenantName = name;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            getTenantInfo();
-            lblWelcome.Text = "Welcome " + tenantName;
+            lblWelcome.Text = "Welcome " + TenantName;
 
             
 

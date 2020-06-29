@@ -18,6 +18,7 @@ namespace SDP_SE1A_Group2
         {
             this.rentinfo = new HashSet<rentinfo>();
             this.reservation = new HashSet<reservation>();
+            this.showcaseitem = new HashSet<showcaseitem>();
         }
     
         public string showcaseid { get; set; }
@@ -27,5 +28,6 @@ namespace SDP_SE1A_Group2
     
         public virtual ICollection<rentinfo> rentinfo { get; set; }
         public virtual ICollection<reservation> reservation { get; set; }
+        public virtual ICollection<showcaseitem> showcaseitem { get; set; }
     }
 }

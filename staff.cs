@@ -12,14 +12,21 @@ namespace SDP_SE1A_Group2
     using System;
     using System.Collections.Generic;
     
-    public partial class suborder
+    public partial class staff
     {
-        public string orderID { get; set; }
-        public string suborderID { get; set; }
-        public string itemID { get; set; }
-        public string qty { get; set; }
+        public staff()
+        {
+            this.attendence = new HashSet<attendence>();
+        }
     
-        public virtual item item { get; set; }
-        public virtual order order { get; set; }
+        public int staffID { get; set; }
+        public string tenantpwd { get; set; }
+        public string email { get; set; }
+        public string name { get; set; }
+        public string staffType { get; set; }
+        public Nullable<int> reportsTo { get; set; }
+        public float salary { get; set; }
+    
+        public virtual ICollection<attendence> attendence { get; set; }
     }
 }
