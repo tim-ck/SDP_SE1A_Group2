@@ -62,6 +62,17 @@
           <Property Name="qty" Type="int" Nullable="false" />
           <Property Name="totalPrice" Type="float" Nullable="false" />
         </EntityType>
+        <EntityType Name="preinputitem">
+          <Key>
+            <PropertyRef Name="preinputitemid" />
+          </Key>
+          <Property Name="preinputitemid" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="itemname" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="itemqty" Type="int" Nullable="false" />
+          <Property Name="itemdesc" Type="varchar" MaxLength="45" />
+          <Property Name="itemunitprice" Type="float" Nullable="false" />
+          <Property Name="tenantid" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
         <EntityType Name="rentinfo">
           <Key>
             <PropertyRef Name="rentID" />
@@ -194,6 +205,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="preinputitem_tenantid_fk">
+          <End Role="tenant" Type="Self.tenant" Multiplicity="1" />
+          <End Role="preinputitem" Type="Self.preinputitem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tenant">
+              <PropertyRef Name="tenantID" />
+            </Principal>
+            <Dependent Role="preinputitem">
+              <PropertyRef Name="tenantid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="rentinfo_showcaseid_fk">
           <End Role="showcase" Type="Self.showcase" Multiplicity="1" />
           <End Role="rentinfo" Type="Self.rentinfo" Multiplicity="*" />
@@ -273,6 +296,7 @@
           <EntitySet Name="itemimage" EntityType="Self.itemimage" Schema="sdp" store:Type="Tables" />
           <EntitySet Name="order" EntityType="Self.order" Schema="sdp" store:Type="Tables" />
           <EntitySet Name="order_detail" EntityType="Self.order_detail" Schema="sdp" store:Type="Tables" />
+          <EntitySet Name="preinputitem" EntityType="Self.preinputitem" Schema="sdp" store:Type="Tables" />
           <EntitySet Name="rentinfo" EntityType="Self.rentinfo" Schema="sdp" store:Type="Tables" />
           <EntitySet Name="reservation" EntityType="Self.reservation" Schema="sdp" store:Type="Tables" />
           <EntitySet Name="showcase" EntityType="Self.showcase" Schema="sdp" store:Type="Tables" />
@@ -302,6 +326,10 @@
           <AssociationSet Name="order_customerID_fk2" Association="Self.order_customerID_fk2">
             <End Role="item" EntitySet="item" />
             <End Role="order_detail" EntitySet="order_detail" />
+          </AssociationSet>
+          <AssociationSet Name="preinputitem_tenantid_fk" Association="Self.preinputitem_tenantid_fk">
+            <End Role="tenant" EntitySet="tenant" />
+            <End Role="preinputitem" EntitySet="preinputitem" />
           </AssociationSet>
           <AssociationSet Name="rentinfo_showcaseid_fk" Association="Self.rentinfo_showcaseid_fk">
             <End Role="showcase" EntitySet="showcase" />
@@ -401,6 +429,18 @@
           <NavigationProperty Name="item" Relationship="Self.order_customerID_fk2" FromRole="order_detail" ToRole="item" />
           <NavigationProperty Name="order" Relationship="Self.order_customerID_fk1" FromRole="order_detail" ToRole="order" />
         </EntityType>
+        <EntityType Name="preinputitem">
+          <Key>
+            <PropertyRef Name="preinputitemid" />
+          </Key>
+          <Property Name="preinputitemid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="itemname" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="itemqty" Type="Int32" Nullable="false" />
+          <Property Name="itemdesc" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="itemunitprice" Type="Single" Nullable="false" />
+          <Property Name="tenantid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tenant" Relationship="Self.preinputitem_tenantid_fk" FromRole="preinputitem" ToRole="tenant" />
+        </EntityType>
         <EntityType Name="rentinfo">
           <Key>
             <PropertyRef Name="rentID" />
@@ -472,6 +512,7 @@
           <Property Name="email" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="items" Relationship="Self.item_tenantid_fk" FromRole="tenant" ToRole="item" />
+          <NavigationProperty Name="preinputitems" Relationship="Self.preinputitem_tenantid_fk" FromRole="tenant" ToRole="preinputitem" />
           <NavigationProperty Name="rentinfoes" Relationship="Self.rentinfo_tenantid_fk" FromRole="tenant" ToRole="rentinfo" />
         </EntityType>
         <Association Name="attendence_ibfk_2">
@@ -558,6 +599,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="preinputitem_tenantid_fk">
+          <End Role="tenant" Type="Self.tenant" Multiplicity="1" />
+          <End Role="preinputitem" Type="Self.preinputitem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tenant">
+              <PropertyRef Name="tenantID" />
+            </Principal>
+            <Dependent Role="preinputitem">
+              <PropertyRef Name="tenantid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="rentinfo_showcaseid_fk">
           <End Role="showcase" Type="Self.showcase" Multiplicity="1" />
           <End Role="rentinfo" Type="Self.rentinfo" Multiplicity="*" />
@@ -618,13 +671,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="sdpEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="sdpEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="attendences" EntityType="Self.attendence" />
           <EntitySet Name="customers" EntityType="Self.customer" />
           <EntitySet Name="items" EntityType="Self.item" />
           <EntitySet Name="itemimages" EntityType="Self.itemimage" />
           <EntitySet Name="orders" EntityType="Self.order" />
           <EntitySet Name="order_detail" EntityType="Self.order_detail" />
+          <EntitySet Name="preinputitems" EntityType="Self.preinputitem" />
           <EntitySet Name="rentinfoes" EntityType="Self.rentinfo" />
           <EntitySet Name="reservations" EntityType="Self.reservation" />
           <EntitySet Name="showcases" EntityType="Self.showcase" />
@@ -659,6 +713,10 @@
             <End Role="order" EntitySet="orders" />
             <End Role="order_detail" EntitySet="order_detail" />
           </AssociationSet>
+          <AssociationSet Name="preinputitem_tenantid_fk" Association="Self.preinputitem_tenantid_fk">
+            <End Role="tenant" EntitySet="tenants" />
+            <End Role="preinputitem" EntitySet="preinputitems" />
+          </AssociationSet>
           <AssociationSet Name="rentinfo_showcaseid_fk" Association="Self.rentinfo_showcaseid_fk">
             <End Role="showcase" EntitySet="showcases" />
             <End Role="rentinfo" EntitySet="rentinfoes" />
@@ -685,7 +743,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="sdpModelStoreContainer" CdmEntityContainer="sdpEntities1">
+        <EntityContainerMapping StorageEntityContainer="sdpModelStoreContainer" CdmEntityContainer="sdpEntities">
           <EntitySetMapping Name="attendences">
             <EntityTypeMapping TypeName="sdpModel.attendence">
               <MappingFragment StoreEntitySet="attendence">
@@ -744,6 +802,18 @@
                 <ScalarProperty Name="unitPrice" ColumnName="unitPrice" />
                 <ScalarProperty Name="qty" ColumnName="qty" />
                 <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="preinputitems">
+            <EntityTypeMapping TypeName="sdpModel.preinputitem">
+              <MappingFragment StoreEntitySet="preinputitem">
+                <ScalarProperty Name="preinputitemid" ColumnName="preinputitemid" />
+                <ScalarProperty Name="itemname" ColumnName="itemname" />
+                <ScalarProperty Name="itemqty" ColumnName="itemqty" />
+                <ScalarProperty Name="itemdesc" ColumnName="itemdesc" />
+                <ScalarProperty Name="itemunitprice" ColumnName="itemunitprice" />
+                <ScalarProperty Name="tenantid" ColumnName="tenantid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

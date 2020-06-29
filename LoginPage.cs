@@ -86,7 +86,7 @@ namespace SDP_SE1A_Group2
         public void CustomerVerify(String username, String password)
         {
             Boolean Verify = false;
-            using (var db = new sdpEntities1())
+            using (var db = new sdpEntities())
             {
                 var userAcct =  from list in db.customers
                                 where list.customerID.Equals(username)
@@ -123,7 +123,7 @@ namespace SDP_SE1A_Group2
         public void TenantVerify(String username, String password)
         {
             Boolean Verify = false;
-            using (var db = new sdpEntities1())
+            using (var db = new sdpEntities())
             {
                 var userAcct = from list in db.customers
                                where list.customerID.Equals(username)
@@ -163,11 +163,11 @@ namespace SDP_SE1A_Group2
         public void StaffVerify(String username, String password)
         {
             Boolean Verify = false;
-            using (var db = new sdpEntities1())
+            using (var db = new sdpEntities())
             {
-                var userAcct = from list in db.customers
-                               where list.customerID.Equals(username)
-                               select new { list.customerID, list.customerpwd };
+                var userAcct = from list in db.staffs
+                               where list.staffID.Equals(username)
+                               select new { list.staffID, list.tenantpwd };
                 if (userAcct == null)
                 {
                     txtErrMsg.Text = "The Username / Password is incorrect";
@@ -176,7 +176,7 @@ namespace SDP_SE1A_Group2
                 {
                     foreach (var user in userAcct.ToList())
                     {
-                        if ((username == user.customerID.ToString()) && (password == user.customerpwd.ToString()))
+                        if ((username == user.staffID.ToString()) && (password == user.tenantpwd.ToString()))
                         {
                             Verify = true;
                             this.Hide();
@@ -205,7 +205,7 @@ namespace SDP_SE1A_Group2
         public String[] GetCustomerEmail(String username)
         {
             
-            using (var db = new sdpEntities1())
+            using (var db = new sdpEntities())
             {
                 var e = from list in db.customers
                                where list.customerID.Equals(username)
@@ -228,17 +228,17 @@ namespace SDP_SE1A_Group2
         public String[] GetTenatEmail(String username)
         {
 
-            using (var db = new sdpEntities1())
+            using (var db = new sdpEntities())
             {
-                var e = from list in db.customers
-                        where list.customerID.Equals(username)
-                        select new { list.customerID, list.email, list.customerpwd };
+                var e = from list in db.tenants
+                        where list.tenantID.Equals(username)
+                        select new { list.tenantID, list.email, list.tenantpwd };
                 if (e == null) { return null; }
                 else
                 {
                     foreach (var user in e.ToList())
                     {
-                        String[] act = { user.email.ToString(), user.customerpwd.ToString() };
+                        String[] act = { user.email.ToString(), user.tenantpwd.ToString() };
                         return act;
                     }
                 }
@@ -251,17 +251,18 @@ namespace SDP_SE1A_Group2
 
         public String[] GetStaffEmail(String username)
         {
-            using (var db = new sdpEntities1())
+
+            using (var db = new sdpEntities())
             {
-                var e = from list in db.customers
-                        where list.customerID.Equals(username)
-                        select new { list.customerID, list.email, list.customerpwd };
+                var e = from list in db.staffs
+                        where list.staffID.Equals(username)
+                        select new { list.staffID, list.email, list.tenantpwd };
                 if (e == null) { return null; }
                 else
                 {
                     foreach (var user in e.ToList())
                     {
-                        String[] act = { user.email.ToString(), user.customerpwd.ToString() };
+                        String[] act = { user.email.ToString(), user.tenantpwd.ToString() };
                         return act;
                     }
                 }

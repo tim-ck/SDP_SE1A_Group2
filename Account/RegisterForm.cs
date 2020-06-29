@@ -185,7 +185,7 @@ namespace SDP_SE1A_Group2.Account
             if (rdoC.Checked) {
                 try
                 {
-                    using (var db = new sdpEntities1())
+                    using (var db = new sdpEntities())
                     {
                         var acct = new customer()
                         {
@@ -216,17 +216,17 @@ namespace SDP_SE1A_Group2.Account
             else if (rdoT.Checked) { //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 try
                 {
-                    using (var db = new sdpEntities1())
+                    using (var db = new sdpEntities())
                     {
-                        var acct = new customer()
+                        var acct = new tenant()
                         {
-                            customerID = txtUsername.Text,
-                            customerpwd = txtPassword.Text,
-                            customername = txtFirstName.Text,
+                            tenantID = txtUsername.Text,
+                            tenantpwd = txtPassword.Text,
+                            tenantName = txtFirstName.Text,
                             email = txtEmail.Text,
                             phone = txtPhoneNumber.Text
                         };
-                        db.customers.Add(acct);
+                        db.tenants.Add(acct);
                         db.SaveChanges();
                     }
                 }
@@ -248,17 +248,18 @@ namespace SDP_SE1A_Group2.Account
             {//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 try
                 {
-                    using (var db = new sdpEntities1())
+                    using (var db = new sdpEntities())
                     {
-                        var acct = new customer()
+                        var acct = new staff()
                         {
-                            customerID = txtUsername.Text,
-                            customerpwd = txtPassword.Text,
-                            customername = txtFirstName.Text,
+                            staffID = int.Parse(txtUsername.Text),
+                            tenantpwd = txtPassword.Text,
+                            name = txtFirstName.Text,
                             email = txtEmail.Text,
-                            phone = txtPhoneNumber.Text
+                            staffType = "p",
+                            salary=50
                         };
-                        db.customers.Add(acct);
+                        db.staffs.Add(acct);
                         db.SaveChanges();
                     }
                 }
