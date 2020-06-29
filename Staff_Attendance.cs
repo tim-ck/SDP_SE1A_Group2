@@ -12,7 +12,7 @@ namespace SDP_SE1A_Group2
 {
     public partial class Staff_Attendance : Form
     {
-        attendence attendence = new attendence();
+        pt_workinghours attendance = new pt_workinghours();
         public Staff_Attendance()
         {
             InitializeComponent();
@@ -20,13 +20,21 @@ namespace SDP_SE1A_Group2
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             attendence.staffID = int.Parse(txtStaffID.Text.Trim());
-            attendence.month = dtpMonth.Value.Date;
+            attendence.month = DateTime.Parse(txtMonth.Text.Trim());
             attendence.hour = int.Parse(txtWorkHour.Text.Trim());
 
-            using(DBEntities db = new DBEntities())
+            using(DBEntities2 db = new DBEntities2())
+=======
+            attendance.staffID = txtStaffID.Text.Trim();
+            attendance.month = int.Parse(txtMonth.Text.Trim());
+            attendance.hour = int.Parse(txtWorkHour.Text.Trim());
+
+            using(DBEntities1 db = new DBEntities1())
+>>>>>>> parent of 8fcec7f... DIU
             {
-                db.attendence.Add(attendence);
+                db.pt_workinghours.Add(attendance);
                 db.SaveChanges();
             }
 
@@ -37,9 +45,9 @@ namespace SDP_SE1A_Group2
 
         private void Staff_Attendance_Load(object sender, EventArgs e)
         {
-            using (DBEntities print = new DBEntities())
+            using (DBEntities2 print = new DBEntities2())
             {
-                var atten = (from list in print.attendence
+                var atten = (from list in print.pt_workinghours
                              select list);    // select * from employees
 
                 foreach (var atten2 in atten.ToList())
