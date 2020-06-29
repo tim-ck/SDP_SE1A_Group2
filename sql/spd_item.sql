@@ -44,7 +44,7 @@ CREATE TABLE `item` (
 
 LOCK TABLES `item` WRITE;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
-INSERT INTO `item` VALUES ('1','1','cust1_item1','abc',1,10,1),('2','1','cust1_item2',NULL,2,12,1),('3','2','cust2_item1',NULL,10,2,1),('4','3','cust3_item1','gg',20,35,1),('5','3','cust3_item2',NULL,50,12,1),('6','3','cust3_item3',NULL,15,10,1),('7','4','cust4_item1',NULL,2,7,1),('8','4','cust4_item2',NULL,3,4,1);
+INSERT INTO `item` VALUES ('1','1','cust1_item1','cust1_item1 desccccc',1,10,0),('2','1','cust1_item2','cust1_item2 descccccc',2,12,1),('3','2','cust2_item1','cust2_item1 desccccc',10,2,1),('4','3','cust3_item1','cust3_item1 descccccc',20,35,1),('5','3','cust3_item2','cust3_item2 descccccc',50,12,1),('6','3','cust3_item3','cust3_item3 desccc',15,10,1),('7','4','cust4_item1','cust4_item1 desccc',2,7,1),('8','4','cust4_item2','cust4_item2 descccc',3,4,1);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-29  0:01:34
+-- Dump completed on 2020-06-29  9:42:20
