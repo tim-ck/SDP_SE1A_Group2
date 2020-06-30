@@ -111,6 +111,7 @@
             this.rowNumber.HeaderText = "No.";
             this.rowNumber.MinimumWidth = 6;
             this.rowNumber.Name = "rowNumber";
+            this.rowNumber.ReadOnly = true;
             this.rowNumber.Width = 75;
             // 
             // name
@@ -118,6 +119,7 @@
             this.name.HeaderText = "Name";
             this.name.MinimumWidth = 6;
             this.name.Name = "name";
+            this.name.ReadOnly = true;
             this.name.Width = 125;
             // 
             // description
@@ -125,6 +127,7 @@
             this.description.HeaderText = "Description";
             this.description.MinimumWidth = 6;
             this.description.Name = "description";
+            this.description.ReadOnly = true;
             this.description.Width = 125;
             // 
             // qty
@@ -132,6 +135,7 @@
             this.qty.HeaderText = "Qty";
             this.qty.MinimumWidth = 6;
             this.qty.Name = "qty";
+            this.qty.ReadOnly = true;
             this.qty.Width = 125;
             // 
             // unitPrice
@@ -139,6 +143,7 @@
             this.unitPrice.HeaderText = "Unit Price";
             this.unitPrice.MinimumWidth = 6;
             this.unitPrice.Name = "unitPrice";
+            this.unitPrice.ReadOnly = true;
             this.unitPrice.Width = 125;
             // 
             // WaitForStockIn

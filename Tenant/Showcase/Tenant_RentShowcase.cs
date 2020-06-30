@@ -51,7 +51,7 @@ namespace SDP_SE1A_Group2 {
 
             //Load showcase data from db
             this.dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
-            using (var classicContext = new spdEntities())
+            using (var classicContext = new sdpEntities())
             {
                 var showcase = (from list in classicContext.showcase
                            select list);    // select * from employees

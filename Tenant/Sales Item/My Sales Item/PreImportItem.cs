@@ -27,7 +27,7 @@ namespace SDP_SE1A_Group2.Tenant.SalesItem
         private void WaitForStockIn_Load(object sender, EventArgs e)
         {
             //load data
-            using (var db = new spdEntities())
+            using (var db = new sdpEntities())
             {
                 var rs = from result in db.preinputitem
                          where result.tenantid.Contains(TenantMain.tenantID)

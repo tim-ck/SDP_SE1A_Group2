@@ -24,18 +24,20 @@ namespace SDP_SE1A_Group2
 
         private void UpdateShowcaseItem_Load(object sender, EventArgs e)
         {
-            using (var db = new spdEntities())
+            using (var db = new sdpEntities())
             {
-                var rs = (from result in db.item
-                          where result.itemID.Contains(itemID)
-                                select result);    // select * from employees
+                var rs = (from listSI in db.showcaseitem
+                          from listI in db.item
+                          where listSI.itemid.Contains(itemID)
+                                select new { listI.itemName, listI.unitPrice, listI.itemDesc, listSI.avalibleQty, listSI.availability }
+                );    // select * from employees
 
                 foreach (var row in rs.ToList())
                 {
                     txtName.Text = row.itemName;
                     txtPrice.Text = row.unitPrice.ToString();
                     txtDescription.Text = row.itemDesc;
-                    txtQty.Text = row.itemQty.ToString();
+                    txtQty.Text = row.avalibleQty.ToString();
 
                     if (row.availability.Equals(1))
                     {

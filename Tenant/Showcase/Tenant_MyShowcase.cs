@@ -27,7 +27,7 @@ namespace SDP_SE1A_Group2
 
         private void Form2MyShowcase_Load(object sender, EventArgs e)
         {
-            using (var classicContext = new spdEntities())
+            using (var classicContext = new sdpEntities())
             {
                 var showcase = (from listrentinfo in classicContext.rentinfo
                                 join listshowcase in classicContext.showcase on listrentinfo.showcaseid equals listshowcase.showcaseid

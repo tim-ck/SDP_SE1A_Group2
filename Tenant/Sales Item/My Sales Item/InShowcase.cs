@@ -25,17 +25,28 @@ namespace SDP_SE1A_Group2.Tenant.SalesItem
         private void InShowcase_Load(object sender, EventArgs e)
         {
             //Load data
-            using(var db = new spdEntities())
+            using(var db = new sdpEntities())
             {
-                var rs = from resultitem in db.item
-                         join resultrentinfo in db.rentinfo on resultitem.tenantID equals resultrentinfo.tenantID
-                         where resultitem.tenantID.Contains(TenantMain.tenantID)
-                         select new { resultitem.itemID, resultitem.itemQty, resultitem.unitPrice, resultitem.itemName,
-                                      resultrentinfo.showcaseid, resultrentinfo.duration, resultrentinfo.startDate };
+                var rs = from resultrentinfo in db.rentinfo
+                         from resultitem in db.item
+                         join resultSI in db.showcaseitem on resultitem.itemID equals resultSI.itemid
+                         where resultitem.tenantID.Contains(TenantMain.tenantID) && resultrentinfo.tenantID.Contains(TenantMain.tenantID)
+                         select new
+                         {
+                             resultitem.itemID,
+                             resultSI.avalibleQty,
+                             resultitem.unitPrice,
+                             resultitem.itemName,
+                             resultrentinfo.showcaseid,
+                             resultrentinfo.duration,
+                             resultrentinfo.startDate
+                         };
+
+
                 foreach (var row in rs.ToList())
                 {
                     if (row.startDate.ToOADate() + row.duration >= DateTime.Now.ToOADate())
-                        dataGridView1.Rows.Add(row.itemID, row.itemName, row.showcaseid.Substring(0, 3), row.showcaseid, row.itemQty, row.unitPrice);
+                        dataGridView1.Rows.Add(row.itemID, row.itemName, row.showcaseid.Substring(0, 3), row.showcaseid, row.avalibleQty, row.unitPrice);
                 }
 
             }

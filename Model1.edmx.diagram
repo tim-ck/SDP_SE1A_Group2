@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="00e1c9903b0344e18e98cba584883559" Name="Diagram1">
-        <EntityTypeShape EntityType="sdpModel.attendence" Width="1.5" PointX="10" PointY="3.125" IsExpanded="true" />
+      <Diagram DiagramId="257e95716212492d941c200c1063615b" Name="Diagram1">
+        <EntityTypeShape EntityType="sdpModel.attendence" Width="1.5" PointX="10" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="sdpModel.customer" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="sdpModel.item" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="sdpModel.itemimage" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
@@ -15,8 +15,8 @@
         <EntityTypeShape EntityType="sdpModel.rentinfo" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="sdpModel.reservation" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="sdpModel.showcase" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="sdpModel.showcaseitem" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="sdpModel.staff" Width="1.5" PointX="7.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sdpModel.showcaseitem" Width="1.5" PointX="5.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sdpModel.staff" Width="1.5" PointX="7.75" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="sdpModel.tenant" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
         <AssociationConnector Association="sdpModel.attendence_ibfk_2" ManuallyRouted="false" />
         <AssociationConnector Association="sdpModel.order_customerID_fk" ManuallyRouted="false" />

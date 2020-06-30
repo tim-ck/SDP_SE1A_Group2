@@ -110,6 +110,7 @@
           <Property Name="avalibleQty" Type="int" Nullable="false" />
           <Property Name="soldQty" Type="int" Nullable="false" />
           <Property Name="TotalQty" Type="int" Nullable="false" />
+          <Property Name="availability" Type="tinyint" Nullable="false" />
         </EntityType>
         <EntityType Name="staff">
           <Key>
@@ -486,6 +487,7 @@
           <Property Name="avalibleQty" Type="Int32" Nullable="false" />
           <Property Name="soldQty" Type="Int32" Nullable="false" />
           <Property Name="TotalQty" Type="Int32" Nullable="false" />
+          <Property Name="availability" Type="SByte" Nullable="false" />
           <NavigationProperty Name="item" Relationship="Self.showcaseitem_itemid_fk" FromRole="showcaseitem" ToRole="item" />
           <NavigationProperty Name="showcase" Relationship="Self.showcaseitem_showcaseId_fk" FromRole="showcaseitem" ToRole="showcase" />
         </EntityType>
@@ -855,6 +857,7 @@
                 <ScalarProperty Name="avalibleQty" ColumnName="avalibleQty" />
                 <ScalarProperty Name="soldQty" ColumnName="soldQty" />
                 <ScalarProperty Name="TotalQty" ColumnName="TotalQty" />
+                <ScalarProperty Name="availability" ColumnName="availability" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

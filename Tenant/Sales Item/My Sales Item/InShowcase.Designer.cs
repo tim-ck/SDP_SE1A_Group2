@@ -180,6 +180,7 @@
             this.itemId.HeaderText = "Item ID";
             this.itemId.MinimumWidth = 6;
             this.itemId.Name = "itemId";
+            this.itemId.ReadOnly = true;
             this.itemId.Width = 80;
             // 
             // itemName
@@ -187,6 +188,7 @@
             this.itemName.HeaderText = "Item Name";
             this.itemName.MinimumWidth = 6;
             this.itemName.Name = "itemName";
+            this.itemName.ReadOnly = true;
             this.itemName.Width = 125;
             // 
             // location
@@ -194,6 +196,7 @@
             this.location.HeaderText = "Location";
             this.location.MinimumWidth = 6;
             this.location.Name = "location";
+            this.location.ReadOnly = true;
             this.location.Width = 125;
             // 
             // showcaseId
@@ -201,6 +204,7 @@
             this.showcaseId.HeaderText = "Showcase ID";
             this.showcaseId.MinimumWidth = 6;
             this.showcaseId.Name = "showcaseId";
+            this.showcaseId.ReadOnly = true;
             this.showcaseId.Width = 125;
             // 
             // qty
@@ -208,6 +212,7 @@
             this.qty.HeaderText = "Qty";
             this.qty.MinimumWidth = 6;
             this.qty.Name = "qty";
+            this.qty.ReadOnly = true;
             this.qty.Width = 75;
             // 
             // unitPrice
@@ -215,6 +220,7 @@
             this.unitPrice.HeaderText = "Unit Price";
             this.unitPrice.MinimumWidth = 6;
             this.unitPrice.Name = "unitPrice";
+            this.unitPrice.ReadOnly = true;
             this.unitPrice.Width = 125;
             // 
             // InShowcase

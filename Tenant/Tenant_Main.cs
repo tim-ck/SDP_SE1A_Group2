@@ -9,26 +9,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SDP_SE1A_Group2
+
 {
+
     public partial class TenantMain : Form
     {
-        //public static String tenantID;
-        //public static String tenantName;
-        public string TenantID { get; private set; }
-        public string TenantName { get; private set; }
+        public static String tenantID;
+        public static String tenantName;
+
 
         public TenantMain(String id, String name)
         {
             InitializeComponent();
-            TenantID = id;
-            TenantName = name;
+            tenantID = id;
+            tenantName = name;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            lblWelcome.Text = "Welcome " + TenantName;
-
-            
+            lblWelcome.Text = "Welcome " + tenantName;
 
         }
         #region Hide/ShowSubMenu

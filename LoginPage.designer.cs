@@ -144,7 +144,6 @@
             this.btnRegister.TabIndex = 8;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // btnForgotPassword
             // 
@@ -160,7 +159,6 @@
             this.btnForgotPassword.TabIndex = 7;
             this.btnForgotPassword.Text = "Forgot passord?";
             this.btnForgotPassword.UseVisualStyleBackColor = false;
-            this.btnForgotPassword.Click += new System.EventHandler(this.btnForgotPassword_Click);
             // 
             // lblCloseButton
             // 

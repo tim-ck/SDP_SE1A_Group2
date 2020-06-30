@@ -60,48 +60,11 @@ namespace SDP_SE1A_Group2
             float price;
             int qty;
             String desc;
-            using (var db = new spdEntities())
-            {
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
-                    string rs = db.Database.SqlQuery<string>("Select MAX(preinputitemid) from preinputitem").FirstOrDefault<string>();
-                    itemName = row.Cells[1].Value.ToString();
-                    desc = row.Cells[2].Value.ToString();
-                    qty = int.Parse(row.Cells[3].Value.ToString());
-                    price = int.Parse(row.Cells[4].Value.ToString());
-
-                    string sql = "insert into preinputitem(preinputitemid,itemname, itemqty, itemdesc, itemunitprice, tenantid) values('" + rs + "', + '" + itemName + "', + )"
-                    int noOfRowInserted = db.Database.ExecuteSqlCommand("")
-                    ExecuteSqlCommand("Insert into preinputitem(preinputitemid,itemname, itemqty, itemdesc, itemunitprice, tenantid) values('" + rs + "', '" +  +"')
 
 
-
-    
-                    //More code here
-                }
-
-
-
-
-
-
-
-
-
-                for (int i=0; i<dataGridView1.RowCount; i++)
-                {
-                    string rs = db.Database.SqlQuery<string>("Select MAX(preinputitemid) from preinputitem").FirstOrDefault<string>();
-                }
-
-                Insert command
-                int noOfRowInserted = db.Database.
-                    ExecuteSqlCommand("Insert into preinputitem(preinputitemid,itemname, itemqty, itemdesc, itemunitprice, tenantid) values('" + rs + "', )
-
-
-
-
-}
 
         }
+
     }
 }
+

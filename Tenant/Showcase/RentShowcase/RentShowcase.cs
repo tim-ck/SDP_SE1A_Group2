@@ -27,7 +27,7 @@ namespace SDP_SE1A_Group2
             lblShowcaseId.Text = showcaseid;
             lblLocation.Text = showcaseid.Substring(0,3);
 
-            using (var db = new spdEntities())
+            using (var db = new sdpEntities())
             {
                 var rs = from result in db.showcase
                          where result.showcaseid.Contains(showcaseid)

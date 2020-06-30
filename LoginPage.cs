@@ -1,5 +1,4 @@
-﻿using SDP_SE1A_Group2.Account;
-using SDP_SE1A_Group2.Customer;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,81 +52,20 @@ namespace SDP_SE1A_Group2
 
                 return;
             }
-            if (password == "" || password == "Password")
-            {
-                label2.BackColor = Color.Red;
-                txtErrMsg.Text = "Enter a Password";
-                return;
-            }
-            
-            if (rdoCustomer.Checked)
-            {
-                CustomerVerify(username, password);
-
-            }
-            else if (rdoTenent.Checked)
-            {
                 TenantVerify(username, password);
-            }
-            else if (rdoStaff.Checked)
-            {
-                StaffVerify(username, password);
-            }
-            else
-            {
-                txtErrMsg.Text = "Choose your account type";
-                return;
-            }
-
-
         }
 
 //verify start
-        public void CustomerVerify(String username, String password)
-        {
-            Boolean Verify = false;
-            using (var db = new sdpEntities())
-            {
-                var userAcct =  from list in db.customers
-                                where list.customerID.Equals(username)
-                                select new { list.customerID, list.customerpwd };
-                if(userAcct==null){
-                    txtErrMsg.Text = "The Username / Password is incorrect";            
-                }else{
-                    foreach (var user in userAcct.ToList())
-                    {
-                        if ((username == user.customerID.ToString()) && (password == user.customerpwd.ToString()))
-                        {
-                            Verify = true;
-                            this.Hide();
-                            txtUsername.Text = "Username";
-                            txtPassword.Text = "Password";
-                            CustomerMain cus = new CustomerMain(this, username); 
-                            cus.Show();
-                            return;
-                        }
-                    }
-                }
-                if(Verify == false)
-                 {
-                    label2.BackColor = Color.Red;
-                    label1.BackColor = Color.Red;
-                    txtErrMsg.Text = "The Username / Password is incorrect";
-                    return;
-                }
-                
-            }
-
-        }
+        
 
         public void TenantVerify(String username, String password)
         {
             Boolean Verify = false;
             using (var db = new sdpEntities())
             {
-                var userAcct = from list in db.customers
-                               where list.customerID.Equals(username)
-                               select new { list.customerID, list.customerpwd };
+                var userAcct = from list in db.tenant
+                               where list.tenantID.Equals(username)
+                               select new { list.tenantID, list.tenantpwd, list.tenantName };
                 if (userAcct == null)
                 {
                     txtErrMsg.Text = "The Username / Password is incorrect";
@@ -136,14 +74,14 @@ namespace SDP_SE1A_Group2
                 {
                     foreach (var user in userAcct.ToList())
                     {
-                        if ((username == user.customerID.ToString()) && (password == user.customerpwd.ToString()))
+                        if ((username == user.tenantID.ToString()) && (password == user.tenantpwd.ToString()))
                         {
                             Verify = true;
                             this.Hide();
                             txtUsername.Text = "Username";
                             txtPassword.Text = "Password";
-                            CustomerMain cus = new CustomerMain(this, username);
-                            cus.Show();
+                            TenantMain tenantMain = new TenantMain(user.tenantID, user.tenantName);
+                            tenantMain.Show();
                             return;
                         }
                     }
@@ -160,46 +98,7 @@ namespace SDP_SE1A_Group2
 
         }
 
-        public void StaffVerify(String username, String password)
-        {
-            Boolean Verify = false;
-            using (var db = new sdpEntities())
-            {
-                var userAcct = from list in db.staffs
-                               where list.staffID.Equals(username)
-                               select new { list.staffID, list.tenantpwd };
-                if (userAcct == null)
-                {
-                    txtErrMsg.Text = "The Username / Password is incorrect";
-                }
-                else
-                {
-                    foreach (var user in userAcct.ToList())
-                    {
-                        if ((username == user.staffID.ToString()) && (password == user.tenantpwd.ToString()))
-                        {
-                            Verify = true;
-                            this.Hide();
-                            txtUsername.Text = "Username";
-                            txtPassword.Text = "Password";
-                            CustomerMain cus = new CustomerMain(this, username);
-                            cus.Show();
-                            return;
-                        }
-                    }
-                }
-                if (Verify == false)
-                {
-                    label2.BackColor = Color.Red;
-                    label1.BackColor = Color.Red;
-                    txtErrMsg.Text = "The Username / Password is incorrect";
-                    return;
-                }
-
-            }
-
-
-        }
+       
 
 //username verify
         public String[] GetCustomerEmail(String username)
@@ -207,7 +106,7 @@ namespace SDP_SE1A_Group2
             
             using (var db = new sdpEntities())
             {
-                var e = from list in db.customers
+                var e = from list in db.customer
                                where list.customerID.Equals(username)
                                select new { list.customerID, list.email,list.customerpwd };
                 if (e == null) {  return null; } else
@@ -230,7 +129,7 @@ namespace SDP_SE1A_Group2
 
             using (var db = new sdpEntities())
             {
-                var e = from list in db.tenants
+                var e = from list in db.tenant
                         where list.tenantID.Equals(username)
                         select new { list.tenantID, list.email, list.tenantpwd };
                 if (e == null) { return null; }
@@ -249,48 +148,13 @@ namespace SDP_SE1A_Group2
 
         }
 
-        public String[] GetStaffEmail(String username)
-        {
 
-            using (var db = new sdpEntities())
-            {
-                var e = from list in db.staffs
-                        where list.staffID.Equals(username)
-                        select new { list.staffID, list.email, list.tenantpwd };
-                if (e == null) { return null; }
-                else
-                {
-                    foreach (var user in e.ToList())
-                    {
-                        String[] act = { user.email.ToString(), user.tenantpwd.ToString() };
-                        return act;
-                    }
-                }
-
-                return null;
-            }
-
-
-        }
 //username verify ENd
 
 //verify ENd
 
 
-        public void btnForgotPassword_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ForgotPasswordForm forgot = new ForgotPasswordForm(this);
-            forgot.Show();
 
-        }
-
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            RegisterForm register = new RegisterForm(this);
-            register.Show();
-        }
 
 //UI START
         private void txtUsername_Click(object sender, EventArgs e)
