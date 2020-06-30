@@ -112,7 +112,7 @@ namespace SDP_SE1A_Group2
             */
 
             this.Hide();
-            Staff staff = new Staff();
+            Staff_main staff = new Staff_main();
             staff.Show();
 
         }
