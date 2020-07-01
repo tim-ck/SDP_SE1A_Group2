@@ -187,6 +187,9 @@
     <Compile Include="Tenant\Sales Item\My Sales Item\Update Item\UpdateImportItem.Designer.cs">
       <DependentUpon>UpdateImportItem.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="LoginPage.resx">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>

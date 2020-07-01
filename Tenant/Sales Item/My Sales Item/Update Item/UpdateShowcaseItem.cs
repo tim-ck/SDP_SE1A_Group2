@@ -16,21 +16,23 @@ namespace SDP_SE1A_Group2
         public UpdateShowcaseItem(String id)
         {
             InitializeComponent();
-
             itemID = id;
-
-
         }
 
         private void UpdateShowcaseItem_Load(object sender, EventArgs e)
         {
+          //Load item info
             using (var db = new sdpEntities())
             {
-                var rs = (from listSI in db.showcaseitem
-                          from listI in db.item
-                          where listSI.itemid.Contains(itemID)
-                                select new { listI.itemName, listI.unitPrice, listI.itemDesc, listSI.avalibleQty, listSI.availability }
-                );    // select * from employees
+                var rs = from lsShowcaseItem in db.showcaseitem
+                          join lsItem in db.item on lsShowcaseItem.itemid equals lsItem.itemID
+                          where lsShowcaseItem.itemid.Contains(itemID)
+                          select new { lsItem.itemName,
+                                       lsItem.unitPrice,
+                                       lsItem.itemDesc,
+                                       lsShowcaseItem.avalibleQty,
+                                       lsShowcaseItem.availability
+                                     };
 
                 foreach (var row in rs.ToList())
                 {
@@ -49,6 +51,7 @@ namespace SDP_SE1A_Group2
                     }
                 }
             }
+            //txtName.Text = "ID: " + itemID;
         }
 
         private void button1_Click(object sender, EventArgs e)

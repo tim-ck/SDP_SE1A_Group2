@@ -39,14 +39,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.rowNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.showcaseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.soldDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -165,65 +167,6 @@
             this.panel2.Size = new System.Drawing.Size(1116, 527);
             this.panel2.TabIndex = 5;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.rowNumber,
-            this.itemId,
-            this.itemName,
-            this.unitPrice,
-            this.qty,
-            this.subTotal});
-            this.dataGridView1.Location = new System.Drawing.Point(74, 43);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(931, 408);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // rowNumber
-            // 
-            this.rowNumber.HeaderText = "No.";
-            this.rowNumber.MinimumWidth = 6;
-            this.rowNumber.Name = "rowNumber";
-            this.rowNumber.Width = 125;
-            // 
-            // itemId
-            // 
-            this.itemId.HeaderText = "Item ID";
-            this.itemId.MinimumWidth = 6;
-            this.itemId.Name = "itemId";
-            this.itemId.Width = 125;
-            // 
-            // itemName
-            // 
-            this.itemName.HeaderText = "Item Name";
-            this.itemName.MinimumWidth = 6;
-            this.itemName.Name = "itemName";
-            this.itemName.Width = 125;
-            // 
-            // unitPrice
-            // 
-            this.unitPrice.HeaderText = "Unit Price";
-            this.unitPrice.MinimumWidth = 6;
-            this.unitPrice.Name = "unitPrice";
-            this.unitPrice.Width = 125;
-            // 
-            // qty
-            // 
-            this.qty.HeaderText = "Qty";
-            this.qty.MinimumWidth = 6;
-            this.qty.Name = "qty";
-            this.qty.Width = 125;
-            // 
-            // subTotal
-            // 
-            this.subTotal.HeaderText = "Sub Total";
-            this.subTotal.MinimumWidth = 6;
-            this.subTotal.Name = "subTotal";
-            this.subTotal.Width = 125;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
@@ -231,6 +174,89 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(970, 3);
             this.panel3.TabIndex = 1;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.rowNumber,
+            this.showcaseId,
+            this.itemId,
+            this.itemName,
+            this.unitPrice,
+            this.qty,
+            this.subTotal,
+            this.soldDate});
+            this.dataGridView1.Location = new System.Drawing.Point(17, 50);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 27;
+            this.dataGridView1.Size = new System.Drawing.Size(1209, 408);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // rowNumber
+            // 
+            this.rowNumber.HeaderText = "No.";
+            this.rowNumber.MinimumWidth = 6;
+            this.rowNumber.Name = "rowNumber";
+            this.rowNumber.ReadOnly = true;
+            this.rowNumber.Width = 75;
+            // 
+            // showcaseId
+            // 
+            this.showcaseId.HeaderText = "Showcase ID";
+            this.showcaseId.MinimumWidth = 6;
+            this.showcaseId.Name = "showcaseId";
+            this.showcaseId.ReadOnly = true;
+            this.showcaseId.Width = 125;
+            // 
+            // itemId
+            // 
+            this.itemId.HeaderText = "Item ID";
+            this.itemId.MinimumWidth = 6;
+            this.itemId.Name = "itemId";
+            this.itemId.ReadOnly = true;
+            this.itemId.Width = 125;
+            // 
+            // itemName
+            // 
+            this.itemName.HeaderText = "Item Name";
+            this.itemName.MinimumWidth = 6;
+            this.itemName.Name = "itemName";
+            this.itemName.ReadOnly = true;
+            this.itemName.Width = 125;
+            // 
+            // unitPrice
+            // 
+            this.unitPrice.HeaderText = "Unit Price";
+            this.unitPrice.MinimumWidth = 6;
+            this.unitPrice.Name = "unitPrice";
+            this.unitPrice.ReadOnly = true;
+            this.unitPrice.Width = 125;
+            // 
+            // qty
+            // 
+            this.qty.HeaderText = "Qty";
+            this.qty.MinimumWidth = 6;
+            this.qty.Name = "qty";
+            this.qty.ReadOnly = true;
+            this.qty.Width = 125;
+            // 
+            // subTotal
+            // 
+            this.subTotal.HeaderText = "Sub Total";
+            this.subTotal.MinimumWidth = 6;
+            this.subTotal.Name = "subTotal";
+            this.subTotal.ReadOnly = true;
+            this.subTotal.Width = 125;
+            // 
+            // soldDate
+            // 
+            this.soldDate.HeaderText = "Sold Date";
+            this.soldDate.MinimumWidth = 6;
+            this.soldDate.Name = "soldDate";
+            this.soldDate.ReadOnly = true;
+            this.soldDate.Width = 125;
             // 
             // TenantShowcaseSalesRecord
             // 
@@ -266,12 +292,14 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridViewTextBoxColumn rowNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn showcaseId;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemId;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemName;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn subTotal;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soldDate;
     }
 }
