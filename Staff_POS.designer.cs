@@ -159,7 +159,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(303, 33);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(250, 203);
+            this.dataGridView1.Size = new System.Drawing.Size(311, 212);
             this.dataGridView1.TabIndex = 12;
             // 
             // Staff_POS

@@ -12,6 +12,7 @@ namespace SDP_SE1A_Group2
 {
     public partial class Staff_Attendance : Form
     {
+        staff staff = new staff();
         attendence attendence = new attendence();
         public Staff_Attendance()
         {
@@ -20,21 +21,31 @@ namespace SDP_SE1A_Group2
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            
+            int id = int.Parse(txtStaffID.Text.Trim());
             int month = int.Parse(cmbMonth.SelectedItem.ToString());
-            attendence.staffID = int.Parse(txtStaffID.Text.Trim());
-            attendence.month = month;
-            attendence.hour = int.Parse(txtWorkHour.Text.Trim());
 
-            using(DBEntities db = new DBEntities())
+            using (DBEntities db = new DBEntities())
             {
-                db.attendence.Add(attendence);
-                db.SaveChanges();
-            }
+                var atten = (from list in db.staff
+                             select list.staffID);
+                foreach (var atten2 in atten.ToList())
+                {
+                    if(atten2 == id)
+                    {
+                        attendence.month = month;
+                        attendence.hour = int.Parse(txtWorkHour.Text.Trim());
 
-            MessageBox.Show("Submitted Successfully");
+                        db.attendence.Add(attendence);
+                        db.SaveChanges();
 
-            
+                        MessageBox.Show("Submitted Successfully");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Staff ID not found");
+                    }
+                }
+            }         
         }
 
         private void Staff_Attendance_Load(object sender, EventArgs e)

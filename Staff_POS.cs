@@ -12,7 +12,7 @@ namespace SDP_SE1A_Group2
 {
     public partial class Staff_POS : Form
     {
-        attendence attendence = new attendence()
+        
         public int qt;
         public double price;
         public double totalPrice;
