@@ -62,7 +62,8 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(432, 36);
             this.txtUsername.TabIndex = 4;
-            this.txtUsername.Text = "Username";
+            this.txtUsername.TabStop = false;
+            this.txtUsername.Text = "customer01";
             this.txtUsername.Click += new System.EventHandler(this.txtUsername_Click);
             // 
             // label1
@@ -93,7 +94,8 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(432, 36);
             this.txtPassword.TabIndex = 5;
-            this.txtPassword.Text = "Password";
+            this.txtPassword.TabStop = false;
+            this.txtPassword.Text = "pass01";
             this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
             // 
             // label3
@@ -269,6 +271,7 @@
             // 
             // LoginPage
             // 
+            this.AcceptButton = this.btnSignIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));

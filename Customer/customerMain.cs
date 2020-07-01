@@ -17,9 +17,9 @@ namespace SDP_SE1A_Group2.Customer
 {
     public partial class CustomerMain : Form
     {
-       
+
         private Form activeForm = null;
-        private String userId, cusName,cusEmail;
+        private String userId, cusName, cusEmail;
         private Boolean hvItem;
         Form opener;
         CartPage cartPage;
@@ -35,30 +35,17 @@ namespace SDP_SE1A_Group2.Customer
             InitializeComponent();
             opener = parentForm;
             this.userId = userId;
+            UpdateCustomerInfo();
 
-            using (var db = new sdpEntities())
-             {
-                var userAcct = from list in db.customers
-                                where list.customerID.Equals(userId)
-                                select list;
-                foreach (var user in userAcct.ToList())
-                 {
-                        cusEmail = user.email;
-                        cusName= user.customername;
-                }
 
-              
-
-             }
-            
-            lblTitle.Text= "Welcome Customer " + cusName ;
+            lblTitle.Text = "Welcome Customer " + cusName;
 
             //define Form varible
-            cartPage = new CartPage(this, cusName);
+            cartPage = new CartPage(this, cusName, userId);
             browseItemForm = new BrowseItems(this, cusName);
-            orderForm = new Order(this, cusName);
+            orderForm = new Order(this, cusName, userId);
 
-            
+
             //UI hide border
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -67,7 +54,28 @@ namespace SDP_SE1A_Group2.Customer
             btnCart.Image = cart_P;
         }
 
-//Title bar START
+        private void UpdateCustomerInfo()
+        {
+            using (var db = new sdpEntities())
+            {
+                var userAcct = from list in db.customers
+                               where list.customerID.Equals(userId)
+                               select list;
+                foreach (var user in userAcct.ToList())
+                {
+                    cusEmail = user.email;
+                    cusName = user.customername;
+                }
+
+
+
+            }
+        }
+
+        public void updateOrderIdList(){
+            orderForm.updateOrderIdList(); ;
+        }
+        //Title bar START
         private void lblCloseBtn_Click(object sender, EventArgs e)
         {
             opener.Close();
@@ -262,6 +270,7 @@ public void sendEmail(String subject, String message)
             this.WindowState = FormWindowState.Minimized;
         }
 
+       
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

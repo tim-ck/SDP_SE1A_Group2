@@ -22,6 +22,8 @@ namespace SDP_SE1A_Group2
         public string orderID { get; set; }
         public string customerID { get; set; }
         public System.DateTime orderDate { get; set; }
+        public float orderTotalPrice { get; set; }
+        public string storeName { get; set; }
     
         public virtual customer customer { get; set; }
         public virtual ICollection<order_detail> order_detail { get; set; }

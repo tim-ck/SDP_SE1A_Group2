@@ -17,12 +17,18 @@ namespace SDP_SE1A_Group2.Customer
     {
 
         CustomerMain opener;
+        private String cusName, cusID;
         private int itemsCount=0;
 
-        public CartPage(CustomerMain opener, String cusName)
+        public CartPage(CustomerMain opener, String cusName, String cusID)
         {
             InitializeComponent();
             this.opener = opener;
+            this.cusID = cusID;
+            this.cusName = cusName;
+
+           
+
         }
 
         public void UpdateStore(int storeIndex) {
@@ -55,6 +61,18 @@ namespace SDP_SE1A_Group2.Customer
             txtStoreID.Text = storeID;
             txtStoreAddress.Text = storeName;
         }
+        //update Order Total Price
+        private void UpdateOrderTotalPrcie()
+        {
+            float orderTotalPrice = 0;
+
+            for (int i = 0; i < dataGridView1.Rows.Count-1; i++)
+            {
+                if(dataGridView1.Rows[i].Cells["totalPrice"].Value!=null)
+                    orderTotalPrice += float.Parse(dataGridView1.Rows[i].Cells["totalPrice"].Value.ToString());
+            }
+            txtTotalPrice.Text = orderTotalPrice.ToString();
+        }
 
         //add
         public void AddItem(String itemID, String itemName, String description, int quantity, int qtyRemain, int unitPrice, int totalPrice) {
@@ -75,10 +93,13 @@ namespace SDP_SE1A_Group2.Customer
             cmb.DataSource = qty;
             cmb.Value = quantity.ToString();
             dataGridView1.Rows[itemsCount - 1].Cells["totalPrice"].Value = totalPrice;
-
+            
+            UpdateOrderTotalPrcie();
 
 
         }
+
+        
         //remove
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -91,7 +112,8 @@ namespace SDP_SE1A_Group2.Customer
                     opener.UpdateCartHvItem(false);
                 dataGridView1.Rows.Remove(dataGridView1.Rows[row]);
             }
-                
+            UpdateOrderTotalPrcie();
+
         }
         //clear
         public void ClearCart()
@@ -99,6 +121,7 @@ namespace SDP_SE1A_Group2.Customer
             dataGridView1.Rows.Clear();
             itemsCount = 0;
             opener.UpdateCartHvItem(false);
+            UpdateOrderTotalPrcie();
         }
 
         //btn
@@ -135,28 +158,79 @@ namespace SDP_SE1A_Group2.Customer
                 var confirmResult = MessageBox.Show("Are you sure to create Order?", "", MessageBoxButtons.OKCancel);
                 if (confirmResult == DialogResult.OK)
                 {
-                    int orderID = 001;//!!!!!!!!!sql
-                    var culture = new CultureInfo("en-GB");
-                    String subject = "Order Detail for your order #" + orderID;
-                    String msg = "<h1>The Hong Kong Cube Shop</h1>" +
-                        "<h2>Your order is ready.</h2>" +
-                        "order id:" + orderID +
-                        "<br>order date:" + DateTime.Now.ToString(culture) +
-                        "<hr>Store ID : " + txtStoreID.Text + "<br>" +
-                        "Store Address : " + txtStoreAddress.Text + "<br>" +
-                        "Opening hours: 10:00am-09:00pm <p>" +
-                        "Contact our staff inside the store mention above. We will check your email and customer account,<br> and we will prepare items of your order." +
-                        "<hr>" +
-                        "<table bgcolor='#80b3d3' width='100%' border='1' >" +
-                        "<tr><th>ItemID</th><th>Item Name</th><th>Description</th><th>Unit Price</th><th>Quantity</th><th>Total Price</th></tr>" +
-                        "<tr>" +
-                        "<td colspan='4'>Total Price</td>" +
-                        "<td colspan='2'></td></tr></table>";
+                    int orderCount ;
+                    using (var db = new sdpEntities())
+                    {
+                        var id = from a in db.orders
+                                 select a;
+                        orderCount = id.Count() + 1;
+                        String newOrderID = orderCount.ToString("D3");
+                        //SendEMail AND create Order
+                        var order = new order()
+                        {
+                            orderID = newOrderID,
+                            customerID = cusID,
+                            orderDate = System.DateTime.Today,
+                            orderTotalPrice = float.Parse(txtTotalPrice.Text),
+                            storeName = txtStoreAddress.Text
 
-                    opener.sendEmail(subject, msg);
-                    //opener.CreateOrder()
-                    MessageBox.Show("The Order detail had sent to your Email successfully. Order created");
+                        };
+                        db.orders.Add(order);
+                        db.SaveChanges();
+                        var culture = new CultureInfo("en-GB");
+                        String subject = "Order Detail for your order #" + newOrderID;
+                        String msg = "<h1>The Hong Kong Cube Shop</h1>" +
+                            "<h2>Your order is ready.</h2>" +
+                            "order id:" + newOrderID +
+                            "<br>order date:" + DateTime.Now.ToString(culture) +
+                            "<hr>Store ID : " + txtStoreID.Text + "<br>" +
+                            "Store Address : " + txtStoreAddress.Text + "<br>" +
+                            "Opening hours: 10:00am-09:00pm <p>" +
+                            "Contact our staff inside the store mention above. We will check your email and customer account,<br> and we will prepare items of your order." +
+                            "<hr>" +
+                            "<table bgcolor='#80b3d3' width='100%' border='1' >" +
+                            "<tr><th>ItemID</th><th>Item Name</th><th>Description</th><th>Unit Price</th><th>Quantity</th><th>Total Price</th></tr>";
+                        for(int i=0; i<dataGridView1.Rows.Count-1;i++)
+                        {
+                            String itemid = dataGridView1.Rows[i].Cells["itemID"].Value.ToString();
+                            String unitprice = dataGridView1.Rows[i].Cells["unitPrice"].Value.ToString();
+                            String quantity = dataGridView1.Rows[i].Cells["qty"].Value.ToString();
+                            String itemTotalPrice = dataGridView1.Rows[i].Cells["totalPrice"].Value.ToString();
+                            msg += "<tr><th>"+itemid+"</th><th>"+ dataGridView1.Rows[i].Cells["itemName"].Value.ToString() + "</th><th>" + dataGridView1.Rows[i].Cells["description"].Value.ToString() + "</th><th>"+unitprice+"</th><th>"+quantity+"</th><th>"+itemTotalPrice+"</th></tr>";
+                            
+                            var orderdetail = new order_detail()
+                            {
+                                orderID = newOrderID,
+                                itemID = itemid,
+                                unitPrice = float.Parse(unitprice),
+                                qty = int.Parse(quantity),
+                                totalPrice = float.Parse(itemTotalPrice)
+
+                            };
+                            db.order_detail.Add(orderdetail);
+                            db.SaveChanges();
+                            var orderde = db.showcaseitems.SingleOrDefault(a => a.itemid == itemid);
+                            if (orderde != null)
+                            {
+                                orderde.avalibleQty -= int.Parse(quantity);
+                                db.SaveChanges();
+                            }
+                        }
+                        msg +="<tr>" +
+                            "<td colspan='4'>Total Price</td>" +
+                            "<td colspan='2'></td></tr></table>";
+
+                        opener.sendEmail(subject, msg);
+                        //opener.CreateOrder()
+                        MessageBox.Show("The Order detail had sent to your Email successfully. Order created");
+                        opener.updateOrderIdList();
+
+                    }
                 }
+
+
+
+
                     
             }
             

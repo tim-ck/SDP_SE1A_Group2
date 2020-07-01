@@ -126,9 +126,9 @@
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(179)))), ((int)(((byte)(211)))));
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.textBox2.Location = new System.Drawing.Point(12, 638);
+            this.textBox2.Location = new System.Drawing.Point(799, 638);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(873, 34);
+            this.textBox2.Size = new System.Drawing.Size(99, 34);
             this.textBox2.TabIndex = 18;
             this.textBox2.Text = "Total Price:";
             // 

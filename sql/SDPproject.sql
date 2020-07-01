@@ -189,8 +189,10 @@ DROP TABLE IF EXISTS `order`;
 
 CREATE TABLE `order` (
   `orderID` varchar(15) NOT NULL,
+  `storeName` varchar(80) NOT NULL,
   `customerID` varchar(15) NOT NULL,
   `orderDate` date NOT NULL,
+  `orderTotalPrice` float NOT NULL,
   PRIMARY KEY (`orderID`),
   KEY `order_customerid_fk_idx` (`customerID`),
   CONSTRAINT `order_customerID_fk` FOREIGN KEY (`customerID`) REFERENCES `customer`(`customerID`)
@@ -199,7 +201,7 @@ CREATE TABLE `order` (
 /*Data for the table `order` */
 
 LOCK TABLES `order` WRITE;
-INSERT INTO `order` VALUES ('001','customer01','2020-06-01'),('002','customer02','2020-06-03');
+INSERT INTO `order` VALUES ('001','MK','customer01','2020-06-01',30),('002','mk','customer02','2020-06-03',10);
 UNLOCK TABLES;
 
 
