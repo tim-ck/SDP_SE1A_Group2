@@ -25,7 +25,6 @@ namespace SDP_SE1A_Group2.Customer
         CartPage cartPage;
         BrowseItems browseItemForm;
         Order orderForm;
-        Staff.ShowcaseManagement peter ;
         Bitmap cart_P = Properties.Resources.cart_P;
         Bitmap cart_S = Properties.Resources.cart_S;
         Bitmap cart_hvItem_P = Properties.Resources.cart_hvItem_P;
@@ -37,7 +36,7 @@ namespace SDP_SE1A_Group2.Customer
             opener = parentForm;
             this.userId = userId;
 
-            using (var db = new sdpEntities1())
+            using (var db = new sdpEntities())
              {
                 var userAcct = from list in db.customers
                                 where list.customerID.Equals(userId)
@@ -59,9 +58,7 @@ namespace SDP_SE1A_Group2.Customer
             browseItemForm = new BrowseItems(this, cusName);
             orderForm = new Order(this, cusName);
 
-            //PETER
-            peter = new Staff.ShowcaseManagement();
-            openChildForm(peter);
+            
             //UI hide border
             this.Text = string.Empty;
             this.ControlBox = false;

@@ -62,7 +62,6 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(432, 36);
             this.txtUsername.TabIndex = 4;
-            this.txtUsername.TabStop = false;
             this.txtUsername.Text = "Username";
             this.txtUsername.Click += new System.EventHandler(this.txtUsername_Click);
             // 
@@ -94,7 +93,6 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(432, 36);
             this.txtPassword.TabIndex = 5;
-            this.txtPassword.TabStop = false;
             this.txtPassword.Text = "Password";
             this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
             // 
@@ -199,6 +197,7 @@
             this.rdoTenent.TabStop = true;
             this.rdoTenent.Text = "Tenant";
             this.rdoTenent.UseVisualStyleBackColor = true;
+            this.rdoTenent.Click += new System.EventHandler(this.rdoStaff_Click);
             // 
             // rdoStaff
             // 
@@ -211,6 +210,7 @@
             this.rdoStaff.TabStop = true;
             this.rdoStaff.Text = "Staff";
             this.rdoStaff.UseVisualStyleBackColor = true;
+            this.rdoStaff.Click += new System.EventHandler(this.rdoStaff_Click);
             // 
             // rdoCustomer
             // 
@@ -223,6 +223,7 @@
             this.rdoCustomer.TabStop = true;
             this.rdoCustomer.Text = "Customer";
             this.rdoCustomer.UseVisualStyleBackColor = true;
+            this.rdoCustomer.Click += new System.EventHandler(this.rdoStaff_Click);
             // 
             // pictureBox3
             // 

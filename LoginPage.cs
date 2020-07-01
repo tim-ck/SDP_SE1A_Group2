@@ -27,7 +27,7 @@ namespace SDP_SE1A_Group2
         }
         
 
-//drag form 
+//drag form Start
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
@@ -39,8 +39,9 @@ namespace SDP_SE1A_Group2
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+ //drag form End
 
-        
+
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
@@ -86,37 +87,45 @@ namespace SDP_SE1A_Group2
         public void CustomerVerify(String username, String password)
         {
             Boolean Verify = false;
-            using (var db = new sdpEntities())
-            {
-                var userAcct =  from list in db.customers
-                                where list.customerID.Equals(username)
-                                select new { list.customerID, list.customerpwd };
-                if(userAcct==null){
-                    txtErrMsg.Text = "The Username / Password is incorrect";            
-                }else{
-                    foreach (var user in userAcct.ToList())
+            using (var db = new sdpEntities()){
+                
+                
+                    var userAcct = from list in db.customers
+                                   where list.customerID.Equals(username)
+                                   select new { list.customerID, list.customerpwd };
+                    if (userAcct == null)
                     {
-                        if ((username == user.customerID.ToString()) && (password == user.customerpwd.ToString()))
+                        txtErrMsg.Text = "The Username / Password is incorrect";
+                    }
+                    else
+                    {
+                        foreach (var user in userAcct.ToList())
                         {
-                            Verify = true;
-                            this.Hide();
-                            txtUsername.Text = "Username";
-                            txtPassword.Text = "Password";
-                            CustomerMain cus = new CustomerMain(this, username); 
-                            cus.Show();
-                            return;
+                            if ((username == user.customerID.ToString()) && (password == user.customerpwd.ToString()))
+                            {
+                                Verify = true;
+                                this.Hide();
+                                txtUsername.Text = "Username";
+                                txtPassword.Text = "Password";
+                                CustomerMain cus = new CustomerMain(this, username);
+                                cus.Show();
+                                return;
+                            }
                         }
                     }
-                }
-                if(Verify == false)
-                 {
-                    label2.BackColor = Color.Red;
-                    label1.BackColor = Color.Red;
-                    txtErrMsg.Text = "The Username / Password is incorrect";
-                    return;
-                }
+                    if (Verify == false)
+                    {
+                        label2.BackColor = Color.Red;
+                        label1.BackColor = Color.Red;
+                        txtErrMsg.Text = "The Username / Password is incorrect";
+                        return;
+                    }
+
                 
+
             }
+           
+            
 
         }
 
@@ -323,7 +332,20 @@ namespace SDP_SE1A_Group2
             txtUsername.ForeColor = Color.White;
         }
 
-        
+        private void rdoStaff_Click(object sender, EventArgs e)
+        {
+            pictureBox2.Image = Properties.Resources.user;
+            label1.BackColor = Color.White;
+            txtUsername.ForeColor = Color.White;
+
+            pictureBox3.Image = Properties.Resources.iconmonstr_lock_3_240;
+            label2.BackColor = Color.White;
+            txtPassword.ForeColor = Color.White;
+        }
+
+
+
+
         //UI END
 
 

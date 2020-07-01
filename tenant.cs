@@ -17,7 +17,6 @@ namespace SDP_SE1A_Group2
         public tenant()
         {
             this.items = new HashSet<item>();
-            this.preinputitems = new HashSet<preinputitem>();
             this.rentinfoes = new HashSet<rentinfo>();
         }
     
@@ -28,7 +27,6 @@ namespace SDP_SE1A_Group2
         public string phone { get; set; }
     
         public virtual ICollection<item> items { get; set; }
-        public virtual ICollection<preinputitem> preinputitems { get; set; }
         public virtual ICollection<rentinfo> rentinfoes { get; set; }
     }
 }

@@ -63,7 +63,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 693);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1214, 107);
+            this.panel1.Size = new System.Drawing.Size(1114, 107);
             this.panel1.TabIndex = 15;
             // 
             // btnClearCart
@@ -73,7 +73,7 @@
             this.btnClearCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearCart.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.btnClearCart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnClearCart.Location = new System.Drawing.Point(783, 19);
+            this.btnClearCart.Location = new System.Drawing.Point(703, 19);
             this.btnClearCart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClearCart.Name = "btnClearCart";
             this.btnClearCart.Size = new System.Drawing.Size(130, 66);
@@ -85,7 +85,7 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
-            this.label1.Location = new System.Drawing.Point(965, 81);
+            this.label1.Location = new System.Drawing.Point(888, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(210, 4);
             this.label1.TabIndex = 14;
@@ -101,7 +101,7 @@
             this.btnShowShopItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowShopItem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.btnShowShopItem.ForeColor = System.Drawing.Color.White;
-            this.btnShowShopItem.Location = new System.Drawing.Point(965, 19);
+            this.btnShowShopItem.Location = new System.Drawing.Point(888, 19);
             this.btnShowShopItem.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnShowShopItem.Name = "btnShowShopItem";
             this.btnShowShopItem.Size = new System.Drawing.Size(210, 62);
@@ -115,9 +115,9 @@
             this.txtTotalPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(179)))), ((int)(((byte)(211)))));
             this.txtTotalPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotalPrice.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.txtTotalPrice.Location = new System.Drawing.Point(1006, 638);
+            this.txtTotalPrice.Location = new System.Drawing.Point(891, 638);
             this.txtTotalPrice.Name = "txtTotalPrice";
-            this.txtTotalPrice.Size = new System.Drawing.Size(184, 34);
+            this.txtTotalPrice.Size = new System.Drawing.Size(207, 34);
             this.txtTotalPrice.TabIndex = 17;
             this.txtTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -126,9 +126,9 @@
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(179)))), ((int)(((byte)(211)))));
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.textBox2.Location = new System.Drawing.Point(27, 638);
+            this.textBox2.Location = new System.Drawing.Point(12, 638);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(979, 34);
+            this.textBox2.Size = new System.Drawing.Size(873, 34);
             this.textBox2.TabIndex = 18;
             this.textBox2.Text = "Total Price:";
             // 
@@ -137,7 +137,7 @@
             this.txtStoreID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(179)))), ((int)(((byte)(211)))));
             this.txtStoreID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtStoreID.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.txtStoreID.Location = new System.Drawing.Point(27, 65);
+            this.txtStoreID.Location = new System.Drawing.Point(12, 50);
             this.txtStoreID.Name = "txtStoreID";
             this.txtStoreID.Size = new System.Drawing.Size(222, 34);
             this.txtStoreID.TabIndex = 19;
@@ -148,7 +148,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.lblTitle.Location = new System.Drawing.Point(20, 9);
+            this.lblTitle.Location = new System.Drawing.Point(5, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(631, 38);
             this.lblTitle.TabIndex = 20;
@@ -189,7 +189,7 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
-            this.dataGridView1.Location = new System.Drawing.Point(27, 99);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 91);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -210,7 +210,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(229)))));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.Height = 50;
-            this.dataGridView1.Size = new System.Drawing.Size(1163, 540);
+            this.dataGridView1.Size = new System.Drawing.Size(1086, 540);
             this.dataGridView1.TabIndex = 21;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellEndEdit);
@@ -259,7 +259,7 @@
             this.txtStoreAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(179)))), ((int)(((byte)(211)))));
             this.txtStoreAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtStoreAddress.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.txtStoreAddress.Location = new System.Drawing.Point(249, 65);
+            this.txtStoreAddress.Location = new System.Drawing.Point(234, 50);
             this.txtStoreAddress.Name = "txtStoreAddress";
             this.txtStoreAddress.Size = new System.Drawing.Size(664, 34);
             this.txtStoreAddress.TabIndex = 22;
@@ -270,7 +270,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(75)))), ((int)(((byte)(142)))));
-            this.ClientSize = new System.Drawing.Size(1214, 800);
+            this.ClientSize = new System.Drawing.Size(1114, 800);
             this.Controls.Add(this.txtStoreAddress);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblTitle);

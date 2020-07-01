@@ -60,7 +60,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(308, 800);
+            this.panel1.Size = new System.Drawing.Size(213, 800);
             this.panel1.TabIndex = 1;
             // 
             // label3
@@ -85,10 +85,10 @@
             this.btnShowOrderDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowOrderDetail.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.btnShowOrderDetail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.btnShowOrderDetail.Location = new System.Drawing.Point(12, 697);
+            this.btnShowOrderDetail.Location = new System.Drawing.Point(18, 695);
             this.btnShowOrderDetail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnShowOrderDetail.Name = "btnShowOrderDetail";
-            this.btnShowOrderDetail.Size = new System.Drawing.Size(276, 59);
+            this.btnShowOrderDetail.Size = new System.Drawing.Size(196, 78);
             this.btnShowOrderDetail.TabIndex = 15;
             this.btnShowOrderDetail.Text = "Show Order Detail >>";
             this.btnShowOrderDetail.UseVisualStyleBackColor = false;
@@ -101,7 +101,7 @@
             this.listBox1.Location = new System.Drawing.Point(18, 84);
             this.listBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(260, 585);
+            this.listBox1.Size = new System.Drawing.Size(177, 585);
             this.listBox1.TabIndex = 14;
             // 
             // lblTitle
@@ -109,7 +109,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.lblTitle.Location = new System.Drawing.Point(317, 9);
+            this.lblTitle.Location = new System.Drawing.Point(219, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(631, 38);
             this.lblTitle.TabIndex = 18;
@@ -152,7 +152,7 @@
             this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView2.EnableHeadersVisualStyles = false;
             this.dataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
-            this.dataGridView2.Location = new System.Drawing.Point(324, 51);
+            this.dataGridView2.Location = new System.Drawing.Point(220, 51);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -173,7 +173,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(229)))));
             this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView2.RowTemplate.Height = 50;
-            this.dataGridView2.Size = new System.Drawing.Size(859, 722);
+            this.dataGridView2.Size = new System.Drawing.Size(882, 722);
             this.dataGridView2.TabIndex = 19;
             // 
             // itemID
@@ -230,7 +230,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(219)))));
-            this.ClientSize = new System.Drawing.Size(1214, 800);
+            this.ClientSize = new System.Drawing.Size(1114, 800);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.panel1);

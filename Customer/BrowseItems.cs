@@ -72,7 +72,7 @@ namespace SDP_SE1A_Group2.Customer
             }
             cmb.DataSource = qty;
             dataGridView1.Rows[0].Cells["qty"].Value = "0";*/
-            using (var db = new sdpEntities1())
+            using (var db = new sdpEntities())
             {
                 var item = from items in db.items
                            from showcaseItem in db.showcaseitems
