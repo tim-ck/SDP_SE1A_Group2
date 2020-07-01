@@ -24,13 +24,14 @@ namespace SDP_SE1A_Group2
             int id = int.Parse(txtStaffID.Text.Trim());
             int month = int.Parse(cmbMonth.SelectedItem.ToString());
 
+            //not finish
             using (DBEntities db = new DBEntities())
             {
-                var atten = (from list in db.staff
+                var atten3 = (from list in db.staff
                              select list.staffID);
-                foreach (var atten2 in atten.ToList())
+                foreach (var atten4 in atten3.ToList())
                 {
-                    if(atten2 == id)
+                    if(atten4 == id)
                     {
                         attendence.month = month;
                         attendence.hour = int.Parse(txtWorkHour.Text.Trim());
