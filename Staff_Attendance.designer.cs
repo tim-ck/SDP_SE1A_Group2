@@ -38,7 +38,7 @@
             this.month = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblMonth = new System.Windows.Forms.Label();
-            this.dtpMonth = new System.Windows.Forms.DateTimePicker();
+            this.cmbMonth = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +94,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 237);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(304, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(337, 150);
             this.dataGridView1.TabIndex = 6;
             // 
             // staffID
@@ -121,21 +121,33 @@
             this.lblMonth.TabIndex = 7;
             this.lblMonth.Text = "Month:";
             // 
-            // dtpMonth
+            // cmbMonth
             // 
-            this.dtpMonth.CustomFormat = "yyyy-MM-dd";
-            this.dtpMonth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpMonth.Location = new System.Drawing.Point(195, 82);
-            this.dtpMonth.Name = "dtpMonth";
-            this.dtpMonth.Size = new System.Drawing.Size(121, 22);
-            this.dtpMonth.TabIndex = 9;
+            this.cmbMonth.FormattingEnabled = true;
+            this.cmbMonth.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cmbMonth.Location = new System.Drawing.Point(195, 82);
+            this.cmbMonth.Name = "cmbMonth";
+            this.cmbMonth.Size = new System.Drawing.Size(121, 20);
+            this.cmbMonth.TabIndex = 8;
             // 
             // Staff_Attendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 594);
-            this.Controls.Add(this.dtpMonth);
+            this.Controls.Add(this.cmbMonth);
             this.Controls.Add(this.lblMonth);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtWorkHour);
@@ -164,6 +176,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn month;
         private System.Windows.Forms.DataGridViewTextBoxColumn hour;
         private System.Windows.Forms.Label lblMonth;
-        private System.Windows.Forms.DateTimePicker dtpMonth;
+        private System.Windows.Forms.ComboBox cmbMonth;
     }
 }

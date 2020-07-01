@@ -20,8 +20,10 @@ namespace SDP_SE1A_Group2
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            
+            int month = int.Parse(cmbMonth.SelectedItem.ToString());
             attendence.staffID = int.Parse(txtStaffID.Text.Trim());
-            attendence.month = dtpMonth.Value.Date;
+            attendence.month = month;
             attendence.hour = int.Parse(txtWorkHour.Text.Trim());
 
             using(DBEntities db = new DBEntities())
@@ -40,7 +42,7 @@ namespace SDP_SE1A_Group2
             using (DBEntities print = new DBEntities())
             {
                 var atten = (from list in print.attendence
-                             select list);    // select * from employees
+                             select list);    // select * from attendence
 
                 foreach (var atten2 in atten.ToList())
                 {
