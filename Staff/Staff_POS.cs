@@ -12,7 +12,8 @@ namespace SDP_SE1A_Group2
 {
     public partial class Staff_POS : Form
     {
-        
+        showcaseitem showcaseitem = new showcaseitem();
+        item item = new item();
         public int qt;
         public double price;
         public double totalPrice;
@@ -32,13 +33,11 @@ namespace SDP_SE1A_Group2
         {
             id = txtItemID.Text;
             qt = int.Parse(txtQT.Text);
-
             
-
+            
+            
             //receipt
             string[] receipt = {id,qt.ToString(),totalPrice.ToString()};
-
-
         }
 
         private void txtTotalPrice_TextChanged(object sender, EventArgs e)
@@ -53,6 +52,26 @@ namespace SDP_SE1A_Group2
 
             totalPrice = qt * price;
             txtTotalPrice.Text = totalPrice.ToString();
+        }
+
+        private void txtItemID_TextChanged(object sender, EventArgs e)
+        {
+            using (DBEntities db = new DBEntities())
+            {
+                id = txtItemID.Text;
+                qt = int.Parse(txtQT.Text);
+                var itemHere = db.showcaseitem.SingleOrDefault(d => d.itemid == id);
+                var qtyHere = db.showcaseitem.SingleOrDefault(i => i.avalibleQty > 0);
+                if (itemHere != null)
+                {
+                    
+                    MessageBox.Show("Success");
+                }
+                else
+                {
+                    MessageBox.Show("");
+                }
+            }
         }
     }
 }

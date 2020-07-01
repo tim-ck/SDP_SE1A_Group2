@@ -27,30 +27,30 @@ namespace SDP_SE1A_Group2
             //not finish
             using (DBEntities db = new DBEntities())
             {
-                var atten3 = (from list in db.staff
-                             select list.staffID);
-                foreach (var atten4 in atten3.ToList())
+                var result = db.attendence.SingleOrDefault(b => b.staffID == id && b.month == month);
+                if (result != null)
                 {
-                    if(atten4 == id)
-                    {
-                        attendence.month = month;
-                        attendence.hour = int.Parse(txtWorkHour.Text.Trim());
-
-                        db.attendence.Add(attendence);
-                        db.SaveChanges();
-
-                        MessageBox.Show("Submitted Successfully");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Staff ID not found");
-                    }
+                    int h = int.Parse(txtWorkHour.Text.Trim());
+                    result.hour += h;
+                    result.month = month;
+                    db.SaveChanges();
+                    MessageBox.Show("Submitted Successfully");
+                    updateDate();
                 }
-            }         
+                else
+                {
+                    MessageBox.Show("Staff ID not found");
+                }
+            }
         }
 
         private void Staff_Attendance_Load(object sender, EventArgs e)
         {
+            updateDate();
+        }
+        public void updateDate()
+        {
+            dataGridView1.Rows.Clear();
             using (DBEntities print = new DBEntities())
             {
                 var atten = (from list in print.attendence
