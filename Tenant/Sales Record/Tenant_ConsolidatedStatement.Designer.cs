@@ -40,6 +40,15 @@
             this.panelSoldItems = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.rowNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.location = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.showcaseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soldDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label39 = new System.Windows.Forms.Label();
@@ -79,15 +88,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.rowNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.location = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.showcaseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soldDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelSoldItems.SuspendLayout();
@@ -154,19 +154,6 @@
             // cboMonth
             // 
             this.cboMonth.FormattingEnabled = true;
-            this.cboMonth.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
             this.cboMonth.Location = new System.Drawing.Point(587, 34);
             this.cboMonth.Name = "cboMonth";
             this.cboMonth.Size = new System.Drawing.Size(121, 23);
@@ -190,6 +177,7 @@
             this.cboYear.Name = "cboYear";
             this.cboYear.Size = new System.Drawing.Size(121, 23);
             this.cboYear.TabIndex = 6;
+            this.cboYear.SelectedIndexChanged += new System.EventHandler(this.cboYear_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -257,6 +245,78 @@
             this.dataGridView1.Size = new System.Drawing.Size(1041, 407);
             this.dataGridView1.TabIndex = 1;
             // 
+            // rowNumber
+            // 
+            this.rowNumber.HeaderText = "No.";
+            this.rowNumber.MinimumWidth = 6;
+            this.rowNumber.Name = "rowNumber";
+            this.rowNumber.ReadOnly = true;
+            this.rowNumber.Width = 40;
+            // 
+            // location
+            // 
+            this.location.HeaderText = "Location";
+            this.location.MinimumWidth = 6;
+            this.location.Name = "location";
+            this.location.ReadOnly = true;
+            this.location.Width = 125;
+            // 
+            // showcaseId
+            // 
+            this.showcaseId.HeaderText = "Showcase ID";
+            this.showcaseId.MinimumWidth = 6;
+            this.showcaseId.Name = "showcaseId";
+            this.showcaseId.ReadOnly = true;
+            this.showcaseId.Width = 80;
+            // 
+            // itemId
+            // 
+            this.itemId.HeaderText = "Item ID";
+            this.itemId.MinimumWidth = 6;
+            this.itemId.Name = "itemId";
+            this.itemId.ReadOnly = true;
+            this.itemId.Width = 80;
+            // 
+            // itemName
+            // 
+            this.itemName.HeaderText = "Item Name";
+            this.itemName.MinimumWidth = 6;
+            this.itemName.Name = "itemName";
+            this.itemName.ReadOnly = true;
+            this.itemName.Width = 125;
+            // 
+            // unitPrice
+            // 
+            this.unitPrice.HeaderText = "Unit Price";
+            this.unitPrice.MinimumWidth = 6;
+            this.unitPrice.Name = "unitPrice";
+            this.unitPrice.ReadOnly = true;
+            this.unitPrice.Width = 80;
+            // 
+            // qty
+            // 
+            this.qty.HeaderText = "Qty";
+            this.qty.MinimumWidth = 6;
+            this.qty.Name = "qty";
+            this.qty.ReadOnly = true;
+            this.qty.Width = 75;
+            // 
+            // subTotal
+            // 
+            this.subTotal.HeaderText = "Sub Total";
+            this.subTotal.MinimumWidth = 6;
+            this.subTotal.Name = "subTotal";
+            this.subTotal.ReadOnly = true;
+            this.subTotal.Width = 125;
+            // 
+            // soldDate
+            // 
+            this.soldDate.HeaderText = "Sold Date";
+            this.soldDate.MinimumWidth = 6;
+            this.soldDate.Name = "soldDate";
+            this.soldDate.ReadOnly = true;
+            this.soldDate.Width = 125;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(24)))));
@@ -269,7 +329,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1095, 361);
             this.panel3.TabIndex = 18;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel4
             // 
@@ -704,78 +763,6 @@
             this.label2.Size = new System.Drawing.Size(118, 36);
             this.label2.TabIndex = 9;
             this.label2.Text = "MM/YY";
-            // 
-            // rowNumber
-            // 
-            this.rowNumber.HeaderText = "No.";
-            this.rowNumber.MinimumWidth = 6;
-            this.rowNumber.Name = "rowNumber";
-            this.rowNumber.ReadOnly = true;
-            this.rowNumber.Width = 40;
-            // 
-            // location
-            // 
-            this.location.HeaderText = "Location";
-            this.location.MinimumWidth = 6;
-            this.location.Name = "location";
-            this.location.ReadOnly = true;
-            this.location.Width = 125;
-            // 
-            // showcaseId
-            // 
-            this.showcaseId.HeaderText = "Showcase ID";
-            this.showcaseId.MinimumWidth = 6;
-            this.showcaseId.Name = "showcaseId";
-            this.showcaseId.ReadOnly = true;
-            this.showcaseId.Width = 80;
-            // 
-            // itemId
-            // 
-            this.itemId.HeaderText = "Item ID";
-            this.itemId.MinimumWidth = 6;
-            this.itemId.Name = "itemId";
-            this.itemId.ReadOnly = true;
-            this.itemId.Width = 80;
-            // 
-            // itemName
-            // 
-            this.itemName.HeaderText = "Item Name";
-            this.itemName.MinimumWidth = 6;
-            this.itemName.Name = "itemName";
-            this.itemName.ReadOnly = true;
-            this.itemName.Width = 125;
-            // 
-            // unitPrice
-            // 
-            this.unitPrice.HeaderText = "Unit Price";
-            this.unitPrice.MinimumWidth = 6;
-            this.unitPrice.Name = "unitPrice";
-            this.unitPrice.ReadOnly = true;
-            this.unitPrice.Width = 80;
-            // 
-            // qty
-            // 
-            this.qty.HeaderText = "Qty";
-            this.qty.MinimumWidth = 6;
-            this.qty.Name = "qty";
-            this.qty.ReadOnly = true;
-            this.qty.Width = 75;
-            // 
-            // subTotal
-            // 
-            this.subTotal.HeaderText = "Sub Total";
-            this.subTotal.MinimumWidth = 6;
-            this.subTotal.Name = "subTotal";
-            this.subTotal.ReadOnly = true;
-            this.subTotal.Width = 125;
-            // 
-            // soldDate
-            // 
-            this.soldDate.HeaderText = "Sold Date";
-            this.soldDate.MinimumWidth = 6;
-            this.soldDate.Name = "soldDate";
-            this.soldDate.ReadOnly = true;
-            this.soldDate.Width = 125;
             // 
             // TenantConsolidatedStatement
             // 

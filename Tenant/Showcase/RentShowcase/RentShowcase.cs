@@ -15,6 +15,8 @@ namespace SDP_SE1A_Group2
         String showcaseid;
         String ava;
         double rental;
+        double discountPeriod = 1;
+        double discountShowcaseNum = 1;
         public RentShowcase(string id)
         {
             InitializeComponent();
@@ -23,15 +25,16 @@ namespace SDP_SE1A_Group2
 
         private void RentShowcase_Load(object sender, EventArgs e)
         {
-            //Load showcase info
+            //Load selected showcase info
             lblShowcaseId.Text = showcaseid;
-            lblLocation.Text = showcaseid.Substring(0,3);
+            lblLocation.Text = showcaseid.Substring(0,3).ToUpper();
 
             using (var db = new sdpEntities())
             {
                 var rs = from result in db.showcase
                          where result.showcaseid.Contains(showcaseid)
                          select result;
+
                 foreach(var row in rs)
                 {
                     lblRental.Text = row.rental.ToString();
@@ -43,45 +46,111 @@ namespace SDP_SE1A_Group2
             {
                 case "a":
                     lblStatus.Text = "Available";
+                    lblStatus.ForeColor = Color.Green;
                     break;
                 case "o":
                     lblStatus.Text = "Occupied";
+                    lblStatus.ForeColor = Color.Red;
                     break;
                 case "r":
                     lblStatus.Text = "Reserved";
                     break;
             }
 
-            if (ava.Equals("a"))
+
+            // Enable "Rent" / "Reserve" button
+            if (ava.Equals("o"))
             {
                 btnReserve.Enabled = true;
-            }
-            else if (ava.Equals("o"))
+            } else if (ava.Equals("a"))
             {
                 btnRent.Enabled = true;
             }
+            // Load No. of Showcase that is renting
+            using (var db = new sdpEntities())
+            {
+                var rs = from lsRentinfo in db.rentinfo
+                         where lsRentinfo.tenantID.Contains(TenantMain.tenantID)
+                         select lsRentinfo;
 
+                int showcaseNumber = 0;
+                foreach(var row in rs.ToList())
+                {
+                    if (row.startDate.ToOADate() + row.duration >= DateTime.Now.ToOADate())
+                    showcaseNumber++;
+                }
+                lblNumShowcase.Text = showcaseNumber.ToString();
+            }
+
+            // Calculate discount for No. showcase
+            if (int.Parse(lblNumShowcase.Text) > 2 && int.Parse(lblNumShowcase.Text) <= 5)
+            {
+                lblDiscountNum.Text = "5%";
+                discountShowcaseNum = 0.95;
+                lblDiscountNum.ForeColor = Color.Green;
+            }
+            else if (int.Parse(lblNumShowcase.Text) >= 6)
+            {
+                lblDiscountNum.Text = "10%";
+                lblDiscountNum.ForeColor = Color.Green;
+                discountShowcaseNum = 0.9;
+            }
 
 
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(lblTotalPrice.Text.ToString()))
+            
+            // Calculate discount & total price for rent period
+            if (!txtPeriod.Text.Equals(""))
             {
-                if (int.Parse(txtPeriod.Text) >= 4380)
+                if (int.Parse(txtPeriod.Text) >= 365)
+                    // >= 12 months
                 {
-                    lblTotalPrice.Text = (0.85 * rental * double.Parse(txtPeriod.Text.ToString())).ToString();
+                    lblTotalPrice.Text = (0.85 * rental * int.Parse(txtPeriod.Text.ToString())).ToString();
+                    cb12M.ForeColor = Color.Green;
+                    cb12M.Checked = true;
+                    cb6M.ForeColor = Color.WhiteSmoke;
+                    cb6M.Checked = false;
+                    discountPeriod = 0.9;
+
+                }else if (int.Parse(txtPeriod.Text) >= 182 && int.Parse(txtPeriod.Text) < 365)
+                    // >= 6 months
+                {
+                    lblTotalPrice.Text = (0.95 * rental * int.Parse(txtPeriod.Text.ToString())).ToString();
+                    cb6M.ForeColor = Color.Green;
+                    cb6M.Checked = true;
+                    cb12M.ForeColor = Color.WhiteSmoke;
+                    cb12M.Checked = false;
+                    discountPeriod = 0.95;
                 }
-                else if (int.Parse(txtPeriod.Text) >= 180){
-                    lblTotalPrice.Text = (0.95 * rental * double.Parse(txtPeriod.Text.ToString())).ToString();
+                else
+                // < 6 months
+                {
+                    lblTotalPrice.Text = (rental * int.Parse(txtPeriod.Text)).ToString("F1");
+                    cb6M.ForeColor = Color.WhiteSmoke;
+                    cb6M.Checked = false;
+                    cb12M.ForeColor = Color.WhiteSmoke;
+                    cb12M.Checked = false;
+                    discountPeriod = 1;
                 }
             }
+            else
+            {
+                lblTotalPrice.Text = "0";
+            }
+            // Show "Total Discount"
+            lblDiscount.Text = ((double.Parse(lblTotalPrice.Text)) - (double.Parse(lblTotalPrice.Text) * discountPeriod * discountShowcaseNum)).ToString("F1");
+            // Show "After Discount"
+            lblAfterDiscount.Text = (double.Parse(lblTotalPrice.Text) - double.Parse(lblDiscount.Text)).ToString("F1");
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
     }
 }

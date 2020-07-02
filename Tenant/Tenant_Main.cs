@@ -27,7 +27,7 @@ namespace SDP_SE1A_Group2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            lblWelcome.Text = "Welcome " + tenantName;
+            lblWelcome.Text = "Welcome  " + tenantName;
 
         }
         #region Hide/ShowSubMenu

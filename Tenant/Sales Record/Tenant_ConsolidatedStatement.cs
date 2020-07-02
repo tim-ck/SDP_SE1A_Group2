@@ -43,11 +43,21 @@ namespace SDP_SE1A_Group2
                 
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
+
+
+        private void cboYear_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            //Load cboMonth values
+            if (int.Parse(cboYear.SelectedItem.ToString()) == DateTime.Now.Year)
+            {
+                for(int i = 1; i <= DateTime.Now.Month; i++)
+                    cboMonth.Items.Add(i);
+            }
+            else
+            {
+                for (int i = 1; i <= 12; i++)
+                    cboMonth.Items.Add(i);
+            }
         }
-
-
     }
 }

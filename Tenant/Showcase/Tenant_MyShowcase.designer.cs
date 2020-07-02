@@ -84,6 +84,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Gray;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -94,6 +96,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(156, 140);
             this.dataGridView1.MinimumSize = new System.Drawing.Size(739, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(739, 337);
@@ -104,6 +107,7 @@
             this.showcaseId.HeaderText = "Showcase ID";
             this.showcaseId.MinimumWidth = 6;
             this.showcaseId.Name = "showcaseId";
+            this.showcaseId.ReadOnly = true;
             this.showcaseId.Width = 125;
             // 
             // size
@@ -111,6 +115,7 @@
             this.size.HeaderText = "Size";
             this.size.MinimumWidth = 6;
             this.size.Name = "size";
+            this.size.ReadOnly = true;
             this.size.Width = 125;
             // 
             // rentalPerDay

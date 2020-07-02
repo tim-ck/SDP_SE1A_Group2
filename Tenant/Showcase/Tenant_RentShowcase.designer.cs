@@ -203,7 +203,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1095, 786);
             this.panel3.TabIndex = 17;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // dataGridView1
             // 
