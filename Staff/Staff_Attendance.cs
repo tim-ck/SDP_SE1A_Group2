@@ -24,7 +24,6 @@ namespace SDP_SE1A_Group2
             int id = int.Parse(txtStaffID.Text.Trim());
             int month = int.Parse(cmbMonth.SelectedItem.ToString());
 
-            //not finish
             using (DBEntities db = new DBEntities())
             {
                 var result = db.attendence.SingleOrDefault(b => b.staffID == id && b.month == month);

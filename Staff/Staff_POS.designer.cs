@@ -40,6 +40,11 @@
             this.btnCount = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.showcaseid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.avalibleQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soldQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,11 +138,18 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(365, 65);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.showcaseid,
+            this.itemid,
+            this.avalibleQty,
+            this.soldQty,
+            this.TotalQty});
+            this.dataGridView1.Location = new System.Drawing.Point(374, 65);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(353, 236);
+            this.dataGridView1.Size = new System.Drawing.Size(413, 236);
             this.dataGridView1.TabIndex = 12;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnPrint
             // 
@@ -147,6 +159,32 @@
             this.btnPrint.TabIndex = 13;
             this.btnPrint.Text = "Print receipt";
             this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // showcaseid
+            // 
+            this.showcaseid.HeaderText = "showcaseid";
+            this.showcaseid.Name = "showcaseid";
+            // 
+            // itemid
+            // 
+            this.itemid.HeaderText = "itemid";
+            this.itemid.Name = "itemid";
+            // 
+            // avalibleQty
+            // 
+            this.avalibleQty.HeaderText = "avalibleQty";
+            this.avalibleQty.Name = "avalibleQty";
+            // 
+            // soldQty
+            // 
+            this.soldQty.HeaderText = "soldQty";
+            this.soldQty.Name = "soldQty";
+            // 
+            // TotalQty
+            // 
+            this.TotalQty.HeaderText = "TotalQty";
+            this.TotalQty.Name = "TotalQty";
             // 
             // Staff_POS
             // 
@@ -167,6 +205,7 @@
             this.Controls.Add(this.lblItemID);
             this.Name = "Staff_POS";
             this.Text = " ";
+            this.Load += new System.EventHandler(this.Staff_POS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -186,5 +225,10 @@
         private System.Windows.Forms.Button btnCount;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.DataGridViewTextBoxColumn showcaseid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn avalibleQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soldQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalQty;
     }
 }

@@ -30,11 +30,11 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnPOS = new System.Windows.Forms.Button();
-            this.btnAttendence = new System.Windows.Forms.Button();
-            this.btnExport = new System.Windows.Forms.Button();
-            this.btnReserve = new System.Windows.Forms.Button();
             this.btnSalesRecord = new System.Windows.Forms.Button();
+            this.btnReserve = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.btnAttendence = new System.Windows.Forms.Button();
+            this.btnPOS = new System.Windows.Forms.Button();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -60,35 +60,15 @@
             this.panel2.Size = new System.Drawing.Size(200, 512);
             this.panel2.TabIndex = 1;
             // 
-            // btnPOS
+            // btnSalesRecord
             // 
-            this.btnPOS.Location = new System.Drawing.Point(63, 63);
-            this.btnPOS.Name = "btnPOS";
-            this.btnPOS.Size = new System.Drawing.Size(75, 23);
-            this.btnPOS.TabIndex = 2;
-            this.btnPOS.Text = "POS";
-            this.btnPOS.UseVisualStyleBackColor = true;
-            this.btnPOS.Click += new System.EventHandler(this.btnPOS_Click);
-            // 
-            // btnAttendence
-            // 
-            this.btnAttendence.Location = new System.Drawing.Point(63, 130);
-            this.btnAttendence.Name = "btnAttendence";
-            this.btnAttendence.Size = new System.Drawing.Size(75, 23);
-            this.btnAttendence.TabIndex = 3;
-            this.btnAttendence.Text = "Attendence";
-            this.btnAttendence.UseVisualStyleBackColor = true;
-            this.btnAttendence.Click += new System.EventHandler(this.btnAttendence_Click);
-            // 
-            // btnExport
-            // 
-            this.btnExport.Location = new System.Drawing.Point(63, 204);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(75, 23);
-            this.btnExport.TabIndex = 4;
-            this.btnExport.Text = "Export";
-            this.btnExport.UseVisualStyleBackColor = true;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            this.btnSalesRecord.Location = new System.Drawing.Point(63, 347);
+            this.btnSalesRecord.Name = "btnSalesRecord";
+            this.btnSalesRecord.Size = new System.Drawing.Size(75, 23);
+            this.btnSalesRecord.TabIndex = 6;
+            this.btnSalesRecord.Text = "SalesRecord";
+            this.btnSalesRecord.UseVisualStyleBackColor = true;
+            this.btnSalesRecord.Click += new System.EventHandler(this.btnSalesRecord_Click);
             // 
             // btnReserve
             // 
@@ -100,15 +80,35 @@
             this.btnReserve.UseVisualStyleBackColor = true;
             this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
             // 
-            // btnSalesRecord
+            // btnExport
             // 
-            this.btnSalesRecord.Location = new System.Drawing.Point(63, 347);
-            this.btnSalesRecord.Name = "btnSalesRecord";
-            this.btnSalesRecord.Size = new System.Drawing.Size(75, 23);
-            this.btnSalesRecord.TabIndex = 6;
-            this.btnSalesRecord.Text = "SalesRecord";
-            this.btnSalesRecord.UseVisualStyleBackColor = true;
-            this.btnSalesRecord.Click += new System.EventHandler(this.btnSalesRecord_Click);
+            this.btnExport.Location = new System.Drawing.Point(63, 204);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(75, 23);
+            this.btnExport.TabIndex = 4;
+            this.btnExport.Text = "Export";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // btnAttendence
+            // 
+            this.btnAttendence.Location = new System.Drawing.Point(63, 130);
+            this.btnAttendence.Name = "btnAttendence";
+            this.btnAttendence.Size = new System.Drawing.Size(75, 23);
+            this.btnAttendence.TabIndex = 3;
+            this.btnAttendence.Text = "Attendence";
+            this.btnAttendence.UseVisualStyleBackColor = true;
+            this.btnAttendence.Click += new System.EventHandler(this.btnAttendence_Click);
+            // 
+            // btnPOS
+            // 
+            this.btnPOS.Location = new System.Drawing.Point(63, 63);
+            this.btnPOS.Name = "btnPOS";
+            this.btnPOS.Size = new System.Drawing.Size(75, 23);
+            this.btnPOS.TabIndex = 2;
+            this.btnPOS.Text = "POS";
+            this.btnPOS.UseVisualStyleBackColor = true;
+            this.btnPOS.Click += new System.EventHandler(this.btnPOS_Click);
             // 
             // panelChildForm
             // 
@@ -128,6 +128,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Staff_main";
             this.Text = "Staff_main";
+            this.Load += new System.EventHandler(this.Staff_main_Load);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 

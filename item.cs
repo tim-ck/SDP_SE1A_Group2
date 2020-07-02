@@ -25,7 +25,7 @@ namespace SDP_SE1A_Group2
         public string tenantID { get; set; }
         public string itemName { get; set; }
         public string itemDesc { get; set; }
-        public float unitPrice { get; set; }
+        public int unitPrice { get; set; }
     
         public virtual tenant tenant { get; set; }
         public virtual ICollection<itemimage> itemimage { get; set; }

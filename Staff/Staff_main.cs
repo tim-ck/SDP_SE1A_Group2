@@ -62,5 +62,10 @@ namespace SDP_SE1A_Group2
             Staff_SalesRecord staff_salesrecord = new Staff_SalesRecord();
             openForm(staff_salesrecord);
         }
+
+        private void Staff_main_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

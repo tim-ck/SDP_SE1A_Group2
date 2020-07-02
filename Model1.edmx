@@ -32,7 +32,7 @@
           <Property Name="tenantID" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="itemName" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="itemDesc" Type="varchar" MaxLength="45" />
-          <Property Name="unitPrice" Type="float" Nullable="false" />
+          <Property Name="unitPrice" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="itemimage">
           <Key>
@@ -361,7 +361,7 @@
           <Property Name="tenantID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="itemName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="itemDesc" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="unitPrice" Type="Single" Nullable="false" />
+          <Property Name="unitPrice" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tenant" Relationship="Self.item_tenantid_fk" FromRole="item" ToRole="tenant" />
           <NavigationProperty Name="itemimage" Relationship="Self.itemimage_itemid_fk" FromRole="item" ToRole="itemimage" />
           <NavigationProperty Name="order_detail" Relationship="Self.order_customerID_fk2" FromRole="item" ToRole="order_detail" />
