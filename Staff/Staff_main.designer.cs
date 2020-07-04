@@ -32,7 +32,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSalesRecord = new System.Windows.Forms.Button();
             this.btnReserve = new System.Windows.Forms.Button();
-            this.btnExport = new System.Windows.Forms.Button();
             this.btnAttendence = new System.Windows.Forms.Button();
             this.btnPOS = new System.Windows.Forms.Button();
             this.panelChildForm = new System.Windows.Forms.Panel();
@@ -51,7 +50,6 @@
             // 
             this.panel2.Controls.Add(this.btnSalesRecord);
             this.panel2.Controls.Add(this.btnReserve);
-            this.panel2.Controls.Add(this.btnExport);
             this.panel2.Controls.Add(this.btnAttendence);
             this.panel2.Controls.Add(this.btnPOS);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -79,16 +77,6 @@
             this.btnReserve.Text = "Reserve";
             this.btnReserve.UseVisualStyleBackColor = true;
             this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
-            // 
-            // btnExport
-            // 
-            this.btnExport.Location = new System.Drawing.Point(63, 204);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(75, 23);
-            this.btnExport.TabIndex = 4;
-            this.btnExport.Text = "Export";
-            this.btnExport.UseVisualStyleBackColor = true;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // btnAttendence
             // 
@@ -140,7 +128,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnSalesRecord;
         private System.Windows.Forms.Button btnReserve;
-        private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Button btnAttendence;
         private System.Windows.Forms.Button btnPOS;
         private System.Windows.Forms.Panel panelChildForm;

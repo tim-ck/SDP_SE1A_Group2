@@ -31,7 +31,7 @@ namespace SDP_SE1A_Group2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            id = txtItemID.Text;
+            id = txtItemID.Text.ToString();
             qt = int.Parse(txtQT.Text);
 
             using (DBEntities db = new DBEntities())
@@ -45,7 +45,7 @@ namespace SDP_SE1A_Group2
                         result.avalibleQty -= qt;
                         result.soldQty += qt;
                         db.SaveChanges();
-                        if (showcaseitem.avalibleQty > 0)
+                        if (result.avalibleQty >= 0)
                         {
                             MessageBox.Show("Successfully");
                         }
@@ -56,7 +56,6 @@ namespace SDP_SE1A_Group2
                             db.SaveChanges();
                             MessageBox.Show("Qty not available");
                         }
-                        updateDate();
                     }
                     else
                     {
@@ -67,6 +66,7 @@ namespace SDP_SE1A_Group2
                 {
                     MessageBox.Show("Item ID not found");
                 }
+                updateDate();
             }
         }
 
@@ -77,11 +77,7 @@ namespace SDP_SE1A_Group2
 
         private void btnCount_Click(object sender, EventArgs e)
         {
-            qt = int.Parse(txtQT.Text);
-            price = double.Parse(txtPrice.Text);
-
-            totalPrice = qt * price;
-            txtTotalPrice.Text = totalPrice.ToString();
+            
         }
 
         private void txtItemID_TextChanged(object sender, EventArgs e)
@@ -120,12 +116,36 @@ namespace SDP_SE1A_Group2
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            id = txtItemID.Text.ToString();
+            qt = int.Parse(txtQT.Text);
+            String date = System.DateTime.Now.ToString("f");
+            String name = "";
+            int unitprice = 0;
+            using (DBEntities db = new DBEntities())
+            {
+                var result = db.item.SingleOrDefault(b => b.itemID == id);
+                if (result != null)
+                {
+                    name = result.itemName;
+                    unitprice = result.unitPrice;
+                }
+            }
+            MessageBox.Show("Stock in Date:"+ date+"\r\n"+"Product Name:"+name + "\r\n"+"Unit Price:"+unitprice + "\r\n"+"Qty:"+qt + "\r\n"+"Total Price:"+price);
 
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtQT_TextChanged(object sender, EventArgs e)
+        {
+            qt = int.Parse(txtQT.Text);
+            price = double.Parse(txtPrice.Text);
+
+            totalPrice = qt * price;
+            txtTotalPrice.Text = totalPrice.ToString();
         }
     }
 }

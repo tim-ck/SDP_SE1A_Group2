@@ -45,11 +45,6 @@ namespace SDP_SE1A_Group2
             openForm(staff_attendance);
         }
 
-        private void btnExport_Click(object sender, EventArgs e)
-        {
-            Staff_Export staff_export = new Staff_Export();
-            openForm(staff_export);
-        }
 
         private void btnReserve_Click(object sender, EventArgs e)
         {

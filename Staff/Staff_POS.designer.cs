@@ -37,14 +37,13 @@
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.btnPay = new System.Windows.Forms.Button();
-            this.btnCount = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.showcaseid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.avalibleQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soldQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,6 +97,7 @@
             this.txtQT.Name = "txtQT";
             this.txtQT.Size = new System.Drawing.Size(121, 22);
             this.txtQT.TabIndex = 7;
+            this.txtQT.TextChanged += new System.EventHandler(this.txtQT_TextChanged);
             // 
             // txtPrice
             // 
@@ -125,16 +125,6 @@
             this.btnPay.UseVisualStyleBackColor = true;
             this.btnPay.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnCount
-            // 
-            this.btnCount.Location = new System.Drawing.Point(284, 247);
-            this.btnCount.Name = "btnCount";
-            this.btnCount.Size = new System.Drawing.Size(75, 21);
-            this.btnCount.TabIndex = 11;
-            this.btnCount.Text = "Count";
-            this.btnCount.UseVisualStyleBackColor = true;
-            this.btnCount.Click += new System.EventHandler(this.btnCount_Click);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -150,16 +140,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(413, 236);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Location = new System.Drawing.Point(166, 329);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(88, 32);
-            this.btnPrint.TabIndex = 13;
-            this.btnPrint.Text = "Print receipt";
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // showcaseid
             // 
@@ -186,6 +166,16 @@
             this.TotalQty.HeaderText = "TotalQty";
             this.TotalQty.Name = "TotalQty";
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(166, 329);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(88, 32);
+            this.btnPrint.TabIndex = 13;
+            this.btnPrint.Text = "Print receipt";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // Staff_POS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -193,7 +183,6 @@
             this.ClientSize = new System.Drawing.Size(799, 457);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnCount);
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.txtTotalPrice);
             this.Controls.Add(this.txtPrice);
@@ -222,7 +211,6 @@
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtTotalPrice;
         private System.Windows.Forms.Button btnPay;
-        private System.Windows.Forms.Button btnCount;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.DataGridViewTextBoxColumn showcaseid;

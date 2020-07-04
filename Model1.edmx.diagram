@@ -14,7 +14,7 @@
         <EntityTypeShape EntityType="sdpModel.rentinfo" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="sdpModel.reservation" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="sdpModel.showcase" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="sdpModel.showcaseitem" Width="1.5" PointX="5.625" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="sdpModel.showcaseitem" Width="1.5" PointX="5.75" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="sdpModel.staff" Width="1.5" PointX="7.875" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="sdpModel.tenant" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
         <AssociationConnector Association="sdpModel.attendence_ibfk_2" ManuallyRouted="false" />
