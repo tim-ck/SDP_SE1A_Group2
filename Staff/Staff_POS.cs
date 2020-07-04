@@ -130,7 +130,7 @@ namespace SDP_SE1A_Group2
                     unitprice = result.unitPrice;
                 }
             }
-            MessageBox.Show("Stock in Date:"+ date+"\r\n"+"Product Name:"+name + "\r\n"+"Unit Price:"+unitprice + "\r\n"+"Qty:"+qt + "\r\n"+"Total Price:"+price);
+            MessageBox.Show("Stock in Date:"+ date+"\r\n"+"Product Name:"+name + "\r\n"+"Unit Price:"+unitprice + "\r\n"+"Qty:"+qt + "\r\n"+"Total Price:"+ totalPrice);
 
         }
 
