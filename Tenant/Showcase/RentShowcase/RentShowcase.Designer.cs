@@ -43,6 +43,7 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblShowcaseId = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.lblAfterDiscount = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblDiscountNum = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +73,7 @@
             this.btnRent.TabIndex = 1;
             this.btnRent.Text = "Rent";
             this.btnRent.UseVisualStyleBackColor = false;
+            this.btnRent.Click += new System.EventHandler(this.btnRent_Click);
             // 
             // btnReserve
             // 
@@ -250,6 +251,18 @@
             this.panel1.Size = new System.Drawing.Size(573, 319);
             this.panel1.TabIndex = 18;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label9.Location = new System.Drawing.Point(426, 25);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(58, 23);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "day(s)";
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -407,18 +420,6 @@
             this.lblDiscountNum.Size = new System.Drawing.Size(39, 23);
             this.lblDiscountNum.TabIndex = 28;
             this.lblDiscountNum.Text = "x %";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(426, 25);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 23);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "day(s)";
             // 
             // RentShowcase
             // 

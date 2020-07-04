@@ -152,5 +152,9 @@ namespace SDP_SE1A_Group2
             this.Close();
         }
 
+        private void btnRent_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

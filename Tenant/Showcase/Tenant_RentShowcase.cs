@@ -77,7 +77,7 @@ namespace SDP_SE1A_Group2 {
                     dataGridView1.Rows.Add(row.showcaseid, row.size, row.rental, status);
                 }
             }
-            
+            // Change font color 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 if (row.Cells["Status"].Value.Equals("Available"))

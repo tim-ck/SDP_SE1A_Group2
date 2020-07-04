@@ -52,7 +52,6 @@
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelWelcome = new System.Windows.Forms.Panel();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.btnCustomerPage = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.panelLogOut.SuspendLayout();
             this.panelRecordSubMenu.SuspendLayout();
@@ -351,7 +350,6 @@
             // 
             this.panelWelcome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.panelWelcome.Controls.Add(this.lblWelcome);
-            this.panelWelcome.Controls.Add(this.btnCustomerPage);
             this.panelWelcome.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelWelcome.Location = new System.Drawing.Point(0, 0);
             this.panelWelcome.Name = "panelWelcome";
@@ -370,19 +368,6 @@
             this.lblWelcome.Size = new System.Drawing.Size(271, 69);
             this.lblWelcome.TabIndex = 1;
             this.lblWelcome.Text = "Welcome ";
-            // 
-            // btnCustomerPage
-            // 
-            this.btnCustomerPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCustomerPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.btnCustomerPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomerPage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCustomerPage.Location = new System.Drawing.Point(888, 16);
-            this.btnCustomerPage.Name = "btnCustomerPage";
-            this.btnCustomerPage.Size = new System.Drawing.Size(224, 53);
-            this.btnCustomerPage.TabIndex = 0;
-            this.btnCustomerPage.Text = "Go to Customer Page";
-            this.btnCustomerPage.UseVisualStyleBackColor = false;
             // 
             // TenantMain
             // 
@@ -434,7 +419,6 @@
         private System.Windows.Forms.Panel panelConent;
         private System.Windows.Forms.Panel panelWelcome;
         private System.Windows.Forms.Label lblWelcome;
-        private System.Windows.Forms.Button btnCustomerPage;
         private System.Windows.Forms.Panel panelChildForm;
     }
 }
