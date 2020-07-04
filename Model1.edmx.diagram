@@ -4,19 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="257e95716212492d941c200c1063615b" Name="Diagram1">
-        <EntityTypeShape EntityType="sdpModel.attendence" Width="1.5" PointX="10" PointY="3" IsExpanded="true" />
+      <Diagram DiagramId="e364a4ff45c4424e8e39d8cffd99f651" Name="Diagram1">
+        <EntityTypeShape EntityType="sdpModel.attendence" Width="1.5" PointX="10" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="sdpModel.customer" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="sdpModel.item" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="sdpModel.itemimage" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="sdpModel.order" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="sdpModel.order_detail" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="sdpModel.preinputitem" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
-        <EntityTypeShape EntityType="sdpModel.rentinfo" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="sdpModel.reservation" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="sdpModel.showcase" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sdpModel.rentinfo" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sdpModel.reservation" Width="1.5" PointX="7.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sdpModel.showcase" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="sdpModel.showcaseitem" Width="1.5" PointX="5.25" PointY="10.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="sdpModel.staff" Width="1.5" PointX="7.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sdpModel.staff" Width="1.5" PointX="7.75" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="sdpModel.tenant" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
         <AssociationConnector Association="sdpModel.attendence_ibfk_2" ManuallyRouted="false" />
         <AssociationConnector Association="sdpModel.order_customerID_fk" ManuallyRouted="false" />
@@ -28,8 +28,6 @@
         <AssociationConnector Association="sdpModel.preinputitem_tenantid_fk" ManuallyRouted="false" />
         <AssociationConnector Association="sdpModel.rentinfo_showcaseid_fk" ManuallyRouted="false" />
         <AssociationConnector Association="sdpModel.rentinfo_tenantid_fk" ManuallyRouted="false" />
-        <AssociationConnector Association="sdpModel.reservation_rentid_fk" ManuallyRouted="false" />
-        <AssociationConnector Association="sdpModel.reservation_showcaseid_fk" ManuallyRouted="false" />
         <AssociationConnector Association="sdpModel.showcaseitem_showcaseId_fk" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

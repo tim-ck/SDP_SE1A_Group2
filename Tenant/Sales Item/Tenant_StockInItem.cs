@@ -53,18 +53,29 @@ namespace SDP_SE1A_Group2
             txtPrice.Text = "";
             txtDesc.Text = "";
         }
-
+        //!!!!!!!!!!!!!!!//
         private void btnUpload_Click(object sender, EventArgs e)
         {
-            String itemName;
-            float price;
-            int qty;
-            String desc;
+            using (var db = new sdpEntities())
+            {
+                //Insert row to table: "preinputitem"
+                string newID = (!db.preinputitem.Any()) ? (newID = "001") : (int.Parse(db.preinputitem.Max(p => p.preinputitemid)) + 1).ToString("D3");
 
+                string sql = "Insert into preinputitem(preinputid, itemname, itemqty, itemdesc, itemprice, tenantid) values('" + newID + "', '" + TenantMain.tenantID + "', '" + lblShowcaseId.Text.ToString() + "')";
+                int noOfRowInserted = db.Database.ExecuteSqlCommand(sql);
 
+                if (noOfRowInserted == 1)
+                {
+                    string msg = "You have reserve the following showcase successfully:\r\n" + lblShowcaseId.Text.ToString();
+                    MessageBox.Show(msg, "System Message");
 
-        }
+                    //Update table: "Showcase" value: "Stutas" to "r"
+                    sql = "Update showcase set status ='r' where showcaseid='" + lblShowcaseId.Text.ToString() + "'";
+                    int noOfRowUpdated = db.Database.ExecuteSqlCommand(sql);
 
-    }
+                    this.Close();
+                }
+
+            }
 }
 

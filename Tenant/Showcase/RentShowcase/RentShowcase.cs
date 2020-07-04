@@ -12,15 +12,17 @@ namespace SDP_SE1A_Group2
 {
     public partial class RentShowcase : Form
     {
+        TenantRentShowcase _owner;
         String showcaseid;
         String ava;
         double rental;
         double discountPeriod = 1;
         double discountShowcaseNum = 1;
-        public RentShowcase(string id)
+        public RentShowcase(string id, TenantRentShowcase owner)
         {
             InitializeComponent();
             showcaseid = id;
+            _owner = owner;
         }
 
         private void RentShowcase_Load(object sender, EventArgs e)
@@ -154,7 +156,71 @@ namespace SDP_SE1A_Group2
 
         private void btnRent_Click(object sender, EventArgs e)
         {
+            using (var db = new sdpEntities())
+            {
+                //Insert row to table: "rentInfo"
+                int newID = int.Parse(db.rentinfo.Max(p => p.rentID)) + 1;
+                string sql = "Insert into rentinfo(rentID, tenantID, startDate, duration, showcaseid) values('" + newID + "', '" + TenantMain.tenantID + "', '" + DateTime.Now + "', '" + txtPeriod.Text.ToString() + "', '" + lblShowcaseId.Text.ToString() + "')";
+                int noOfRowInserted = db.Database.ExecuteSqlCommand(sql);
 
+                if (noOfRowInserted == 1)
+                {
+                    //Update table: "Showcase"
+
+                    sql = "Update showcase set status ='o' where showcaseid='" + lblShowcaseId.Text.ToString()+"'";
+                    int noOfRowUpdated = db.Database.ExecuteSqlCommand(sql);
+
+
+                    string msg = "Rent successfully." +
+                                 "\r\n\r\nDetail:" +
+                                 "\r\nShowcaseID: " + lblShowcaseId.Text.ToString() +
+                                 "\r\nDuration: " + txtPeriod.Text.ToString() +
+                                 "\r\nTotal Charge: " + lblAfterDiscount.Text.ToString();
+                    MessageBox.Show(msg, "System Message");
+                    this.Close();
+
+                }
+            }
+                    
+        }
+
+        private void RentShowcase_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _owner.clearDgv();
+            _owner.loadDgv();
+        }
+
+
+
+
+        private void btnReserve_Click(object sender, EventArgs e)
+        {
+            using (var db = new sdpEntities())
+            {
+                //Insert row to table: "reservation"
+                string newID = (!db.reservation.Any())? (newID = "001"):(int.Parse(db.reservation.Max(p => p.reservationid)) + 1).ToString("D3");
+
+                string sql = "Insert into reservation(reservationid, tenantID, showcaseid) values('" + newID + "', '" + TenantMain.tenantID + "', '" + lblShowcaseId.Text.ToString() + "')";
+                int noOfRowInserted = db.Database.ExecuteSqlCommand(sql);
+
+                if (noOfRowInserted == 1)
+                {
+                    string msg = "You have reserve the following showcase successfully:\r\n" + lblShowcaseId.Text.ToString();
+                    MessageBox.Show(msg, "System Message");
+
+                    //Update table: "Showcase" value: "Stutas" to "r"
+                    sql = "Update showcase set status ='r' where showcaseid='" + lblShowcaseId.Text.ToString() + "'";
+                    int noOfRowUpdated = db.Database.ExecuteSqlCommand(sql);
+
+                    this.Close();
+                }
+
+
+                {
+                    
+
+                }
+            }
         }
     }
 }

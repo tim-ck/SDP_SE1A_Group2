@@ -88,6 +88,7 @@
             this.btnReserve.TabIndex = 2;
             this.btnReserve.Text = "Reserve";
             this.btnReserve.UseVisualStyleBackColor = false;
+            this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
             // 
             // label2
             // 
@@ -445,6 +446,7 @@
             this.Controls.Add(this.label2);
             this.Name = "RentShowcase";
             this.Text = "RentShowcase";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RentShowcase_FormClosing);
             this.Load += new System.EventHandler(this.RentShowcase_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

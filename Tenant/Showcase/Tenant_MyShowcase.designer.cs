@@ -30,6 +30,7 @@
         {
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radOld = new System.Windows.Forms.RadioButton();
             this.radCurrent = new System.Windows.Forms.RadioButton();
@@ -41,7 +42,6 @@
             this.endDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -68,6 +68,20 @@
             this.panel1.Size = new System.Drawing.Size(1116, 664);
             this.panel1.TabIndex = 1;
             // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(433, 53);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(182, 25);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Pick one to check";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.radOld);
@@ -82,14 +96,12 @@
             // radOld
             // 
             this.radOld.AutoSize = true;
-            this.radOld.Checked = true;
             this.radOld.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.radOld.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.radOld.Location = new System.Drawing.Point(242, 24);
             this.radOld.Name = "radOld";
             this.radOld.Size = new System.Drawing.Size(111, 21);
             this.radOld.TabIndex = 22;
-            this.radOld.TabStop = true;
             this.radOld.Text = "Old Record";
             this.radOld.UseVisualStyleBackColor = true;
             this.radOld.CheckedChanged += new System.EventHandler(this.radOld_CheckedChanged);
@@ -97,12 +109,14 @@
             // radCurrent
             // 
             this.radCurrent.AutoSize = true;
+            this.radCurrent.Checked = true;
             this.radCurrent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.radCurrent.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.radCurrent.Location = new System.Drawing.Point(26, 24);
             this.radCurrent.Name = "radCurrent";
             this.radCurrent.Size = new System.Drawing.Size(140, 21);
             this.radCurrent.TabIndex = 21;
+            this.radCurrent.TabStop = true;
             this.radCurrent.Text = "Current Record";
             this.radCurrent.UseVisualStyleBackColor = true;
             this.radCurrent.CheckedChanged += new System.EventHandler(this.radCurrent_CheckedChanged);
@@ -190,20 +204,6 @@
             this.label1.Size = new System.Drawing.Size(212, 36);
             this.label1.TabIndex = 1;
             this.label1.Text = "My Showcase";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(433, 53);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(182, 25);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Pick one to check";
             // 
             // TenantMyShowcase
             // 

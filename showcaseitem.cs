@@ -16,7 +16,7 @@ namespace SDP_SE1A_Group2
     {
         public string showcaseid { get; set; }
         public string itemid { get; set; }
-        public int avalibleQty { get; set; }
+        public int availableQty { get; set; }
         public int soldQty { get; set; }
         public int TotalQty { get; set; }
         public sbyte availability { get; set; }

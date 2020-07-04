@@ -14,11 +14,6 @@ namespace SDP_SE1A_Group2
     
     public partial class rentinfo
     {
-        public rentinfo()
-        {
-            this.reservation = new HashSet<reservation>();
-        }
-    
         public string rentID { get; set; }
         public string tenantID { get; set; }
         public System.DateTime startDate { get; set; }
@@ -27,6 +22,5 @@ namespace SDP_SE1A_Group2
     
         public virtual showcase showcase { get; set; }
         public virtual tenant tenant { get; set; }
-        public virtual ICollection<reservation> reservation { get; set; }
     }
 }

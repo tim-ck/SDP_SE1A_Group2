@@ -17,9 +17,56 @@ namespace SDP_SE1A_Group2 {
             InitializeComponent();
         }
 
-        private void picBack_Click(object sender, EventArgs e)
+        public void loadDgv()
         {
-            this.Close();
+            //Load showcase data to data grid view from db
+            this.dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
+
+            using (var classicContext = new sdpEntities())
+            {
+                var showcase = (from list in classicContext.showcase
+                                select list);
+
+
+
+                foreach (var row in showcase.ToList())
+                {
+                    //Convert status code to word
+                    string status = "";
+                    if (row.status.Equals("a"))
+                    {
+                        status = "Available";
+                        //dataGridView1.CurrentRow.DefaultCellStyle.BackColor = Color.Green;
+                    }
+                    else if (row.status.Equals("o"))
+                    {
+                        status = "Occupied";
+                    }
+                    else
+                    {
+                        status = "Reserved";
+                    }
+                    dataGridView1.Rows.Add(row.showcaseid, row.size, row.rental, status);
+                }
+            }
+            // Change font color 
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells["Status"].Value.Equals("Available"))
+                {
+                    row.Cells["Status"].Style.ForeColor = Color.Green;
+                }
+                else if (row.Cells["Status"].Value.Equals("Occupied"))
+                {
+                    row.Cells["Status"].Style.ForeColor = Color.Red;
+                }
+                else
+                    row.Cells["Status"].Style.ForeColor = Color.Black;
+            }
+        }
+        public void clearDgv()
+        {
+            dataGridView1.Rows.Clear();
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -32,7 +79,7 @@ namespace SDP_SE1A_Group2 {
                 {
                     showcaseID = row.Cells[0].Value.ToString();
                 }
-                RentShowcase rentShowcase = new RentShowcase(showcaseID);
+                RentShowcase rentShowcase = new RentShowcase(showcaseID, this);
                 rentShowcase.Show();
             }
             else
@@ -50,52 +97,8 @@ namespace SDP_SE1A_Group2 {
             cboSize.SelectedIndex = 0;
             cboStatus.SelectedIndex = 0;
 
-            //Load showcase data to data grid view from db
-            this.dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
-            using (var classicContext = new sdpEntities())
-            {
-                var showcase = (from list in classicContext.showcase
-                           select list);
-
-                
-
-                foreach (var row in showcase.ToList())
-                {
-                    //Convert status code to word
-                    string status = "";
-                    if (row.status.Equals("a"))
-                    {
-                        status = "Available";
-                        //dataGridView1.CurrentRow.DefaultCellStyle.BackColor = Color.Green;
-                    } else if (row.status.Equals("o")){
-                        status = "Occupied";
-                    }
-                    else
-                    {
-                        status = "Reserved";
-                    }
-                    dataGridView1.Rows.Add(row.showcaseid, row.size, row.rental, status);
-                }
-            }
-            // Change font color 
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                if (row.Cells["Status"].Value.Equals("Available"))
-                {
-                    row.Cells["Status"].Style.ForeColor = Color.Green;
-                } else if (row.Cells["Status"].Value.Equals("Occupied"))
-                {
-                    row.Cells["Status"].Style.ForeColor = Color.Red;
-                } else
-                    row.Cells["Status"].Style.ForeColor = Color.Black;
-            }
-            
-
-            //Filter selected
-
-
+            loadDgv();
         }
-
 
     }
 }

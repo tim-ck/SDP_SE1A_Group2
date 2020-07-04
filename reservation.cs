@@ -15,10 +15,7 @@ namespace SDP_SE1A_Group2
     public partial class reservation
     {
         public string reservationid { get; set; }
+        public string tenantID { get; set; }
         public string showcaseid { get; set; }
-        public string rentid { get; set; }
-    
-        public virtual rentinfo rentinfo { get; set; }
-        public virtual showcase showcase { get; set; }
     }
 }

@@ -88,8 +88,8 @@
             <PropertyRef Name="reservationid" />
           </Key>
           <Property Name="reservationid" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="tenantID" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="showcaseid" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="rentid" Type="varchar" MaxLength="15" Nullable="false" />
         </EntityType>
         <EntityType Name="showcase">
           <Key>
@@ -107,7 +107,7 @@
           </Key>
           <Property Name="showcaseid" Type="varchar" MaxLength="6" Nullable="false" />
           <Property Name="itemid" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="avalibleQty" Type="int" Nullable="false" />
+          <Property Name="availableQty" Type="int" Nullable="false" />
           <Property Name="soldQty" Type="int" Nullable="false" />
           <Property Name="TotalQty" Type="int" Nullable="false" />
           <Property Name="availability" Type="tinyint" Nullable="false" />
@@ -242,30 +242,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="reservation_rentid_fk">
-          <End Role="rentinfo" Type="Self.rentinfo" Multiplicity="1" />
-          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="rentinfo">
-              <PropertyRef Name="rentID" />
-            </Principal>
-            <Dependent Role="reservation">
-              <PropertyRef Name="rentid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="reservation_showcaseid_fk">
-          <End Role="showcase" Type="Self.showcase" Multiplicity="1" />
-          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="showcase">
-              <PropertyRef Name="showcaseid" />
-            </Principal>
-            <Dependent Role="reservation">
-              <PropertyRef Name="showcaseid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="showcaseitem_itemid_fk">
           <End Role="item" Type="Self.item" Multiplicity="1" />
           <End Role="showcaseitem" Type="Self.showcaseitem" Multiplicity="*" />
@@ -339,14 +315,6 @@
           <AssociationSet Name="rentinfo_tenantid_fk" Association="Self.rentinfo_tenantid_fk">
             <End Role="tenant" EntitySet="tenant" />
             <End Role="rentinfo" EntitySet="rentinfo" />
-          </AssociationSet>
-          <AssociationSet Name="reservation_rentid_fk" Association="Self.reservation_rentid_fk">
-            <End Role="rentinfo" EntitySet="rentinfo" />
-            <End Role="reservation" EntitySet="reservation" />
-          </AssociationSet>
-          <AssociationSet Name="reservation_showcaseid_fk" Association="Self.reservation_showcaseid_fk">
-            <End Role="showcase" EntitySet="showcase" />
-            <End Role="reservation" EntitySet="reservation" />
           </AssociationSet>
           <AssociationSet Name="showcaseitem_itemid_fk" Association="Self.showcaseitem_itemid_fk">
             <End Role="item" EntitySet="item" />
@@ -453,17 +421,14 @@
           <Property Name="showcaseid" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="showcase" Relationship="Self.rentinfo_showcaseid_fk" FromRole="rentinfo" ToRole="showcase" />
           <NavigationProperty Name="tenant" Relationship="Self.rentinfo_tenantid_fk" FromRole="rentinfo" ToRole="tenant" />
-          <NavigationProperty Name="reservation" Relationship="Self.reservation_rentid_fk" FromRole="rentinfo" ToRole="reservation" />
         </EntityType>
         <EntityType Name="reservation">
           <Key>
             <PropertyRef Name="reservationid" />
           </Key>
           <Property Name="reservationid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tenantID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="showcaseid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="rentid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="rentinfo" Relationship="Self.reservation_rentid_fk" FromRole="reservation" ToRole="rentinfo" />
-          <NavigationProperty Name="showcase" Relationship="Self.reservation_showcaseid_fk" FromRole="reservation" ToRole="showcase" />
         </EntityType>
         <EntityType Name="showcase">
           <Key>
@@ -474,7 +439,6 @@
           <Property Name="rental" Type="Single" Nullable="false" />
           <Property Name="status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="rentinfo" Relationship="Self.rentinfo_showcaseid_fk" FromRole="showcase" ToRole="rentinfo" />
-          <NavigationProperty Name="reservation" Relationship="Self.reservation_showcaseid_fk" FromRole="showcase" ToRole="reservation" />
           <NavigationProperty Name="showcaseitem" Relationship="Self.showcaseitem_showcaseId_fk" FromRole="showcase" ToRole="showcaseitem" />
         </EntityType>
         <EntityType Name="showcaseitem">
@@ -484,7 +448,7 @@
           </Key>
           <Property Name="showcaseid" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="itemid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="avalibleQty" Type="Int32" Nullable="false" />
+          <Property Name="availableQty" Type="Int32" Nullable="false" />
           <Property Name="soldQty" Type="Int32" Nullable="false" />
           <Property Name="TotalQty" Type="Int32" Nullable="false" />
           <Property Name="availability" Type="SByte" Nullable="false" />
@@ -637,30 +601,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="reservation_rentid_fk">
-          <End Role="rentinfo" Type="Self.rentinfo" Multiplicity="1" />
-          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="rentinfo">
-              <PropertyRef Name="rentID" />
-            </Principal>
-            <Dependent Role="reservation">
-              <PropertyRef Name="rentid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="reservation_showcaseid_fk">
-          <End Role="showcase" Type="Self.showcase" Multiplicity="1" />
-          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="showcase">
-              <PropertyRef Name="showcaseid" />
-            </Principal>
-            <Dependent Role="reservation">
-              <PropertyRef Name="showcaseid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="showcaseitem_showcaseId_fk">
           <End Role="showcase" Type="Self.showcase" Multiplicity="1" />
           <End Role="showcaseitem" Type="Self.showcaseitem" Multiplicity="*" />
@@ -726,14 +666,6 @@
           <AssociationSet Name="rentinfo_tenantid_fk" Association="Self.rentinfo_tenantid_fk">
             <End Role="tenant" EntitySet="tenant" />
             <End Role="rentinfo" EntitySet="rentinfo" />
-          </AssociationSet>
-          <AssociationSet Name="reservation_rentid_fk" Association="Self.reservation_rentid_fk">
-            <End Role="rentinfo" EntitySet="rentinfo" />
-            <End Role="reservation" EntitySet="reservation" />
-          </AssociationSet>
-          <AssociationSet Name="reservation_showcaseid_fk" Association="Self.reservation_showcaseid_fk">
-            <End Role="showcase" EntitySet="showcase" />
-            <End Role="reservation" EntitySet="reservation" />
           </AssociationSet>
           <AssociationSet Name="showcaseitem_showcaseId_fk" Association="Self.showcaseitem_showcaseId_fk">
             <End Role="showcase" EntitySet="showcase" />
@@ -834,8 +766,8 @@
             <EntityTypeMapping TypeName="sdpModel.reservation">
               <MappingFragment StoreEntitySet="reservation">
                 <ScalarProperty Name="reservationid" ColumnName="reservationid" />
+                <ScalarProperty Name="tenantID" ColumnName="tenantID" />
                 <ScalarProperty Name="showcaseid" ColumnName="showcaseid" />
-                <ScalarProperty Name="rentid" ColumnName="rentid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -854,7 +786,7 @@
               <MappingFragment StoreEntitySet="showcaseitem">
                 <ScalarProperty Name="showcaseid" ColumnName="showcaseid" />
                 <ScalarProperty Name="itemid" ColumnName="itemid" />
-                <ScalarProperty Name="avalibleQty" ColumnName="avalibleQty" />
+                <ScalarProperty Name="availableQty" ColumnName="availableQty" />
                 <ScalarProperty Name="soldQty" ColumnName="soldQty" />
                 <ScalarProperty Name="TotalQty" ColumnName="TotalQty" />
                 <ScalarProperty Name="availability" ColumnName="availability" />

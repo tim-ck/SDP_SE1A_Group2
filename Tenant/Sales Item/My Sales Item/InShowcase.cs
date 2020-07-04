@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SDP_SE1A_Group2.Tenant.SalesItem
+namespace SDP_SE1A_Group2
 {
     public partial class InShowcase : Form
     {
@@ -17,15 +17,10 @@ namespace SDP_SE1A_Group2.Tenant.SalesItem
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void InShowcase_Load(object sender, EventArgs e)
+        public void loadDgv()
         {
             //Load showcase items  
-            using(var db = new sdpEntities())
+            using (var db = new sdpEntities())
             {
                 var rs = from lsShowcaseItem in db.showcaseitem
                          join lsItem in db.item on lsShowcaseItem.itemid equals lsItem.itemID
@@ -33,31 +28,36 @@ namespace SDP_SE1A_Group2.Tenant.SalesItem
                          select new
                          {
                              lsItem.itemID,
-                             lsShowcaseItem.avalibleQty,
+                             lsShowcaseItem.availableQty,
                              lsItem.unitPrice,
                              lsItem.itemName,
                              lsShowcaseItem.showcaseid,
                          };
-                foreach(var row in rs.ToList())
+                foreach (var row in rs.ToList())
                 {
-                    dataGridView1.Rows.Add(row.itemID, row.itemName, row.showcaseid.Substring(0, 3), row.showcaseid, row.avalibleQty, row.unitPrice);
+                    dataGridView1.Rows.Add(row.itemID, row.itemName, row.showcaseid.Substring(0, 3), row.showcaseid, row.availableQty, row.unitPrice);
                 }
 
             }
+        }
+
+        public void clearDgv()
+        {
+            dataGridView1.Rows.Clear();
+        }
+
+        private void InShowcase_Load(object sender, EventArgs e)
+        {
+            loadDgv();
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             //Double click to update Item info
             string itemID = "";
-            /* foreach (DataGridViewRow row in dataGridView1.SelectedRows)
-             {
-                 itemID = row.Cells[0].Value.ToString();
-             }
-             */
             itemID = dataGridView1.CurrentRow.Cells[0].Value.ToString();
 
-            UpdateShowcaseItem updateShowcaseItem = new UpdateShowcaseItem(itemID);
+            UpdateShowcaseItem updateShowcaseItem = new UpdateShowcaseItem(itemID, this);
             updateShowcaseItem.Show();
         }
     }
