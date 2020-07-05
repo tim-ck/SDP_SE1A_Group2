@@ -1,4 +1,4 @@
-﻿using SDP_SE1A_Group2.Tenant.SalesItem;
+﻿using SDP_SE1A_Group2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

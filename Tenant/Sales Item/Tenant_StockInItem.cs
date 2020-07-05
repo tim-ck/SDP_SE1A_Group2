@@ -17,18 +17,14 @@ namespace SDP_SE1A_Group2
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void TenantStockInItem_Load(object sender, EventArgs e)
         {
 
         }
-
+        
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            //Add input data to dataGridView1
             this.dataGridView1.Rows.Add(dataGridView1.RowCount + 1,
                                            txtName.Text,
                                            txtDesc.Text,
@@ -53,29 +49,32 @@ namespace SDP_SE1A_Group2
             txtPrice.Text = "";
             txtDesc.Text = "";
         }
-        //!!!!!!!!!!!!!!!//
+
         private void btnUpload_Click(object sender, EventArgs e)
         {
+            //Insert row to table: "preinputitem"
             using (var db = new sdpEntities())
             {
-                //Insert row to table: "preinputitem"
-                string newID = (!db.preinputitem.Any()) ? (newID = "001") : (int.Parse(db.preinputitem.Max(p => p.preinputitemid)) + 1).ToString("D3");
-
-                string sql = "Insert into preinputitem(preinputid, itemname, itemqty, itemdesc, itemprice, tenantid) values('" + newID + "', '" + TenantMain.tenantID + "', '" + lblShowcaseId.Text.ToString() + "')";
-                int noOfRowInserted = db.Database.ExecuteSqlCommand(sql);
-
-                if (noOfRowInserted == 1)
+                
+                int itemAdded = 0;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                    string msg = "You have reserve the following showcase successfully:\r\n" + lblShowcaseId.Text.ToString();
-                    MessageBox.Show(msg, "System Message");
+                    string newID = (!db.preinputitem.Any()) ? (newID = "001") : (int.Parse(db.preinputitem.Max(p => p.preinputitemid)) + 1).ToString("D3");
+                    string name = row.Cells["name"].Value.ToString();
+                    string desc = row.Cells["desc"].Value.ToString(); ;
+                    int qty = int.Parse(row.Cells["qty"].Value.ToString());
+                    float unitPrice = float.Parse(row.Cells["unitPrice"].Value.ToString());
 
-                    //Update table: "Showcase" value: "Stutas" to "r"
-                    sql = "Update showcase set status ='r' where showcaseid='" + lblShowcaseId.Text.ToString() + "'";
-                    int noOfRowUpdated = db.Database.ExecuteSqlCommand(sql);
+                    string sql = "Insert into preinputitem(preinputitemid, itemname, itemqty, itemdesc, itemunitprice, tenantid) values('" + newID + "', '" + name + "', '" + qty + "','" + desc + "','" + unitPrice + "','" + TenantMain.tenantID + "')";
+                    int noOfRowInserted = db.Database.ExecuteSqlCommand(sql);
 
-                    this.Close();
+                    itemAdded++;
                 }
-
+                MessageBox.Show(itemAdded + "item(s) add successfully", "System Message");
+                dataGridView1.Rows.Clear();
             }
+
+        }
+    }
 }
 

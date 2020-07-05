@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SDP_SE1A_Group2.Tenant.SalesItem
+namespace SDP_SE1A_Group2
 {
     public partial class WaitForStockIn : Form
     {
@@ -17,16 +17,9 @@ namespace SDP_SE1A_Group2.Tenant.SalesItem
             InitializeComponent();
         }
 
-        private void dataGridView2_DoubleClick(object sender, EventArgs e)
+        //Load data from table: "preinputitem" to dataGridView1
+        public void loadDgv()
         {
-            // update item info
-            UpdateImportItem updateImportItem = new UpdateImportItem();
-            updateImportItem.Show();
-        }
-
-        private void WaitForStockIn_Load(object sender, EventArgs e)
-        {
-            //load data
             using (var db = new sdpEntities())
             {
                 var rs = from result in db.preinputitem
@@ -35,7 +28,8 @@ namespace SDP_SE1A_Group2.Tenant.SalesItem
 
                 foreach (var row in rs.ToList())
                 {
-                    dataGridView2.Rows.Add( dataGridView2.RowCount,
+                    dataGridView2.Rows.Add(dataGridView2.RowCount + 1,
+                                            row.preinputitemid,
                                             row.itemname,
                                             row.itemdesc,
                                             row.itemqty,
@@ -43,6 +37,29 @@ namespace SDP_SE1A_Group2.Tenant.SalesItem
                 }
 
             }
+        }
+
+        public void clearDgv()
+        {
+            dataGridView2.Rows.Clear();
+        }
+
+
+        private void dataGridView2_DoubleClick(object sender, EventArgs e)
+        {
+
+            //Open new form to update item info
+            string id="";
+
+            id = dataGridView2.CurrentRow.Cells["id"].Value.ToString();
+            
+            UpdateImportItem updateImportItem = new UpdateImportItem(id, this);
+            updateImportItem.Show();
+        }
+
+        private void WaitForStockIn_Load(object sender, EventArgs e)
+        {
+            loadDgv();
         }
     }
 }
