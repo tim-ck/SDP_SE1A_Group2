@@ -152,6 +152,10 @@ namespace SDP_SE1A_Group2
             openChildForm(tenantConsolidatedStatement);
         }
 
-        
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            opener.Show();
+        }
     }
 }
