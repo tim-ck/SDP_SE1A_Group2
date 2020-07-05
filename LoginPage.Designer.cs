@@ -125,6 +125,7 @@
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(490, 82);
             this.btnSignIn.TabIndex = 6;
+            this.btnSignIn.TabStop = false;
             this.btnSignIn.Tag = "85, 195, 245";
             this.btnSignIn.Text = "Sign In";
             this.btnSignIn.UseVisualStyleBackColor = false;
@@ -142,6 +143,7 @@
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(302, 63);
             this.btnRegister.TabIndex = 8;
+            this.btnRegister.TabStop = false;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
@@ -158,6 +160,7 @@
             this.btnForgotPassword.Name = "btnForgotPassword";
             this.btnForgotPassword.Size = new System.Drawing.Size(302, 52);
             this.btnForgotPassword.TabIndex = 7;
+            this.btnForgotPassword.TabStop = false;
             this.btnForgotPassword.Text = "Forgot passord?";
             this.btnForgotPassword.UseVisualStyleBackColor = false;
             this.btnForgotPassword.Click += new System.EventHandler(this.btnForgotPassword_Click);
@@ -196,7 +199,6 @@
             this.rdoTenent.Name = "rdoTenent";
             this.rdoTenent.Size = new System.Drawing.Size(148, 41);
             this.rdoTenent.TabIndex = 2;
-            this.rdoTenent.TabStop = true;
             this.rdoTenent.Text = "Tenant";
             this.rdoTenent.UseVisualStyleBackColor = true;
             this.rdoTenent.Click += new System.EventHandler(this.rdoStaff_Click);
@@ -209,7 +211,6 @@
             this.rdoStaff.Name = "rdoStaff";
             this.rdoStaff.Size = new System.Drawing.Size(148, 41);
             this.rdoStaff.TabIndex = 3;
-            this.rdoStaff.TabStop = true;
             this.rdoStaff.Text = "Staff";
             this.rdoStaff.UseVisualStyleBackColor = true;
             this.rdoStaff.Click += new System.EventHandler(this.rdoStaff_Click);
@@ -222,7 +223,6 @@
             this.rdoCustomer.Name = "rdoCustomer";
             this.rdoCustomer.Size = new System.Drawing.Size(146, 41);
             this.rdoCustomer.TabIndex = 1;
-            this.rdoCustomer.TabStop = true;
             this.rdoCustomer.Text = "Customer";
             this.rdoCustomer.UseVisualStyleBackColor = true;
             this.rdoCustomer.Click += new System.EventHandler(this.rdoStaff_Click);
