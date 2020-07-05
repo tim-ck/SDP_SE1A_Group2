@@ -41,6 +41,7 @@
             this.btnAttendence = new System.Windows.Forms.Button();
             this.btnPOS = new System.Windows.Forms.Button();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -127,6 +128,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnLogOut);
             this.panel2.Controls.Add(this.btnShowcase);
             this.panel2.Controls.Add(this.btnSalesRecord);
             this.panel2.Controls.Add(this.btnReserve);
@@ -203,6 +205,17 @@
             this.panelChildForm.Size = new System.Drawing.Size(1269, 857);
             this.panelChildForm.TabIndex = 2;
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Location = new System.Drawing.Point(0, 723);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(233, 134);
+            this.btnLogOut.TabIndex = 8;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // Staff_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -240,5 +253,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnShowcase;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }

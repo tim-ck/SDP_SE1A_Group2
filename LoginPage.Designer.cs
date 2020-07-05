@@ -60,7 +60,7 @@
             this.txtUsername.Location = new System.Drawing.Point(98, 344);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(432, 54);
+            this.txtUsername.Size = new System.Drawing.Size(432, 36);
             this.txtUsername.TabIndex = 4;
             this.txtUsername.TabStop = false;
             this.txtUsername.Text = "Username";
@@ -92,7 +92,7 @@
             this.txtPassword.Location = new System.Drawing.Point(98, 445);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(432, 54);
+            this.txtPassword.Size = new System.Drawing.Size(432, 36);
             this.txtPassword.TabIndex = 5;
             this.txtPassword.TabStop = false;
             this.txtPassword.Text = "Password";
@@ -105,7 +105,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.label3.Location = new System.Drawing.Point(12, 214);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(793, 62);
+            this.label3.Size = new System.Drawing.Size(535, 42);
             this.label3.TabIndex = 9;
             this.label3.Text = "Welcome to Hong Kong Cube Shop";
             // 
@@ -173,7 +173,7 @@
             this.lblCloseButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.lblCloseButton.Location = new System.Drawing.Point(530, 0);
             this.lblCloseButton.Name = "lblCloseButton";
-            this.lblCloseButton.Size = new System.Drawing.Size(51, 60);
+            this.lblCloseButton.Size = new System.Drawing.Size(34, 40);
             this.lblCloseButton.TabIndex = 9;
             this.lblCloseButton.Text = "X";
             this.lblCloseButton.Click += new System.EventHandler(this.lblCloseButton_Click);
@@ -188,7 +188,7 @@
             this.txtErrMsg.Location = new System.Drawing.Point(34, 505);
             this.txtErrMsg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtErrMsg.Name = "txtErrMsg";
-            this.txtErrMsg.Size = new System.Drawing.Size(432, 54);
+            this.txtErrMsg.Size = new System.Drawing.Size(432, 36);
             this.txtErrMsg.TabIndex = 15;
             // 
             // rdoTenent
@@ -223,6 +223,7 @@
             this.rdoCustomer.Name = "rdoCustomer";
             this.rdoCustomer.Size = new System.Drawing.Size(146, 41);
             this.rdoCustomer.TabIndex = 1;
+            this.rdoCustomer.TabStop = true;
             this.rdoCustomer.Text = "Customer";
             this.rdoCustomer.UseVisualStyleBackColor = true;
             this.rdoCustomer.Click += new System.EventHandler(this.rdoStaff_Click);
@@ -272,7 +273,7 @@
             // LoginPage
             // 
             this.AcceptButton = this.btnSignIn;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(564, 811);

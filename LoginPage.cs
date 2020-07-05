@@ -45,6 +45,8 @@ namespace SDP_SE1A_Group2
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
+            
+
             String username = txtUsername.Text;
             String password = txtPassword.Text;
             if (username == ""|| username == "Username")
@@ -107,8 +109,17 @@ namespace SDP_SE1A_Group2
                                 Verify = true;
                                 this.Hide();
                                 txtUsername.Text = "Username";
-                                txtPassword.Text = "Password";
-                                CustomerMain cus = new CustomerMain(this, username);
+                            txtPassword.PasswordChar = '\0';
+
+                            txtPassword.Text = "Password";
+                            pictureBox2.Image = Properties.Resources.user;
+                            label1.BackColor = Color.White;
+                            txtUsername.ForeColor = Color.White;
+
+                            pictureBox3.Image = Properties.Resources.iconmonstr_lock_3_240;
+                            label2.BackColor = Color.White;
+                            txtPassword.ForeColor = Color.White;
+                            CustomerMain cus = new CustomerMain(this, username);
                                 cus.Show();
                                 return;
                             }
@@ -151,7 +162,16 @@ namespace SDP_SE1A_Group2
                             Verify = true;
                             this.Hide();
                             txtUsername.Text = "Username";
+                            txtPassword.PasswordChar = '\0';
+
                             txtPassword.Text = "Password";
+                            pictureBox2.Image = Properties.Resources.user;
+                            label1.BackColor = Color.White;
+                            txtUsername.ForeColor = Color.White;
+
+                            pictureBox3.Image = Properties.Resources.iconmonstr_lock_3_240;
+                            label2.BackColor = Color.White;
+                            txtPassword.ForeColor = Color.White;
                             TenantMain tenantMain = new TenantMain(this, user.tenantID, user.tenantName);
                             tenantMain.Show();
                             return;
@@ -192,7 +212,16 @@ namespace SDP_SE1A_Group2
                             Verify = true;
                             this.Hide();
                             txtUsername.Text = "Username";
+                            txtPassword.PasswordChar = '\0';
+
                             txtPassword.Text = "Password";
+                            pictureBox2.Image = Properties.Resources.user;
+                            label1.BackColor = Color.White;
+                            txtUsername.ForeColor = Color.White;
+
+                            pictureBox3.Image = Properties.Resources.iconmonstr_lock_3_240;
+                            label2.BackColor = Color.White;
+                            txtPassword.ForeColor = Color.White;
                             Staff_main staffMain = new Staff_main(this);
                             staffMain.Show();
                             return;

@@ -104,5 +104,11 @@ namespace SDP_SE1A_Group2
 
 
         }
+     
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            opener.Show();
+        }
     }
 }

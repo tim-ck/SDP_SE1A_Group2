@@ -179,9 +179,9 @@ namespace SDP_SE1A_Group2.Account
             try { int no = int.Parse(txtPhoneNumber.Text); }
             catch { txtErrMsg.Text = "invalid Phone Number"; lblPhone.BackColor = Color.Red; return; }
             if(txtUsername.Text=="Username" || txtUsername.Text == "") { txtErrMsg.Text = "Enter username"; lbluserName.BackColor = Color.Red; return; }
-            if (txtUsername.TextLength < 6 || txtUsername.TextLength > 20) { txtErrMsg.Text = " username should not less than 8 charater and not more than 20 charater"; lbluserName.BackColor = Color.Red; return; }
+            if (txtUsername.TextLength < 6 || txtUsername.TextLength > 20) { txtErrMsg.Text = " username should not less than 6 charater and not more than 20 charater"; lbluserName.BackColor = Color.Red; return; }
             if (txtPassword.Text == "Password" || txtPassword.Text == "") { txtErrMsg.Text = "Enter Password"; lblPwd.BackColor = Color.Red; return; }
-            if (txtPassword.TextLength<6 || txtPassword.TextLength > 20) { txtErrMsg.Text = " Password should not less than 8 charater and not more than 20 charater"; lblPwd.BackColor = Color.Red; return; }
+            if (txtPassword.TextLength<6 || txtPassword.TextLength > 20) { txtErrMsg.Text = " Password should not less than 6 charater and not more than 20 charater"; lblPwd.BackColor = Color.Red; return; }
             if (rdoC.Checked) {
                 try
                 {
