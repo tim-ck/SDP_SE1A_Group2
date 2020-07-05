@@ -33,11 +33,11 @@ namespace SDP_SE1A_Group2
         {
             id = txtItemID.Text.ToString();
             qt = int.Parse(txtQT.Text);
+            string selectedItem = cmbLocation.Items[cmbLocation.SelectedIndex].ToString();
 
             using (DBEntities db = new DBEntities())
             {
                 var result = db.showcaseitem.SingleOrDefault(b => b.itemid == id);
-
                 if (result != null)
                 {
                     if (result.avalibleQty > 0)
@@ -143,7 +143,6 @@ namespace SDP_SE1A_Group2
         {
             qt = int.Parse(txtQT.Text);
             price = double.Parse(txtPrice.Text);
-
             totalPrice = qt * price;
             txtTotalPrice.Text = totalPrice.ToString();
         }

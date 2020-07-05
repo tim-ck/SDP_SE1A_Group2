@@ -22,7 +22,7 @@ namespace SDP_SE1A_Group2
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             int id = int.Parse(txtStaffID.Text.Trim());
-            int month = int.Parse(cmbMonth.SelectedItem.ToString());
+            string month = dtpMonth.Value.ToString("yyyy-MM");
 
             using (DBEntities db = new DBEntities())
             {

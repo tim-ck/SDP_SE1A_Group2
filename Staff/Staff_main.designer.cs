@@ -60,9 +60,9 @@
             // 
             // btnSalesRecord
             // 
-            this.btnSalesRecord.Location = new System.Drawing.Point(63, 347);
+            this.btnSalesRecord.Location = new System.Drawing.Point(0, 269);
             this.btnSalesRecord.Name = "btnSalesRecord";
-            this.btnSalesRecord.Size = new System.Drawing.Size(75, 23);
+            this.btnSalesRecord.Size = new System.Drawing.Size(200, 107);
             this.btnSalesRecord.TabIndex = 6;
             this.btnSalesRecord.Text = "SalesRecord";
             this.btnSalesRecord.UseVisualStyleBackColor = true;
@@ -70,9 +70,9 @@
             // 
             // btnReserve
             // 
-            this.btnReserve.Location = new System.Drawing.Point(63, 294);
+            this.btnReserve.Location = new System.Drawing.Point(0, 174);
             this.btnReserve.Name = "btnReserve";
-            this.btnReserve.Size = new System.Drawing.Size(75, 23);
+            this.btnReserve.Size = new System.Drawing.Size(200, 98);
             this.btnReserve.TabIndex = 5;
             this.btnReserve.Text = "Reserve";
             this.btnReserve.UseVisualStyleBackColor = true;
@@ -80,9 +80,9 @@
             // 
             // btnAttendence
             // 
-            this.btnAttendence.Location = new System.Drawing.Point(63, 130);
+            this.btnAttendence.Location = new System.Drawing.Point(0, 83);
             this.btnAttendence.Name = "btnAttendence";
-            this.btnAttendence.Size = new System.Drawing.Size(75, 23);
+            this.btnAttendence.Size = new System.Drawing.Size(200, 93);
             this.btnAttendence.TabIndex = 3;
             this.btnAttendence.Text = "Attendence";
             this.btnAttendence.UseVisualStyleBackColor = true;
@@ -90,9 +90,9 @@
             // 
             // btnPOS
             // 
-            this.btnPOS.Location = new System.Drawing.Point(63, 63);
+            this.btnPOS.Location = new System.Drawing.Point(0, 0);
             this.btnPOS.Name = "btnPOS";
-            this.btnPOS.Size = new System.Drawing.Size(75, 23);
+            this.btnPOS.Size = new System.Drawing.Size(200, 86);
             this.btnPOS.TabIndex = 2;
             this.btnPOS.Text = "POS";
             this.btnPOS.UseVisualStyleBackColor = true;
