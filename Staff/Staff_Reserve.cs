@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SDP_SE1A_Group2.Staff
+namespace SDP_SE1A_Group2
 {
-    public partial class Peter1 : Form
+    public partial class Staff_Reserve : Form
     {
-        public Peter1()
+        public Staff_Reserve()
         {
             InitializeComponent();
         }

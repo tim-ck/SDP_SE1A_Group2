@@ -48,11 +48,10 @@ namespace SDP_SE1A_Group2.Staff
             using (var db = new sdpEntities())
             {
                 var showcaseList = from showcase in db.showcases
-                                   from reservations in db.reservations
                                    from rentinfo in db.rentinfoes
-                                   where showcase.showcaseid.Equals(showcaseID) && showcase.showcaseid ==  reservations.showcaseid&& reservations.reservationid == rentinfo.reservationid
-                                   orderby reservations.reservationid ascending
-                                   select new { showcase.storeAddress, showcase.showcaseid, showcase.size, showcase.status, reservations.reservationid,  };
+                                   where showcase.showcaseid.Equals(showcaseID) && showcase.showcaseid == rentinfo.showcaseid
+                                   orderby rentinfo.rentID ascending
+                                   select new { showcase.storeAddress, showcase.showcaseid, showcase.size, showcase.status  };
                
                 var showcaseDetail = showcaseList.ToList();
                 txtStoreAddress.Text = showcaseDetail[0].storeAddress.ToString();
@@ -63,7 +62,6 @@ namespace SDP_SE1A_Group2.Staff
                 foreach (var i in showcaseList.ToList())
                 {
                     dataGridViewItem.Rows.Add(
-                        i.itemDetail.itemID, i.itemDetail.itemName, i.itemDetail.itemDesc, i.itemDetail.unitPrice, i.avalibleQty, i.soldQty
                         );
                 }
                 
@@ -108,12 +106,7 @@ namespace SDP_SE1A_Group2.Staff
 
         
 
-        private void btnRentPage_Click(object sender, EventArgs e)
-        {
-            Peter1 peter1 = new Peter1();
-            opener.openChildForm(peter1);
-        }
-
+      
         private void btnShowItemList_Click(object sender, EventArgs e)
         {
             UpdateItemDataGridView(listBoxShowcaseID.SelectedItem.ToString());

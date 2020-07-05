@@ -1,6 +1,6 @@
-﻿namespace SDP_SE1A_Group2.Staff
+﻿namespace SDP_SE1A_Group2
 {
-    partial class Peter1
+    partial class Staff_Export
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Peter1";
+            this.Text = "Staff_Export";
         }
 
         #endregion
