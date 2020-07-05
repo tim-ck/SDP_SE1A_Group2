@@ -190,6 +190,78 @@
     <Compile Include="tenant.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Tenant\Sales Item\My Sales Item\InShowcase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\Sales Item\My Sales Item\InShowcase.designer.cs">
+      <DependentUpon>InShowcase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tenant\Sales Item\My Sales Item\PreImportItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\Sales Item\My Sales Item\PreImportItem.designer.cs">
+      <DependentUpon>PreImportItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tenant\Sales Item\My Sales Item\Update Item\UpdateImportItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\Sales Item\My Sales Item\Update Item\UpdateImportItem.designer.cs">
+      <DependentUpon>UpdateImportItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tenant\Sales Item\My Sales Item\Update Item\UpdateShowcaseItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\Sales Item\My Sales Item\Update Item\UpdateShowcaseItem.designer.cs">
+      <DependentUpon>UpdateShowcaseItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tenant\Sales Item\Tenant_MySalesItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\Sales Item\Tenant_MySalesItem.designer.cs">
+      <DependentUpon>Tenant_MySalesItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tenant\Sales Item\Tenant_StockInItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\Sales Item\Tenant_StockInItem.designer.cs">
+      <DependentUpon>Tenant_StockInItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tenant\Sales Record\Tenant_ConsolidatedStatement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\Sales Record\Tenant_ConsolidatedStatement.designer.cs">
+      <DependentUpon>Tenant_ConsolidatedStatement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tenant\Sales Record\Tenant_ShowcaseSalesRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\Sales Record\Tenant_ShowcaseSalesRecord.designer.cs">
+      <DependentUpon>Tenant_ShowcaseSalesRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tenant\Showcase\RentShowcase\RentShowcase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\Showcase\RentShowcase\RentShowcase.designer.cs">
+      <DependentUpon>RentShowcase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tenant\Showcase\Tenant_MyShowcase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\Showcase\Tenant_MyShowcase.designer.cs">
+      <DependentUpon>Tenant_MyShowcase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tenant\Showcase\Tenant_RentShowcase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\Showcase\Tenant_RentShowcase.designer.cs">
+      <DependentUpon>Tenant_RentShowcase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tenant\Tenant_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\Tenant_Main.designer.cs">
+      <DependentUpon>Tenant_Main.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Account\ForgotPasswordForm.resx">
       <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,6 +305,42 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Staff\Staff_SalesRecord.resx">
       <DependentUpon>Staff_SalesRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\Sales Item\My Sales Item\InShowcase.resx">
+      <DependentUpon>InShowcase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\Sales Item\My Sales Item\PreImportItem.resx">
+      <DependentUpon>PreImportItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\Sales Item\My Sales Item\Update Item\UpdateImportItem.resx">
+      <DependentUpon>UpdateImportItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\Sales Item\My Sales Item\Update Item\UpdateShowcaseItem.resx">
+      <DependentUpon>UpdateShowcaseItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\Sales Item\Tenant_MySalesItem.resx">
+      <DependentUpon>Tenant_MySalesItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\Sales Item\Tenant_StockInItem.resx">
+      <DependentUpon>Tenant_StockInItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\Sales Record\Tenant_ConsolidatedStatement.resx">
+      <DependentUpon>Tenant_ConsolidatedStatement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\Sales Record\Tenant_ShowcaseSalesRecord.resx">
+      <DependentUpon>Tenant_ShowcaseSalesRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\Showcase\RentShowcase\RentShowcase.resx">
+      <DependentUpon>RentShowcase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\Showcase\Tenant_MyShowcase.resx">
+      <DependentUpon>Tenant_MyShowcase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\Showcase\Tenant_RentShowcase.resx">
+      <DependentUpon>Tenant_RentShowcase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\Tenant_Main.resx">
+      <DependentUpon>Tenant_Main.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

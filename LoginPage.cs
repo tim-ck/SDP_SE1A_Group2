@@ -135,11 +135,9 @@ namespace SDP_SE1A_Group2
             Boolean Verify = false;
             using (var db = new sdpEntities())
             {
-
-
                 var userAcct = from list in db.tenants
                                where list.tenantID.Equals(username)
-                               select new { list.tenantID, list.tenantpwd };
+                               select new { list.tenantID, list.tenantpwd, list.tenantName };
                 if (userAcct == null)
                 {
                     txtErrMsg.Text = "The Username / Password is incorrect";
@@ -154,27 +152,21 @@ namespace SDP_SE1A_Group2
                             this.Hide();
                             txtUsername.Text = "Username";
                             txtPassword.Text = "Password";
-                            CustomerMain cus = new CustomerMain(this, username);
-                            cus.Show();
+                            TenantMain tenantMain = new TenantMain(user.tenantID, user.tenantName);
+                            tenantMain.Show();
                             return;
                         }
                     }
-                    if (Verify == false)
-                    {
-
-                        label2.BackColor = Color.Red;
-                        label1.BackColor = Color.Red;
-                        txtErrMsg.Text = "The Username / Password is incorrect";
-                        return;
-                    }
-
-
+                }
+                if (Verify == false)
+                {
+                    label2.BackColor = Color.Red;
+                    label1.BackColor = Color.Red;
+                    txtErrMsg.Text = "The Username / Password is incorrect";
+                    return;
                 }
 
-
-
             }
-
         }
 
         public void StaffVerify(String username, String password)
