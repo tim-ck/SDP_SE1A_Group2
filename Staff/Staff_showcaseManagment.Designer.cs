@@ -1,6 +1,6 @@
 ﻿namespace SDP_SE1A_Group2.Staff
 {
-    partial class Peter
+    partial class Staff_showcaseManagment
     {
         /// <summary>
         /// Required designer variable.

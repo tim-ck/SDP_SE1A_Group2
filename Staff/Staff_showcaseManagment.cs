@@ -11,13 +11,11 @@ using System.Windows.Forms;
 
 namespace SDP_SE1A_Group2.Staff
 {
-    public partial class Peter : Form
+    public partial class Staff_showcaseManagment : Form
     {
 
-        CustomerMain opener;
-        public Peter(CustomerMain opener)
+        public Staff_showcaseManagment()
         {
-            this.opener = opener;
             InitializeComponent();
             UpdateListBox();
             dataGridViewRentalRecord.Hide();

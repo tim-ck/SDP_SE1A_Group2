@@ -83,21 +83,24 @@ namespace SDP_SE1A_Group2
 
         }
 
-//verify start
+        //verify start
         public void CustomerVerify(String username, String password)
         {
             Boolean Verify = false;
-            using (var db = new sdpEntities()){
-                
-                
-                    var userAcct = from list in db.customers
-                                   where list.customerID.Equals(username)
-                                   select new { list.customerID, list.customerpwd };
-                    if (userAcct == null)
-                    {
-                        txtErrMsg.Text = "The Username / Password is incorrect";
-                    }
-                    else
+            using (var db = new sdpEntities())
+            {
+
+
+                var userAcct = from list in db.customers
+                               where list.customerID.Equals(username)
+                               select new { list.customerID, list.customerpwd };
+                if (userAcct == null)
+                {
+                    txtErrMsg.Text = "The Username / Password is incorrect";
+                }
+                else
+                {
+                    try
                     {
                         foreach (var user in userAcct.ToList())
                         {
@@ -113,7 +116,7 @@ namespace SDP_SE1A_Group2
                             }
                         }
                     }
-                    if (Verify == false)
+                    catch
                     {
                         label2.BackColor = Color.Red;
                         label1.BackColor = Color.Red;
@@ -121,12 +124,11 @@ namespace SDP_SE1A_Group2
                         return;
                     }
 
-                
+                }
+
+
 
             }
-           
-            
-
         }
 
         public void TenantVerify(String username, String password)
@@ -143,26 +145,33 @@ namespace SDP_SE1A_Group2
                 }
                 else
                 {
-                    foreach (var user in userAcct.ToList())
-                    {
-                        if ((username == user.customerID.ToString()) && (password == user.customerpwd.ToString()))
+
+                        try
                         {
-                            Verify = true;
-                            this.Hide();
-                            txtUsername.Text = "Username";
-                            txtPassword.Text = "Password";
-                            CustomerMain cus = new CustomerMain(this, username);
-                            cus.Show();
+                            foreach (var user in userAcct.ToList())
+                            {
+                                if ((username == user.customerID.ToString()) && (password == user.customerpwd.ToString()))
+                                {
+                                    Verify = true;
+                                    this.Hide();
+                                    txtUsername.Text = "Username";
+                                    txtPassword.Text = "Password";
+                                    CustomerMain cus = new CustomerMain(this, username);
+                                    cus.Show();
+                                    return;
+                                }
+                            }
+                        }
+                        catch
+                        {
+                            label2.BackColor = Color.Red;
+                            label1.BackColor = Color.Red;
+                            txtErrMsg.Text = "The Username / Password is incorrect";
                             return;
                         }
-                    }
-                }
-                if (Verify == false)
-                {
-                    label2.BackColor = Color.Red;
-                    label1.BackColor = Color.Red;
-                    txtErrMsg.Text = "The Username / Password is incorrect";
-                    return;
+                        
+                
+                
                 }
 
             }
@@ -183,27 +192,33 @@ namespace SDP_SE1A_Group2
                 }
                 else
                 {
-                    foreach (var user in userAcct.ToList())
-                    {
-                        if ((username == user.staffID.ToString()) && (password == user.tenantpwd.ToString()))
+
+                        try
                         {
-                            Verify = true;
-                            this.Hide();
-                            txtUsername.Text = "Username";
-                            txtPassword.Text = "Password";
-                            Staff_main cus = new Staff_main(this);
-                            cus.Show();
+                            foreach (var user in userAcct.ToList())
+                            {
+                                if ((username == user.staffID.ToString()) && (password == user.tenantpwd.ToString()))
+                                {
+                                    Verify = true;
+                                    this.Hide();
+                                    txtUsername.Text = "Username";
+                                    txtPassword.Text = "Password";
+                                    Staff_main cus = new Staff_main(this);
+                                    cus.Show();
+                                    return;
+                                }
+                            }
+                        }
+                        catch
+                        {
+                            label2.BackColor = Color.Red;
+                            label1.BackColor = Color.Red;
+                            txtErrMsg.Text = "The Username / Password is incorrect";
                             return;
                         }
-                    }
+                        
                 }
-                if (Verify == false)
-                {
-                    label2.BackColor = Color.Red;
-                    label1.BackColor = Color.Red;
-                    txtErrMsg.Text = "The Username / Password is incorrect";
-                    return;
-                }
+               
 
             }
 
@@ -221,11 +236,23 @@ namespace SDP_SE1A_Group2
                                select new { list.customerID, list.email,list.customerpwd };
                 if (e == null) {  return null; } else
                 {
-                    foreach (var user in e.ToList())
-                    {
-                        String[] act = { user.email.ToString(), user.customerpwd.ToString() };
-                        return act;
-                    }
+
+                        try
+                        {
+                            foreach (var user in e.ToList())
+                            {
+                                String[] act = { user.email.ToString(), user.customerpwd.ToString() };
+                                return act;
+                            }
+                        }
+                        catch
+                        {
+                            label2.BackColor = Color.Red;
+                            label1.BackColor = Color.Red;
+                            txtErrMsg.Text = "The Username / Password is incorrect";
+                            return null;
+                        }
+                        
                 }
 
                 return null;
@@ -245,11 +272,23 @@ namespace SDP_SE1A_Group2
                 if (e == null) { return null; }
                 else
                 {
-                    foreach (var user in e.ToList())
-                    {
-                        String[] act = { user.email.ToString(), user.tenantpwd.ToString() };
-                        return act;
-                    }
+
+                        try
+                        {
+                            foreach (var user in e.ToList())
+                            {
+                                String[] act = { user.email.ToString(), user.tenantpwd.ToString() };
+                                return act;
+                            }
+                        }
+                        catch
+                        {
+                            label2.BackColor = Color.Red;
+                            label1.BackColor = Color.Red;
+                            txtErrMsg.Text = "The Username / Password is incorrect";
+                            return null;
+                        }
+                       
                 }
 
                 return null;
@@ -269,11 +308,23 @@ namespace SDP_SE1A_Group2
                 if (e == null) { return null; }
                 else
                 {
-                    foreach (var user in e.ToList())
-                    {
-                        String[] act = { user.email.ToString(), user.tenantpwd.ToString() };
-                        return act;
-                    }
+
+                        try
+                        {
+                            foreach (var user in e.ToList())
+                            {
+                                String[] act = { user.email.ToString(), user.tenantpwd.ToString() };
+                                return act;
+                            }
+                        }
+                        catch
+                        {
+                            label2.BackColor = Color.Red;
+                            label1.BackColor = Color.Red;
+                            txtErrMsg.Text = "The Username / Password is incorrect";
+                            return null;
+                        }
+                        
                 }
 
                 return null;

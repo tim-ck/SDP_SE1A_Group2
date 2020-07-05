@@ -244,11 +244,7 @@ public void sendEmail(String subject, String message)
             btnSetting.ForeColor = Color.FromArgb(182, 182, 182);
         }
 
-        private void btnPeter_Click(object sender, EventArgs e)
-        {
-            Peter peter = new Peter(this);
-            openChildForm(peter);
-        }
+      
 
 
 

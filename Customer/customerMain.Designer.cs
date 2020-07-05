@@ -269,7 +269,6 @@
             this.btnPeter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPeter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPeter.UseVisualStyleBackColor = true;
-            this.btnPeter.Click += new System.EventHandler(this.btnPeter_Click);
             // 
             // CustomerMain
             // 
