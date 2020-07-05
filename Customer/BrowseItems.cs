@@ -76,7 +76,7 @@ namespace SDP_SE1A_Group2.Customer
             {
                 var item = from items in db.items
                            from showcaseItem in db.showcaseitems
-                           where showcaseItem.showcaseid.Contains(storeName) && items.itemID == showcaseItem.itemid
+                           where showcaseItem.showcaseid.Contains(storeName) && items.itemID == showcaseItem.itemid && showcaseItem.avalibleQty>0
                            select new
                            {
                                showcaseItem.itemid,

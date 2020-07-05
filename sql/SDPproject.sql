@@ -94,20 +94,6 @@ UNLOCK TABLES;
 
 
 
-/*Table structure for table `showcase` */
-DROP TABLE IF EXISTS `showcase`;
-
-CREATE TABLE `showcase` (
-  `showcaseid` varchar(6) NOT NULL,
-  `size` int(11) NOT NULL,
-  `rental` float NOT NULL,
-  `status` varchar(15) NOT NULL,
-  PRIMARY KEY (`showcaseid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*Data for the table `showcase` */
-LOCK TABLES `showcase` WRITE;
-INSERT INTO `showcase` VALUES ('cwb001',50000,5,'a'),('cwb002',30000,3,'o'),('cwb003',40000,4,'a'),('kwf001',30000,3,'r'),('kwf002',40000,4,'r'),('kwf003',40000,4,'r'),('mka001',30000,3,'o'),('mka002',30000,3,'a'),('mka003',40000,4,'o'),('mkb001',50000,5,'a'),('mkb002',50000,5,'r'),('mkb003',40000,4,'a'),('sht001',30000,3,'o'),('sht002',40000,4,'r'),('sht003',50000,5,'a');
-UNLOCK TABLES;
 
 
 /*Table structure for table `showcaseitem` */
@@ -184,26 +170,6 @@ UNLOCK TABLES;
 
 
 
-/*Table structure for table `order` */
-DROP TABLE IF EXISTS `order`;
-
-CREATE TABLE `order` (
-  `orderID` varchar(15) NOT NULL,
-  `storeName` varchar(80) NOT NULL,
-  `customerID` varchar(15) NOT NULL,
-  `orderDate` date NOT NULL,
-  `orderTotalPrice` float NOT NULL,
-  PRIMARY KEY (`orderID`),
-  KEY `order_customerid_fk_idx` (`customerID`),
-  CONSTRAINT `order_customerID_fk` FOREIGN KEY (`customerID`) REFERENCES `customer`(`customerID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/*Data for the table `order` */
-
-LOCK TABLES `order` WRITE;
-INSERT INTO `order` VALUES ('001','MK','customer01','2020-06-01',30),('002','mk','customer02','2020-06-03',10);
-UNLOCK TABLES;
-
 
 /*Table structure for table `order_detail` */
 
@@ -253,7 +219,7 @@ DROP TABLE IF EXISTS `attendence`;
 
 CREATE TABLE `attendence` (
   `staffID` int(20) NOT NULL,
-  `month` date NOT NULL,
+  `month` varchar(10) NOT NULL,
   `hour` int(3) NOT NULL,
   PRIMARY KEY (`staffID`,`month`),
   KEY `attendencestaffID` (`staffID`),
@@ -264,6 +230,10 @@ CREATE TABLE `attendence` (
 
 LOCK TABLES `staff` WRITE;
 UNLOCK TABLES;
+
+
+
+/*need to change !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
 
 
@@ -294,7 +264,41 @@ UNLOCK TABLES;
 
 
 
+/*Table structure for table `showcase` */
+DROP TABLE IF EXISTS `showcase`;
 
+CREATE TABLE `showcase` (
+  `showcaseid` varchar(6) NOT NULL,
+  `size` int(11) NOT NULL,
+  `rental` float NOT NULL,
+  `status` varchar(15) NOT NULL,
+  PRIMARY KEY (`showcaseid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*Data for the table `showcase` */
+LOCK TABLES `showcase` WRITE;
+INSERT INTO `showcase` VALUES ('cwb001',50000,5,'a'),('cwb002',30000,3,'o'),('cwb003',40000,4,'a'),('kwf001',30000,3,'r'),('kwf002',40000,4,'r'),('kwf003',40000,4,'r'),('mka001',30000,3,'o'),('mka002',30000,3,'a'),('mka003',40000,4,'o'),('mkb001',50000,5,'a'),('mkb002',50000,5,'r'),('mkb003',40000,4,'a'),('sht001',30000,3,'o'),('sht002',40000,4,'r'),('sht003',50000,5,'a');
+UNLOCK TABLES;
+
+
+/*Table structure for table `order` */
+DROP TABLE IF EXISTS `order`;
+
+CREATE TABLE `order` (
+  `orderID` varchar(15) NOT NULL,
+  `storeName` varchar(80) NOT NULL,
+  `customerID` varchar(15) NOT NULL,
+  `orderDate` date NOT NULL,
+  `orderTotalPrice` float NOT NULL,
+  PRIMARY KEY (`orderID`),
+  KEY `order_customerid_fk_idx` (`customerID`),
+  CONSTRAINT `order_customerID_fk` FOREIGN KEY (`customerID`) REFERENCES `customer`(`customerID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `order` */
+
+LOCK TABLES `order` WRITE;
+INSERT INTO `order` VALUES ('001','MK','customer01','2020-06-01',30),('002','mk','customer02','2020-06-03',10);
+UNLOCK TABLES;
 
 
 

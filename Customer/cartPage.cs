@@ -213,6 +213,7 @@ namespace SDP_SE1A_Group2.Customer
                             if (orderde != null)
                             {
                                 orderde.avalibleQty -= int.Parse(quantity);
+                                orderde.soldQty += int.Parse(quantity);
                                 db.SaveChanges();
                             }
                         }

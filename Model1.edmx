@@ -11,7 +11,7 @@
             <PropertyRef Name="month" />
           </Key>
           <Property Name="staffID" Type="int" Nullable="false" />
-          <Property Name="month" Type="date" Nullable="false" />
+          <Property Name="month" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="hour" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="customer">
@@ -90,7 +90,6 @@
           <Property Name="size" Type="int" Nullable="false" />
           <Property Name="rental" Type="float" Nullable="false" />
           <Property Name="status" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="storeAddress" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="showcaseitem">
           <Key>
@@ -341,7 +340,7 @@
             <PropertyRef Name="month" />
           </Key>
           <Property Name="staffID" Type="Int32" Nullable="false" />
-          <Property Name="month" Type="DateTime" Nullable="false" />
+          <Property Name="month" Type="String" Nullable="false" />
           <Property Name="hour" Type="Int32" Nullable="false" />
           <NavigationProperty Name="staff" Relationship="Self.attendence_ibfk_2" FromRole="attendence" ToRole="staff" />
         </EntityType>
@@ -777,7 +776,6 @@
           <EntitySetMapping Name="showcases">
             <EntityTypeMapping TypeName="sdpModel.showcase">
               <MappingFragment StoreEntitySet="showcase">
-                <ScalarProperty Name="storeAddress" ColumnName="storeAddress" />
                 <ScalarProperty Name="showcaseid" ColumnName="showcaseid" />
                 <ScalarProperty Name="size" ColumnName="size" />
                 <ScalarProperty Name="rental" ColumnName="rental" />

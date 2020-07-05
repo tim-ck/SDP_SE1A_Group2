@@ -20,6 +20,7 @@ namespace SDP_SE1A_Group2.Staff
             this.opener = opener;
             InitializeComponent();
             UpdateListBox();
+            dataGridViewRentalRecord.Hide();
         }
 
 
@@ -41,10 +42,36 @@ namespace SDP_SE1A_Group2.Staff
             
         }
 
-
-        private void UpdateDataGridView(String showcaseID)
+        private void UpdateRentalRecordDataGridView(string showcaseID)
         {
-            dataGridView1.Rows.Clear();
+            dataGridViewItem.Rows.Clear();
+            using (var db = new sdpEntities())
+            {
+                var showcaseList = from showcase in db.showcases
+                                   from reservations in db.reservations
+                                   from rentinfo in db.rentinfoes
+                                   where showcase.showcaseid.Equals(showcaseID) && showcase.showcaseid ==  reservations.showcaseid&& reservations.reservationid == rentinfo.reservationid
+                                   orderby reservations.reservationid ascending
+                                   select new { showcase.storeAddress, showcase.showcaseid, showcase.size, showcase.status, reservations.reservationid,  };
+               
+                var showcaseDetail = showcaseList.ToList();
+                txtStoreAddress.Text = showcaseDetail[0].storeAddress.ToString();
+                txtShowCaseID.Text = showcaseDetail[0].showcaseid.ToString();
+                txtShowcaseSize.Text = showcaseDetail[0].size.ToString();
+                txtStatus.Text = showcaseDetail[0].status.ToString();
+
+                foreach (var i in showcaseList.ToList())
+                {
+                    dataGridViewItem.Rows.Add(
+                        i.itemDetail.itemID, i.itemDetail.itemName, i.itemDetail.itemDesc, i.itemDetail.unitPrice, i.avalibleQty, i.soldQty
+                        );
+                }
+                
+            }
+        }
+        private void UpdateItemDataGridView(String showcaseID)
+        {
+            dataGridViewItem.Rows.Clear();
             using (var db = new sdpEntities())
             {
                 var showcaseList = from showcase in db.showcases
@@ -52,19 +79,23 @@ namespace SDP_SE1A_Group2.Staff
                                    from itemDetail in db.items
                                    where showcase.showcaseid.Equals(showcaseID) && showcase.showcaseid == showcaseitem .showcaseid&& itemDetail.itemID == showcaseitem.itemid
                                    orderby itemDetail.itemID ascending
-                                   select new { showcase, showcaseitem, itemDetail };
-                String storeName = "";
+                                   select new { showcase.storeAddress, showcase.showcaseid, showcase.size,showcase.status, showcaseitem.avalibleQty, showcaseitem.soldQty, showcaseitem.TotalQty, itemDetail};
+                var showcaseDetail = showcaseList.ToList();
+                txtStoreAddress.Text = showcaseDetail[0].storeAddress.ToString();
+                txtShowCaseID.Text = showcaseDetail[0].showcaseid.ToString();
+                txtShowcaseSize.Text = showcaseDetail[0].size.ToString();
+                txtStatus.Text = showcaseDetail[0].status.ToString();
+
                 foreach (var i in showcaseList.ToList())
                 {
-                    storeName = i.showcase.
-                    dataGridView1.Rows.Add(
-                        i.orderID, i.storeName, i.orderDate, i.itemID, i.itemName, i.itemDesc, i.unitPrice, i.qty, i.totalPrice
+                    dataGridViewItem.Rows.Add(
+                        i.itemDetail.itemID, i.itemDetail.itemName, i.itemDetail.itemDesc, i.itemDetail.unitPrice,i.avalibleQty,i.soldQty
                         );
                 }
-                txtStoreAddress.Text = "Store address: " + storeName;
             }
         }
 
+        
 
         //Update view End
 
@@ -72,13 +103,25 @@ namespace SDP_SE1A_Group2.Staff
         //btnClick behaviour
         private void btnShowShowcaseRecord_Click(object sender, EventArgs e)
         {
-            UpdateDataGridView(listBoxShowcaseID.SelectedItem.ToString());
+            UpdateRentalRecordDataGridView(listBoxShowcaseID.SelectedItem.ToString());
         }
+
+        
 
         private void btnRentPage_Click(object sender, EventArgs e)
         {
             Peter1 peter1 = new Peter1();
             opener.openChildForm(peter1);
+        }
+
+        private void btnShowItemList_Click(object sender, EventArgs e)
+        {
+            UpdateItemDataGridView(listBoxShowcaseID.SelectedItem.ToString());
+        }
+
+        private void dataGridViewItem_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
