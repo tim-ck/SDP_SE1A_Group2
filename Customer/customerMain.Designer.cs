@@ -41,6 +41,7 @@
             this.lblCloseBtn = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.btnPeter = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -50,6 +51,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.btnPeter);
             this.panel1.Controls.Add(this.btnOrder);
             this.panel1.Controls.Add(this.btnSetting);
             this.panel1.Controls.Add(this.btnLogOut);
@@ -137,7 +139,7 @@
             this.btnCart.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnCart.Size = new System.Drawing.Size(250, 100);
             this.btnCart.TabIndex = 3;
-            this.btnCart.Text = "Cart";
+            this.btnCart.Text = "  Cart";
             this.btnCart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCart.UseVisualStyleBackColor = true;
@@ -249,6 +251,26 @@
             this.panelChildForm.Size = new System.Drawing.Size(1214, 800);
             this.panelChildForm.TabIndex = 2;
             // 
+            // btnPeter
+            // 
+            this.btnPeter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPeter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPeter.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPeter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
+            this.btnPeter.Image = global::SDP_SE1A_Group2.Properties.Resources.order_p;
+            this.btnPeter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPeter.Location = new System.Drawing.Point(0, 400);
+            this.btnPeter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPeter.Name = "btnPeter";
+            this.btnPeter.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnPeter.Size = new System.Drawing.Size(250, 100);
+            this.btnPeter.TabIndex = 7;
+            this.btnPeter.Text = "Peter";
+            this.btnPeter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPeter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPeter.UseVisualStyleBackColor = true;
+            this.btnPeter.Click += new System.EventHandler(this.btnPeter_Click);
+            // 
             // CustomerMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -287,5 +309,6 @@
         private System.Windows.Forms.Label lblCloseBtn;
         private System.Windows.Forms.Label lblMinBtn;
         private System.Windows.Forms.Button btnOrder;
+        private System.Windows.Forms.Button btnPeter;
     }
 }

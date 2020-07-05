@@ -145,6 +145,18 @@
     <Compile Include="staff.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Staff\Peter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff\Peter.Designer.cs">
+      <DependentUpon>Peter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Peter1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff\Peter1.Designer.cs">
+      <DependentUpon>Peter1.cs</DependentUpon>
+    </Compile>
     <Compile Include="tenant.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -173,6 +185,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff\Peter.resx">
+      <DependentUpon>Peter.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -238,7 +253,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\nav\" />
-    <Folder Include="Staff\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cart_P.png" />

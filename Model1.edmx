@@ -90,6 +90,7 @@
           <Property Name="size" Type="int" Nullable="false" />
           <Property Name="rental" Type="float" Nullable="false" />
           <Property Name="status" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="storeAddress" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="showcaseitem">
           <Key>
@@ -438,6 +439,7 @@
           <NavigationProperty Name="rentinfoes" Relationship="Self.rentinfo_showcaseid_fk" FromRole="showcase" ToRole="rentinfo" />
           <NavigationProperty Name="reservations" Relationship="Self.reservation_showcaseid_fk" FromRole="showcase" ToRole="reservation" />
           <NavigationProperty Name="showcaseitems" Relationship="Self.showcaseitem_showcaseId_fk" FromRole="showcase" ToRole="showcaseitem" />
+          <Property Name="storeAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="showcaseitem">
           <Key>
@@ -775,6 +777,7 @@
           <EntitySetMapping Name="showcases">
             <EntityTypeMapping TypeName="sdpModel.showcase">
               <MappingFragment StoreEntitySet="showcase">
+                <ScalarProperty Name="storeAddress" ColumnName="storeAddress" />
                 <ScalarProperty Name="showcaseid" ColumnName="showcaseid" />
                 <ScalarProperty Name="size" ColumnName="size" />
                 <ScalarProperty Name="rental" ColumnName="rental" />

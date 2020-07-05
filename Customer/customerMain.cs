@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SDP_SE1A_Group2.Staff;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,10 +19,10 @@ namespace SDP_SE1A_Group2.Customer
     public partial class CustomerMain : Form
     {
 
-        private Form activeForm = null;
+        private Form activeForm = null; 
         private String userId, cusName, cusEmail;
         private Boolean hvItem;
-        Form opener;
+        Form opener;                                                             
         CartPage cartPage;
         BrowseItems browseItemForm;
         Order orderForm;
@@ -33,7 +34,7 @@ namespace SDP_SE1A_Group2.Customer
         public CustomerMain(Form parentForm, String userId)
         {
             InitializeComponent();
-            opener = parentForm;
+            opener = parentForm;                                                              
             this.userId = userId;
             UpdateCustomerInfo();
 
@@ -172,7 +173,7 @@ public void sendEmail(String subject, String message)
 //Email End
 
     //open child form
-        private void openChildForm(Form childForm)
+        public void openChildForm(Form childForm)
         {
             if (activeForm!= null)
                 activeForm.Hide();
@@ -242,10 +243,14 @@ public void sendEmail(String subject, String message)
             btnSetting.Image = Properties.Resources.setting;
             btnSetting.ForeColor = Color.FromArgb(182, 182, 182);
         }
-        
-       
 
-        
+        private void btnPeter_Click(object sender, EventArgs e)
+        {
+            Peter peter = new Peter(this);
+            openChildForm(peter);
+        }
+
+
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
@@ -270,7 +275,7 @@ public void sendEmail(String subject, String message)
             this.WindowState = FormWindowState.Minimized;
         }
 
-       
+        
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
