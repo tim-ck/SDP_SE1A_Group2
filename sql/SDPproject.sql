@@ -78,9 +78,14 @@ CREATE TABLE `rentinfo` (
   `startDate` date NOT NULL,
   `duration` int(11) NOT NULL,
   `showcaseid` varchar(6) NOT NULL,
+  `storeID` varchar(15) NOT NULL,
+
   PRIMARY KEY (`rentID`),
   KEY `rentinfo_showcaseid` (`showcaseid`),
   KEY `rentinfo_tenantID` (`tenantID`),
+   KEY `_storeID_fk`(`storeID`),
+  CONSTRAINT `_storeID_fk` FOREIGN KEY (`storeID`) REFERENCES `store`(`storeID`),
+
   CONSTRAINT `rentinfo_showcaseid_fk` FOREIGN KEY (`showcaseid`) REFERENCES `showcase` (`showcaseid`) ,
   CONSTRAINT `rentinfo_tenantid_fk` FOREIGN KEY (`tenantID`) REFERENCES `tenant` (`tenantID`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -101,6 +106,8 @@ DROP TABLE IF EXISTS `showcaseitem`;
 
 CREATE TABLE `showcaseitem` (
   `showcaseid` varchar(6) NOT NULL,
+  `storeID` varchar(15) NOT NULL,
+
   `itemid` varchar(15) NOT NULL,
   `avalibleQty` int(11) NOT NULL,
   `soldQty`int(11) NOT NULL,
@@ -108,6 +115,9 @@ CREATE TABLE `showcaseitem` (
   CONSTRAINT `showcaseitem_pk` PRIMARY KEY(`showcaseId`,`itemid`),
   KEY `showcaseitemitemid` (`itemid`),
   KEY `showcaseitem_showcaseId` (`showcaseId`),
+  KEY `showcaseitem_storeID_fk`(`storeID`),
+  CONSTRAINT `showcaseitem_storeID_fk` FOREIGN KEY (`storeID`) REFERENCES `store`(`storeID`),
+
   CONSTRAINT `showcaseitem_showcaseId_fk` FOREIGN KEY (`showcaseId`) REFERENCES `showcase` (`showcaseid`), 
   CONSTRAINT `showcaseitem_itemid_fk` FOREIGN KEY (`itemid`) REFERENCES `item` (`itemID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -128,7 +138,7 @@ CREATE TABLE `item` (
   `unitPrice` float NOT NULL,
   PRIMARY KEY (`itemID`),
   KEY `item_tenantid_fk_idx` (`tenantID`),
-  CONSTRAINT `item_tenantid_fk` FOREIGN KEY (`tenantID`) REFERENCES `tenant` (`tenantID`) 
+  CONSTRAINT `item_tenantid_fk` FOREIGN KEY (`tenantID`) REFERENCES `tenant` (`tenantID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `item` */
@@ -269,10 +279,14 @@ DROP TABLE IF EXISTS `showcase`;
 
 CREATE TABLE `showcase` (
   `showcaseid` varchar(6) NOT NULL,
+  `storeID` varchar(15) NOT NULL,
   `size` int(11) NOT NULL,
   `rental` float NOT NULL,
   `status` varchar(15) NOT NULL,
   PRIMARY KEY (`showcaseid`)
+  KEY `showcase_storeID_fk`(`storeID`),
+  CONSTRAINT `showcase_storeID_fk` FOREIGN KEY (`storeID`) REFERENCES `store`(`storeID`)
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*Data for the table `showcase` */
 LOCK TABLES `showcase` WRITE;
@@ -285,23 +299,41 @@ DROP TABLE IF EXISTS `order`;
 
 CREATE TABLE `order` (
   `orderID` varchar(15) NOT NULL,
-  `storeName` varchar(80) NOT NULL,
+  `storeID` varchar(15) NOT NULL,
   `customerID` varchar(15) NOT NULL,
   `orderDate` date NOT NULL,
   `orderTotalPrice` float NOT NULL,
   PRIMARY KEY (`orderID`),
   KEY `order_customerid_fk_idx` (`customerID`),
-  CONSTRAINT `order_customerID_fk` FOREIGN KEY (`customerID`) REFERENCES `customer`(`customerID`)
+  KEY `order_storeID_fk`(`storeID`),
+  CONSTRAINT `order_customerID_fk` FOREIGN KEY (`customerID`) REFERENCES `customer`(`customerID`),
+  CONSTRAINT `order_storeID_fk` FOREIGN KEY (`storeID`) REFERENCES `store`(`storeID`)
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `order` */
 
 LOCK TABLES `order` WRITE;
-INSERT INTO `order` VALUES ('001','MK','customer01','2020-06-01',30),('002','mk','customer02','2020-06-03',10);
+INSERT INTO `order` VALUES ('001','mka','customer01','2020-06-01',30),('002','mka','customer02','2020-06-03',10);
 UNLOCK TABLES;
 
 
 
+/*Table structure for table `store` */
+DROP TABLE IF EXISTS `store`;
+
+CREATE TABLE `store` (
+  `storeID` varchar(15) NOT NULL,
+  `storeAddress` varchar(255) NOT NULL,
+  
+  PRIMARY KEY (`storeID`),
+ ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `order` */
+
+LOCK TABLES `order` WRITE;
+INSERT INTO `order` VALUES ('cwb'  ,'UG03, ABC Mall'),('kwf'  ,'LG22, DEF Commercial Centre'),('mka'  ,'203, G.H.I Mall'),('mkb'  ,'LG123, Kwai Fong Plaza'),('sht'  ,'888, New ST Plaza');
+UNLOCK TABLES;
 
 
 
@@ -313,3 +345,4 @@ UNLOCK TABLES;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+ 
