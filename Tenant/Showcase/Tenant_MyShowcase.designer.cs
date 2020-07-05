@@ -63,9 +63,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1116, 664);
+            this.panel1.Size = new System.Drawing.Size(837, 531);
             this.panel1.TabIndex = 1;
             // 
             // label3
@@ -75,10 +75,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(433, 53);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(325, 42);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(182, 25);
+            this.label3.Size = new System.Drawing.Size(150, 20);
             this.label3.TabIndex = 22;
             this.label3.Text = "Pick one to check";
             // 
@@ -86,9 +85,11 @@
             // 
             this.groupBox1.Controls.Add(this.radOld);
             this.groupBox1.Controls.Add(this.radCurrent);
-            this.groupBox1.Location = new System.Drawing.Point(327, 94);
+            this.groupBox1.Location = new System.Drawing.Point(245, 75);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(375, 54);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(281, 43);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -98,9 +99,10 @@
             this.radOld.AutoSize = true;
             this.radOld.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.radOld.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radOld.Location = new System.Drawing.Point(242, 24);
+            this.radOld.Location = new System.Drawing.Point(182, 19);
+            this.radOld.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radOld.Name = "radOld";
-            this.radOld.Size = new System.Drawing.Size(111, 21);
+            this.radOld.Size = new System.Drawing.Size(89, 17);
             this.radOld.TabIndex = 22;
             this.radOld.Text = "Old Record";
             this.radOld.UseVisualStyleBackColor = true;
@@ -112,9 +114,10 @@
             this.radCurrent.Checked = true;
             this.radCurrent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.radCurrent.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radCurrent.Location = new System.Drawing.Point(26, 24);
+            this.radCurrent.Location = new System.Drawing.Point(20, 19);
+            this.radCurrent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radCurrent.Name = "radCurrent";
-            this.radCurrent.Size = new System.Drawing.Size(140, 21);
+            this.radCurrent.Size = new System.Drawing.Size(111, 17);
             this.radCurrent.TabIndex = 21;
             this.radCurrent.TabStop = true;
             this.radCurrent.Text = "Current Record";
@@ -134,14 +137,15 @@
             this.startDate,
             this.endDate,
             this.scStatus});
-            this.dataGridView1.Location = new System.Drawing.Point(89, 248);
-            this.dataGridView1.MinimumSize = new System.Drawing.Size(739, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(67, 198);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.MinimumSize = new System.Drawing.Size(554, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(924, 337);
+            this.dataGridView1.Size = new System.Drawing.Size(693, 270);
             this.dataGridView1.TabIndex = 16;
             // 
             // showcaseId
@@ -199,20 +203,20 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(212, 36);
+            this.label1.Size = new System.Drawing.Size(173, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "My Showcase";
             // 
             // TenantMyShowcase
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(24)))));
-            this.ClientSize = new System.Drawing.Size(1116, 664);
+            this.ClientSize = new System.Drawing.Size(837, 531);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "TenantMyShowcase";
             this.Text = "My Showcase";
             this.Load += new System.EventHandler(this.Form2MyShowcase_Load);

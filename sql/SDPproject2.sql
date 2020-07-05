@@ -202,7 +202,9 @@ CREATE TABLE `preinputitem` (
   `itemdesc` varchar(45) DEFAULT NULL,
   `itemunitprice` float NOT NULL,
   `tenantid` varchar(15) NOT NULL,
-  PRIMARY KEY (`preinputitemid`)
+  PRIMARY KEY (`preinputitemid`),
+  KEY `preinputitem_tenantid` (`tenantid`),
+  CONSTRAINT `preinputitem_fk1` FOREIGN KEY (`tenantid`) REFERENCES `tenant` (`tenantID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -260,8 +262,12 @@ DROP TABLE IF EXISTS `reservation`;
 CREATE TABLE `reservation` (
   `reservationid` varchar(15) NOT NULL,
   `showcaseid` varchar(15) NOT NULL,
-  `tenantid` varchar(15) NOT NULL,
-  PRIMARY KEY (`reservationid`)
+  `tenantid` varchar(20) NOT NULL,
+  PRIMARY KEY (`reservationid`),
+  KEY `reservation_fk`(`tenantid`),
+  KEY `reservation_showcaseid`(`showcaseid`),
+  CONSTRAINT `reservation_fk1` FOREIGN KEY (`tenantid`) REFERENCES `tenant`(`tenantID`),
+  CONSTRAINT `reservation_fk2` FOREIGN KEY (`showcaseid`) REFERENCES `showcase`(`showcaseid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -351,9 +357,11 @@ CREATE TABLE `staff` (
   `email` varchar(100) DEFAULT NULL,
   `name` varchar(50) NOT NULL,
   `staffType` char(2) NOT NULL,
-  `reportsTo` int(11) DEFAULT NULL,
+  `reportsTo` varchar(20) DEFAULT NULL,
   `salary` float NOT NULL,
-  PRIMARY KEY (`staffID`)
+  PRIMARY KEY (`staffID`),
+  KEY `stafffk` (`reportsTo`),
+  CONSTRAINT `staffs_fk` FOREIGN KEY (`reportsTo`) REFERENCES `staff` (`staffID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -363,7 +371,7 @@ CREATE TABLE `staff` (
 
 LOCK TABLES `staff` WRITE;
 /*!40000 ALTER TABLE `staff` DISABLE KEYS */;
-INSERT INTO `staff` VALUES ('staff01','pass01',NULL,'a','p',NULL,50),('staff02','pass02',NULL,'b','p',NULL,40),('staff03','pass03',NULL,'c','f',NULL,15000);
+INSERT INTO `staff` VALUES ('staff01','pass01',null,'a','p','staff03',50) ,('staff02','pass02',null,'b','p','staff03',40) , ('staff03','pass03',null,'c','f',null,15000);
 /*!40000 ALTER TABLE `staff` ENABLE KEYS */;
 UNLOCK TABLES;
 

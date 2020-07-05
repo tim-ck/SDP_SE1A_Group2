@@ -42,28 +42,67 @@ namespace SDP_SE1A_Group2.Staff
 
         private void UpdateRentalRecordDataGridView(string showcaseID)
         {
-            dataGridViewItem.Rows.Clear();
+            dataGridViewRentalRecord.Rows.Clear();
             using (var db = new sdpEntities())
-            {
-                var showcaseList = from showcase in db.showcases
-                                   from rentinfo in db.rentinfoes
-                                   from store in db.stores
-                                   where showcase.showcaseid.Equals(showcaseID) && showcase.showcaseid == rentinfo.showcaseid && store.storeID == showcase.showcaseid
-                                   orderby rentinfo.rentID ascending
-                                   select new { store.storeAddress, showcase.showcaseid, showcase.size, showcase.status  };
-               
-                var showcaseDetail = showcaseList.ToList();
-                txtStoreAddress.Text = showcaseDetail[0].storeAddress.ToString();
-                txtShowCaseID.Text = showcaseDetail[0].showcaseid.ToString();
-                txtShowcaseSize.Text = showcaseDetail[0].size.ToString();
-                txtStatus.Text = showcaseDetail[0].status.ToString();
+            {//update showcaseInfo
 
-                foreach (var i in showcaseList.ToList())
+                var showcaseInfo = from storeList in db.stores
+                                   from showcaseList in db.showcases
+                                   where showcaseList.showcaseid.Contains(showcaseID) && storeList.storeID == showcaseList.storeID
+                                   select new
+                                   {
+                                       storeList.storeAddress,
+                                       showcaseList.showcaseid,
+                                       showcaseList.size,
+                                       showcaseList.status
+                                   };
+                var detail = showcaseInfo.ToList();
+                if (detail != null)
                 {
-                    dataGridViewItem.Rows.Add(
-                        );
+                    txtStoreAddress.Text = "Store address: " + detail[0].storeAddress.ToString();
+                    txtShowCaseID.Text = "Showcase ID: " + detail[0].showcaseid.ToString();
+                    txtShowcaseSize.Text = "Showcase Size: " + detail[0].size.ToString();
+                    string status;
+                    //Convert status code to word
+                    if (detail[0].status.ToString() == "a")
+                    {
+                        status = "Available";
+                    }
+                    else if (detail[0].status.ToString() == "o")
+                    {
+                        status = "Occupied";
+                    }
+                    else
+                    {
+                        status = "Reserved";
+                    }
+                    txtStatus.Text = "Status: " + status;
                 }
-                
+
+                //update showcase record
+                var showcaseRentalList = from rentRecord in db.rentinfoes
+                                        where rentRecord.showcaseid.Contains(showcaseID)
+                                        select new
+                                       {
+                                           rentRecord.rentID,
+                                           rentRecord.tenantID,
+                                           rentRecord.startDate,
+                                           rentRecord.duration,
+
+
+                                       };
+
+                foreach (var i in showcaseRentalList.ToList())
+                {
+                    var endDate = i.startDate.AddDays(i.duration).ToString("yyyy-MM-dd");
+                    var startDate = i.startDate.ToString("yyyy-MM-dd");
+
+
+                    dataGridViewRentalRecord.Rows.Add(
+                        i.rentID, i.tenantID, startDate, i.duration, endDate
+                        );
+
+                }
             }
         }
         private void UpdateItemDataGridView(String showcaseID)
@@ -71,24 +110,72 @@ namespace SDP_SE1A_Group2.Staff
             dataGridViewItem.Rows.Clear();
             using (var db = new sdpEntities())
             {
-                var showcaseList = from showcase in db.showcases
-                                   from showcaseitem in db.showcaseitems
-                                   from itemDetail in db.items
-                                   from store in db.stores
-                                   where showcase.showcaseid.Equals(showcaseID) && showcase.showcaseid == showcaseitem .showcaseid&& itemDetail.itemID == showcaseitem.itemid && store.storeID == showcase.showcaseid
-                                   orderby itemDetail.itemID ascending
-                                   select new { store.storeAddress, showcase.showcaseid, showcase.size,showcase.status, showcaseitem.availableQty, showcaseitem.soldQty, showcaseitem.TotalQty, itemDetail};
-                var showcaseDetail = showcaseList.ToList();
-                txtStoreAddress.Text = showcaseDetail[0].storeAddress.ToString();
-                txtShowCaseID.Text = showcaseDetail[0].showcaseid.ToString();
-                txtShowcaseSize.Text = showcaseDetail[0].size.ToString();
-                txtStatus.Text = showcaseDetail[0].status.ToString();
+                //update showcaseInfo
 
-                foreach (var i in showcaseList.ToList())
+                var showcaseInfo = from storeList in db.stores
+                                   from showcaseList in db.showcases
+                                   where showcaseList.showcaseid.Contains(showcaseID) && storeList.storeID == showcaseList.storeID
+                                   select new
+                                   {
+                                       storeList.storeAddress,
+                                       showcaseList.showcaseid,
+                                       showcaseList.size,
+                                       showcaseList.status
+                                   };
+                var detail = showcaseInfo.ToList();
+                if (detail != null)
                 {
+                    txtStoreAddress.Text = "Store address: " + detail[0].storeAddress.ToString();
+                    txtShowCaseID.Text = "Showcase ID: "+detail[0].showcaseid.ToString();
+                    txtShowcaseSize.Text = "Showcase Size: " + detail[0].size.ToString();
+                    string status;
+                    //Convert status code to word
+                    if (detail[0].status.ToString()=="a")
+                    {
+                        status = "Available";
+                    }
+                    else if (detail[0].status.ToString()=="o")
+                    {
+                        status = "Occupied";
+                    }
+                    else
+                    {
+                        status = "Reserved";
+                    }
+                    txtStatus.Text = "Status: " + status;
+                }
+
+                //update showcase Items
+                var showcaseitemList =  from showcaseitems in db.showcaseitems
+                                        from item in db.items
+                                        where showcaseitems.showcaseid.Contains(showcaseID) && showcaseitems.itemid == item.itemID
+                                   select new
+                                   {
+                                       showcaseitems.itemid,
+                                       item.itemName,
+                                       item.itemDesc,
+                                       item.unitPrice,
+                                       showcaseitems.availableQty,
+                                       showcaseitems.availability,
+                                       showcaseitems.soldQty
+
+                                   };
+
+                foreach (var i in showcaseitemList.ToList())
+                {
+                    String available = "";
+                    if (i.availability == 1)
+                    {
+                        available = "available";
+                    }
+                    else
+                    {
+                        available = "not available";
+                    }
                     dataGridViewItem.Rows.Add(
-                        i.itemDetail.itemID, i.itemDetail.itemName, i.itemDetail.itemDesc, i.itemDetail.unitPrice,i.availableQty,i.soldQty
+                        i.itemid, i.itemName, i.itemDesc, i.unitPrice,i.availableQty, available, i.soldQty
                         );
+                    
                 }
             }
         }
@@ -101,6 +188,8 @@ namespace SDP_SE1A_Group2.Staff
         //btnClick behaviour
         private void btnShowShowcaseRecord_Click(object sender, EventArgs e)
         {
+            dataGridViewItem.Hide();
+            dataGridViewRentalRecord.Show();
             UpdateRentalRecordDataGridView(listBoxShowcaseID.SelectedItem.ToString());
         }
 
@@ -109,6 +198,13 @@ namespace SDP_SE1A_Group2.Staff
       
         private void btnShowItemList_Click(object sender, EventArgs e)
         {
+            dataGridViewItem.Show();
+            dataGridViewRentalRecord.Hide();
+            if (listBoxShowcaseID.SelectedItem == null)
+            {
+                MessageBox.Show("Select a Showcase ID");
+            }
+
             UpdateItemDataGridView(listBoxShowcaseID.SelectedItem.ToString());
         }
 

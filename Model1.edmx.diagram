@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9156f172fc614099af3db51d94189b09" Name="Diagram1">
+      <Diagram DiagramId="9156f172fc614099af3db51d94189b09" Name="Diagram1" ZoomLevel="71">
         <EntityTypeShape EntityType="sdpModel.attendence" Width="1.5" PointX="5" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="sdpModel.customer" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="sdpModel.item" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
@@ -33,6 +33,10 @@
         <AssociationConnector Association="sdpModel.showcase_storeID_fk" ManuallyRouted="false" />
         <AssociationConnector Association="sdpModel.showcaseitem_showcaseId_fk" ManuallyRouted="false" />
         <AssociationConnector Association="sdpModel.showcaseitem_storeID_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="sdpModel.preinputitem_fk1" />
+        <AssociationConnector Association="sdpModel.reservation_fk1" />
+        <AssociationConnector Association="sdpModel.reservation_fk2" />
+        <AssociationConnector Association="sdpModel.staffs_fk" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

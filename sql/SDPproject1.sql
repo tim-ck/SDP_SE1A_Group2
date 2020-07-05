@@ -204,7 +204,10 @@ CREATE TABLE `preinputitem` (
   `itemdesc` varchar(45) DEFAULT NULL,
   `itemunitprice` float NOT NULL,
   `tenantid` varchar(15) NOT NULL,
-  PRIMARY KEY (`preinputitemid`)
+  PRIMARY KEY (`preinputitemid`),
+  KEY `preinputitem_tenantid` (`tenantid`),
+  CONSTRAINT `preinputitem_fk1` FOREIGN KEY (`tenantid`) REFERENCES `order` (`tenantID`)
+  
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -264,7 +267,12 @@ CREATE TABLE `reservation` (
   `reservationid` varchar(15) NOT NULL,
   `showcaseid` varchar(15) NOT NULL,
   `tenantid` varchar(15) NOT NULL,
-  PRIMARY KEY (`reservationid`)
+  PRIMARY KEY (`reservationid`),
+  KEY `reservation_fk`(`tenantid`),
+  KEY `reservation_showcaseid`(`showcaseid`),
+  CONSTRAINT `reservation_fk1` FOREIGN KEY (`tenantid`) REFERENCES `tenant`(`tenantID`),
+  CONSTRAINT `reservation_fk2` FOREIGN KEY (`showcaseid`) REFERENCES `showcase`(`showcaseid`)
+  
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -359,6 +367,9 @@ CREATE TABLE `staff` (
   `reportsTo` int(11) DEFAULT NULL,
   `salary` float NOT NULL,
   PRIMARY KEY (`staffID`)
+  KEY `stafffk` (`reportsTo`),
+  CONSTRAINT `staff_fk` FOREIGN KEY (`reportsTo`) REFERENCES `staff` (`staffID`)
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -370,7 +381,7 @@ LOCK TABLES `staff` WRITE;
 /*!40000 ALTER TABLE `staff` DISABLE KEYS */;
 
 LOCK TABLES `staff` WRITE;
-INSERT INTO `staff` VALUES ('staff01','pass01',null,'a','p',null,50) ,('staff02','pass02',null,'b','p',null,40) , ('staff03','pass03',null,'c','f',null,15000);
+INSERT INTO `staff` VALUES ('staff01','pass01',null,'a','p','staff03',50) ,('staff02','pass02',null,'b','p','staff03',40) , ('staff03','pass03',null,'c','f',null,15000);
 
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `staff` ENABLE KEYS */;
