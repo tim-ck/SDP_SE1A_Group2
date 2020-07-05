@@ -66,7 +66,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 18F);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(9, 7);
+            this.label3.Location = new System.Drawing.Point(10, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(154, 32);
             this.label3.TabIndex = 16;
@@ -83,10 +83,10 @@
             this.btnShowShowcaseRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowShowcaseRecord.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnShowShowcaseRecord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.btnShowShowcaseRecord.Location = new System.Drawing.Point(15, 364);
-            this.btnShowShowcaseRecord.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnShowShowcaseRecord.Location = new System.Drawing.Point(17, 455);
+            this.btnShowShowcaseRecord.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnShowShowcaseRecord.Name = "btnShowShowcaseRecord";
-            this.btnShowShowcaseRecord.Size = new System.Drawing.Size(174, 40);
+            this.btnShowShowcaseRecord.Size = new System.Drawing.Size(203, 50);
             this.btnShowShowcaseRecord.TabIndex = 15;
             this.btnShowShowcaseRecord.Text = "Rent Record>>";
             this.btnShowShowcaseRecord.UseVisualStyleBackColor = false;
@@ -96,10 +96,11 @@
             // 
             this.listBoxShowcaseID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBoxShowcaseID.FormattingEnabled = true;
-            this.listBoxShowcaseID.ItemHeight = 12;
-            this.listBoxShowcaseID.Location = new System.Drawing.Point(15, 45);
+            this.listBoxShowcaseID.ItemHeight = 15;
+            this.listBoxShowcaseID.Location = new System.Drawing.Point(17, 56);
+            this.listBoxShowcaseID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBoxShowcaseID.Name = "listBoxShowcaseID";
-            this.listBoxShowcaseID.Size = new System.Drawing.Size(174, 312);
+            this.listBoxShowcaseID.Size = new System.Drawing.Size(203, 390);
             this.listBoxShowcaseID.TabIndex = 14;
             // 
             // panel1
@@ -113,7 +114,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(207, 512);
+            this.panel1.Size = new System.Drawing.Size(241, 842);
             this.panel1.TabIndex = 27;
             // 
             // btnShowItemList
@@ -127,10 +128,10 @@
             this.btnShowItemList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowItemList.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnShowItemList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
-            this.btnShowItemList.Location = new System.Drawing.Point(15, 412);
-            this.btnShowItemList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnShowItemList.Location = new System.Drawing.Point(17, 515);
+            this.btnShowItemList.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnShowItemList.Name = "btnShowItemList";
-            this.btnShowItemList.Size = new System.Drawing.Size(177, 41);
+            this.btnShowItemList.Size = new System.Drawing.Size(206, 51);
             this.btnShowItemList.TabIndex = 17;
             this.btnShowItemList.Text = " Item Detail >>";
             this.btnShowItemList.UseVisualStyleBackColor = false;
@@ -139,9 +140,9 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
-            this.label1.Location = new System.Drawing.Point(721, 474);
+            this.label1.Location = new System.Drawing.Point(993, 811);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 3);
+            this.label1.Size = new System.Drawing.Size(129, 4);
             this.label1.TabIndex = 31;
             // 
             // btnRentPage
@@ -155,10 +156,10 @@
             this.btnRentPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRentPage.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.btnRentPage.ForeColor = System.Drawing.Color.White;
-            this.btnRentPage.Location = new System.Drawing.Point(721, 424);
-            this.btnRentPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRentPage.Location = new System.Drawing.Point(993, 749);
+            this.btnRentPage.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnRentPage.Name = "btnRentPage";
-            this.btnRentPage.Size = new System.Drawing.Size(111, 50);
+            this.btnRentPage.Size = new System.Drawing.Size(129, 62);
             this.btnRentPage.TabIndex = 30;
             this.btnRentPage.Text = "Rent";
             this.btnRentPage.UseVisualStyleBackColor = false;
@@ -167,11 +168,11 @@
             // 
             this.txtShowCaseID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(179)))), ((int)(((byte)(211)))));
             this.txtShowCaseID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtShowCaseID.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtShowCaseID.Location = new System.Drawing.Point(218, 56);
+            this.txtShowCaseID.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.txtShowCaseID.Location = new System.Drawing.Point(254, 86);
             this.txtShowCaseID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtShowCaseID.Name = "txtShowCaseID";
-            this.txtShowCaseID.Size = new System.Drawing.Size(188, 23);
+            this.txtShowCaseID.Size = new System.Drawing.Size(219, 34);
             this.txtShowCaseID.TabIndex = 32;
             this.txtShowCaseID.Text = "Showcase ID:";
             // 
@@ -179,22 +180,22 @@
             // 
             this.txtStoreAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(179)))), ((int)(((byte)(211)))));
             this.txtStoreAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtStoreAddress.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtStoreAddress.Location = new System.Drawing.Point(213, 29);
+            this.txtStoreAddress.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.txtStoreAddress.Location = new System.Drawing.Point(254, 48);
             this.txtStoreAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtStoreAddress.Name = "txtStoreAddress";
-            this.txtStoreAddress.Size = new System.Drawing.Size(619, 23);
+            this.txtStoreAddress.Size = new System.Drawing.Size(859, 34);
             this.txtStoreAddress.TabIndex = 33;
             this.txtStoreAddress.Text = "Store address:";
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Verdana", 12F);
+            this.lblTitle.Font = new System.Drawing.Font("Verdana", 18F);
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.lblTitle.Location = new System.Drawing.Point(215, 9);
+            this.lblTitle.Location = new System.Drawing.Point(251, 11);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(150, 18);
+            this.lblTitle.Size = new System.Drawing.Size(220, 29);
             this.lblTitle.TabIndex = 35;
             this.lblTitle.Text = "Showcase Detail:";
             // 
@@ -202,11 +203,11 @@
             // 
             this.txtShowcaseSize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(179)))), ((int)(((byte)(211)))));
             this.txtShowcaseSize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtShowcaseSize.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtShowcaseSize.Location = new System.Drawing.Point(412, 56);
+            this.txtShowcaseSize.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.txtShowcaseSize.Location = new System.Drawing.Point(489, 86);
             this.txtShowcaseSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtShowcaseSize.Name = "txtShowcaseSize";
-            this.txtShowcaseSize.Size = new System.Drawing.Size(212, 23);
+            this.txtShowcaseSize.Size = new System.Drawing.Size(383, 34);
             this.txtShowcaseSize.TabIndex = 37;
             this.txtShowcaseSize.Text = "Showcase Size:";
             // 
@@ -214,11 +215,11 @@
             // 
             this.txtStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(179)))), ((int)(((byte)(211)))));
             this.txtStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtStatus.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtStatus.Location = new System.Drawing.Point(639, 56);
+            this.txtStatus.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.txtStatus.Location = new System.Drawing.Point(888, 86);
             this.txtStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(193, 23);
+            this.txtStatus.Size = new System.Drawing.Size(225, 34);
             this.txtStatus.TabIndex = 38;
             this.txtStatus.Text = "Status:";
             // 
@@ -230,7 +231,7 @@
             this.dataGridViewRentalRecord.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(58)))), ((int)(((byte)(62)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("PMingLiU", 9F);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
@@ -240,7 +241,7 @@
             this.dataGridViewRentalRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(130)))), ((int)(((byte)(147)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("PMingLiU", 9F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(110)))), ((int)(((byte)(148)))));
@@ -249,12 +250,13 @@
             this.dataGridViewRentalRecord.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewRentalRecord.EnableHeadersVisualStyles = false;
             this.dataGridViewRentalRecord.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
-            this.dataGridViewRentalRecord.Location = new System.Drawing.Point(218, 84);
+            this.dataGridViewRentalRecord.Location = new System.Drawing.Point(254, 126);
+            this.dataGridViewRentalRecord.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridViewRentalRecord.Name = "dataGridViewRentalRecord";
             this.dataGridViewRentalRecord.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(115)))), ((int)(((byte)(190)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("PMingLiU", 9F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -269,7 +271,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(229)))));
             this.dataGridViewRentalRecord.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewRentalRecord.RowTemplate.Height = 50;
-            this.dataGridViewRentalRecord.Size = new System.Drawing.Size(614, 333);
+            this.dataGridViewRentalRecord.Size = new System.Drawing.Size(868, 590);
             this.dataGridViewRentalRecord.TabIndex = 43;
             // 
             // dataGridViewItem
@@ -280,7 +282,7 @@
             this.dataGridViewItem.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(58)))), ((int)(((byte)(62)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("PMingLiU", 9F);
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
@@ -297,7 +299,7 @@
             this.SoldQty});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(130)))), ((int)(((byte)(147)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("PMingLiU", 9F);
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(254)))), ((int)(((byte)(252)))));
             dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5);
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(110)))), ((int)(((byte)(148)))));
@@ -306,12 +308,13 @@
             this.dataGridViewItem.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewItem.EnableHeadersVisualStyles = false;
             this.dataGridViewItem.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
-            this.dataGridViewItem.Location = new System.Drawing.Point(218, 84);
+            this.dataGridViewItem.Location = new System.Drawing.Point(254, 126);
+            this.dataGridViewItem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridViewItem.Name = "dataGridViewItem";
             this.dataGridViewItem.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(115)))), ((int)(((byte)(190)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("PMingLiU", 9F);
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F);
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -326,7 +329,7 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(229)))));
             this.dataGridViewItem.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewItem.RowTemplate.Height = 50;
-            this.dataGridViewItem.Size = new System.Drawing.Size(614, 277);
+            this.dataGridViewItem.Size = new System.Drawing.Size(868, 520);
             this.dataGridViewItem.TabIndex = 44;
             // 
             // dataGridViewTextBoxColumn1
@@ -359,12 +362,12 @@
             this.SoldQty.HeaderText = "Sold quantity";
             this.SoldQty.Name = "SoldQty";
             // 
-            // Peter
+            // Staff_showcaseManagment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(219)))));
-            this.ClientSize = new System.Drawing.Size(848, 512);
+            this.ClientSize = new System.Drawing.Size(1155, 842);
             this.Controls.Add(this.dataGridViewItem);
             this.Controls.Add(this.dataGridViewRentalRecord);
             this.Controls.Add(this.txtStatus);
@@ -375,9 +378,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRentPage);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("PMingLiU", 9F);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Peter";
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "Staff_showcaseManagment";
             this.Text = "Peter";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

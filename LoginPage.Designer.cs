@@ -63,7 +63,7 @@
             this.txtUsername.Size = new System.Drawing.Size(432, 36);
             this.txtUsername.TabIndex = 4;
             this.txtUsername.TabStop = false;
-            this.txtUsername.Text = "customer01";
+            this.txtUsername.Text = "Username";
             this.txtUsername.Click += new System.EventHandler(this.txtUsername_Click);
             // 
             // label1
@@ -95,7 +95,7 @@
             this.txtPassword.Size = new System.Drawing.Size(432, 36);
             this.txtPassword.TabIndex = 5;
             this.txtPassword.TabStop = false;
-            this.txtPassword.Text = "pass01";
+            this.txtPassword.Text = "Password";
             this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
             // 
             // label3
