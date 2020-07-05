@@ -51,9 +51,9 @@
             this.panelConent = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelWelcome = new System.Windows.Forms.Panel();
-            this.lblWelcome = new System.Windows.Forms.Label();
             this.lblMinBtn = new System.Windows.Forms.Label();
             this.lblCloseBtn = new System.Windows.Forms.Label();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.panelSideMenu.SuspendLayout();
             this.panelLogOut.SuspendLayout();
             this.panelRecordSubMenu.SuspendLayout();
@@ -100,6 +100,7 @@
             this.button6.Text = "Log out";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // btnRentShowcase
             // 
@@ -361,19 +362,6 @@
             this.panelWelcome.TabIndex = 19;
             this.panelWelcome.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelWelcome_MouseDown);
             // 
-            // lblWelcome
-            // 
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblWelcome.Font = new System.Drawing.Font("PMingLiU", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblWelcome.ForeColor = System.Drawing.Color.LightGray;
-            this.lblWelcome.Location = new System.Drawing.Point(0, 0);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
-            this.lblWelcome.Size = new System.Drawing.Size(220, 57);
-            this.lblWelcome.TabIndex = 1;
-            this.lblWelcome.Text = "Welcome ";
-            // 
             // lblMinBtn
             // 
             this.lblMinBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -401,6 +389,19 @@
             this.lblCloseBtn.TabIndex = 7;
             this.lblCloseBtn.Text = "X";
             this.lblCloseBtn.Click += new System.EventHandler(this.lblCloseBtn_Click);
+            // 
+            // lblWelcome
+            // 
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblWelcome.Font = new System.Drawing.Font("PMingLiU", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblWelcome.ForeColor = System.Drawing.Color.LightGray;
+            this.lblWelcome.Location = new System.Drawing.Point(0, 0);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
+            this.lblWelcome.Size = new System.Drawing.Size(220, 57);
+            this.lblWelcome.TabIndex = 1;
+            this.lblWelcome.Text = "Welcome ";
             // 
             // TenantMain
             // 

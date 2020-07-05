@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnPeter = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
-            this.btnSetting = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnCart = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
@@ -51,9 +49,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.panel1.Controls.Add(this.btnPeter);
             this.panel1.Controls.Add(this.btnOrder);
-            this.panel1.Controls.Add(this.btnSetting);
             this.panel1.Controls.Add(this.btnLogOut);
             this.panel1.Controls.Add(this.btnCart);
             this.panel1.Controls.Add(this.btnProduct);
@@ -64,25 +60,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 900);
             this.panel1.TabIndex = 0;
-            // 
-            // btnPeter
-            // 
-            this.btnPeter.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPeter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPeter.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPeter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
-            this.btnPeter.Image = global::SDP_SE1A_Group2.Properties.Resources.order_p;
-            this.btnPeter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPeter.Location = new System.Drawing.Point(0, 400);
-            this.btnPeter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnPeter.Name = "btnPeter";
-            this.btnPeter.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnPeter.Size = new System.Drawing.Size(250, 100);
-            this.btnPeter.TabIndex = 7;
-            this.btnPeter.Text = "Peter";
-            this.btnPeter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPeter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPeter.UseVisualStyleBackColor = true;
             // 
             // btnOrder
             // 
@@ -103,26 +80,6 @@
             this.btnOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnOrder.UseVisualStyleBackColor = true;
             this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click_1);
-            // 
-            // btnSetting
-            // 
-            this.btnSetting.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetting.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
-            this.btnSetting.Image = global::SDP_SE1A_Group2.Properties.Resources.setting;
-            this.btnSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSetting.Location = new System.Drawing.Point(0, 760);
-            this.btnSetting.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnSetting.Size = new System.Drawing.Size(250, 70);
-            this.btnSetting.TabIndex = 5;
-            this.btnSetting.Text = "   Setting";
-            this.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSetting.UseVisualStyleBackColor = true;
-            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // btnLogOut
             // 
@@ -298,7 +255,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnProduct;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnCart;
         private System.Windows.Forms.Panel panelTitleBar;
@@ -308,6 +264,5 @@
         private System.Windows.Forms.Label lblCloseBtn;
         private System.Windows.Forms.Label lblMinBtn;
         private System.Windows.Forms.Button btnOrder;
-        private System.Windows.Forms.Button btnPeter;
     }
 }

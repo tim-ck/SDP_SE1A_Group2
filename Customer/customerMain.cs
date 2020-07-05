@@ -205,8 +205,6 @@ public void sendEmail(String subject, String message)
             else
                 btnCart.Image = cart_P;
             btnCart.ForeColor = Color.FromArgb(182, 182, 182);
-            btnSetting.Image = Properties.Resources.setting;
-            btnSetting.ForeColor = Color.FromArgb(182, 182, 182);
         }
 
         private void btnCart_Click(object sender, EventArgs e)
@@ -223,8 +221,7 @@ public void sendEmail(String subject, String message)
             else
                 btnCart.Image = cart_S;
             btnCart.ForeColor = Color.FromArgb(236, 236, 236);
-            btnSetting.Image = Properties.Resources.setting;
-            btnSetting.ForeColor = Color.FromArgb(182, 182, 182);
+          
         }
         private void btnOrder_Click_1(object sender, EventArgs e)
         {
@@ -240,8 +237,7 @@ public void sendEmail(String subject, String message)
             else
                 btnCart.Image = cart_P;
             btnCart.ForeColor = Color.FromArgb(182, 182, 182);
-            btnSetting.Image = Properties.Resources.setting;
-            btnSetting.ForeColor = Color.FromArgb(182, 182, 182);
+            
         }
 
       
@@ -262,8 +258,7 @@ public void sendEmail(String subject, String message)
             else
                 btnCart.Image = cart_P;
             btnCart.ForeColor = Color.FromArgb(182, 182, 182);
-            btnSetting.Image = Properties.Resources.setting_s;
-            btnSetting.ForeColor = Color.FromArgb(236, 236, 236);
+            
         }
 
         private void lblMinBtn_Click(object sender, EventArgs e)

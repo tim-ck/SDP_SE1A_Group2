@@ -18,8 +18,8 @@ namespace SDP_SE1A_Group2
         {
             this.orders = new HashSet<order>();
             this.rentinfoes = new HashSet<rentinfo>();
-            this.showcaseitems = new HashSet<showcaseitem>();
             this.showcases = new HashSet<showcase>();
+            this.showcaseitems = new HashSet<showcaseitem>();
         }
     
         public string storeID { get; set; }
@@ -27,7 +27,7 @@ namespace SDP_SE1A_Group2
     
         public virtual ICollection<order> orders { get; set; }
         public virtual ICollection<rentinfo> rentinfoes { get; set; }
-        public virtual ICollection<showcaseitem> showcaseitems { get; set; }
         public virtual ICollection<showcase> showcases { get; set; }
+        public virtual ICollection<showcaseitem> showcaseitems { get; set; }
     }
 }
