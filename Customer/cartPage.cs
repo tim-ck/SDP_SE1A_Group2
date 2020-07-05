@@ -172,7 +172,7 @@ namespace SDP_SE1A_Group2.Customer
                             customerID = cusID,
                             orderDate = System.DateTime.Today,
                             orderTotalPrice = float.Parse(txtTotalPrice.Text),
-                            storeName = txtStoreAddress.Text
+                            storeID = txtStoreID.Text
 
                         };
                         db.orders.Add(order);

@@ -213,7 +213,7 @@ namespace SDP_SE1A_Group2.Account
                 this.Close();
                 opener.Show();
             }
-            else if (rdoT.Checked) { //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            else if (rdoT.Checked) { 
                 try
                 {
                     using (var db = new sdpEntities())
@@ -244,39 +244,7 @@ namespace SDP_SE1A_Group2.Account
                 this.Close();
                 opener.Show();
             }
-            else if (rdoS.Checked)
-            {//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                try
-                {
-                    using (var db = new sdpEntities())
-                    {
-                        var acct = new staff()
-                        {
-                            staffID = int.Parse(txtUsername.Text),
-                            tenantpwd = txtPassword.Text,
-                            name = txtFirstName.Text,
-                            email = txtEmail.Text,
-                            staffType = "p",
-                            salary=50
-                        };
-                        db.staffs.Add(acct);
-                        db.SaveChanges();
-                    }
-                }
-                catch (System.Data.Entity.Infrastructure.DbUpdateException)
-                {
-                    txtErrMsg.Text = "username used";
-                    return;
-                }
-                catch
-                {
-                    txtErrMsg.Text = "SQL err";
-                    return;
-                }
-                MessageBox.Show("Successgully registered");
-                this.Close();
-                opener.Show();
-            }
+            
             else
             {
                 txtErrMsg.Text = "Choose a account type";

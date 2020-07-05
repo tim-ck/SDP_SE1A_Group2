@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.rdoT = new System.Windows.Forms.RadioButton();
-            this.rdoS = new System.Windows.Forms.RadioButton();
             this.rdoC = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,25 +64,13 @@
             // 
             this.rdoT.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.rdoT.ForeColor = System.Drawing.Color.White;
-            this.rdoT.Location = new System.Drawing.Point(200, 211);
+            this.rdoT.Location = new System.Drawing.Point(313, 211);
             this.rdoT.Name = "rdoT";
             this.rdoT.Size = new System.Drawing.Size(148, 41);
             this.rdoT.TabIndex = 35;
             this.rdoT.TabStop = true;
             this.rdoT.Text = "Tenant";
             this.rdoT.UseVisualStyleBackColor = true;
-            // 
-            // rdoS
-            // 
-            this.rdoS.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.rdoS.ForeColor = System.Drawing.Color.White;
-            this.rdoS.Location = new System.Drawing.Point(354, 211);
-            this.rdoS.Name = "rdoS";
-            this.rdoS.Size = new System.Drawing.Size(148, 41);
-            this.rdoS.TabIndex = 34;
-            this.rdoS.TabStop = true;
-            this.rdoS.Text = "Staff";
-            this.rdoS.UseVisualStyleBackColor = true;
             // 
             // rdoC
             // 
@@ -421,7 +408,6 @@
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.rdoT);
-            this.Controls.Add(this.rdoS);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.rdoC);
             this.Controls.Add(this.label2);
@@ -445,7 +431,6 @@
         #endregion
 
         private System.Windows.Forms.RadioButton rdoT;
-        private System.Windows.Forms.RadioButton rdoS;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.RadioButton rdoC;
         private System.Windows.Forms.Label label2;

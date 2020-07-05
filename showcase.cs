@@ -25,8 +25,10 @@ namespace SDP_SE1A_Group2
         public float rental { get; set; }
         public string status { get; set; }
         public sbyte availability { get; set; }
+        public string storeID { get; set; }
     
         public virtual ICollection<rentinfo> rentinfoes { get; set; }
         public virtual ICollection<showcaseitem> showcaseitems { get; set; }
+        public virtual store store { get; set; }
     }
 }

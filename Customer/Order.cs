@@ -55,14 +55,15 @@ namespace SDP_SE1A_Group2.Customer
                 var orderList = from order in db.orders
                                 from orderDetail in db.order_detail
                                 from itemDetail in db.items
-                                where order.orderID.Equals(orderID) && order.orderID == orderDetail.orderID && itemDetail.itemID == orderDetail.itemID
+                                from store in db.stores
+                                where order.orderID.Equals(orderID) && order.orderID == orderDetail.orderID && itemDetail.itemID == orderDetail.itemID&& store.storeID == order.storeID
                                 orderby order.orderID ascending
-                                select new { order.orderID,order.storeName, order.orderDate, orderDetail.itemID, itemDetail.itemName,itemDetail.itemDesc, itemDetail.unitPrice, orderDetail.qty, orderDetail.totalPrice, order.orderTotalPrice };
+                                select new { order.orderID, store.storeAddress, order.orderDate, orderDetail.itemID, itemDetail.itemName,itemDetail.itemDesc, itemDetail.unitPrice, orderDetail.qty, orderDetail.totalPrice, order.orderTotalPrice };
                 String storeName="";
                 foreach (var i in orderList.ToList()) { 
-                    storeName = i.storeName.ToString();
+                    storeName = i.storeAddress.ToString();
                     dataGridView2.Rows.Add(
-                        i.orderID, i.storeName, i.orderDate, i.itemID, i.itemName, i.itemDesc, i.unitPrice, i.qty, i.totalPrice
+                        i.orderID, i.storeAddress, i.orderDate, i.itemID, i.itemName, i.itemDesc, i.unitPrice, i.qty, i.totalPrice
                         );
                 }
                 txtStoreAddress.Text = "Store address: "+storeName;

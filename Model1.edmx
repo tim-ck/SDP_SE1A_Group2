@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="sdpModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="sdpModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="attendence">
           <Key>
             <PropertyRef Name="staffID" />
@@ -99,6 +99,7 @@
             <PropertyRef Name="showcaseid" />
           </Key>
           <Property Name="showcaseid" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="storeID" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="size" Type="int" Nullable="false" />
           <Property Name="rental" Type="float" Nullable="false" />
           <Property Name="status" Type="varchar" MaxLength="15" Nullable="false" />
@@ -265,6 +266,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="showcase_storeID_fk">
+          <End Role="store" Type="Self.store" Multiplicity="1" />
+          <End Role="showcase" Type="Self.showcase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="store">
+              <PropertyRef Name="storeID" />
+            </Principal>
+            <Dependent Role="showcase">
+              <PropertyRef Name="storeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="showcaseitem_itemid_fk">
           <End Role="item" Type="Self.item" Multiplicity="1" />
           <End Role="showcaseitem" Type="Self.showcaseitem" Multiplicity="*" />
@@ -356,6 +369,10 @@
             <End Role="tenant" EntitySet="tenant" />
             <End Role="rentinfo" EntitySet="rentinfo" />
           </AssociationSet>
+          <AssociationSet Name="showcase_storeID_fk" Association="Self.showcase_storeID_fk">
+            <End Role="store" EntitySet="store" />
+            <End Role="showcase" EntitySet="showcase" />
+          </AssociationSet>
           <AssociationSet Name="showcaseitem_itemid_fk" Association="Self.showcaseitem_itemid_fk">
             <End Role="item" EntitySet="item" />
             <End Role="showcaseitem" EntitySet="showcaseitem" />
@@ -369,8 +386,7 @@
             <End Role="showcaseitem" EntitySet="showcaseitem" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="sdpModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -489,6 +505,8 @@
           <Property Name="availability" Type="SByte" Nullable="false" />
           <NavigationProperty Name="rentinfoes" Relationship="Self.rentinfo_showcaseid_fk" FromRole="showcase" ToRole="rentinfo" />
           <NavigationProperty Name="showcaseitems" Relationship="Self.showcaseitem_showcaseId_fk" FromRole="showcase" ToRole="showcaseitem" />
+          <Property Name="storeID" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="store" Relationship="sdpModel.showcase_storeID_fk" FromRole="showcase" ToRole="store" />
         </EntityType>
         <EntityType Name="showcaseitem">
           <Key>
@@ -527,6 +545,7 @@
           <NavigationProperty Name="orders" Relationship="Self.order_storeID_fk" FromRole="store" ToRole="order" />
           <NavigationProperty Name="rentinfoes" Relationship="Self.C_storeID_fk" FromRole="store" ToRole="rentinfo" />
           <NavigationProperty Name="showcaseitems" Relationship="Self.showcaseitem_storeID_fk" FromRole="store" ToRole="showcaseitem" />
+          <NavigationProperty Name="showcases" Relationship="sdpModel.showcase_storeID_fk" FromRole="store" ToRole="showcase" />
         </EntityType>
         <EntityType Name="tenant">
           <Key>
@@ -763,7 +782,23 @@
             <End Role="store" EntitySet="stores" />
             <End Role="showcaseitem" EntitySet="showcaseitems" />
           </AssociationSet>
+          <AssociationSet Name="showcase_storeID_fk" Association="sdpModel.showcase_storeID_fk">
+            <End Role="store" EntitySet="stores" />
+            <End Role="showcase" EntitySet="showcases" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="showcase_storeID_fk">
+          <End Type="sdpModel.store" Role="store" Multiplicity="1" />
+          <End Type="sdpModel.showcase" Role="showcase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="store">
+              <PropertyRef Name="storeID" />
+            </Principal>
+            <Dependent Role="showcase">
+              <PropertyRef Name="storeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -869,6 +904,7 @@
           <EntitySetMapping Name="showcases">
             <EntityTypeMapping TypeName="sdpModel.showcase">
               <MappingFragment StoreEntitySet="showcase">
+                <ScalarProperty Name="storeID" ColumnName="storeID" />
                 <ScalarProperty Name="showcaseid" ColumnName="showcaseid" />
                 <ScalarProperty Name="size" ColumnName="size" />
                 <ScalarProperty Name="rental" ColumnName="rental" />

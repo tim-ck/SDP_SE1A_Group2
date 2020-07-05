@@ -47,9 +47,10 @@ namespace SDP_SE1A_Group2.Staff
             {
                 var showcaseList = from showcase in db.showcases
                                    from rentinfo in db.rentinfoes
-                                   where showcase.showcaseid.Equals(showcaseID) && showcase.showcaseid == rentinfo.showcaseid
+                                   from store in db.stores
+                                   where showcase.showcaseid.Equals(showcaseID) && showcase.showcaseid == rentinfo.showcaseid && store.storeID == showcase.showcaseid
                                    orderby rentinfo.rentID ascending
-                                   select new { showcase.storeAddress, showcase.showcaseid, showcase.size, showcase.status  };
+                                   select new { store.storeAddress, showcase.showcaseid, showcase.size, showcase.status  };
                
                 var showcaseDetail = showcaseList.ToList();
                 txtStoreAddress.Text = showcaseDetail[0].storeAddress.ToString();
@@ -73,9 +74,10 @@ namespace SDP_SE1A_Group2.Staff
                 var showcaseList = from showcase in db.showcases
                                    from showcaseitem in db.showcaseitems
                                    from itemDetail in db.items
-                                   where showcase.showcaseid.Equals(showcaseID) && showcase.showcaseid == showcaseitem .showcaseid&& itemDetail.itemID == showcaseitem.itemid
+                                   from store in db.stores
+                                   where showcase.showcaseid.Equals(showcaseID) && showcase.showcaseid == showcaseitem .showcaseid&& itemDetail.itemID == showcaseitem.itemid && store.storeID == showcase.showcaseid
                                    orderby itemDetail.itemID ascending
-                                   select new { showcase.storeAddress, showcase.showcaseid, showcase.size,showcase.status, showcaseitem.avalibleQty, showcaseitem.soldQty, showcaseitem.TotalQty, itemDetail};
+                                   select new { store.storeAddress, showcase.showcaseid, showcase.size,showcase.status, showcaseitem.avalibleQty, showcaseitem.soldQty, showcaseitem.TotalQty, itemDetail};
                 var showcaseDetail = showcaseList.ToList();
                 txtStoreAddress.Text = showcaseDetail[0].storeAddress.ToString();
                 txtShowCaseID.Text = showcaseDetail[0].showcaseid.ToString();

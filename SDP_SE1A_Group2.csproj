@@ -184,6 +184,9 @@
     <Compile Include="Staff\Staff_SalesRecord.designer.cs">
       <DependentUpon>Staff_SalesRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="store.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="tenant.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
