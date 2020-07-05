@@ -28,14 +28,14 @@ namespace SDP_SE1A_Group2
                          select new
                          {
                              lsItem.itemID,
-                             lsShowcaseItem.avalibleQty,
+                             lsShowcaseItem.availableQty,
                              lsItem.unitPrice,
                              lsItem.itemName,
                              lsShowcaseItem.showcaseid,
                          };
                 foreach (var row in rs.ToList())
                 {
-                    dataGridView1.Rows.Add(row.itemID, row.itemName, row.showcaseid.Substring(0, 3), row.showcaseid, row.avalibleQty, row.unitPrice);
+                    dataGridView1.Rows.Add(row.itemID, row.itemName, row.showcaseid.Substring(0, 3), row.showcaseid, row.availableQty, row.unitPrice);
                 }
 
             }

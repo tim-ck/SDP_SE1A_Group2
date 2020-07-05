@@ -76,12 +76,12 @@ namespace SDP_SE1A_Group2.Customer
             {
                 var item = from items in db.items
                            from showcaseItem in db.showcaseitems
-                           where showcaseItem.showcaseid.Contains(storeName) && items.itemID == showcaseItem.itemid && showcaseItem.avalibleQty>0
+                           where showcaseItem.showcaseid.Contains(storeName) && items.itemID == showcaseItem.itemid && showcaseItem.availableQty>0
                            select new
                            {
                                showcaseItem.itemid,
                                showcaseItem.showcaseid,
-                               showcaseItem.avalibleQty,
+                               showcaseItem.availableQty,
                                items.itemName,
                                items.itemDesc,
                                items.unitPrice
@@ -95,12 +95,12 @@ namespace SDP_SE1A_Group2.Customer
                                    
                                    i.itemName,
                                    i.itemDesc,
-                                   i.avalibleQty,
+                                   i.availableQty,
                                    i.unitPrice);
                     DataGridViewComboBoxCell cmb = 
                         (DataGridViewComboBoxCell)(dataGridView1.Rows[count].Cells["qty"]);
-                    String[] qty = new string[i.avalibleQty+1] ;
-                    for(int a =0; a<=i.avalibleQty; a++){
+                    String[] qty = new string[i.availableQty+1] ;
+                    for(int a =0; a<=i.availableQty; a++){
                         qty[a] = a.ToString();
                     }
                     cmb.DataSource = qty;

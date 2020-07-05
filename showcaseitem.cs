@@ -17,10 +17,9 @@ namespace SDP_SE1A_Group2
         public string showcaseid { get; set; }
         public string storeID { get; set; }
         public string itemid { get; set; }
-        public int avalibleQty { get; set; }
+        public int availableQty { get; set; }
         public int soldQty { get; set; }
         public int TotalQty { get; set; }
-        public int availableQty { get; set; }
         public Nullable<sbyte> availability { get; set; }
     
         public virtual item item { get; set; }

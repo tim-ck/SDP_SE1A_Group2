@@ -212,7 +212,7 @@ namespace SDP_SE1A_Group2.Customer
                             var orderde = db.showcaseitems.SingleOrDefault(a => a.itemid == itemid);
                             if (orderde != null)
                             {
-                                orderde.avalibleQty -= int.Parse(quantity);
+                                orderde.availableQty -= int.Parse(quantity);
                                 orderde.soldQty += int.Parse(quantity);
                                 db.SaveChanges();
                             }

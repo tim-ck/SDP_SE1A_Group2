@@ -77,7 +77,7 @@ namespace SDP_SE1A_Group2.Staff
                                    from store in db.stores
                                    where showcase.showcaseid.Equals(showcaseID) && showcase.showcaseid == showcaseitem .showcaseid&& itemDetail.itemID == showcaseitem.itemid && store.storeID == showcase.showcaseid
                                    orderby itemDetail.itemID ascending
-                                   select new { store.storeAddress, showcase.showcaseid, showcase.size,showcase.status, showcaseitem.avalibleQty, showcaseitem.soldQty, showcaseitem.TotalQty, itemDetail};
+                                   select new { store.storeAddress, showcase.showcaseid, showcase.size,showcase.status, showcaseitem.availableQty, showcaseitem.soldQty, showcaseitem.TotalQty, itemDetail};
                 var showcaseDetail = showcaseList.ToList();
                 txtStoreAddress.Text = showcaseDetail[0].storeAddress.ToString();
                 txtShowCaseID.Text = showcaseDetail[0].showcaseid.ToString();
@@ -87,7 +87,7 @@ namespace SDP_SE1A_Group2.Staff
                 foreach (var i in showcaseList.ToList())
                 {
                     dataGridViewItem.Rows.Add(
-                        i.itemDetail.itemID, i.itemDetail.itemName, i.itemDetail.itemDesc, i.itemDetail.unitPrice,i.avalibleQty,i.soldQty
+                        i.itemDetail.itemID, i.itemDetail.itemName, i.itemDetail.itemDesc, i.itemDetail.unitPrice,i.availableQty,i.soldQty
                         );
                 }
             }
