@@ -152,7 +152,7 @@ namespace SDP_SE1A_Group2
                             this.Hide();
                             txtUsername.Text = "Username";
                             txtPassword.Text = "Password";
-                            TenantMain tenantMain = new TenantMain(user.tenantID, user.tenantName);
+                            TenantMain tenantMain = new TenantMain(this, user.tenantID, user.tenantName);
                             tenantMain.Show();
                             return;
                         }

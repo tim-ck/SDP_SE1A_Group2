@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPeter = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.lblCloseBtn = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.btnPeter = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,6 +64,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 900);
             this.panel1.TabIndex = 0;
+            // 
+            // btnPeter
+            // 
+            this.btnPeter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPeter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPeter.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPeter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
+            this.btnPeter.Image = global::SDP_SE1A_Group2.Properties.Resources.order_p;
+            this.btnPeter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPeter.Location = new System.Drawing.Point(0, 400);
+            this.btnPeter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPeter.Name = "btnPeter";
+            this.btnPeter.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnPeter.Size = new System.Drawing.Size(250, 100);
+            this.btnPeter.TabIndex = 7;
+            this.btnPeter.Text = "Peter";
+            this.btnPeter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPeter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPeter.UseVisualStyleBackColor = true;
             // 
             // btnOrder
             // 
@@ -205,6 +224,7 @@
             // 
             // lblMinBtn
             // 
+            this.lblMinBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMinBtn.AutoSize = true;
             this.lblMinBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblMinBtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -251,25 +271,6 @@
             this.panelChildForm.Size = new System.Drawing.Size(1214, 800);
             this.panelChildForm.TabIndex = 2;
             // 
-            // btnPeter
-            // 
-            this.btnPeter.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPeter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPeter.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPeter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
-            this.btnPeter.Image = global::SDP_SE1A_Group2.Properties.Resources.order_p;
-            this.btnPeter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPeter.Location = new System.Drawing.Point(0, 400);
-            this.btnPeter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnPeter.Name = "btnPeter";
-            this.btnPeter.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnPeter.Size = new System.Drawing.Size(250, 100);
-            this.btnPeter.TabIndex = 7;
-            this.btnPeter.Text = "Peter";
-            this.btnPeter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPeter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPeter.UseVisualStyleBackColor = true;
-            // 
             // CustomerMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -279,7 +280,6 @@
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "CustomerMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

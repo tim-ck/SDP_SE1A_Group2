@@ -30,7 +30,7 @@ CREATE TABLE `attendence` (
   `hour` int(3) NOT NULL,
   PRIMARY KEY (`staffID`,`month`),
   KEY `attendencestaffID` (`staffID`),
-  CONSTRAINT `attendence_ibfk_2` FOREIGN KEY (`staffID`) REFERENCES `staff` (`staffID`)
+  CONSTRAINT `attendences_ibfk_2` FOREIGN KEY (`staffID`) REFERENCES `staff` (`staffID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
