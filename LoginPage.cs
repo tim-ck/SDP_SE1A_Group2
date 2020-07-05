@@ -191,7 +191,7 @@ namespace SDP_SE1A_Group2
                             this.Hide();
                             txtUsername.Text = "Username";
                             txtPassword.Text = "Password";
-                            CustomerMain cus = new CustomerMain(this, username);
+                            Staff_main cus = new Staff_main(this);
                             cus.Show();
                             return;
                         }
