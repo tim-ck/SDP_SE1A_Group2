@@ -20,6 +20,8 @@ namespace SDP_SE1A_Group2
         public int avalibleQty { get; set; }
         public int soldQty { get; set; }
         public int TotalQty { get; set; }
+        public int availableQty { get; set; }
+        public Nullable<sbyte> availability { get; set; }
     
         public virtual item item { get; set; }
         public virtual showcase showcase { get; set; }

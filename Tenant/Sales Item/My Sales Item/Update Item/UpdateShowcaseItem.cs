@@ -35,8 +35,8 @@ namespace SDP_SE1A_Group2
                              lsItem.itemName,
                              lsItem.unitPrice,
                              lsItem.itemDesc,
-                             lsShowcaseItem.avalibleQty,
-                             //lsShowcaseItem.availability
+                             lsShowcaseItem.availableQty,
+                             lsShowcaseItem.availability
                          };
 
                 foreach (var row in rs.ToList())
@@ -44,16 +44,16 @@ namespace SDP_SE1A_Group2
                     txtName.Text = row.itemName;
                     txtPrice.Text = row.unitPrice.ToString();
                     txtDescription.Text = row.itemDesc;
-                    txtQty.Text = row.avalibleQty.ToString();
+                    txtQty.Text = row.availableQty.ToString();
 
-                    /*if (row.availability.Equals(1))
+                    if (row.availability.Equals(1))
                     {
                         radAva.Checked = true;
                     }
                     else
                     {
                         radUava.Checked = true;
-                    }*/
+                    }
                 }
             }
 
