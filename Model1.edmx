@@ -11,7 +11,7 @@
             <PropertyRef Name="month" />
           </Key>
           <Property Name="staffID" Type="int" Nullable="false" />
-          <Property Name="month" Type="date" Nullable="false" />
+          <Property Name="month" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="hour" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="customer">
@@ -73,6 +73,7 @@
           <Property Name="startDate" Type="date" Nullable="false" />
           <Property Name="duration" Type="int" Nullable="false" />
           <Property Name="showcaseid" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="storeID" Type="varchar" MaxLength="15" Nullable="false" />
         </EntityType>
         <EntityType Name="reservation">
           <Key>
@@ -97,6 +98,7 @@
             <PropertyRef Name="itemid" />
           </Key>
           <Property Name="showcaseid" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="storeID" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="itemid" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="avalibleQty" Type="int" Nullable="false" />
           <Property Name="soldQty" Type="int" Nullable="false" />
@@ -340,7 +342,7 @@
             <PropertyRef Name="month" />
           </Key>
           <Property Name="staffID" Type="Int32" Nullable="false" />
-          <Property Name="month" Type="DateTime" Nullable="false" />
+          <Property Name="month" Type="String" Nullable="false" />
           <Property Name="hour" Type="Int32" Nullable="false" />
           <NavigationProperty Name="staff" Relationship="Self.attendence_ibfk_2" FromRole="attendence" ToRole="staff" />
         </EntityType>
@@ -416,6 +418,7 @@
           <NavigationProperty Name="showcase" Relationship="Self.rentinfo_showcaseid_fk" FromRole="rentinfo" ToRole="showcase" />
           <NavigationProperty Name="tenant" Relationship="Self.rentinfo_tenantid_fk" FromRole="rentinfo" ToRole="tenant" />
           <NavigationProperty Name="reservations" Relationship="Self.reservation_rentid_fk" FromRole="rentinfo" ToRole="reservation" />
+          <Property Name="storeID" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="reservation">
           <Key>
@@ -438,6 +441,7 @@
           <NavigationProperty Name="rentinfoes" Relationship="Self.rentinfo_showcaseid_fk" FromRole="showcase" ToRole="rentinfo" />
           <NavigationProperty Name="reservations" Relationship="Self.reservation_showcaseid_fk" FromRole="showcase" ToRole="reservation" />
           <NavigationProperty Name="showcaseitems" Relationship="Self.showcaseitem_showcaseId_fk" FromRole="showcase" ToRole="showcaseitem" />
+          <Property Name="storeAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="showcaseitem">
           <Key>
@@ -451,6 +455,7 @@
           <Property Name="TotalQty" Type="Int32" Nullable="false" />
           <NavigationProperty Name="item" Relationship="Self.showcaseitem_itemid_fk" FromRole="showcaseitem" ToRole="item" />
           <NavigationProperty Name="showcase" Relationship="Self.showcaseitem_showcaseId_fk" FromRole="showcaseitem" ToRole="showcase" />
+          <Property Name="storeID" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="staff">
           <Key>
@@ -755,6 +760,7 @@
           <EntitySetMapping Name="rentinfoes">
             <EntityTypeMapping TypeName="sdpModel.rentinfo">
               <MappingFragment StoreEntitySet="rentinfo">
+                <ScalarProperty Name="storeID" ColumnName="storeID" />
                 <ScalarProperty Name="rentID" ColumnName="rentID" />
                 <ScalarProperty Name="tenantID" ColumnName="tenantID" />
                 <ScalarProperty Name="startDate" ColumnName="startDate" />
@@ -785,6 +791,7 @@
           <EntitySetMapping Name="showcaseitems">
             <EntityTypeMapping TypeName="sdpModel.showcaseitem">
               <MappingFragment StoreEntitySet="showcaseitem">
+                <ScalarProperty Name="storeID" ColumnName="storeID" />
                 <ScalarProperty Name="showcaseid" ColumnName="showcaseid" />
                 <ScalarProperty Name="itemid" ColumnName="itemid" />
                 <ScalarProperty Name="avalibleQty" ColumnName="avalibleQty" />

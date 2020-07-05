@@ -145,6 +145,48 @@
     <Compile Include="staff.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Staff\Peter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff\Peter.Designer.cs">
+      <DependentUpon>Peter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Staff_Attendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff\Staff_Attendance.designer.cs">
+      <DependentUpon>Staff_Attendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Staff_Export.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff\Staff_Export.designer.cs">
+      <DependentUpon>Staff_Export.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Staff_main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff\Staff_main.designer.cs">
+      <DependentUpon>Staff_main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Staff_POS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff\Staff_POS.designer.cs">
+      <DependentUpon>Staff_POS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Staff_Reserve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff\Staff_Reserve.designer.cs">
+      <DependentUpon>Staff_Reserve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Staff_SalesRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff\Staff_SalesRecord.designer.cs">
+      <DependentUpon>Staff_SalesRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="tenant.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -173,6 +215,24 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff\Peter.resx">
+      <DependentUpon>Peter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff\Staff_Attendance.resx">
+      <DependentUpon>Staff_Attendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff\Staff_main.resx">
+      <DependentUpon>Staff_main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff\Staff_POS.resx">
+      <DependentUpon>Staff_POS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff\Staff_Reserve.resx">
+      <DependentUpon>Staff_Reserve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff\Staff_SalesRecord.resx">
+      <DependentUpon>Staff_SalesRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -238,7 +298,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\nav\" />
-    <Folder Include="Staff\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cart_P.png" />

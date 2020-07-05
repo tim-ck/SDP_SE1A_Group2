@@ -24,6 +24,7 @@ namespace SDP_SE1A_Group2
         public System.DateTime startDate { get; set; }
         public int duration { get; set; }
         public string showcaseid { get; set; }
+        public string storeID { get; set; }
     
         public virtual showcase showcase { get; set; }
         public virtual tenant tenant { get; set; }
