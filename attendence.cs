@@ -14,7 +14,7 @@ namespace SDP_SE1A_Group2
     
     public partial class attendence
     {
-        public int staffID { get; set; }
+        public string staffID { get; set; }
         public string month { get; set; }
         public int hour { get; set; }
     

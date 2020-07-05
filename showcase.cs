@@ -17,7 +17,6 @@ namespace SDP_SE1A_Group2
         public showcase()
         {
             this.rentinfoes = new HashSet<rentinfo>();
-            this.reservations = new HashSet<reservation>();
             this.showcaseitems = new HashSet<showcaseitem>();
         }
     
@@ -25,10 +24,9 @@ namespace SDP_SE1A_Group2
         public int size { get; set; }
         public float rental { get; set; }
         public string status { get; set; }
-        public string storeAddress { get; set; }
+        public sbyte availability { get; set; }
     
         public virtual ICollection<rentinfo> rentinfoes { get; set; }
-        public virtual ICollection<reservation> reservations { get; set; }
         public virtual ICollection<showcaseitem> showcaseitems { get; set; }
     }
 }

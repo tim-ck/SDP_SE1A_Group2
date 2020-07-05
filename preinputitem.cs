@@ -12,17 +12,13 @@ namespace SDP_SE1A_Group2
     using System;
     using System.Collections.Generic;
     
-    public partial class rentinfo
+    public partial class preinputitem
     {
-        public string rentID { get; set; }
-        public string tenantID { get; set; }
-        public System.DateTime startDate { get; set; }
-        public int duration { get; set; }
-        public string showcaseid { get; set; }
-        public string storeID { get; set; }
-    
-        public virtual store store { get; set; }
-        public virtual showcase showcase { get; set; }
-        public virtual tenant tenant { get; set; }
+        public string preinputitemid { get; set; }
+        public string itemname { get; set; }
+        public int itemqty { get; set; }
+        public string itemdesc { get; set; }
+        public float itemunitprice { get; set; }
+        public string tenantid { get; set; }
     }
 }

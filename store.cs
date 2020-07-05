@@ -12,21 +12,20 @@ namespace SDP_SE1A_Group2
     using System;
     using System.Collections.Generic;
     
-    public partial class staff
+    public partial class store
     {
-        public staff()
+        public store()
         {
-            this.attendences = new HashSet<attendence>();
+            this.orders = new HashSet<order>();
+            this.rentinfoes = new HashSet<rentinfo>();
+            this.showcaseitems = new HashSet<showcaseitem>();
         }
     
-        public string staffID { get; set; }
-        public string staffPwd { get; set; }
-        public string email { get; set; }
-        public string name { get; set; }
-        public string staffType { get; set; }
-        public Nullable<int> reportsTo { get; set; }
-        public float salary { get; set; }
+        public string storeID { get; set; }
+        public string storeAddress { get; set; }
     
-        public virtual ICollection<attendence> attendences { get; set; }
+        public virtual ICollection<order> orders { get; set; }
+        public virtual ICollection<rentinfo> rentinfoes { get; set; }
+        public virtual ICollection<showcaseitem> showcaseitems { get; set; }
     }
 }

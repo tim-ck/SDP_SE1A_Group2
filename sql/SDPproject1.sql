@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `attendence`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `attendence` (
-  `staffID` int(20) NOT NULL,
+  `staffID` varchar(20) NOT NULL,
   `month` varchar(10) NOT NULL,
   `hour` int(3) NOT NULL,
   PRIMARY KEY (`staffID`,`month`),
@@ -40,6 +40,7 @@ CREATE TABLE `attendence` (
 
 LOCK TABLES `attendence` WRITE;
 /*!40000 ALTER TABLE `attendence` DISABLE KEYS */;
+
 /*!40000 ALTER TABLE `attendence` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -135,13 +136,16 @@ DROP TABLE IF EXISTS `order`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `order` (
   `orderID` varchar(15) NOT NULL,
-  `storeName` varchar(80) NOT NULL,
+  `storeID` varchar(15) NOT NULL,
   `customerID` varchar(15) NOT NULL,
   `orderDate` date NOT NULL,
   `orderTotalPrice` float NOT NULL,
   PRIMARY KEY (`orderID`),
   KEY `order_customerid_fk_idx` (`customerID`),
-  CONSTRAINT `order_customerID_fk` FOREIGN KEY (`customerID`) REFERENCES `customer` (`customerID`)
+  KEY `order_storeID_fk`(`storeID`),
+  CONSTRAINT `order_customerID_fk` FOREIGN KEY (`customerID`) REFERENCES `customer`(`customerID`),
+    CONSTRAINT `order_storeID_fk` FOREIGN KEY (`storeID`) REFERENCES `store`(`storeID`)
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -151,7 +155,7 @@ CREATE TABLE `order` (
 
 LOCK TABLES `order` WRITE;
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
-INSERT INTO `order` VALUES ('001','MK','customer01','2020-06-01',30),('002','mk','customer02','2020-06-03',10);
+INSERT INTO `order` VALUES ('001','mka','customer01','2020-06-01',30),('002','mka','customer02','2020-06-03',10);
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -227,9 +231,13 @@ CREATE TABLE `rentinfo` (
   `startDate` date NOT NULL,
   `duration` int(11) NOT NULL,
   `showcaseid` varchar(6) NOT NULL,
+    `storeID` varchar(15) NOT NULL,
+
   PRIMARY KEY (`rentID`),
   KEY `rentinfo_showcaseid` (`showcaseid`),
   KEY `rentinfo_tenantID` (`tenantID`),
+   KEY `_storeID_fk`(`storeID`),
+  CONSTRAINT `_storeID_fk` FOREIGN KEY (`storeID`) REFERENCES `store`(`storeID`),
   CONSTRAINT `rentinfo_showcaseid_fk` FOREIGN KEY (`showcaseid`) REFERENCES `showcase` (`showcaseid`),
   CONSTRAINT `rentinfo_tenantid_fk` FOREIGN KEY (`tenantID`) REFERENCES `tenant` (`tenantID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -241,7 +249,7 @@ CREATE TABLE `rentinfo` (
 
 LOCK TABLES `rentinfo` WRITE;
 /*!40000 ALTER TABLE `rentinfo` DISABLE KEYS */;
-INSERT INTO `rentinfo` VALUES ('1','tenant01','2020-06-01',10,'sht001'),('2','tenant01','2020-06-01',10,'cwb001'),('3','tenant01','2020-06-01',10,'mka001'),('4','tenant01','2020-06-01',10,'mkb001'),('5','tenant01','2020-06-01',10,'kwf001'),('6','tenant02','2020-06-02',10,'cwb002');
+INSERT INTO `rentinfo` VALUES ('1','tenant01','2020-06-01',10,'sht001','sht'),('2','tenant01','2020-06-01',10,'cwb001','cwd'),('3','tenant01','2020-06-01',10,'mka001','mka'),('4','tenant01','2020-06-01',10,'mkb001','mkb'),('5','tenant01','2020-06-01',10,'kwf001','kwf'),('6','tenant02','2020-06-02',10,'cwb002','cwb');
 /*!40000 ALTER TABLE `rentinfo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -278,11 +286,15 @@ DROP TABLE IF EXISTS `showcase`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `showcase` (
   `showcaseid` varchar(6) NOT NULL,
+  `storeID` varchar(15) NOT NULL,
   `size` int(11) NOT NULL,
   `rental` float NOT NULL,
   `status` varchar(15) NOT NULL,
   `availability` tinyint(4) NOT NULL,
-  PRIMARY KEY (`showcaseid`)
+  
+  PRIMARY KEY (`showcaseid`),
+  KEY `showcaseitem_storeID_fk`(`storeID`),
+  CONSTRAINT `showcase_storeID_fk` FOREIGN KEY (`storeID`) REFERENCES `store`(`storeID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -292,7 +304,7 @@ CREATE TABLE `showcase` (
 
 LOCK TABLES `showcase` WRITE;
 /*!40000 ALTER TABLE `showcase` DISABLE KEYS */;
-INSERT INTO `showcase` VALUES ('',0,0,'',0),('cwb001',50000,5,'a',0),('cwb002',30000,3,'o',0),('cwb003',40000,4,'a',0),('cwb004',30000,3,'a',0),('cwb005',30000,3,'a',0),('cwb006',30000,3,'a',0),('cwb007',40000,4,'a',0),('cwb008',50000,5,'a',0),('cwb009',30000,3,'a',0),('cwb010',30000,3,'a',0),('cwb011',30000,3,'a',0),('cwb012',30000,3,'a',0),('cwb013',40000,4,'a',0),('cwb014',40000,4,'a',0),('cwb015',40000,4,'a',0),('cwb016',40000,4,'a',0),('cwb017',50000,5,'a',0),('cwb018',30000,3,'a',0),('cwb019',40000,4,'a',0),('cwb020',30000,3,'a',0),('cwb021',50000,5,'a',0),('cwb022',40000,4,'a',0),('cwb023',40000,4,'a',0),('cwb024',50000,5,'a',0),('cwb025',50000,5,'a',0),('cwb026',30000,3,'a',0),('cwb027',30000,3,'a',0),('cwb028',40000,4,'a',0),('cwb029',30000,3,'a',0),('cwb030',50000,5,'a',0),('cwb031',30000,3,'a',0),('cwb032',40000,4,'a',0),('kwf001',30000,3,'r',0),('kwf002',40000,4,'r',0),('kwf003',40000,4,'r',0),('kwf004',30000,3,'a',0),('kwf005',40000,4,'a',0),('kwf006',50000,5,'a',0),('kwf007',50000,5,'a',0),('kwf008',50000,5,'a',0),('kwf009',30000,3,'a',0),('kwf010',40000,4,'a',0),('kwf011',30000,3,'a',0),('kwf012',30000,3,'a',0),('kwf013',50000,5,'a',0),('kwf014',50000,5,'a',0),('kwf015',40000,4,'a',0),('kwf016',50000,5,'a',0),('kwf017',30000,3,'a',0),('kwf018',50000,5,'a',0),('kwf019',30000,3,'a',0),('kwf020',40000,4,'a',0),('kwf021',40000,4,'a',0),('kwf022',50000,5,'a',0),('kwf023',40000,4,'a',0),('kwf024',50000,5,'a',0),('kwf025',30000,3,'a',0),('kwf026',30000,3,'a',0),('kwf027',30000,3,'a',0),('kwf028',50000,5,'a',0),('kwf029',40000,4,'a',0),('kwf030',40000,4,'a',0),('kwf031',40000,4,'a',0),('kwf032',50000,5,'a',0),('mka001',30000,3,'o',0),('mka002',30000,3,'a',0),('mka003',40000,4,'o',0),('mka004',30000,3,'a',0),('mka005',30000,3,'a',0),('mka006',30000,3,'a',0),('mka007',40000,4,'a',0),('mka008',40000,4,'a',0),('mka009',30000,3,'a',0),('mka010',40000,4,'a',0),('mka011',50000,5,'a',0),('mka012',50000,5,'a',0),('mka013',30000,3,'a',0),('mka014',50000,5,'a',0),('mka015',50000,5,'a',0),('mka016',30000,3,'a',0),('mka017',40000,4,'a',0),('mka018',30000,3,'a',0),('mka019',30000,3,'a',0),('mka020',50000,5,'a',0),('mka021',30000,3,'a',0),('mka022',30000,3,'a',0),('mka023',40000,4,'a',0),('mka024',40000,4,'a',0),('mka025',50000,5,'a',0),('mka026',40000,4,'a',0),('mka027',40000,4,'a',0),('mka028',40000,4,'a',0),('mka029',40000,4,'a',0),('mka030',30000,3,'a',0),('mka031',30000,3,'a',0),('mka032',30000,3,'a',0),('mkb001',50000,5,'a',0),('mkb002',50000,5,'r',0),('mkb003',40000,4,'a',0),('mkb004',40000,4,'a',0),('mkb005',40000,4,'a',0),('mkb006',40000,4,'a',0),('mkb007',40000,4,'a',0),('mkb008',30000,3,'a',0),('mkb009',50000,5,'a',0),('mkb010',50000,5,'a',0),('mkb011',50000,5,'a',0),('mkb012',50000,5,'a',0),('mkb013',30000,3,'a',0),('mkb014',30000,3,'a',0),('mkb015',50000,5,'a',0),('mkb016',40000,4,'a',0),('mkb017',30000,3,'a',0),('mkb018',50000,5,'a',0),('mkb019',40000,4,'a',0),('mkb020',30000,3,'a',0),('mkb021',40000,4,'a',0),('mkb022',40000,4,'a',0),('mkb023',40000,4,'a',0),('mkb024',50000,5,'a',0),('mkb025',50000,5,'a',0),('mkb026',50000,5,'a',0),('mkb027',50000,5,'a',0),('mkb028',50000,5,'a',0),('mkb029',40000,4,'a',0),('mkb030',40000,4,'a',0),('mkb031',50000,5,'a',0),('mkb032',50000,5,'a',0),('sht001',30000,3,'o',0),('sht002',40000,4,'r',0),('sht003',50000,5,'a',0),('sht004',50000,5,'a',0),('sht005',50000,5,'a',0),('sht006',50000,5,'a',0),('sht007',50000,5,'a',0),('sht008',50000,5,'a',0),('sht009',40000,4,'a',0),('sht010',50000,5,'a',0),('sht011',30000,3,'a',0),('sht012',40000,4,'a',0),('sht013',50000,5,'a',0),('sht014',30000,3,'a',0),('sht015',50000,5,'a',0),('sht016',30000,3,'a',0),('sht017',30000,3,'a',0),('sht018',40000,4,'a',0),('sht019',40000,4,'a',0),('sht020',40000,4,'a',0),('sht021',50000,5,'a',0),('sht022',40000,4,'a',0),('sht023',50000,5,'a',0),('sht024',40000,4,'a',0),('sht025',50000,5,'a',0),('sht026',50000,5,'a',0),('sht027',40000,4,'a',0),('sht028',30000,3,'a',0),('sht029',30000,3,'a',0),('sht030',30000,3,'a',0),('sht031',30000,3,'a',0),('sht032',50000,5,'a',0);
+INSERT INTO `showcase` VALUES ('cwb001','cwb',50000,5,'a',0),('cwb002','cwb',30000,3,'o',0),('cwb003','cwb',40000,4,'a',0),('cwb004','cwb',30000,3,'a',0),('cwb005','cwb',30000,3,'a',0),('cwb006','cwb',30000,3,'a',0),('cwb007','cwb',40000,4,'a',0),('cwb008','cwb',50000,5,'a',0),('cwb009','cwb',30000,3,'a',0),('cwb010','cwb',30000,3,'a',0),('cwb011','cwb',30000,3,'a',0),('cwb012','cwb',30000,3,'a',0),('cwb013','cwb',40000,4,'a',0),('cwb014','cwb',40000,4,'a',0),('cwb015','cwb',40000,4,'a',0),('cwb016','cwb',40000,4,'a',0),('cwb017','cwb',50000,5,'a',0),('cwb018','cwb',30000,3,'a',0),('cwb019','cwb',40000,4,'a',0),('cwb020','cwb',30000,3,'a',0),('cwb021','cwb',50000,5,'a',0),('cwb022','cwb',40000,4,'a',0),('cwb023','cwb',40000,4,'a',0),('cwb024','cwb',50000,5,'a',0),('cwb025','cwb',50000,5,'a',0),('cwb026','cwb',30000,3,'a',0),('cwb027','cwb',30000,3,'a',0),('cwb028','cwb',40000,4,'a',0),('cwb029','cwb',30000,3,'a',0),('cwb030','cwb',50000,5,'a',0),('cwb031','cwb',30000,3,'a',0),('cwb032','cwb',40000,4,'a',0),('kwf001','kwf',30000,3,'r',0),('kwf002','kwf',40000,4,'r',0),('kwf003','kwf',40000,4,'r',0),('kwf004','kwf',30000,3,'a',0),('kwf005','kwf',40000,4,'a',0),('kwf006','kwf',50000,5,'a',0),('kwf007','kwf',50000,5,'a',0),('kwf008','kwf',50000,5,'a',0),('kwf009','kwf',30000,3,'a',0),('kwf010','kwf',40000,4,'a',0),('kwf011','kwf',30000,3,'a',0),('kwf012','kwf',30000,3,'a',0),('kwf013','kwf',50000,5,'a',0),('kwf014','kwf',50000,5,'a',0),('kwf015','kwf',40000,4,'a',0),('kwf016','kwf',50000,5,'a',0),('kwf017','kwf',30000,3,'a',0),('kwf018','kwf',50000,5,'a',0),('kwf019','kwf',30000,3,'a',0),('kwf020','kwf',40000,4,'a',0),('kwf021','kwf',40000,4,'a',0),('kwf022','kwf',50000,5,'a',0),('kwf023','kwf',40000,4,'a',0),('kwf024','kwf',50000,5,'a',0),('kwf025','kwf',30000,3,'a',0),('kwf026','kwf',30000,3,'a',0),('kwf027','kwf',30000,3,'a',0),('kwf028','kwf',50000,5,'a',0),('kwf029','kwf',40000,4,'a',0),('kwf030','kwf',40000,4,'a',0),('kwf031','kwf',40000,4,'a',0),('kwf032','kwf',50000,5,'a',0),('mka001','mka',30000,3,'o',0),('mka002','mka',30000,3,'a',0),('mka003','mka',40000,4,'o',0),('mka004','mka',30000,3,'a',0),('mka005','mka',30000,3,'a',0),('mka006','mka',30000,3,'a',0),('mka007','mka',40000,4,'a',0),('mka008','mka',40000,4,'a',0),('mka009','mka',30000,3,'a',0),('mka010','mka',40000,4,'a',0),('mka011','mka',50000,5,'a',0),('mka012','mka',50000,5,'a',0),('mka013','mka',30000,3,'a',0),('mka014','mka',50000,5,'a',0),('mka015','mka',50000,5,'a',0),('mka016','mka',30000,3,'a',0),('mka017','mka',40000,4,'a',0),('mka018','mka',30000,3,'a',0),('mka019','mka',30000,3,'a',0),('mka020','mka',50000,5,'a',0),('mka021','mka',30000,3,'a',0),('mka022','mka',30000,3,'a',0),('mka023','mka',40000,4,'a',0),('mka024','mka',40000,4,'a',0),('mka025','mka',50000,5,'a',0),('mka026','mka',40000,4,'a',0),('mka027','mka',40000,4,'a',0),('mka028','mka',40000,4,'a',0),('mka029','mka',40000,4,'a',0),('mka030','mka',30000,3,'a',0),('mka031','mka',30000,3,'a',0),('mka032','mka',30000,3,'a',0),('mkb001','mkb',50000,5,'a',0),('mkb002','mkb',50000,5,'r',0),('mkb003','mkb',40000,4,'a',0),('mkb004','mkb',40000,4,'a',0),('mkb005','mkb',40000,4,'a',0),('mkb006','mkb',40000,4,'a',0),('mkb007','mkb',40000,4,'a',0),('mkb008','mkb',30000,3,'a',0),('mkb009','mkb',50000,5,'a',0),('mkb010','mkb',50000,5,'a',0),('mkb011','mkb',50000,5,'a',0),('mkb012','mkb',50000,5,'a',0),('mkb013','mkb',30000,3,'a',0),('mkb014','mkb',30000,3,'a',0),('mkb015','mkb',50000,5,'a',0),('mkb016','mkb',40000,4,'a',0),('mkb017','mkb',30000,3,'a',0),('mkb018','mkb',50000,5,'a',0),('mkb019','mkb',40000,4,'a',0),('mkb020','mkb',30000,3,'a',0),('mkb021','mkb',40000,4,'a',0),('mkb022','mkb',40000,4,'a',0),('mkb023','mkb',40000,4,'a',0),('mkb024','mkb',50000,5,'a',0),('mkb025','mkb',50000,5,'a',0),('mkb026','mkb',50000,5,'a',0),('mkb027','mkb',50000,5,'a',0),('mkb028','mkb',50000,5,'a',0),('mkb029','mkb',40000,4,'a',0),('mkb030','mkb',40000,4,'a',0),('mkb031','mkb',50000,5,'a',0),('mkb032','mkb',50000,5,'a',0),('sht001','sht',30000,3,'o',0),('sht002','sht',40000,4,'r',0),('sht003','sht',50000,5,'a',0),('sht004','sht',50000,5,'a',0),('sht005','sht',50000,5,'a',0),('sht006','sht',50000,5,'a',0),('sht007','sht',50000,5,'a',0),('sht008','sht',50000,5,'a',0),('sht009','sht',40000,4,'a',0),('sht010','sht',50000,5,'a',0),('sht011','sht',30000,3,'a',0),('sht012','sht',40000,4,'a',0),('sht013','sht',50000,5,'a',0),('sht014','sht',30000,3,'a',0),('sht015','sht',50000,5,'a',0),('sht016','sht',30000,3,'a',0),('sht017','sht',30000,3,'a',0),('sht018','sht',40000,4,'a',0),('sht019','sht',40000,4,'a',0),('sht020','sht',40000,4,'a',0),('sht021','sht',50000,5,'a',0),('sht022','sht',40000,4,'a',0),('sht023','sht',50000,5,'a',0),('sht024','sht',40000,4,'a',0),('sht025','sht',50000,5,'a',0),('sht026','sht',50000,5,'a',0),('sht027','sht',40000,4,'a',0),('sht028','sht',30000,3,'a',0),('sht029','sht',30000,3,'a',0),('sht030','sht',30000,3,'a',0),('sht031','sht',30000,3,'a',0),('sht032','sht',50000,5,'a',0);
 /*!40000 ALTER TABLE `showcase` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -305,6 +317,8 @@ DROP TABLE IF EXISTS `showcaseitem`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `showcaseitem` (
   `showcaseid` varchar(6) NOT NULL,
+  `storeID` varchar(15) NOT NULL,
+
   `itemid` varchar(15) NOT NULL,
   `avalibleQty` int(11) NOT NULL,
   `soldQty` int(11) NOT NULL,
@@ -312,6 +326,8 @@ CREATE TABLE `showcaseitem` (
   PRIMARY KEY (`showcaseid`,`itemid`),
   KEY `showcaseitemitemid` (`itemid`),
   KEY `showcaseitem_showcaseId` (`showcaseid`),
+  KEY `showcaseitem_storeID_fk`(`storeID`),
+  CONSTRAINT `showcaseitem_storeID_fk` FOREIGN KEY (`storeID`) REFERENCES `store`(`storeID`),
   CONSTRAINT `showcaseitem_itemid_fk` FOREIGN KEY (`itemid`) REFERENCES `item` (`itemID`),
   CONSTRAINT `showcaseitem_showcaseId_fk` FOREIGN KEY (`showcaseid`) REFERENCES `showcase` (`showcaseid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -323,7 +339,7 @@ CREATE TABLE `showcaseitem` (
 
 LOCK TABLES `showcaseitem` WRITE;
 /*!40000 ALTER TABLE `showcaseitem` DISABLE KEYS */;
-INSERT INTO `showcaseitem` VALUES ('cwb001','100',50,5,55),('cwb001','120',5,5,5),('cwb002','200',3,2,5),('kwf001','200',3,2,5),('mka001','300',1,4,5),('mkb001','400',7,2,9),('sht001','500',10,0,10);
+INSERT INTO `showcaseitem` VALUES ('cwb001','cwb','100',50,5,55),('cwb001','cwb','120',5,5,5),('cwb002','cwb','200',3,2,5),('kwf001','kwf','200',3,2,5),('mka001','mka','300',1,4,5),('mkb001','mkb','400',7,2,9),('sht001','sht','500',10,0,10);
 /*!40000 ALTER TABLE `showcaseitem` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -335,9 +351,9 @@ DROP TABLE IF EXISTS `staff`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `staff` (
-  `staffID` int(20) NOT NULL,
-  `tenantpwd` varchar(20) NOT NULL,
-  `email` varchar(100) NOT NULL,
+  `staffID` varchar(20) NOT NULL,
+  `staffPwd` varchar(20) NOT NULL,
+  `email` varchar(100) DEFAULT NULL,
   `name` varchar(50) NOT NULL,
   `staffType` char(2) NOT NULL,
   `reportsTo` int(11) DEFAULT NULL,
@@ -352,6 +368,11 @@ CREATE TABLE `staff` (
 
 LOCK TABLES `staff` WRITE;
 /*!40000 ALTER TABLE `staff` DISABLE KEYS */;
+
+LOCK TABLES `staff` WRITE;
+INSERT INTO `staff` VALUES ('staff01','pass01',null,'a','p',null,50) ,('staff02','pass02',null,'b','p',null,40) , ('staff03','pass03',null,'c','f',null,15000);
+
+UNLOCK TABLES;
 /*!40000 ALTER TABLE `staff` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -381,6 +402,23 @@ LOCK TABLES `tenant` WRITE;
 INSERT INTO `tenant` VALUES ('tenant01','pass01','tenant01','tim.ckchow@gmail.com','51776008'),('tenant02','pass02','tenant02','tim.ckchow@gmail.com','51776008');
 /*!40000 ALTER TABLE `tenant` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
+/*Table structure for table `store` */
+DROP TABLE IF EXISTS `store`;
+
+CREATE TABLE `store` (
+  `storeID` varchar(15) NOT NULL,
+  `storeAddress` varchar(255) NOT NULL,
+  PRIMARY KEY (`storeID`)
+ ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `store` */
+
+LOCK TABLES `store` WRITE;
+INSERT INTO `store` VALUES ('cwb'  ,'UG03, ABC Mall'),('kwf'  ,'LG22, DEF Commercial Centre'),('mka'  ,'203, G.H.I Mall'),('mkb'  ,'LG123, Kwai Fong Plaza'),('sht'  ,'888, New ST Plaza');
+UNLOCK TABLES;
+
 
 --
 -- Dumping routines for database 'sdp'

@@ -15,13 +15,14 @@ namespace SDP_SE1A_Group2
     public partial class showcaseitem
     {
         public string showcaseid { get; set; }
+        public string storeID { get; set; }
         public string itemid { get; set; }
         public int avalibleQty { get; set; }
         public int soldQty { get; set; }
         public int TotalQty { get; set; }
-        public string storeID { get; set; }
     
         public virtual item item { get; set; }
         public virtual showcase showcase { get; set; }
+        public virtual store store { get; set; }
     }
 }

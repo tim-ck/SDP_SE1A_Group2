@@ -31,11 +31,13 @@ namespace SDP_SE1A_Group2
         public DbSet<itemimage> itemimages { get; set; }
         public DbSet<order> orders { get; set; }
         public DbSet<order_detail> order_detail { get; set; }
+        public DbSet<preinputitem> preinputitems { get; set; }
         public DbSet<rentinfo> rentinfoes { get; set; }
         public DbSet<reservation> reservations { get; set; }
         public DbSet<showcase> showcases { get; set; }
         public DbSet<showcaseitem> showcaseitems { get; set; }
         public DbSet<staff> staffs { get; set; }
+        public DbSet<store> stores { get; set; }
         public DbSet<tenant> tenants { get; set; }
     }
 }
