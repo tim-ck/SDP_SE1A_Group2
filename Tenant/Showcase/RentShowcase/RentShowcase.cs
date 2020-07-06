@@ -29,7 +29,7 @@ namespace SDP_SE1A_Group2
         {
             //Load selected showcase info
             lblShowcaseId.Text = showcaseid;
-            lblLocation.Text = showcaseid.Substring(0,3).ToUpper();
+            lblLocation.Text = showcaseid.Substring(0, 3).ToUpper();
 
             using (var db = new sdpEntities())
             {
@@ -37,7 +37,7 @@ namespace SDP_SE1A_Group2
                          where result.showcaseid.Contains(showcaseid)
                          select result;
 
-                foreach(var row in rs)
+                foreach (var row in rs)
                 {
                     lblRental.Text = row.rental.ToString();
                     ava = row.status.ToString();
@@ -64,7 +64,8 @@ namespace SDP_SE1A_Group2
             if (ava.Equals("o"))
             {
                 btnReserve.Enabled = true;
-            } else if (ava.Equals("a"))
+            }
+            else if (ava.Equals("a"))
             {
                 btnRent.Enabled = true;
             }
@@ -76,10 +77,10 @@ namespace SDP_SE1A_Group2
                          select lsRentinfo;
 
                 int showcaseNumber = 0;
-                foreach(var row in rs.ToList())
+                foreach (var row in rs.ToList())
                 {
                     if (row.startDate.ToOADate() + row.duration >= DateTime.Now.ToOADate())
-                    showcaseNumber++;
+                        showcaseNumber++;
                 }
                 lblNumShowcase.Text = showcaseNumber.ToString();
             }
@@ -103,12 +104,12 @@ namespace SDP_SE1A_Group2
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
             // Calculate discount & total price for rent period
             if (!txtPeriod.Text.Equals(""))
             {
                 if (int.Parse(txtPeriod.Text) >= 365)
-                    // >= 12 months
+                // >= 12 months
                 {
                     lblTotalPrice.Text = (0.85 * rental * int.Parse(txtPeriod.Text.ToString())).ToString();
                     cb12M.ForeColor = Color.Green;
@@ -117,8 +118,9 @@ namespace SDP_SE1A_Group2
                     cb6M.Checked = false;
                     discountPeriod = 0.9;
 
-                }else if (int.Parse(txtPeriod.Text) >= 182 && int.Parse(txtPeriod.Text) < 365)
-                    // >= 6 months
+                }
+                else if (int.Parse(txtPeriod.Text) >= 182 && int.Parse(txtPeriod.Text) < 365)
+                // >= 6 months
                 {
                     lblTotalPrice.Text = (0.95 * rental * int.Parse(txtPeriod.Text.ToString())).ToString();
                     cb6M.ForeColor = Color.Green;
@@ -146,7 +148,7 @@ namespace SDP_SE1A_Group2
             lblDiscount.Text = ((double.Parse(lblTotalPrice.Text)) - (double.Parse(lblTotalPrice.Text) * discountPeriod * discountShowcaseNum)).ToString("F1");
             // Show "After Discount"
             lblAfterDiscount.Text = (double.Parse(lblTotalPrice.Text) - double.Parse(lblDiscount.Text)).ToString("F1");
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -167,7 +169,7 @@ namespace SDP_SE1A_Group2
                 {
                     //Update table: "Showcase"
 
-                    sql = "Update showcase set status ='o' where showcaseid='" + lblShowcaseId.Text.ToString()+"'";
+                    sql = "Update showcase set status ='o' where showcaseid='" + lblShowcaseId.Text.ToString() + "'";
                     int noOfRowUpdated = db.Database.ExecuteSqlCommand(sql);
 
 
@@ -181,7 +183,7 @@ namespace SDP_SE1A_Group2
 
                 }
             }
-                    
+
         }
 
         private void RentShowcase_FormClosing(object sender, FormClosingEventArgs e)
@@ -198,7 +200,7 @@ namespace SDP_SE1A_Group2
             using (var db = new sdpEntities())
             {
                 //Insert row to table: "reservation"
-                string newID = (!db.reservations.Any())? (newID = "001"):(int.Parse(db.reservations.Max(p => p.reservationid)) + 1).ToString("D3");
+                string newID = (!db.reservations.Any()) ? (newID = "001") : (int.Parse(db.reservations.Max(p => p.reservationid)) + 1).ToString("D3");
 
                 string sql = "Insert into reservation(reservationid, tenantID, showcaseid) values('" + newID + "', '" + TenantMain.tenantID + "', '" + lblShowcaseId.Text.ToString() + "')";
                 int noOfRowInserted = db.Database.ExecuteSqlCommand(sql);
@@ -217,7 +219,7 @@ namespace SDP_SE1A_Group2
 
 
                 {
-                    
+
 
                 }
             }

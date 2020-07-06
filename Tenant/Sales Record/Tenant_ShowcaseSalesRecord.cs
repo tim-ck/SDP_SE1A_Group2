@@ -43,9 +43,9 @@ namespace SDP_SE1A_Group2
 
                 foreach(var row in rs.ToList())
                 {
-                    int index = 1;
+                    int index = dataGridView1.Rows.Count;
                     dataGridView1.Rows.Add(index, row.showcaseid, row.itemID, row.itemName, row.unitPrice, row.soldQty, (row.soldQty * row.unitPrice), row.orderDate);
-                    index++;
+                   
                 }
             }
         }

@@ -91,7 +91,7 @@ namespace SDP_SE1A_Group2
                 db.Database.ExecuteSqlCommand(sql);
 
                 string newDesc = txtDescription.Text.ToString();
-                sql = "Update item set itemDesc ='"+newDesc+"' where itemID='" + itemID + "'";
+                sql = "Update item set itemDesc ='" + newDesc + "' where itemID='" + itemID + "'";
                 db.Database.ExecuteSqlCommand(sql);
 
 
