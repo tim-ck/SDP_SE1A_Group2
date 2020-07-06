@@ -25,9 +25,10 @@ namespace SDP_SE1A_Group2
             _owner = owner;
         }
 
-        private void RentShowcase_Load(object sender, EventArgs e)
+
+        private void loadInfo()
+        //Load selected showcase info
         {
-            //Load selected showcase info
             lblShowcaseId.Text = showcaseid;
             lblLocation.Text = showcaseid.Substring(0, 3).ToUpper();
 
@@ -58,17 +59,6 @@ namespace SDP_SE1A_Group2
                     lblStatus.Text = "Reserved";
                     break;
             }
-
-
-            // Enable "Rent" / "Reserve" button
-            if (ava.Equals("o"))
-            {
-                btnReserve.Enabled = true;
-            }
-            else if (ava.Equals("a"))
-            {
-                btnRent.Enabled = true;
-            }
             // Load No. of Showcase that is renting
             using (var db = new sdpEntities())
             {
@@ -84,7 +74,6 @@ namespace SDP_SE1A_Group2
                 }
                 lblNumShowcase.Text = showcaseNumber.ToString();
             }
-
             // Calculate discount for No. showcase
             if (int.Parse(lblNumShowcase.Text) > 2 && int.Parse(lblNumShowcase.Text) <= 5)
             {
@@ -98,20 +87,39 @@ namespace SDP_SE1A_Group2
                 lblDiscountNum.ForeColor = Color.Green;
                 discountShowcaseNum = 0.9;
             }
+        }
 
 
+        private void enableBtn()
+        //Enable "Rent" / Reserve
+        {
+            if (ava.Equals("o"))
+            {
+                btnReserve.Enabled = true;
+            }
+            else if (ava.Equals("a"))
+            {
+                btnRent.Enabled = true;
+            }
+        }
+
+
+        private void RentShowcase_Load(object sender, EventArgs e)
+        {
+            loadInfo();
+            enableBtn();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        // Calculate discount & total price for rent period
         {
-
-            // Calculate discount & total price for rent period
             if (!txtPeriod.Text.Equals(""))
             {
+                lblTotalPrice.Text = (rental * int.Parse(txtPeriod.Text.ToString())).ToString();
+
                 if (int.Parse(txtPeriod.Text) >= 365)
                 // >= 12 months
                 {
-                    lblTotalPrice.Text = (0.85 * rental * int.Parse(txtPeriod.Text.ToString())).ToString();
                     cb12M.ForeColor = Color.Green;
                     cb12M.Checked = true;
                     cb6M.ForeColor = Color.WhiteSmoke;
@@ -120,9 +128,8 @@ namespace SDP_SE1A_Group2
 
                 }
                 else if (int.Parse(txtPeriod.Text) >= 182 && int.Parse(txtPeriod.Text) < 365)
-                // >= 6 months
+                // >= 6 months && <365
                 {
-                    lblTotalPrice.Text = (0.95 * rental * int.Parse(txtPeriod.Text.ToString())).ToString();
                     cb6M.ForeColor = Color.Green;
                     cb6M.Checked = true;
                     cb12M.ForeColor = Color.WhiteSmoke;
@@ -132,7 +139,6 @@ namespace SDP_SE1A_Group2
                 else
                 // < 6 months
                 {
-                    lblTotalPrice.Text = (rental * int.Parse(txtPeriod.Text)).ToString("F1");
                     cb6M.ForeColor = Color.WhiteSmoke;
                     cb6M.Checked = false;
                     cb12M.ForeColor = Color.WhiteSmoke;
@@ -161,14 +167,16 @@ namespace SDP_SE1A_Group2
             using (var db = new sdpEntities())
             {
                 //Insert row to table: "rentInfo"
-                int newID = int.Parse(db.rentinfoes.Max(p => p.rentID)) + 1;
-                string sql = "Insert into rentinfo(rentID, tenantID, startDate, duration, showcaseid) values('" + newID + "', '" + TenantMain.tenantID + "', '" + DateTime.Now + "', '" + txtPeriod.Text.ToString() + "', '" + lblShowcaseId.Text.ToString() + "')";
+                // int newID = int.Parse(db.rentinfo.Max(p => p.rentID)) + 1;
+                string newID = (!db.rentinfoes.Any()) ? (newID = "001") : (int.Parse(db.rentinfoes.Max(p => p.rentID)) + 1).ToString("D3");
+                DateTime localDate = DateTime.Now;
+               var timeNow = localDate.ToString("en-GB");
+                string sql = "Insert into rentinfo(rentID, tenantID, startDate, duration, showcaseid, storeID) values('" + newID + "', '" + TenantMain.tenantID + "', '" + Convert.ToDateTime(DateTime.Now.ToString()) + "','" + txtPeriod.Text.ToString() + "', '" + lblShowcaseId.Text.ToString() + "','" + lblShowcaseId.Text.ToString().Substring(0, 3) + "')";
                 int noOfRowInserted = db.Database.ExecuteSqlCommand(sql);
 
                 if (noOfRowInserted == 1)
                 {
                     //Update table: "Showcase"
-
                     sql = "Update showcase set status ='o' where showcaseid='" + lblShowcaseId.Text.ToString() + "'";
                     int noOfRowUpdated = db.Database.ExecuteSqlCommand(sql);
 

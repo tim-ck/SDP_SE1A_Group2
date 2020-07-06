@@ -96,6 +96,7 @@ namespace SDP_SE1A_Group2
 
 
                 MessageBox.Show("Updated successfully!", "System Message");
+                this.Close();
             }
         }
 
