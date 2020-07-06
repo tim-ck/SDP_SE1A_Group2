@@ -17,6 +17,7 @@ namespace SDP_SE1A_Group2
         public staff()
         {
             this.attendences = new HashSet<attendence>();
+            this.staff1 = new HashSet<staff>();
         }
     
         public string staffID { get; set; }
@@ -24,9 +25,11 @@ namespace SDP_SE1A_Group2
         public string email { get; set; }
         public string name { get; set; }
         public string staffType { get; set; }
-        public Nullable<int> reportsTo { get; set; }
+        public string reportsTo { get; set; }
         public float salary { get; set; }
     
         public virtual ICollection<attendence> attendences { get; set; }
+        public virtual ICollection<staff> staff1 { get; set; }
+        public virtual staff staff2 { get; set; }
     }
 }

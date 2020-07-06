@@ -188,10 +188,10 @@ namespace SDP_SE1A_Group2.Customer
                             "<hr>Store ID : " + txtStoreID.Text + "<br>" +
                             "Store Address : " + txtStoreAddress.Text + "<br>" +
                             "Opening hours: 10:00am-09:00pm <p>" +
-                            "Contact our staff inside the store mention above. We will check your email and customer account,<br> and we will prepare items of your order." +
+                            "Contact our staff inside the store mention above. We will check your email and customer account,<br> and we will prepare items for your order." +
                             "<hr>" +
                             "<table bgcolor='#80b3d3' width='100%' border='1' >" +
-                            "<tr><th>ItemID</th><th>Item Name</th><th>Description</th><th>Unit Price</th><th>Quantity</th><th>Total Price</th></tr>";
+                            "<tr><th>ItemID</th><th>Item Name</th><th>Description</th><th>Unit Price</th><th>Quantity</th><th>Total Price For Each Items</th></tr>";
                         for(int i=0; i<dataGridView1.Rows.Count-1;i++)
                         {
                             String itemid = dataGridView1.Rows[i].Cells["itemID"].Value.ToString();
@@ -220,8 +220,8 @@ namespace SDP_SE1A_Group2.Customer
                             }
                         }
                         msg +="<tr>" +
-                            "<td colspan='4'>Total Price</td>" +
-                            "<td colspan='2'></td></tr></table>";
+                            "<td colspan='4'>Total Price For This Order</td>" +
+                            "<td colspan='2'>"+txtTotalPrice.Text+"</td></tr></table>";
 
                         opener.sendEmail(subject, msg);
                         //opener.CreateOrder()

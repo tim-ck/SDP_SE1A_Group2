@@ -92,7 +92,7 @@
           </Key>
           <Property Name="reservationid" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="showcaseid" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="tenantid" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="tenantid" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="showcase">
           <Key>
@@ -126,7 +126,7 @@
           <Property Name="email" Type="varchar" MaxLength="100" />
           <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="staffType" Type="char" MaxLength="2" Nullable="false" />
-          <Property Name="reportsTo" Type="int" />
+          <Property Name="reportsTo" Type="varchar" MaxLength="20" />
           <Property Name="salary" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="store">
@@ -242,6 +242,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="preinputitem_fk1">
+          <End Role="tenant" Type="Self.tenant" Multiplicity="1" />
+          <End Role="preinputitem" Type="Self.preinputitem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tenant">
+              <PropertyRef Name="tenantID" />
+            </Principal>
+            <Dependent Role="preinputitem">
+              <PropertyRef Name="tenantid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="rentinfo_showcaseid_fk">
           <End Role="showcase" Type="Self.showcase" Multiplicity="1" />
           <End Role="rentinfo" Type="Self.rentinfo" Multiplicity="*" />
@@ -263,6 +275,30 @@
             </Principal>
             <Dependent Role="rentinfo">
               <PropertyRef Name="tenantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="reservation_fk1">
+          <End Role="tenant" Type="Self.tenant" Multiplicity="1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tenant">
+              <PropertyRef Name="tenantID" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="tenantid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="reservation_fk2">
+          <End Role="showcase" Type="Self.showcase" Multiplicity="1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="showcase">
+              <PropertyRef Name="showcaseid" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="showcaseid" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -314,6 +350,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="staffs_fk">
+          <End Role="staff" Type="Self.staff" Multiplicity="0..1" />
+          <End Role="staff1" Type="Self.staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="staff">
+              <PropertyRef Name="staffID" />
+            </Principal>
+            <Dependent Role="staff1">
+              <PropertyRef Name="reportsTo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="sdpModelStoreContainer">
           <EntitySet Name="attendence" EntityType="Self.attendence" Schema="sdp" store:Type="Tables" />
           <EntitySet Name="customer" EntityType="Self.customer" Schema="sdp" store:Type="Tables" />
@@ -361,6 +409,10 @@
             <End Role="store" EntitySet="store" />
             <End Role="order" EntitySet="order" />
           </AssociationSet>
+          <AssociationSet Name="preinputitem_fk1" Association="Self.preinputitem_fk1">
+            <End Role="tenant" EntitySet="tenant" />
+            <End Role="preinputitem" EntitySet="preinputitem" />
+          </AssociationSet>
           <AssociationSet Name="rentinfo_showcaseid_fk" Association="Self.rentinfo_showcaseid_fk">
             <End Role="showcase" EntitySet="showcase" />
             <End Role="rentinfo" EntitySet="rentinfo" />
@@ -368,6 +420,14 @@
           <AssociationSet Name="rentinfo_tenantid_fk" Association="Self.rentinfo_tenantid_fk">
             <End Role="tenant" EntitySet="tenant" />
             <End Role="rentinfo" EntitySet="rentinfo" />
+          </AssociationSet>
+          <AssociationSet Name="reservation_fk1" Association="Self.reservation_fk1">
+            <End Role="tenant" EntitySet="tenant" />
+            <End Role="reservation" EntitySet="reservation" />
+          </AssociationSet>
+          <AssociationSet Name="reservation_fk2" Association="Self.reservation_fk2">
+            <End Role="showcase" EntitySet="showcase" />
+            <End Role="reservation" EntitySet="reservation" />
           </AssociationSet>
           <AssociationSet Name="showcase_storeID_fk" Association="Self.showcase_storeID_fk">
             <End Role="store" EntitySet="store" />
@@ -384,6 +444,10 @@
           <AssociationSet Name="showcaseitem_storeID_fk" Association="Self.showcaseitem_storeID_fk">
             <End Role="store" EntitySet="store" />
             <End Role="showcaseitem" EntitySet="showcaseitem" />
+          </AssociationSet>
+          <AssociationSet Name="staffs_fk" Association="Self.staffs_fk">
+            <End Role="staff" EntitySet="staff" />
+            <End Role="staff1" EntitySet="staff" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -472,6 +536,7 @@
           <Property Name="itemdesc" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="itemunitprice" Type="Single" Nullable="false" />
           <Property Name="tenantid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tenant" Relationship="Self.preinputitem_fk1" FromRole="preinputitem" ToRole="tenant" />
         </EntityType>
         <EntityType Name="rentinfo">
           <Key>
@@ -493,7 +558,9 @@
           </Key>
           <Property Name="reservationid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="showcaseid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="tenantid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tenantid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tenant" Relationship="Self.reservation_fk1" FromRole="reservation" ToRole="tenant" />
+          <NavigationProperty Name="showcase" Relationship="Self.reservation_fk2" FromRole="reservation" ToRole="showcase" />
         </EntityType>
         <EntityType Name="showcase">
           <Key>
@@ -505,6 +572,7 @@
           <Property Name="rental" Type="Single" Nullable="false" />
           <Property Name="status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="rentinfoes" Relationship="Self.rentinfo_showcaseid_fk" FromRole="showcase" ToRole="rentinfo" />
+          <NavigationProperty Name="reservations" Relationship="Self.reservation_fk2" FromRole="showcase" ToRole="reservation" />
           <NavigationProperty Name="store" Relationship="Self.showcase_storeID_fk" FromRole="showcase" ToRole="store" />
           <NavigationProperty Name="showcaseitems" Relationship="Self.showcaseitem_showcaseId_fk" FromRole="showcase" ToRole="showcaseitem" />
         </EntityType>
@@ -533,9 +601,11 @@
           <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="staffType" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="reportsTo" Type="Int32" />
+          <Property Name="reportsTo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="salary" Type="Single" Nullable="false" />
           <NavigationProperty Name="attendences" Relationship="Self.attendence_ibfk_2" FromRole="staff" ToRole="attendence" />
+          <NavigationProperty Name="staff1" Relationship="Self.staffs_fk" FromRole="staff" ToRole="staff1" />
+          <NavigationProperty Name="staff2" Relationship="Self.staffs_fk" FromRole="staff1" ToRole="staff" />
         </EntityType>
         <EntityType Name="store">
           <Key>
@@ -558,7 +628,9 @@
           <Property Name="email" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="items" Relationship="Self.item_tenantid_fk" FromRole="tenant" ToRole="item" />
+          <NavigationProperty Name="preinputitems" Relationship="Self.preinputitem_fk1" FromRole="tenant" ToRole="preinputitem" />
           <NavigationProperty Name="rentinfoes" Relationship="Self.rentinfo_tenantid_fk" FromRole="tenant" ToRole="rentinfo" />
+          <NavigationProperty Name="reservations" Relationship="Self.reservation_fk1" FromRole="tenant" ToRole="reservation" />
         </EntityType>
         <Association Name="attendence_ibfk_2">
           <End Role="staff" Type="Self.staff" Multiplicity="1" />
@@ -656,6 +728,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="preinputitem_fk1">
+          <End Role="tenant" Type="Self.tenant" Multiplicity="1" />
+          <End Role="preinputitem" Type="Self.preinputitem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tenant">
+              <PropertyRef Name="tenantID" />
+            </Principal>
+            <Dependent Role="preinputitem">
+              <PropertyRef Name="tenantid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="C_storeID_fk">
           <End Role="store" Type="Self.store" Multiplicity="1" />
           <End Role="rentinfo" Type="Self.rentinfo" Multiplicity="*" />
@@ -692,6 +776,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="reservation_fk1">
+          <End Role="tenant" Type="Self.tenant" Multiplicity="1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tenant">
+              <PropertyRef Name="tenantID" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="tenantid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="reservation_fk2">
+          <End Role="showcase" Type="Self.showcase" Multiplicity="1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="showcase">
+              <PropertyRef Name="showcaseid" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="showcaseid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="showcase_storeID_fk">
           <End Role="store" Type="Self.store" Multiplicity="1" />
           <End Role="showcase" Type="Self.showcase" Multiplicity="*" />
@@ -725,6 +833,18 @@
             </Principal>
             <Dependent Role="showcaseitem">
               <PropertyRef Name="storeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="staffs_fk">
+          <End Role="staff" Type="Self.staff" Multiplicity="0..1" />
+          <End Role="staff1" Type="Self.staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="staff">
+              <PropertyRef Name="staffID" />
+            </Principal>
+            <Dependent Role="staff1">
+              <PropertyRef Name="reportsTo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -775,6 +895,10 @@
             <End Role="store" EntitySet="stores" />
             <End Role="order" EntitySet="orders" />
           </AssociationSet>
+          <AssociationSet Name="preinputitem_fk1" Association="Self.preinputitem_fk1">
+            <End Role="tenant" EntitySet="tenants" />
+            <End Role="preinputitem" EntitySet="preinputitems" />
+          </AssociationSet>
           <AssociationSet Name="C_storeID_fk" Association="Self.C_storeID_fk">
             <End Role="store" EntitySet="stores" />
             <End Role="rentinfo" EntitySet="rentinfoes" />
@@ -787,6 +911,14 @@
             <End Role="tenant" EntitySet="tenants" />
             <End Role="rentinfo" EntitySet="rentinfoes" />
           </AssociationSet>
+          <AssociationSet Name="reservation_fk1" Association="Self.reservation_fk1">
+            <End Role="tenant" EntitySet="tenants" />
+            <End Role="reservation" EntitySet="reservations" />
+          </AssociationSet>
+          <AssociationSet Name="reservation_fk2" Association="Self.reservation_fk2">
+            <End Role="showcase" EntitySet="showcases" />
+            <End Role="reservation" EntitySet="reservations" />
+          </AssociationSet>
           <AssociationSet Name="showcase_storeID_fk" Association="Self.showcase_storeID_fk">
             <End Role="store" EntitySet="stores" />
             <End Role="showcase" EntitySet="showcases" />
@@ -798,6 +930,10 @@
           <AssociationSet Name="showcaseitem_storeID_fk" Association="Self.showcaseitem_storeID_fk">
             <End Role="store" EntitySet="stores" />
             <End Role="showcaseitem" EntitySet="showcaseitems" />
+          </AssociationSet>
+          <AssociationSet Name="staffs_fk" Association="Self.staffs_fk">
+            <End Role="staff" EntitySet="staffs" />
+            <End Role="staff1" EntitySet="staffs" />
           </AssociationSet>
         </EntityContainer>
       </Schema>

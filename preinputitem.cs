@@ -20,5 +20,7 @@ namespace SDP_SE1A_Group2
         public string itemdesc { get; set; }
         public float itemunitprice { get; set; }
         public string tenantid { get; set; }
+    
+        public virtual tenant tenant { get; set; }
     }
 }
