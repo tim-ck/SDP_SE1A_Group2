@@ -44,84 +44,82 @@
             this.soldQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.lblLocation = new System.Windows.Forms.Label();
-            this.cmbLocation = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblItemID
             // 
             this.lblItemID.AutoSize = true;
-            this.lblItemID.Location = new System.Drawing.Point(63, 111);
+            this.lblItemID.Location = new System.Drawing.Point(63, 120);
             this.lblItemID.Name = "lblItemID";
-            this.lblItemID.Size = new System.Drawing.Size(44, 12);
+            this.lblItemID.Size = new System.Drawing.Size(44, 13);
             this.lblItemID.TabIndex = 1;
             this.lblItemID.Text = "Item ID:";
             // 
             // lblQT
             // 
             this.lblQT.AutoSize = true;
-            this.lblQT.Location = new System.Drawing.Point(82, 233);
+            this.lblQT.Location = new System.Drawing.Point(82, 252);
             this.lblQT.Name = "lblQT";
-            this.lblQT.Size = new System.Drawing.Size(23, 12);
+            this.lblQT.Size = new System.Drawing.Size(25, 13);
             this.lblQT.TabIndex = 2;
             this.lblQT.Text = "QT:";
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(49, 173);
+            this.lblPrice.Location = new System.Drawing.Point(49, 187);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(56, 12);
+            this.lblPrice.Size = new System.Drawing.Size(58, 13);
             this.lblPrice.TabIndex = 3;
             this.lblPrice.Text = "Price(1pc):";
             // 
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(46, 291);
+            this.lblTotalPrice.Location = new System.Drawing.Point(46, 315);
             this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(58, 12);
+            this.lblTotalPrice.Size = new System.Drawing.Size(61, 13);
             this.lblTotalPrice.TabIndex = 4;
             this.lblTotalPrice.Text = "Total Price:";
             // 
             // txtItemID
             // 
-            this.txtItemID.Location = new System.Drawing.Point(159, 109);
+            this.txtItemID.Location = new System.Drawing.Point(159, 118);
             this.txtItemID.Name = "txtItemID";
-            this.txtItemID.Size = new System.Drawing.Size(121, 22);
+            this.txtItemID.Size = new System.Drawing.Size(121, 20);
             this.txtItemID.TabIndex = 6;
             this.txtItemID.TextChanged += new System.EventHandler(this.txtItemID_TextChanged);
             // 
             // txtQT
             // 
-            this.txtQT.Location = new System.Drawing.Point(159, 230);
+            this.txtQT.Location = new System.Drawing.Point(159, 249);
             this.txtQT.Name = "txtQT";
-            this.txtQT.Size = new System.Drawing.Size(121, 22);
+            this.txtQT.Size = new System.Drawing.Size(121, 20);
             this.txtQT.TabIndex = 7;
             this.txtQT.TextChanged += new System.EventHandler(this.txtQT_TextChanged);
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(159, 170);
+            this.txtPrice.Location = new System.Drawing.Point(159, 184);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(121, 22);
+            this.txtPrice.Size = new System.Drawing.Size(121, 20);
             this.txtPrice.TabIndex = 8;
             // 
             // txtTotalPrice
             // 
-            this.txtTotalPrice.Location = new System.Drawing.Point(159, 288);
+            this.txtTotalPrice.Location = new System.Drawing.Point(159, 312);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.ReadOnly = true;
-            this.txtTotalPrice.Size = new System.Drawing.Size(121, 22);
+            this.txtTotalPrice.Size = new System.Drawing.Size(121, 20);
             this.txtTotalPrice.TabIndex = 9;
             this.txtTotalPrice.TextChanged += new System.EventHandler(this.txtTotalPrice_TextChanged);
             // 
             // btnPay
             // 
-            this.btnPay.Location = new System.Drawing.Point(39, 344);
+            this.btnPay.Location = new System.Drawing.Point(39, 373);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(94, 32);
+            this.btnPay.Size = new System.Drawing.Size(94, 35);
             this.btnPay.TabIndex = 10;
             this.btnPay.Text = "Pay";
             this.btnPay.UseVisualStyleBackColor = true;
@@ -136,10 +134,10 @@
             this.avalibleQty,
             this.soldQty,
             this.TotalQty});
-            this.dataGridView1.Location = new System.Drawing.Point(333, 65);
+            this.dataGridView1.Location = new System.Drawing.Point(333, 70);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(454, 236);
+            this.dataGridView1.Size = new System.Drawing.Size(454, 256);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -170,43 +168,19 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(159, 344);
+            this.btnPrint.Location = new System.Drawing.Point(159, 373);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(88, 32);
+            this.btnPrint.Size = new System.Drawing.Size(88, 35);
             this.btnPrint.TabIndex = 13;
             this.btnPrint.Text = "Print receipt";
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // lblLocation
-            // 
-            this.lblLocation.AutoSize = true;
-            this.lblLocation.Location = new System.Drawing.Point(63, 65);
-            this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(49, 12);
-            this.lblLocation.TabIndex = 14;
-            this.lblLocation.Text = "Location:";
-            // 
-            // cmbLocation
-            // 
-            this.cmbLocation.FormattingEnabled = true;
-            this.cmbLocation.Items.AddRange(new object[] {
-            "CB",
-            "MK",
-            "KF",
-            "S"});
-            this.cmbLocation.Location = new System.Drawing.Point(159, 65);
-            this.cmbLocation.Name = "cmbLocation";
-            this.cmbLocation.Size = new System.Drawing.Size(121, 20);
-            this.cmbLocation.TabIndex = 15;
-            // 
             // Staff_POS
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(799, 457);
-            this.Controls.Add(this.cmbLocation);
-            this.Controls.Add(this.lblLocation);
+            this.ClientSize = new System.Drawing.Size(799, 495);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnPay);
@@ -244,7 +218,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn avalibleQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn soldQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalQty;
-        private System.Windows.Forms.Label lblLocation;
-        private System.Windows.Forms.ComboBox cmbLocation;
     }
 }

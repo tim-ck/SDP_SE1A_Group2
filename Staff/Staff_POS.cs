@@ -33,7 +33,6 @@ namespace SDP_SE1A_Group2
         {
             id = txtItemID.Text.ToString();
             qt = int.Parse(txtQT.Text);
-            string selectedItem = cmbLocation.Items[cmbLocation.SelectedIndex].ToString();
 
             using (sdpEntities db = new sdpEntities())
             {

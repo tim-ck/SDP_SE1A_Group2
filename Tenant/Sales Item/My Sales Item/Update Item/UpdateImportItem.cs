@@ -66,7 +66,8 @@ namespace SDP_SE1A_Group2
                 db.Database.ExecuteSqlCommand(sql);
 
 
-                MessageBox.Show("Updated successfully!" + _itemID, "System Message");
+                MessageBox.Show("Updated successfully!", "System Message");
+                this.Close();
             }
         }
 
@@ -74,6 +75,11 @@ namespace SDP_SE1A_Group2
         {
             _owner.clearDgv();
             _owner.loadDgv();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

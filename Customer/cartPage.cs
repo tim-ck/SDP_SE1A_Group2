@@ -32,7 +32,7 @@ namespace SDP_SE1A_Group2.Customer
         }
 
         public void UpdateStore(int storeIndex) {
-            String storeID = "StoreID : ";
+            String storeID = "";
             String storeName = "Store Name: ";
 
             switch (storeIndex)
@@ -166,17 +166,19 @@ namespace SDP_SE1A_Group2.Customer
                         orderCount = id.Count() + 1;
                         String newOrderID = orderCount.ToString("D3");
                         //SendEMail AND create Order
+                        
                         var order = new order()
                         {
                             orderID = newOrderID,
+                            storeID = txtStoreID.Text,
                             customerID = cusID,
                             orderDate = System.DateTime.Today,
                             orderTotalPrice = float.Parse(txtTotalPrice.Text),
-                            storeID = txtStoreID.Text
+                            
 
                         };
                         db.orders.Add(order);
-                        db.SaveChanges();
+                       
                         var culture = new CultureInfo("en-GB");
                         String subject = "Order Detail for your order #" + newOrderID;
                         String msg = "<h1>The Hong Kong Cube Shop</h1>" +

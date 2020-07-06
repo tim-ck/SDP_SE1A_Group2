@@ -169,9 +169,9 @@ namespace SDP_SE1A_Group2
                 //Insert row to table: "rentInfo"
                 // int newID = int.Parse(db.rentinfo.Max(p => p.rentID)) + 1;
                 string newID = (!db.rentinfoes.Any()) ? (newID = "001") : (int.Parse(db.rentinfoes.Max(p => p.rentID)) + 1).ToString("D3");
-                DateTime localDate = DateTime.Now;
-               var timeNow = localDate.ToString("en-GB");
-                string sql = "Insert into rentinfo(rentID, tenantID, startDate, duration, showcaseid, storeID) values('" + newID + "', '" + TenantMain.tenantID + "', '" + Convert.ToDateTime(DateTime.Now.ToString()) + "','" + txtPeriod.Text.ToString() + "', '" + lblShowcaseId.Text.ToString() + "','" + lblShowcaseId.Text.ToString().Substring(0, 3) + "')";
+                var localDate = DateTime.Now.ToString("yyyy-MM-dd");
+               
+                string sql = "Insert into rentinfo(rentID, tenantID, startDate, duration, showcaseid, storeID) values('" + newID + "', '" + TenantMain.tenantID + "', DATE '" +localDate + "','" + txtPeriod.Text.ToString() + "', '" + lblShowcaseId.Text.ToString() + "','" + lblShowcaseId.Text.ToString().Substring(0, 3) + "')";
                 int noOfRowInserted = db.Database.ExecuteSqlCommand(sql);
 
                 if (noOfRowInserted == 1)
