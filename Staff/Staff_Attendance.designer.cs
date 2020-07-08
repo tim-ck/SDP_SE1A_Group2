@@ -45,7 +45,7 @@
             // lblStaffID
             // 
             this.lblStaffID.AutoSize = true;
-            this.lblStaffID.Location = new System.Drawing.Point(69, 41);
+            this.lblStaffID.Location = new System.Drawing.Point(107, 145);
             this.lblStaffID.Name = "lblStaffID";
             this.lblStaffID.Size = new System.Drawing.Size(42, 12);
             this.lblStaffID.TabIndex = 0;
@@ -54,7 +54,7 @@
             // lblWorkHour
             // 
             this.lblWorkHour.AutoSize = true;
-            this.lblWorkHour.Location = new System.Drawing.Point(45, 126);
+            this.lblWorkHour.Location = new System.Drawing.Point(83, 230);
             this.lblWorkHour.Name = "lblWorkHour";
             this.lblWorkHour.Size = new System.Drawing.Size(66, 12);
             this.lblWorkHour.TabIndex = 1;
@@ -62,14 +62,14 @@
             // 
             // txtStaffID
             // 
-            this.txtStaffID.Location = new System.Drawing.Point(195, 38);
+            this.txtStaffID.Location = new System.Drawing.Point(233, 142);
             this.txtStaffID.Name = "txtStaffID";
             this.txtStaffID.Size = new System.Drawing.Size(121, 22);
             this.txtStaffID.TabIndex = 2;
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(241, 176);
+            this.btnSubmit.Location = new System.Drawing.Point(279, 280);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 4;
@@ -79,7 +79,7 @@
             // 
             // txtWorkHour
             // 
-            this.txtWorkHour.Location = new System.Drawing.Point(195, 123);
+            this.txtWorkHour.Location = new System.Drawing.Point(233, 227);
             this.txtWorkHour.Name = "txtWorkHour";
             this.txtWorkHour.Size = new System.Drawing.Size(121, 22);
             this.txtWorkHour.TabIndex = 5;
@@ -91,7 +91,7 @@
             this.staffID,
             this.month,
             this.hour});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 237);
+            this.dataGridView1.Location = new System.Drawing.Point(50, 341);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(337, 150);
@@ -115,7 +115,7 @@
             // lblMonth
             // 
             this.lblMonth.AutoSize = true;
-            this.lblMonth.Location = new System.Drawing.Point(69, 82);
+            this.lblMonth.Location = new System.Drawing.Point(107, 186);
             this.lblMonth.Name = "lblMonth";
             this.lblMonth.Size = new System.Drawing.Size(39, 12);
             this.lblMonth.TabIndex = 7;
@@ -125,7 +125,7 @@
             // 
             this.dtpMonth.CustomFormat = "yyyy-MM";
             this.dtpMonth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpMonth.Location = new System.Drawing.Point(195, 82);
+            this.dtpMonth.Location = new System.Drawing.Point(233, 186);
             this.dtpMonth.Name = "dtpMonth";
             this.dtpMonth.Size = new System.Drawing.Size(121, 22);
             this.dtpMonth.TabIndex = 8;
