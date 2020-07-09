@@ -35,7 +35,6 @@
             this.btnAttendence = new System.Windows.Forms.Button();
             this.btnPOS = new System.Windows.Forms.Button();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.btnCreateStaff = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +48,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnCreateStaff);
             this.panel2.Controls.Add(this.btnSalesRecord);
             this.panel2.Controls.Add(this.btnReserve);
             this.panel2.Controls.Add(this.btnAttendence);
@@ -82,7 +80,7 @@
             // 
             // btnAttendence
             // 
-            this.btnAttendence.Location = new System.Drawing.Point(0, 426);
+            this.btnAttendence.Location = new System.Drawing.Point(0, 252);
             this.btnAttendence.Name = "btnAttendence";
             this.btnAttendence.Size = new System.Drawing.Size(200, 86);
             this.btnAttendence.TabIndex = 3;
@@ -107,16 +105,6 @@
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(848, 512);
             this.panelChildForm.TabIndex = 2;
-            // 
-            // btnCreateStaff
-            // 
-            this.btnCreateStaff.Location = new System.Drawing.Point(0, 342);
-            this.btnCreateStaff.Name = "btnCreateStaff";
-            this.btnCreateStaff.Size = new System.Drawing.Size(200, 86);
-            this.btnCreateStaff.TabIndex = 7;
-            this.btnCreateStaff.Text = "CreateStaff";
-            this.btnCreateStaff.UseVisualStyleBackColor = true;
-            this.btnCreateStaff.Click += new System.EventHandler(this.btnCreateStaff_Click);
             // 
             // Staff_main
             // 
@@ -143,6 +131,5 @@
         private System.Windows.Forms.Button btnAttendence;
         private System.Windows.Forms.Button btnPOS;
         private System.Windows.Forms.Panel panelChildForm;
-        private System.Windows.Forms.Button btnCreateStaff;
     }
 }
