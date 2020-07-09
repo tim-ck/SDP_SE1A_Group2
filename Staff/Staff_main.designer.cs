@@ -35,6 +35,7 @@
             this.btnAttendence = new System.Windows.Forms.Button();
             this.btnPOS = new System.Windows.Forms.Button();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.btnCreateStaff = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnCreateStaff);
             this.panel2.Controls.Add(this.btnSalesRecord);
             this.panel2.Controls.Add(this.btnReserve);
             this.panel2.Controls.Add(this.btnAttendence);
@@ -60,9 +62,9 @@
             // 
             // btnSalesRecord
             // 
-            this.btnSalesRecord.Location = new System.Drawing.Point(0, 269);
+            this.btnSalesRecord.Location = new System.Drawing.Point(0, 168);
             this.btnSalesRecord.Name = "btnSalesRecord";
-            this.btnSalesRecord.Size = new System.Drawing.Size(200, 107);
+            this.btnSalesRecord.Size = new System.Drawing.Size(200, 86);
             this.btnSalesRecord.TabIndex = 6;
             this.btnSalesRecord.Text = "SalesRecord";
             this.btnSalesRecord.UseVisualStyleBackColor = true;
@@ -70,9 +72,9 @@
             // 
             // btnReserve
             // 
-            this.btnReserve.Location = new System.Drawing.Point(0, 174);
+            this.btnReserve.Location = new System.Drawing.Point(0, 84);
             this.btnReserve.Name = "btnReserve";
-            this.btnReserve.Size = new System.Drawing.Size(200, 98);
+            this.btnReserve.Size = new System.Drawing.Size(200, 86);
             this.btnReserve.TabIndex = 5;
             this.btnReserve.Text = "Reserve";
             this.btnReserve.UseVisualStyleBackColor = true;
@@ -80,9 +82,9 @@
             // 
             // btnAttendence
             // 
-            this.btnAttendence.Location = new System.Drawing.Point(0, 83);
+            this.btnAttendence.Location = new System.Drawing.Point(0, 426);
             this.btnAttendence.Name = "btnAttendence";
-            this.btnAttendence.Size = new System.Drawing.Size(200, 93);
+            this.btnAttendence.Size = new System.Drawing.Size(200, 86);
             this.btnAttendence.TabIndex = 3;
             this.btnAttendence.Text = "Attendence";
             this.btnAttendence.UseVisualStyleBackColor = true;
@@ -105,6 +107,16 @@
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(848, 512);
             this.panelChildForm.TabIndex = 2;
+            // 
+            // btnCreateStaff
+            // 
+            this.btnCreateStaff.Location = new System.Drawing.Point(0, 342);
+            this.btnCreateStaff.Name = "btnCreateStaff";
+            this.btnCreateStaff.Size = new System.Drawing.Size(200, 86);
+            this.btnCreateStaff.TabIndex = 7;
+            this.btnCreateStaff.Text = "CreateStaff";
+            this.btnCreateStaff.UseVisualStyleBackColor = true;
+            this.btnCreateStaff.Click += new System.EventHandler(this.btnCreateStaff_Click);
             // 
             // Staff_main
             // 
@@ -131,5 +143,6 @@
         private System.Windows.Forms.Button btnAttendence;
         private System.Windows.Forms.Button btnPOS;
         private System.Windows.Forms.Panel panelChildForm;
+        private System.Windows.Forms.Button btnCreateStaff;
     }
 }

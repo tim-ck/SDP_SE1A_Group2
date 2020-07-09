@@ -145,6 +145,12 @@
     <Compile Include="Staff\Staff_SalesRecord.designer.cs">
       <DependentUpon>Staff_SalesRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="Staff\Staff_CreateStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff\Staff_CreateStaff.Designer.cs">
+      <DependentUpon>Staff_CreateStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="tenant.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Staff\Staff_Attendance.resx">
       <DependentUpon>Staff_Attendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff\Staff_CreateStaff.resx">
+      <DependentUpon>Staff_CreateStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Staff\Staff_main.resx">
       <DependentUpon>Staff_main.cs</DependentUpon>

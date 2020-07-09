@@ -58,9 +58,17 @@ namespace SDP_SE1A_Group2
             openForm(staff_salesrecord);
         }
 
+        private void btnCreateStaff_Click(object sender, EventArgs e)
+        {
+            Staff_CreateStaff staff_createstaff = new Staff_CreateStaff();
+            openForm(staff_createstaff);
+        }
+
         private void Staff_main_Load(object sender, EventArgs e)
         {
 
         }
+
+        
     }
 }
