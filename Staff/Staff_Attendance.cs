@@ -40,7 +40,23 @@ namespace SDP_SE1A_Group2
                 {
                     MessageBox.Show("Staff ID not found");
                 }
+                //update salary
+                var checkID = db.staff.SingleOrDefault(b => b.staffID == id);
+                if (checkID != null)
+                {
+                    float salary = checkID.salary;
+
+                    var checkHour = db.attendence.SingleOrDefault(c => c.staffID == id);
+                    if (checkHour != null)
+                    {
+                        double total = salary * checkHour.hour;
+                        txtStaffType.Text = total.ToString();
+                    }
+
+                }
             }
+
+
         }
 
         private void Staff_Attendance_Load(object sender, EventArgs e)
@@ -62,6 +78,39 @@ namespace SDP_SE1A_Group2
             }
         }
 
+        private void txtStaffType_TextChanged(object sender, EventArgs e)
+        {
+            int id = int.Parse(txtStaffID.Text.Trim());
+            using (DBEntities db = new DBEntities())
+            {
+                var result = db.staff.SingleOrDefault(b => b.staffID == id);
+                if (result != null)
+                {
+                    txtStaffType.Text = result.staffID.Text.ToString();
+                }
+            }
 
+        }
+
+        private void txtSalary_TextChanged(object sender, EventArgs e)
+        {
+            int id = int.Parse(txtStaffID.Text.Trim());
+            using (DBEntities db = new DBEntities())
+            {
+                var checkID = db.staff.SingleOrDefault(b => b.staffID == id);
+                if (checkID != null)
+                {
+                    float salary = checkID.salary;
+                    
+                    var checkHour = db.attendence.SingleOrDefault(c => c.staffID == id);
+                    if (checkHour != null)
+                    {
+                        double total = salary * checkHour.hour;
+                        txtStaffType.Text = total.ToString();
+                    }
+                        
+                }
+            }
+        }
     }
 }

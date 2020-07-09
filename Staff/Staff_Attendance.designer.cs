@@ -39,6 +39,10 @@
             this.hour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblMonth = new System.Windows.Forms.Label();
             this.dtpMonth = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtStaffType = new System.Windows.Forms.TextBox();
+            this.txtSalary = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,14 +66,14 @@
             // 
             // txtStaffID
             // 
-            this.txtStaffID.Location = new System.Drawing.Point(207, 21);
+            this.txtStaffID.Location = new System.Drawing.Point(129, 14);
             this.txtStaffID.Name = "txtStaffID";
             this.txtStaffID.Size = new System.Drawing.Size(121, 22);
             this.txtStaffID.TabIndex = 2;
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(253, 159);
+            this.btnSubmit.Location = new System.Drawing.Point(175, 141);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 4;
@@ -79,7 +83,7 @@
             // 
             // txtWorkHour
             // 
-            this.txtWorkHour.Location = new System.Drawing.Point(207, 106);
+            this.txtWorkHour.Location = new System.Drawing.Point(129, 99);
             this.txtWorkHour.Name = "txtWorkHour";
             this.txtWorkHour.Size = new System.Drawing.Size(121, 22);
             this.txtWorkHour.TabIndex = 5;
@@ -91,10 +95,10 @@
             this.staffID,
             this.month,
             this.hour});
-            this.dataGridView1.Location = new System.Drawing.Point(24, 220);
+            this.dataGridView1.Location = new System.Drawing.Point(272, 14);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(337, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(343, 150);
             this.dataGridView1.TabIndex = 6;
             // 
             // staffID
@@ -125,16 +129,56 @@
             // 
             this.dtpMonth.CustomFormat = "yyyy-MM";
             this.dtpMonth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpMonth.Location = new System.Drawing.Point(207, 65);
+            this.dtpMonth.Location = new System.Drawing.Point(129, 58);
             this.dtpMonth.Name = "dtpMonth";
             this.dtpMonth.Size = new System.Drawing.Size(121, 22);
             this.dtpMonth.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(66, 196);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 12);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Staff Type:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(86, 238);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 12);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Salary:";
+            // 
+            // txtStaffType
+            // 
+            this.txtStaffType.Location = new System.Drawing.Point(129, 186);
+            this.txtStaffType.Name = "txtStaffType";
+            this.txtStaffType.ReadOnly = true;
+            this.txtStaffType.Size = new System.Drawing.Size(121, 22);
+            this.txtStaffType.TabIndex = 11;
+            this.txtStaffType.TextChanged += new System.EventHandler(this.txtStaffType_TextChanged);
+            // 
+            // txtSalary
+            // 
+            this.txtSalary.Location = new System.Drawing.Point(129, 231);
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.ReadOnly = true;
+            this.txtSalary.Size = new System.Drawing.Size(121, 22);
+            this.txtSalary.TabIndex = 12;
+            this.txtSalary.TextChanged += new System.EventHandler(this.txtSalary_TextChanged);
             // 
             // Staff_Attendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 594);
+            this.Controls.Add(this.txtSalary);
+            this.Controls.Add(this.txtStaffType);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpMonth);
             this.Controls.Add(this.lblMonth);
             this.Controls.Add(this.dataGridView1);
@@ -165,5 +209,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hour;
         private System.Windows.Forms.Label lblMonth;
         private System.Windows.Forms.DateTimePicker dtpMonth;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtStaffType;
+        private System.Windows.Forms.TextBox txtSalary;
     }
 }
