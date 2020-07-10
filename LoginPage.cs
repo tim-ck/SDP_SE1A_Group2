@@ -198,7 +198,7 @@ namespace SDP_SE1A_Group2
 
                 var userAcct = from list in db.staffs
                                where list.staffID.Equals(username)
-                               select new { list.staffID, list.staffPwd };
+                               select new { list.staffID, list.staffPwd ,list.name,list.staffType};
                 if (userAcct == null)
                 {
                     txtErrMsg.Text = "The Username / Password is incorrect";
@@ -222,7 +222,7 @@ namespace SDP_SE1A_Group2
                             pictureBox3.Image = Properties.Resources.iconmonstr_lock_3_240;
                             label2.BackColor = Color.White;
                             txtPassword.ForeColor = Color.White;
-                            Staff_main staffMain = new Staff_main(this);
+                            Staff_main staffMain = new Staff_main(this,user.staffID, user.staffType);
                             staffMain.Show();
                             return;
                         }

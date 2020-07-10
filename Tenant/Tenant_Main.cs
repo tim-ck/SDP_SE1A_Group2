@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SDP_SE1A_Group2.Staff;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -152,10 +153,35 @@ namespace SDP_SE1A_Group2
             openChildForm(tenantConsolidatedStatement);
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        
+
+        //Pong Strat
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            EditTenantInfo editTenantInfo = new EditTenantInfo(this, tenantID);
+            openChildForm(editTenantInfo);
+        }
+
+        
+        public void closeForm()
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            
+        }
+
+        internal void logout()
         {
             this.Close();
             opener.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+            logout();
+
+        }
+        //Pong End
     }
 }

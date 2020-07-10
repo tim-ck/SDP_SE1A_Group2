@@ -55,6 +55,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtErrMsg = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -126,7 +127,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.txtPassword.ForeColor = System.Drawing.Color.White;
             this.txtPassword.HideSelection = false;
-            this.txtPassword.Location = new System.Drawing.Point(91, 653);
+            this.txtPassword.Location = new System.Drawing.Point(98, 676);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(432, 36);
@@ -138,7 +139,7 @@
             // lblPwd
             // 
             this.lblPwd.BackColor = System.Drawing.Color.White;
-            this.lblPwd.Location = new System.Drawing.Point(23, 699);
+            this.lblPwd.Location = new System.Drawing.Point(30, 722);
             this.lblPwd.Name = "lblPwd";
             this.lblPwd.Size = new System.Drawing.Size(500, 2);
             this.lblPwd.TabIndex = 41;
@@ -146,7 +147,7 @@
             // lbluserName
             // 
             this.lbluserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.lbluserName.Location = new System.Drawing.Point(28, 567);
+            this.lbluserName.Location = new System.Drawing.Point(28, 590);
             this.lbluserName.Name = "lbluserName";
             this.lbluserName.Size = new System.Drawing.Size(500, 2);
             this.lbluserName.TabIndex = 38;
@@ -157,7 +158,7 @@
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.txtUsername.ForeColor = System.Drawing.Color.White;
-            this.txtUsername.Location = new System.Drawing.Point(96, 527);
+            this.txtUsername.Location = new System.Drawing.Point(96, 550);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(448, 36);
@@ -168,7 +169,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::SDP_SE1A_Group2.Properties.Resources.iconmonstr_lock_3_240;
-            this.pictureBox3.Location = new System.Drawing.Point(27, 636);
+            this.pictureBox3.Location = new System.Drawing.Point(34, 659);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(57, 59);
@@ -179,7 +180,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::SDP_SE1A_Group2.Properties.Resources.user;
-            this.pictureBox2.Location = new System.Drawing.Point(31, 501);
+            this.pictureBox2.Location = new System.Drawing.Point(31, 524);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(58, 62);
@@ -204,7 +205,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(171, 847);
+            this.label10.Location = new System.Drawing.Point(175, 865);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(168, 28);
             this.label10.TabIndex = 56;
@@ -217,7 +218,7 @@
             this.btnBacktoSignInPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBacktoSignInPage.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.btnBacktoSignInPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnBacktoSignInPage.Location = new System.Drawing.Point(368, 839);
+            this.btnBacktoSignInPage.Location = new System.Drawing.Point(372, 857);
             this.btnBacktoSignInPage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBacktoSignInPage.Name = "btnBacktoSignInPage";
             this.btnBacktoSignInPage.Size = new System.Drawing.Size(155, 45);
@@ -307,9 +308,9 @@
             // 
             this.label7.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(26, 569);
+            this.label7.Location = new System.Drawing.Point(33, 600);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(464, 67);
+            this.label7.Size = new System.Drawing.Size(464, 60);
             this.label7.TabIndex = 68;
             this.label7.Text = "Password(Use 6 or not more than 20 characters with a mix of letters, numbers & sy" +
     "mbols):";
@@ -325,7 +326,7 @@
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
-            this.btnRegister.Location = new System.Drawing.Point(141, 761);
+            this.btnRegister.Location = new System.Drawing.Point(149, 788);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(381, 61);
@@ -374,11 +375,22 @@
             this.txtErrMsg.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtErrMsg.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.txtErrMsg.ForeColor = System.Drawing.Color.Red;
-            this.txtErrMsg.Location = new System.Drawing.Point(26, 717);
+            this.txtErrMsg.Location = new System.Drawing.Point(30, 744);
             this.txtErrMsg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtErrMsg.Name = "txtErrMsg";
             this.txtErrMsg.Size = new System.Drawing.Size(496, 36);
             this.txtErrMsg.TabIndex = 74;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.label4.ForeColor = System.Drawing.Color.IndianRed;
+            this.label4.Location = new System.Drawing.Point(32, 494);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(276, 28);
+            this.label4.TabIndex = 88;
+            this.label4.Text = "(Cannot change once created):";
             // 
             // RegisterForm
             // 
@@ -386,6 +398,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(555, 916);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtErrMsg);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label11);
@@ -457,5 +470,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtErrMsg;
+        private System.Windows.Forms.Label label4;
     }
 }

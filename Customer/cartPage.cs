@@ -78,6 +78,13 @@ namespace SDP_SE1A_Group2.Customer
         public void AddItem(String itemID, String itemName, String description, int quantity, int qtyRemain, int unitPrice, int totalPrice) {
             if (itemsCount == 0)
                opener.UpdateCartHvItem(true);
+            for (int i = 0; i < itemsCount; i++)
+            {
+                if (itemID == dataGridView1.Rows[i].Cells["cart_itemID"].Value.ToString())
+                {
+                    return;
+                }
+            }
             ++itemsCount;
             dataGridView1.Rows.Add(itemID, itemName, description, unitPrice);
             

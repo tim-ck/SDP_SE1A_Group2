@@ -35,13 +35,15 @@
             this.lblCloseBtn = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAcctSetting = new System.Windows.Forms.Button();
+            this.btnAddstaff = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.btnShowcase = new System.Windows.Forms.Button();
             this.btnSalesRecord = new System.Windows.Forms.Button();
             this.btnReserve = new System.Windows.Forms.Button();
             this.btnAttendence = new System.Windows.Forms.Button();
             this.btnPOS = new System.Windows.Forms.Button();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.btnLogOut = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -128,6 +130,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnAcctSetting);
+            this.panel2.Controls.Add(this.btnAddstaff);
             this.panel2.Controls.Add(this.btnLogOut);
             this.panel2.Controls.Add(this.btnShowcase);
             this.panel2.Controls.Add(this.btnSalesRecord);
@@ -141,12 +145,47 @@
             this.panel2.Size = new System.Drawing.Size(233, 857);
             this.panel2.TabIndex = 1;
             // 
+            // btnAcctSetting
+            // 
+            this.btnAcctSetting.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnAcctSetting.Location = new System.Drawing.Point(0, 745);
+            this.btnAcctSetting.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAcctSetting.Name = "btnAcctSetting";
+            this.btnAcctSetting.Size = new System.Drawing.Size(233, 57);
+            this.btnAcctSetting.TabIndex = 10;
+            this.btnAcctSetting.Text = "Account Setting";
+            this.btnAcctSetting.UseVisualStyleBackColor = false;
+            this.btnAcctSetting.Click += new System.EventHandler(this.btnAcctSetting_Click);
+            // 
+            // btnAddstaff
+            // 
+            this.btnAddstaff.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnAddstaff.Location = new System.Drawing.Point(0, 572);
+            this.btnAddstaff.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAddstaff.Name = "btnAddstaff";
+            this.btnAddstaff.Size = new System.Drawing.Size(233, 106);
+            this.btnAddstaff.TabIndex = 9;
+            this.btnAddstaff.Text = "Add Staff";
+            this.btnAddstaff.UseVisualStyleBackColor = false;
+            this.btnAddstaff.Click += new System.EventHandler(this.btnAddstaff_Click);
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Location = new System.Drawing.Point(0, 800);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(233, 57);
+            this.btnLogOut.TabIndex = 8;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // btnShowcase
             // 
             this.btnShowcase.Location = new System.Drawing.Point(0, 467);
             this.btnShowcase.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnShowcase.Name = "btnShowcase";
-            this.btnShowcase.Size = new System.Drawing.Size(233, 134);
+            this.btnShowcase.Size = new System.Drawing.Size(233, 106);
             this.btnShowcase.TabIndex = 7;
             this.btnShowcase.Text = "Showcase Management";
             this.btnShowcase.UseVisualStyleBackColor = true;
@@ -205,17 +244,6 @@
             this.panelChildForm.Size = new System.Drawing.Size(1269, 857);
             this.panelChildForm.TabIndex = 2;
             // 
-            // btnLogOut
-            // 
-            this.btnLogOut.Location = new System.Drawing.Point(0, 723);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(233, 134);
-            this.btnLogOut.TabIndex = 8;
-            this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.UseVisualStyleBackColor = true;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
-            // 
             // Staff_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -254,5 +282,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnShowcase;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnAddstaff;
+        private System.Windows.Forms.Button btnAcctSetting;
     }
 }

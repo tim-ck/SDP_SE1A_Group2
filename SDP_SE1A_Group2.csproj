@@ -83,6 +83,12 @@
     <Compile Include="Customer\CartPage.Designer.cs">
       <DependentUpon>CartPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\CustomerAccountSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerAccountSetting.Designer.cs">
+      <DependentUpon>CustomerAccountSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\customerMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,24 @@
     </Compile>
     <Compile Include="staff.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\AddStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff\AddStaff.Designer.cs">
+      <DependentUpon>AddStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\editStaffInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff\editStaffInfo.Designer.cs">
+      <DependentUpon>editStaffInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tenant\EditTenantInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tenant\EditTenantInfo.Designer.cs">
+      <DependentUpon>EditTenantInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Staff\Staff_showcaseManagment.cs">
       <SubType>Form</SubType>
@@ -274,6 +298,9 @@
     <EmbeddedResource Include="Customer\cartPage.resx">
       <DependentUpon>CartPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerAccountSetting.resx">
+      <DependentUpon>CustomerAccountSetting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer\customerMain.resx">
       <DependentUpon>customerMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,6 +314,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff\AddStaff.resx">
+      <DependentUpon>AddStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff\editStaffInfo.resx">
+      <DependentUpon>editStaffInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tenant\EditTenantInfo.resx">
+      <DependentUpon>EditTenantInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Staff\Staff_showcaseManagment.resx">
       <DependentUpon>Staff_showcaseManagment.cs</DependentUpon>

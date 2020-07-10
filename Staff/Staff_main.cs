@@ -15,13 +15,23 @@ namespace SDP_SE1A_Group2
     public partial class Staff_main : Form
     {
         Form opener;
-        public Staff_main(Form parentForm)
+        //Peter start
+        String staffID, StaffType;
+        //peter end
+
+        public Staff_main(Form parentForm, String staffID, String StaffType)
         {
             InitializeComponent();
             opener = parentForm;
             this.Text = string.Empty;
             this.ControlBox = false;
+            //Peter start
+            this.staffID = staffID;
+            this.StaffType = StaffType;
+            //peter end
         }
+
+        
 
         //Drag From Control 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -51,11 +61,7 @@ namespace SDP_SE1A_Group2
         }
 
 
-        private void btnPOS_Click(object sender, EventArgs e)
-        {
-            Staff_POS staff_pos = new Staff_POS();
-            openForm(staff_pos);
-        }
+        
         private Form activeForm;
         private void openForm(Form childForm)
         {
@@ -104,11 +110,51 @@ namespace SDP_SE1A_Group2
 
 
         }
-     
-        private void btnLogOut_Click(object sender, EventArgs e)
+        //Peter start
+
+
+        private void btnPOS_Click(object sender, EventArgs e)
+        {
+            Staff_POS staff_pos = new Staff_POS(this);
+            openForm(staff_pos);
+        }
+        private void btnAddstaff_Click(object sender, EventArgs e)
+        {
+            AddStaff addStaff = new AddStaff();
+            openForm(addStaff);
+        }
+
+        private void btnAcctSetting_Click(object sender, EventArgs e)
+        {
+            editStaffInfo setting = new editStaffInfo(this, staffID);
+            openForm(setting);
+
+        }
+
+       
+        internal void closeForm()
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+        }
+
+
+        public void btnLogOut_Click(object sender, EventArgs e)
+        {
+
+            logout();
+        }
+
+        public void logout()
         {
             this.Close();
             opener.Show();
         }
+
+        //Peter END
+
+
     }
 }

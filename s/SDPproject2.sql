@@ -177,7 +177,7 @@ DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order` (
   `orderID` varchar(15) NOT NULL,
   `storeID` varchar(15) NOT NULL,
-  `customerID` varchar(15) NOT NULL,
+  `customerID` varchar(15) DEFAULT NULL,
   `orderDate` date NOT NULL,
   `orderTotalPrice` float NOT NULL,
   PRIMARY KEY (`orderID`),
@@ -362,7 +362,7 @@ CREATE TABLE `staff` (
   `staffPwd` varchar(20) NOT NULL,
   `email` varchar(100) DEFAULT NULL,
   `name` varchar(50) NOT NULL,
-  `staffType` char(2) NOT NULL,
+  `staffType` char(1) NOT NULL,
   `reportsTo` varchar(20) DEFAULT NULL,
   `salary` float NOT NULL,
   PRIMARY KEY (`staffID`),

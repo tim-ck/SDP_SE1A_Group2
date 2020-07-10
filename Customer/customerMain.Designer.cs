@@ -40,6 +40,7 @@
             this.lblCloseBtn = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.btnAccountSetting = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -49,6 +50,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.btnAccountSetting);
             this.panel1.Controls.Add(this.btnOrder);
             this.panel1.Controls.Add(this.btnLogOut);
             this.panel1.Controls.Add(this.btnCart);
@@ -228,6 +230,26 @@
             this.panelChildForm.Size = new System.Drawing.Size(1214, 800);
             this.panelChildForm.TabIndex = 2;
             // 
+            // btnAccountSetting
+            // 
+            this.btnAccountSetting.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAccountSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccountSetting.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccountSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
+            this.btnAccountSetting.Image = global::SDP_SE1A_Group2.Properties.Resources.setting;
+            this.btnAccountSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAccountSetting.Location = new System.Drawing.Point(0, 747);
+            this.btnAccountSetting.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAccountSetting.Name = "btnAccountSetting";
+            this.btnAccountSetting.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnAccountSetting.Size = new System.Drawing.Size(250, 83);
+            this.btnAccountSetting.TabIndex = 7;
+            this.btnAccountSetting.Text = "Account  Setting";
+            this.btnAccountSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAccountSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAccountSetting.UseVisualStyleBackColor = true;
+            this.btnAccountSetting.Click += new System.EventHandler(this.btnAccountSetting_Click);
+            // 
             // CustomerMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -264,5 +286,6 @@
         private System.Windows.Forms.Label lblCloseBtn;
         private System.Windows.Forms.Label lblMinBtn;
         private System.Windows.Forms.Button btnOrder;
+        private System.Windows.Forms.Button btnAccountSetting;
     }
 }

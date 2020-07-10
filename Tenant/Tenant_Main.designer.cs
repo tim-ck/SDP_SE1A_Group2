@@ -30,10 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TenantMain));
             this.btnMyShowcase = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.btnRentShowcase = new System.Windows.Forms.Button();
             this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.btnSetting = new System.Windows.Forms.Button();
             this.panelLogOut = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.panelRecordSubMenu = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -83,25 +84,6 @@
             this.btnMyShowcase.UseVisualStyleBackColor = true;
             this.btnMyShowcase.Click += new System.EventHandler(this.btnMyShowcase_Click);
             // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Black;
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button6.ForeColor = System.Drawing.Color.LightGray;
-            this.button6.Location = new System.Drawing.Point(0, 0);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(250, 57);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Log out";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
             // btnRentShowcase
             // 
             this.btnRentShowcase.Dock = System.Windows.Forms.DockStyle.Top;
@@ -123,6 +105,7 @@
             // 
             this.panelSideMenu.AutoScroll = true;
             this.panelSideMenu.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelSideMenu.Controls.Add(this.btnSetting);
             this.panelSideMenu.Controls.Add(this.panelLogOut);
             this.panelSideMenu.Controls.Add(this.panelRecordSubMenu);
             this.panelSideMenu.Controls.Add(this.btnRecord);
@@ -137,6 +120,16 @@
             this.panelSideMenu.Size = new System.Drawing.Size(250, 811);
             this.panelSideMenu.TabIndex = 17;
             // 
+            // btnSetting
+            // 
+            this.btnSetting.Location = new System.Drawing.Point(68, 645);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(144, 95);
+            this.btnSetting.TabIndex = 27;
+            this.btnSetting.Text = "Setting";
+            this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
+            // 
             // panelLogOut
             // 
             this.panelLogOut.Controls.Add(this.button6);
@@ -144,7 +137,26 @@
             this.panelLogOut.Location = new System.Drawing.Point(0, 490);
             this.panelLogOut.Name = "panelLogOut";
             this.panelLogOut.Size = new System.Drawing.Size(250, 67);
-            this.panelLogOut.TabIndex = 25;
+            this.panelLogOut.TabIndex = 26;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Black;
+            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button6.ForeColor = System.Drawing.Color.LightGray;
+            this.button6.Location = new System.Drawing.Point(0, 0);
+            this.button6.Name = "button6";
+            this.button6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button6.Size = new System.Drawing.Size(250, 57);
+            this.button6.TabIndex = 8;
+            this.button6.Text = "Log out";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // panelRecordSubMenu
             // 
@@ -432,7 +444,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnMyShowcase;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnRentShowcase;
         private System.Windows.Forms.Panel panelSideMenu;
         private System.Windows.Forms.Panel panelShowcaseSubMenu;
@@ -440,7 +451,6 @@
         private System.Windows.Forms.Panel panelLogo;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
-        private System.Windows.Forms.Panel panelLogOut;
         private System.Windows.Forms.Panel panelRecordSubMenu;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
@@ -456,6 +466,9 @@
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.Label lblMinBtn;
         private System.Windows.Forms.Label lblCloseBtn;
+        private System.Windows.Forms.Button btnSetting;
+        private System.Windows.Forms.Panel panelLogOut;
+        private System.Windows.Forms.Button button6;
     }
 }
 
