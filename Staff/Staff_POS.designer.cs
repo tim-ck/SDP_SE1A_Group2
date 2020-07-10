@@ -52,36 +52,40 @@
             // lblItemID
             // 
             this.lblItemID.AutoSize = true;
-            this.lblItemID.Location = new System.Drawing.Point(63, 111);
+            this.lblItemID.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblItemID.Location = new System.Drawing.Point(74, 111);
             this.lblItemID.Name = "lblItemID";
-            this.lblItemID.Size = new System.Drawing.Size(44, 12);
+            this.lblItemID.Size = new System.Drawing.Size(60, 16);
             this.lblItemID.TabIndex = 1;
             this.lblItemID.Text = "Item ID:";
             // 
             // lblQT
             // 
             this.lblQT.AutoSize = true;
-            this.lblQT.Location = new System.Drawing.Point(82, 233);
+            this.lblQT.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblQT.Location = new System.Drawing.Point(93, 233);
             this.lblQT.Name = "lblQT";
-            this.lblQT.Size = new System.Drawing.Size(23, 12);
+            this.lblQT.Size = new System.Drawing.Size(32, 16);
             this.lblQT.TabIndex = 2;
             this.lblQT.Text = "QT:";
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(49, 173);
+            this.lblPrice.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblPrice.Location = new System.Drawing.Point(60, 173);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(56, 12);
+            this.lblPrice.Size = new System.Drawing.Size(76, 16);
             this.lblPrice.TabIndex = 3;
             this.lblPrice.Text = "Price(1pc):";
             // 
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(46, 291);
+            this.lblTotalPrice.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblTotalPrice.Location = new System.Drawing.Point(57, 291);
             this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(58, 12);
+            this.lblTotalPrice.Size = new System.Drawing.Size(79, 16);
             this.lblTotalPrice.TabIndex = 4;
             this.lblTotalPrice.Text = "Total Price:";
             // 
@@ -119,12 +123,14 @@
             // 
             // btnPay
             // 
-            this.btnPay.Location = new System.Drawing.Point(39, 344);
+            this.btnPay.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnPay.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnPay.Location = new System.Drawing.Point(41, 333);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(94, 32);
+            this.btnPay.Size = new System.Drawing.Size(113, 44);
             this.btnPay.TabIndex = 10;
             this.btnPay.Text = "Pay";
-            this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.UseVisualStyleBackColor = false;
             this.btnPay.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
@@ -136,7 +142,7 @@
             this.avalibleQty,
             this.soldQty,
             this.TotalQty});
-            this.dataGridView1.Location = new System.Drawing.Point(333, 65);
+            this.dataGridView1.Location = new System.Drawing.Point(320, 65);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(454, 236);
@@ -170,20 +176,23 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(159, 344);
+            this.btnPrint.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnPrint.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnPrint.Location = new System.Drawing.Point(173, 333);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(88, 32);
+            this.btnPrint.Size = new System.Drawing.Size(107, 44);
             this.btnPrint.TabIndex = 13;
             this.btnPrint.Text = "Print receipt";
-            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // lblLocation
             // 
             this.lblLocation.AutoSize = true;
-            this.lblLocation.Location = new System.Drawing.Point(63, 65);
+            this.lblLocation.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblLocation.Location = new System.Drawing.Point(74, 65);
             this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(49, 12);
+            this.lblLocation.Size = new System.Drawing.Size(67, 16);
             this.lblLocation.TabIndex = 14;
             this.lblLocation.Text = "Location:";
             // 
@@ -204,6 +213,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(799, 457);
             this.Controls.Add(this.cmbLocation);
             this.Controls.Add(this.lblLocation);

@@ -40,6 +40,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -48,6 +49,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.SkyBlue;
             this.panel2.Controls.Add(this.btnSalesRecord);
             this.panel2.Controls.Add(this.btnReserve);
             this.panel2.Controls.Add(this.btnAttendence);
@@ -60,47 +62,59 @@
             // 
             // btnSalesRecord
             // 
-            this.btnSalesRecord.Location = new System.Drawing.Point(0, 168);
+            this.btnSalesRecord.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnSalesRecord.Font = new System.Drawing.Font("新細明體", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnSalesRecord.ForeColor = System.Drawing.Color.White;
+            this.btnSalesRecord.Location = new System.Drawing.Point(-27, 157);
             this.btnSalesRecord.Name = "btnSalesRecord";
-            this.btnSalesRecord.Size = new System.Drawing.Size(200, 86);
+            this.btnSalesRecord.Size = new System.Drawing.Size(237, 86);
             this.btnSalesRecord.TabIndex = 6;
             this.btnSalesRecord.Text = "SalesRecord";
-            this.btnSalesRecord.UseVisualStyleBackColor = true;
+            this.btnSalesRecord.UseVisualStyleBackColor = false;
             this.btnSalesRecord.Click += new System.EventHandler(this.btnSalesRecord_Click);
             // 
             // btnReserve
             // 
-            this.btnReserve.Location = new System.Drawing.Point(0, 84);
+            this.btnReserve.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnReserve.Font = new System.Drawing.Font("新細明體", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnReserve.ForeColor = System.Drawing.Color.White;
+            this.btnReserve.Location = new System.Drawing.Point(-10, 77);
             this.btnReserve.Name = "btnReserve";
-            this.btnReserve.Size = new System.Drawing.Size(200, 86);
+            this.btnReserve.Size = new System.Drawing.Size(220, 86);
             this.btnReserve.TabIndex = 5;
             this.btnReserve.Text = "Reserve";
-            this.btnReserve.UseVisualStyleBackColor = true;
+            this.btnReserve.UseVisualStyleBackColor = false;
             this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
             // 
             // btnAttendence
             // 
-            this.btnAttendence.Location = new System.Drawing.Point(0, 252);
+            this.btnAttendence.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAttendence.Font = new System.Drawing.Font("新細明體", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnAttendence.ForeColor = System.Drawing.Color.White;
+            this.btnAttendence.Location = new System.Drawing.Point(-10, 237);
             this.btnAttendence.Name = "btnAttendence";
-            this.btnAttendence.Size = new System.Drawing.Size(200, 86);
+            this.btnAttendence.Size = new System.Drawing.Size(220, 93);
             this.btnAttendence.TabIndex = 3;
             this.btnAttendence.Text = "Attendence";
-            this.btnAttendence.UseVisualStyleBackColor = true;
+            this.btnAttendence.UseVisualStyleBackColor = false;
             this.btnAttendence.Click += new System.EventHandler(this.btnAttendence_Click);
             // 
             // btnPOS
             // 
-            this.btnPOS.Location = new System.Drawing.Point(0, 0);
+            this.btnPOS.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnPOS.Font = new System.Drawing.Font("新細明體", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnPOS.ForeColor = System.Drawing.Color.White;
+            this.btnPOS.Location = new System.Drawing.Point(-10, -4);
             this.btnPOS.Name = "btnPOS";
-            this.btnPOS.Size = new System.Drawing.Size(200, 86);
+            this.btnPOS.Size = new System.Drawing.Size(220, 86);
             this.btnPOS.TabIndex = 2;
             this.btnPOS.Text = "POS";
-            this.btnPOS.UseVisualStyleBackColor = true;
+            this.btnPOS.UseVisualStyleBackColor = false;
             this.btnPOS.Click += new System.EventHandler(this.btnPOS_Click);
             // 
             // panelChildForm
             // 
-            this.panelChildForm.BackColor = System.Drawing.Color.Transparent;
+            this.panelChildForm.BackColor = System.Drawing.Color.SkyBlue;
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(200, 100);
             this.panelChildForm.Name = "panelChildForm";

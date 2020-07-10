@@ -49,24 +49,26 @@
             // lblStaffID
             // 
             this.lblStaffID.AutoSize = true;
-            this.lblStaffID.Location = new System.Drawing.Point(81, 24);
+            this.lblStaffID.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblStaffID.Location = new System.Drawing.Point(58, 20);
             this.lblStaffID.Name = "lblStaffID";
-            this.lblStaffID.Size = new System.Drawing.Size(42, 12);
+            this.lblStaffID.Size = new System.Drawing.Size(57, 16);
             this.lblStaffID.TabIndex = 0;
             this.lblStaffID.Text = "StaffID:";
             // 
             // lblWorkHour
             // 
             this.lblWorkHour.AutoSize = true;
-            this.lblWorkHour.Location = new System.Drawing.Point(57, 109);
+            this.lblWorkHour.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblWorkHour.Location = new System.Drawing.Point(34, 105);
             this.lblWorkHour.Name = "lblWorkHour";
-            this.lblWorkHour.Size = new System.Drawing.Size(66, 12);
+            this.lblWorkHour.Size = new System.Drawing.Size(89, 16);
             this.lblWorkHour.TabIndex = 1;
             this.lblWorkHour.Text = "Work Hours:";
             // 
             // txtStaffID
             // 
-            this.txtStaffID.Location = new System.Drawing.Point(129, 14);
+            this.txtStaffID.Location = new System.Drawing.Point(129, 19);
             this.txtStaffID.Name = "txtStaffID";
             this.txtStaffID.Size = new System.Drawing.Size(121, 22);
             this.txtStaffID.TabIndex = 2;
@@ -83,7 +85,7 @@
             // 
             // txtWorkHour
             // 
-            this.txtWorkHour.Location = new System.Drawing.Point(129, 99);
+            this.txtWorkHour.Location = new System.Drawing.Point(129, 103);
             this.txtWorkHour.Name = "txtWorkHour";
             this.txtWorkHour.Size = new System.Drawing.Size(121, 22);
             this.txtWorkHour.TabIndex = 5;
@@ -119,9 +121,10 @@
             // lblMonth
             // 
             this.lblMonth.AutoSize = true;
-            this.lblMonth.Location = new System.Drawing.Point(81, 65);
+            this.lblMonth.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblMonth.Location = new System.Drawing.Point(58, 61);
             this.lblMonth.Name = "lblMonth";
-            this.lblMonth.Size = new System.Drawing.Size(39, 12);
+            this.lblMonth.Size = new System.Drawing.Size(53, 16);
             this.lblMonth.TabIndex = 7;
             this.lblMonth.Text = "Month:";
             // 
@@ -129,7 +132,7 @@
             // 
             this.dtpMonth.CustomFormat = "yyyy-MM";
             this.dtpMonth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpMonth.Location = new System.Drawing.Point(129, 58);
+            this.dtpMonth.Location = new System.Drawing.Point(129, 61);
             this.dtpMonth.Name = "dtpMonth";
             this.dtpMonth.Size = new System.Drawing.Size(121, 22);
             this.dtpMonth.TabIndex = 8;
@@ -137,24 +140,26 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(66, 196);
+            this.label1.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(43, 192);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 12);
+            this.label1.Size = new System.Drawing.Size(77, 16);
             this.label1.TabIndex = 9;
             this.label1.Text = "Staff Type:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(86, 238);
+            this.label2.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.Location = new System.Drawing.Point(63, 234);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 12);
+            this.label2.Size = new System.Drawing.Size(51, 16);
             this.label2.TabIndex = 10;
             this.label2.Text = "Salary:";
             // 
             // txtStaffType
             // 
-            this.txtStaffType.Location = new System.Drawing.Point(129, 186);
+            this.txtStaffType.Location = new System.Drawing.Point(129, 191);
             this.txtStaffType.Name = "txtStaffType";
             this.txtStaffType.ReadOnly = true;
             this.txtStaffType.Size = new System.Drawing.Size(121, 22);
@@ -163,7 +168,7 @@
             // 
             // txtSalary
             // 
-            this.txtSalary.Location = new System.Drawing.Point(129, 231);
+            this.txtSalary.Location = new System.Drawing.Point(129, 234);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.ReadOnly = true;
             this.txtSalary.Size = new System.Drawing.Size(121, 22);
@@ -174,6 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(945, 594);
             this.Controls.Add(this.txtSalary);
             this.Controls.Add(this.txtStaffType);

@@ -35,7 +35,16 @@ namespace SDP_SE1A_Group2.Staff
                                 orderby showcase.showcaseid ascending
                                 select new { showcase.showcaseid };
 
-                foreach (var i in showcaseList.ToList()) { listBoxShowcaseID.Items.Add(i.showcaseid); }
+                
+                //change color
+                foreach (var i in showcaseList.ToList()) {
+                    listBoxShowcaseID.Items[i].BackColor = Color.Green;
+                    if(i.status == "o")
+                    {
+                        listBoxShowcaseID.Items[i].BackColor = Color.Red;
+                    }
+                    listBoxShowcaseID.Items.Add(i.showcaseid); 
+                }
             }
             
         }
@@ -214,6 +223,11 @@ namespace SDP_SE1A_Group2.Staff
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void listBoxShowcaseID_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

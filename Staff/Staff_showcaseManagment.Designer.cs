@@ -108,6 +108,7 @@
             this.listBoxShowcaseID.Name = "listBoxShowcaseID";
             this.listBoxShowcaseID.Size = new System.Drawing.Size(203, 615);
             this.listBoxShowcaseID.TabIndex = 14;
+            this.listBoxShowcaseID.SelectedIndexChanged += new System.EventHandler(this.listBoxShowcaseID_SelectedIndexChanged);
             // 
             // panel1
             // 
