@@ -24,7 +24,7 @@ namespace SDP_SE1A_Group2
             int id = int.Parse(txtStaffID.Text.Trim());
             string month = dtpMonth.Value.ToString("yyyy-MM");
 
-            using (DBEntities db = new DBEntities())
+            using (sdpEntities db = new sdpEntities())
             {
                 var result = db.attendence.SingleOrDefault(b => b.staffID == id && b.month == month);
                 if (result != null)
@@ -66,7 +66,7 @@ namespace SDP_SE1A_Group2
         public void updateDate()
         {
             dataGridView1.Rows.Clear();
-            using (DBEntities print = new DBEntities())
+            using (sdpEntities print = new sdpEntities())
             {
                 var atten = (from list in print.attendence
                              select list);    // select * from attendence
@@ -81,7 +81,7 @@ namespace SDP_SE1A_Group2
         private void txtStaffType_TextChanged(object sender, EventArgs e)
         {
             int id = int.Parse(txtStaffID.Text.Trim());
-            using (DBEntities db = new DBEntities())
+            using (sdpEntities db = new sdpEntities())
             {
                 var result = db.staff.SingleOrDefault(b => b.staffID == id);
                 if (result != null)
@@ -95,7 +95,7 @@ namespace SDP_SE1A_Group2
         private void txtSalary_TextChanged(object sender, EventArgs e)
         {
             int id = int.Parse(txtStaffID.Text.Trim());
-            using (DBEntities db = new DBEntities())
+            using (sdpEntities db = new sdpEntities())
             {
                 var checkID = db.staff.SingleOrDefault(b => b.staffID == id);
                 if (checkID != null)

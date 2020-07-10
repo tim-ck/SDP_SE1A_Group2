@@ -35,7 +35,7 @@ namespace SDP_SE1A_Group2
             qt = int.Parse(txtQT.Text);
             string selectedItem = cmbLocation.Items[cmbLocation.SelectedIndex].ToString();
 
-            using (DBEntities db = new DBEntities())
+            using (sdpEntities db = new sdpEntities())
             {
                 var result = db.showcaseitem.SingleOrDefault(b => b.itemid == id);
                 if (result != null)
@@ -82,7 +82,7 @@ namespace SDP_SE1A_Group2
 
         private void txtItemID_TextChanged(object sender, EventArgs e)
         {
-            using (DBEntities show = new DBEntities())
+            using (sdpEntities show = new sdpEntities())
             {
                 id = txtItemID.Text;
                 var result = show.item.SingleOrDefault(b => b.itemID == id);
@@ -102,7 +102,7 @@ namespace SDP_SE1A_Group2
         public void updateDate()
         {
             dataGridView1.Rows.Clear();
-            using (DBEntities print = new DBEntities())
+            using (sdpEntities print = new sdpEntities())
             {
                 var x = (from list in print.showcaseitem
                              select list);
@@ -121,7 +121,7 @@ namespace SDP_SE1A_Group2
             String date = System.DateTime.Now.ToString("f");
             String name = "";
             int unitprice = 0;
-            using (DBEntities db = new DBEntities())
+            using (sdpEntities db = new sdpEntities())
             {
                 var result = db.item.SingleOrDefault(b => b.itemID == id);
                 if (result != null)
