@@ -48,8 +48,7 @@ namespace SDP_SE1A_Group2
 
         private void btnReserve_Click(object sender, EventArgs e)
         {
-            Staff_Reserve staff_reserve = new Staff_Reserve();
-            openForm(staff_reserve);
+            
         }
 
         private void btnSalesRecord_Click(object sender, EventArgs e)

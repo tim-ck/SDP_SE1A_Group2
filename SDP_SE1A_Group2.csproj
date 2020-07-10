@@ -85,12 +85,6 @@
     <Compile Include="Staff\Staff_POS.designer.cs">
       <DependentUpon>Staff_POS.cs</DependentUpon>
     </Compile>
-    <Compile Include="Staff\Staff_Reserve.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Staff\Staff_Reserve.designer.cs">
-      <DependentUpon>Staff_Reserve.cs</DependentUpon>
-    </Compile>
     <Compile Include="Staff\Staff_SalesRecord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,9 +116,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Staff\Staff_POS.resx">
       <DependentUpon>Staff_POS.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Staff\Staff_Reserve.resx">
-      <DependentUpon>Staff_Reserve.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Staff\Staff_SalesRecord.resx">
       <DependentUpon>Staff_SalesRecord.cs</DependentUpon>
