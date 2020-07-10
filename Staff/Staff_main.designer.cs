@@ -100,6 +100,7 @@
             // 
             // panelChildForm
             // 
+            this.panelChildForm.BackColor = System.Drawing.Color.Transparent;
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(200, 100);
             this.panelChildForm.Name = "panelChildForm";
