@@ -26,25 +26,37 @@ namespace SDP_SE1A_Group2
                 //Case1: Just rented in the current month (The statement will update daily within the selected month)
                 if (sDate.Month == month && sDate.Year == year && sDate.AddDays(duration) > now)
                 {
+                    MessageBox.Show("Called case1: Just rented in the current month (The statement will update daily within the selected month)");
                     return now.Day;
                 }
                 //Case2: Lease start and end in the same month
                 else if (sDate.Month == month && sDate.Year == year)
                 {
-                    return (int)(new DateTime(year, month, DateTime.DaysInMonth(year, month)).ToOADate() - sDate.ToOADate());
+                    MessageBox.Show("Case2: Lease start and end in the same month");
+                    return DateTime.DaysInMonth(year, month);
                 }
 
                 //Case3: Lease period crossing months
-                else
+                else if (sDate <= new DateTime(year, month, 1) && sDate.AddDays(duration) >= new DateTime(year, month, 1))
                 {
-                    return new DateTime(year, month, DateTime.DaysInMonth(year, month)).Day;
+                    MessageBox.Show("3 called");
+                    int endDayOfMonth = DateTime.DaysInMonth(year, month);
+                    //Case3.1: Lease period end before the end of the month
+                    if (sDate.AddDays(duration).Day <= endDayOfMonth && sDate.AddDays(duration).Month == month)
+                    {
+                        MessageBox.Show("Case3.1: Lease end by the end-day of the month");
+                        return sDate.AddDays(duration).Day;
+                    }
+                    //Case3.2: Lease period crosses the selected month
+                    else if (sDate.AddDays(duration).Day < endDayOfMonth && sDate.AddDays(duration).Month > month)
+                    
+                    {
+                        MessageBox.Show("Case3.2: Lease period crosses the selected month");
+                        return DateTime.DaysInMonth(year, month);
+                    }
                 }
-
             }
-            else
-            {
-                return 0;
-            }
+            return 0;
         }
 
         private void Tenant_ConsolidatedStatement_Load(object sender, EventArgs e)
@@ -52,24 +64,33 @@ namespace SDP_SE1A_Group2
             // Populate CboYear
             using (var db = new sdpEntities())
             {
+                
                 var rs = from lsRentInfo in db.rentinfo
                          where lsRentInfo.tenantID.Contains(TenantMain.tenantID)
                          select lsRentInfo.startDate;
-
-                foreach (var row in rs.ToList())
+                if (rs.Any())
                 {
-
-                    for (int i = row.Year; i <= DateTime.Now.Year; i++)
+                    foreach (var row in rs.ToList())
                     {
-                        cboYear.Items.Add(i);
+
+                        for (int i = row.Year; i <= DateTime.Now.Year; i++)
+                        {
+                            cboYear.Items.Add(i);
+                        }
+                        break;
                     }
-                    break;
+                }
+                else
+                {
+                    MessageBox.Show("You do not have any renting record", "System Message");
+                    btnView.Enabled = false;
                 }
             }
         }
 
         private void cboYear_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cboMonth.Items.Clear();
             //Populate cboMonth values
             if (int.Parse(cboYear.SelectedItem.ToString()) == now.Year)
             {
@@ -100,9 +121,6 @@ namespace SDP_SE1A_Group2
                              lsShowcase.rental
                          };
 
-                if (rs != null)
-                {
-                    //Load Date
                     int selectedYear = int.Parse(cboYear.Text);
                     int selectedMonth = int.Parse(cboMonth.Text);
 
@@ -117,17 +135,14 @@ namespace SDP_SE1A_Group2
                     }
                     lblRental.Text = totalRental.ToString();
                 }
-                else
-                {
-                    MessageBox.Show("No renting Record", "System Message");
-                }
+               
             }
 
         }
 
     }
 
-}
+
 
     
 

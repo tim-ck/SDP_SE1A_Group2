@@ -84,7 +84,7 @@ namespace SDP_SE1A_Group2
             // Open Image locally using path from table: "itemimage".picture
             using (sdpEntities db = new sdpEntities())
             {
-                var result = db.itemimage.SingleOrDefault(b => b.itemImageID != null);
+                var result = db.itemimage.SingleOrDefault(b => b.itemID == _itemID);
                 if (result != null)
                 {
                     string imgLoadPath = result.picture;
@@ -93,9 +93,6 @@ namespace SDP_SE1A_Group2
             }
         }
 
-
-
-        
 
         private void UpdateShowcaseItem_Load(object sender, EventArgs e)
         {
@@ -141,21 +138,18 @@ namespace SDP_SE1A_Group2
                     pictureBox1.Image.Save(pathString, ImageFormat.Jpeg);
                     //Update imgOpenPath in "itemimage"
                     rs.picture = pathString;
+                    db.SaveChanges();
                 }
                 else
                 // Save img & incert path
                 {
-                    
+                    pictureBox1.Image.Save(pathString, ImageFormat.Jpeg);
+                    string newID = (!db.itemimage.Any()) ? (newID = "001") : (int.Parse(db.itemimage.Max(p => p.itemImageID)) + 1).ToString("D3");
+                    sql = "Insert into itemimage(itemImageID, filename, picture, itemID) values('" + newID + "', '" + fileName.Replace(@"\", @"\\") + "', '" + pathString.Replace(@"\", @"\\") + "', '" + _itemID + "')";
+                    db.Database.ExecuteSqlCommand(sql);
                 }
-
-
                 MessageBox.Show(pathString);
-                pictureBox1.Image.Save(pathString, ImageFormat.Jpeg);
-                string newID = (!db.itemimage.Any()) ? (newID = "001") : (int.Parse(db.itemimage.Max(p => p.itemImageID)) + 1).ToString("D3");
-                sql = "Insert into itemimage(itemImageID, filename, picture, itemID) values('" + newID + "', '" + fileName.Replace(@"\", @"\\") + "', '" + pathString.Replace(@"\", @"\\") + "', '" + _itemID + "')";
-
-                db.Database.ExecuteSqlCommand(sql);
-
+               
                 MessageBox.Show("Updated successfully!", "System Message");
                 this.Close();
             }
