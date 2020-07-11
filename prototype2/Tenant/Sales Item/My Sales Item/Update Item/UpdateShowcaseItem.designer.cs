@@ -47,7 +47,6 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
-            this.lblPath = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -248,24 +247,12 @@
             this.lblID.TabIndex = 18;
             this.lblID.Text = "xxx";
             // 
-            // lblPath
-            // 
-            this.lblPath.AutoSize = true;
-            this.lblPath.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.lblPath.Location = new System.Drawing.Point(149, 323);
-            this.lblPath.Name = "lblPath";
-            this.lblPath.Size = new System.Drawing.Size(32, 23);
-            this.lblPath.TabIndex = 19;
-            this.lblPath.Text = "XX";
-            // 
             // UpdateShowcaseItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(873, 626);
-            this.Controls.Add(this.lblPath);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtDescription);
@@ -314,6 +301,5 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.Label lblPath;
     }
 }

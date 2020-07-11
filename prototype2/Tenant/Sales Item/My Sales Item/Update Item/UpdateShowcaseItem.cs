@@ -41,7 +41,6 @@ namespace SDP_SE1A_Group2
                     pictureBox1.Image = Image.FromFile(fileName);
                     iName = ofd.SafeFileName;
                 }
-                lblPath.Text = fileName;
             }
         }
 
@@ -79,19 +78,19 @@ namespace SDP_SE1A_Group2
                     {
                         radUava.Checked = true;
                     }
-                }
-                // Open Image locally using path from table: "itemimage".picture
-                var rsImg = from lsItemimage in db.itemimage
-                            where lsItemimage.itemID.Contains(_itemID)
-                            select lsItemimage;
+                } 
+              }
 
-                foreach (var row in rsImg.ToList())
+            // Open Image locally using path from table: "itemimage".picture
+            using (sdpEntities db = new sdpEntities())
+            {
+                var result = db.itemimage.SingleOrDefault(b => b.itemImageID != null);
+                if (result != null)
                 {
-                    //
+                    string imgLoadPath = result.picture;
+                    pictureBox1.Image = Image.FromFile(imgLoadPath);
                 }
-                
             }
-
         }
 
 
@@ -108,6 +107,7 @@ namespace SDP_SE1A_Group2
         private void btnImport_Click(object sender, EventArgs e)
         {
             pathString = Path.Combine(folder, iName);
+
             //Update table: "item" / "ShowcaseItem"
             using (var db = new sdpEntities())
             {
@@ -131,15 +131,30 @@ namespace SDP_SE1A_Group2
                 sql = "Update item set itemDesc ='" + newDesc + "' where itemID='" + _itemID + "'";
                 db.Database.ExecuteSqlCommand(sql);
 
-                //Insert image path to "Itemimage"
+                //Insert / update image path to "Itemimage" : picture
+
+                var rs = db.itemimage.FirstOrDefault(a => a.itemID == _itemID);
+                // Save img & update path
+                if (rs != null)
+                {
+                    //Save new Img to folder
+                    pictureBox1.Image.Save(pathString, ImageFormat.Jpeg);
+                    //Update imgOpenPath in "itemimage"
+                    rs.picture = pathString;
+                }
+                else
+                // Save img & incert path
+                {
+                    
+                }
+
+
                 MessageBox.Show(pathString);
                 pictureBox1.Image.Save(pathString, ImageFormat.Jpeg);
                 string newID = (!db.itemimage.Any()) ? (newID = "001") : (int.Parse(db.itemimage.Max(p => p.itemImageID)) + 1).ToString("D3");
                 sql = "Insert into itemimage(itemImageID, filename, picture, itemID) values('" + newID + "', '" + fileName.Replace(@"\", @"\\") + "', '" + pathString.Replace(@"\", @"\\") + "', '" + _itemID + "')";
 
                 db.Database.ExecuteSqlCommand(sql);
-
-                
 
                 MessageBox.Show("Updated successfully!", "System Message");
                 this.Close();
