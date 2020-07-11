@@ -48,11 +48,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.lblPath = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblDbPath = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -262,34 +259,12 @@
             this.lblPath.TabIndex = 19;
             this.lblPath.Text = "XX";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(330, 347);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(206, 110);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 20;
-            this.pictureBox2.TabStop = false;
-            // 
-            // lblDbPath
-            // 
-            this.lblDbPath.AutoSize = true;
-            this.lblDbPath.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblDbPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.lblDbPath.Location = new System.Drawing.Point(326, 473);
-            this.lblDbPath.Name = "lblDbPath";
-            this.lblDbPath.Size = new System.Drawing.Size(32, 23);
-            this.lblDbPath.TabIndex = 21;
-            this.lblDbPath.Text = "XX";
-            // 
             // UpdateShowcaseItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(873, 626);
-            this.Controls.Add(this.lblDbPath);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lblPath);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.label6);
@@ -314,7 +289,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,7 +315,5 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblPath;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label lblDbPath;
     }
 }

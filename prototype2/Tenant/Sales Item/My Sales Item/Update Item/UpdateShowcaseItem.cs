@@ -85,8 +85,7 @@ namespace SDP_SE1A_Group2
 
                 foreach (var row in rsImg.ToList())
                 {
-                    lblDbPath.Text = row.picture;
-                    pictureBox2.Image = Image.FromFile(row.picture);
+                    //
                 }
                 
             }
@@ -131,7 +130,7 @@ namespace SDP_SE1A_Group2
                 db.Database.ExecuteSqlCommand(sql);
 
                 //Insert image path to "Itemimage"
-                pictureBox1.Image.Save("C:\\picture\\123.jpg", ImageFormat.Jpeg);
+                pictureBox1.Image.Save(pathString, ImageFormat.Jpeg);
                 string newID = (!db.itemimage.Any()) ? (newID = "001") : (int.Parse(db.itemimage.Max(p => p.itemImageID)) + 1).ToString("D3");
                 sql = "Insert into itemimage(itemImageID, filename, picture, itemID) values('" + newID + "', '" + fileName.Replace(@"\", @"\\") + "', '" + pathString.Replace(@"\", @"\\") + "', '" + _itemID + "')";
 
