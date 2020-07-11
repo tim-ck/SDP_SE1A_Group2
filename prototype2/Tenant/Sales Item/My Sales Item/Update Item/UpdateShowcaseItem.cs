@@ -17,7 +17,8 @@ namespace SDP_SE1A_Group2
         String _itemID;
         InShowcase _owner;
         string fileName;
-        string folder = "C:\\picture";
+        string folder = @"C:\Users\P\Documents\GitHub\SDP_SE1A_Group2\prototype2\Resources\items";
+        string iName;
         string pathString;
 
 
@@ -38,6 +39,7 @@ namespace SDP_SE1A_Group2
                 {
                     fileName = ofd.FileName;
                     pictureBox1.Image = Image.FromFile(fileName);
+                    iName = ofd.SafeFileName;
                 }
                 lblPath.Text = fileName;
             }
@@ -105,7 +107,7 @@ namespace SDP_SE1A_Group2
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-            pathString = Path.Combine(folder, fileName);
+            pathString = Path.Combine(folder, iName);
             //Update table: "item" / "ShowcaseItem"
             using (var db = new sdpEntities())
             {
@@ -130,6 +132,7 @@ namespace SDP_SE1A_Group2
                 db.Database.ExecuteSqlCommand(sql);
 
                 //Insert image path to "Itemimage"
+                MessageBox.Show(pathString);
                 pictureBox1.Image.Save(pathString, ImageFormat.Jpeg);
                 string newID = (!db.itemimage.Any()) ? (newID = "001") : (int.Parse(db.itemimage.Max(p => p.itemImageID)) + 1).ToString("D3");
                 sql = "Insert into itemimage(itemImageID, filename, picture, itemID) values('" + newID + "', '" + fileName.Replace(@"\", @"\\") + "', '" + pathString.Replace(@"\", @"\\") + "', '" + _itemID + "')";
