@@ -21,7 +21,7 @@ namespace SDP_SE1A_Group2
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(txtStaffID.Text.Trim());
+            string id = txtStaffID.Text.Trim();
             string month = dtpMonth.Value.ToString("yyyy-MM");
 
             using (sdpEntities db = new sdpEntities())
@@ -41,19 +41,7 @@ namespace SDP_SE1A_Group2
                     MessageBox.Show("Staff ID not found");
                 }
                 //update salary
-                var checkID = db.staff.SingleOrDefault(b => b.staffID == id);
-                if (checkID != null)
-                {
-                    float salary = checkID.salary;
-
-                    var checkHour = db.attendence.SingleOrDefault(c => c.staffID == id);
-                    if (checkHour != null)
-                    {
-                        double total = salary * checkHour.hour;
-                        txtStaffType.Text = total.ToString();
-                    }
-
-                }
+                updateTextBox();
             }
 
 
@@ -78,38 +66,34 @@ namespace SDP_SE1A_Group2
             }
         }
 
-        private void txtStaffType_TextChanged(object sender, EventArgs e)
+
+
+        private void txtStaffID_TextChanged(object sender, EventArgs e)
         {
-            int id = int.Parse(txtStaffID.Text.Trim());
+
+            updateTextBox();
+
+        }
+        public void updateTextBox()
+        {
+            string id = txtStaffID.Text.Trim();
             using (sdpEntities db = new sdpEntities())
             {
                 var result = db.staff.SingleOrDefault(b => b.staffID == id);
                 if (result != null)
                 {
-                    txtStaffType.Text = result.staffID.Text.ToString();
-                }
-            }
+                    txtStaffType.Text = result.staffType;
 
-        }
+                    float salary = result.salary;
 
-        private void txtSalary_TextChanged(object sender, EventArgs e)
-        {
-            int id = int.Parse(txtStaffID.Text.Trim());
-            using (sdpEntities db = new sdpEntities())
-            {
-                var checkID = db.staff.SingleOrDefault(b => b.staffID == id);
-                if (checkID != null)
-                {
-                    float salary = checkID.salary;
-                    
                     var checkHour = db.attendence.SingleOrDefault(c => c.staffID == id);
                     if (checkHour != null)
                     {
                         double total = salary * checkHour.hour;
-                        txtStaffType.Text = total.ToString();
+                        txtSalary.Text = total.ToString();
                     }
-                        
                 }
+
             }
         }
     }

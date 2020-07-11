@@ -1,4 +1,4 @@
-﻿using SDP_SE1A_Group2.Customer;
+﻿using SDP_SE1A_Group2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,19 +31,22 @@ namespace SDP_SE1A_Group2.Staff
             listBoxShowcaseID.Items.Clear();
             using (var db = new sdpEntities())
             {
-                var showcaseList = from showcase in db.showcases
+                var showcaseList = from showcase in db.showcase
                                 orderby showcase.showcaseid ascending
-                                select new { showcase.showcaseid };
+                                select new { 
+                                    showcase.status,
+                                    showcase.showcaseid };
 
                 
                 //change color
                 foreach (var i in showcaseList.ToList()) {
-                    listBoxShowcaseID.Items[i].BackColor = Color.Green;
-                    if(i.status == "o")
+                    int x = 0;
+                    listBoxShowcaseID.Items.Add(i.showcaseid.ToString());
+                    if(i.status.Equals("o"))
                     {
-                        listBoxShowcaseID.Items[i].BackColor = Color.Red;
+                        listBoxShowcaseID.Items[x] = Color.Red;
                     }
-                    listBoxShowcaseID.Items.Add(i.showcaseid); 
+                    x++;
                 }
             }
             
@@ -55,8 +58,8 @@ namespace SDP_SE1A_Group2.Staff
             using (var db = new sdpEntities())
             {//update showcaseInfo
 
-                var showcaseInfo = from storeList in db.stores
-                                   from showcaseList in db.showcases
+                var showcaseInfo = from storeList in db.store
+                                   from showcaseList in db.showcase
                                    where showcaseList.showcaseid.Contains(showcaseID) && storeList.storeID == showcaseList.storeID
                                    select new
                                    {
@@ -89,7 +92,7 @@ namespace SDP_SE1A_Group2.Staff
                 }
 
                 //update showcase record
-                var showcaseRentalList = from rentRecord in db.rentinfoes
+                var showcaseRentalList = from rentRecord in db.rentinfo
                                         where rentRecord.showcaseid.Contains(showcaseID)
                                         select new
                                        {
@@ -121,8 +124,8 @@ namespace SDP_SE1A_Group2.Staff
             {
                 //update showcaseInfo
 
-                var showcaseInfo = from storeList in db.stores
-                                   from showcaseList in db.showcases
+                var showcaseInfo = from storeList in db.store
+                                   from showcaseList in db.showcase
                                    where showcaseList.showcaseid.Contains(showcaseID) && storeList.storeID == showcaseList.storeID
                                    select new
                                    {
@@ -155,8 +158,8 @@ namespace SDP_SE1A_Group2.Staff
                 }
 
                 //update showcase Items
-                var showcaseitemList =  from showcaseitems in db.showcaseitems
-                                        from item in db.items
+                var showcaseitemList =  from showcaseitems in db.showcaseitem
+                                        from item in db.item
                                         where showcaseitems.showcaseid.Contains(showcaseID) && showcaseitems.itemid == item.itemID
                                    select new
                                    {

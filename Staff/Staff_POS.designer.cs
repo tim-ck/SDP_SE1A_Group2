@@ -40,7 +40,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.showcaseid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.avalibleQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.availableQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soldQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnPrint = new System.Windows.Forms.Button();
@@ -139,7 +139,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.showcaseid,
             this.itemid,
-            this.avalibleQty,
+            this.availableQty,
             this.soldQty,
             this.TotalQty});
             this.dataGridView1.Location = new System.Drawing.Point(320, 65);
@@ -159,10 +159,10 @@
             this.itemid.HeaderText = "itemid";
             this.itemid.Name = "itemid";
             // 
-            // avalibleQty
+            // availableQty
             // 
-            this.avalibleQty.HeaderText = "avalibleQty";
-            this.avalibleQty.Name = "avalibleQty";
+            this.availableQty.HeaderText = "availableQty";
+            this.availableQty.Name = "availableQty";
             // 
             // soldQty
             // 
@@ -251,7 +251,7 @@
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.DataGridViewTextBoxColumn showcaseid;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn avalibleQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn availableQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn soldQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalQty;
         private System.Windows.Forms.Label lblLocation;

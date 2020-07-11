@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SDP_SE1A_Group2.Staff;
 
 namespace SDP_SE1A_Group2
 {
@@ -48,7 +49,8 @@ namespace SDP_SE1A_Group2
 
         private void btnReserve_Click(object sender, EventArgs e)
         {
-
+            Staff_showcaseManagment showcasemanagement = new Staff_showcaseManagment();
+            openForm(showcasemanagement);
         }
 
         private void btnSalesRecord_Click(object sender, EventArgs e)

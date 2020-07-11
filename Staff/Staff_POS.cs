@@ -40,18 +40,18 @@ namespace SDP_SE1A_Group2
                 var result = db.showcaseitem.SingleOrDefault(b => b.itemid == id);
                 if (result != null)
                 {
-                    if (result.avalibleQty > 0)
+                    if (result.availableQty > 0)
                     {
-                        result.avalibleQty -= qt;
+                        result.availableQty -= qt;
                         result.soldQty += qt;
                         db.SaveChanges();
-                        if (result.avalibleQty >= 0)
+                        if (result.availableQty >= 0)
                         {
                             MessageBox.Show("Successfully");
                         }
                         else
                         {
-                            result.avalibleQty += qt;
+                            result.availableQty += qt;
                             result.soldQty -= qt;
                             db.SaveChanges();
                             MessageBox.Show("Qty not available");
@@ -88,7 +88,7 @@ namespace SDP_SE1A_Group2
                 var result = show.item.SingleOrDefault(b => b.itemID == id);
                 if (result != null)
                 {
-                    long x = result.unitPrice;
+                    float x = result.unitPrice;
                     txtPrice.Text = x.ToString();
                 }
             }
@@ -109,7 +109,7 @@ namespace SDP_SE1A_Group2
 
                 foreach (var x2 in x.ToList())
                 {
-                    dataGridView1.Rows.Add(x2.showcaseid, x2.itemid, x2.avalibleQty, x2.soldQty, x2.TotalQty);
+                    dataGridView1.Rows.Add(x2.showcaseid, x2.itemid, x2.availableQty, x2.soldQty, x2.TotalQty);
                 }
             }
         }
@@ -127,7 +127,7 @@ namespace SDP_SE1A_Group2
                 if (result != null)
                 {
                     name = result.itemName;
-                    unitprice = result.unitPrice;
+                    unitprice = (int)result.unitPrice;
                 }
             }
             MessageBox.Show("Stock in Date:"+ date+"\r\n"+"Product Name:"+name + "\r\n"+"Unit Price:"+unitprice + "\r\n"+"Qty:"+qt + "\r\n"+"Total Price:"+ totalPrice);
