@@ -50,6 +50,7 @@
             this.subTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soldDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label39 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -87,7 +88,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelSoldItems.SuspendLayout();
@@ -331,6 +331,17 @@
             this.panel3.Size = new System.Drawing.Size(1095, 361);
             this.panel3.TabIndex = 18;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(240, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(239, 36);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Statement Date:";
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
@@ -466,7 +477,7 @@
             this.lblMkbSD.AutoSize = true;
             this.lblMkbSD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.lblMkbSD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.lblMkbSD.Location = new System.Drawing.Point(308, 9);
+            this.lblMkbSD.Location = new System.Drawing.Point(308, 6);
             this.lblMkbSD.Name = "lblMkbSD";
             this.lblMkbSD.Size = new System.Drawing.Size(17, 17);
             this.lblMkbSD.TabIndex = 47;
@@ -477,7 +488,7 @@
             this.lblMkbQty.AutoSize = true;
             this.lblMkbQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.lblMkbQty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.lblMkbQty.Location = new System.Drawing.Point(162, 4);
+            this.lblMkbQty.Location = new System.Drawing.Point(162, 5);
             this.lblMkbQty.Name = "lblMkbQty";
             this.lblMkbQty.Size = new System.Drawing.Size(17, 17);
             this.lblMkbQty.TabIndex = 30;
@@ -521,7 +532,7 @@
             this.lblMkaSD.AutoSize = true;
             this.lblMkaSD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.lblMkaSD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.lblMkaSD.Location = new System.Drawing.Point(308, 4);
+            this.lblMkaSD.Location = new System.Drawing.Point(308, 5);
             this.lblMkaSD.Name = "lblMkaSD";
             this.lblMkaSD.Size = new System.Drawing.Size(17, 17);
             this.lblMkaSD.TabIndex = 52;
@@ -670,7 +681,7 @@
             this.lblProfit.AutoSize = true;
             this.lblProfit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblProfit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.lblProfit.Location = new System.Drawing.Point(182, 155);
+            this.lblProfit.Location = new System.Drawing.Point(180, 155);
             this.lblProfit.Name = "lblProfit";
             this.lblProfit.Size = new System.Drawing.Size(24, 25);
             this.lblProfit.TabIndex = 60;
@@ -753,17 +764,6 @@
             this.lblDate.Size = new System.Drawing.Size(118, 36);
             this.lblDate.TabIndex = 9;
             this.lblDate.Text = "MM/YY";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(240, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(239, 36);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Statement Date:";
             // 
             // TenantConsolidatedStatement
             // 
