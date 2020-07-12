@@ -222,7 +222,7 @@ namespace SDP_SE1A_Group2
                             pictureBox3.Image = Properties.Resources.iconmonstr_lock_3_240;
                             label2.BackColor = Color.White;
                             txtPassword.ForeColor = Color.White;
-                            Staff_main staffMain = new Staff_main(this);
+                            Staff_main staffMain = new Staff_main();
                             staffMain.Show();
                             return;
                         }

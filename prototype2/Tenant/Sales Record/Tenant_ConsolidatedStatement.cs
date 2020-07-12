@@ -293,6 +293,8 @@ namespace SDP_SE1A_Group2
 
 
                 //Load dgv --> showcas, item, order, order detail
+
+                
                 var rs4 = from lsShowcaseItem in db.showcaseitem
                           join lsItem in db.item on lsShowcaseItem.itemid equals lsItem.itemID
                           where lsItem.tenantID.Contains(TenantMain.tenantID)
@@ -353,6 +355,60 @@ namespace SDP_SE1A_Group2
                     
                     
                 }
+                
+
+                /*
+                int index;
+                string location;
+                string showcaseid;
+                string itemid;
+                string itemname;
+                double unitprice;
+                int qty;
+                double subtotal;
+                DateTime solddate;
+
+                var rs4 = from lsOrder in db.order
+                          join lsOrderDetail in db.order_detail on lsOrder.orderID equals lsOrderDetail.orderID
+                          select new
+                          {
+                              lsOrder.orderID,
+                              lsOrder.orderDate,
+                              lsOrderDetail.itemID,
+                              lsOrderDetail.qty,
+                              lsOrderDetail.unitPrice,
+                              lsOrder.storeID
+                          };
+
+                var rs5 = from lsItem in db.item
+                          from lsShowcaseItem in db.showcaseitem
+                          join lsTenant in db.tenant on lsItem.tenantID equals lsTenant.tenantID
+                          where lsItem.tenantID.Contains(TenantMain.tenantID)
+                          select lsItem;
+
+
+
+                foreach (var row1 in rs4.ToList())
+                {
+                    if (row1.orderDate.Month == selectedMonth)
+                    {
+                        foreach (var row2 in rs5.ToList())
+                        {
+                            if (row2.itemID == row1.itemID)
+                            {
+                                index = dataGridView1.Rows.Count + 1;
+                                location = row1.
+
+
+
+                                dataGridView1.Rows.Add(index, location, showcaseid, itemid, itemname,
+                                  unitprice, qty, subtotal, solddate);
+
+                            }
+                        }
+                    }
+                }
+                */
 
 
             }

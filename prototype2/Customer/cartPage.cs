@@ -168,7 +168,7 @@ namespace SDP_SE1A_Group2.Customer
                     int orderCount ;
                     using (var db = new sdpEntities())
                     {
-                        var id = from a in db.orders
+                        var id = from a in db.order
                                  select a;
                         orderCount = id.Count() + 1;
                         String newOrderID = orderCount.ToString("D3");
@@ -184,7 +184,7 @@ namespace SDP_SE1A_Group2.Customer
                             
 
                         };
-                        db.orders.Add(order);
+                        db.order.Add(order);
                        
                         var culture = new CultureInfo("en-GB");
                         String subject = "Order Detail for your order #" + newOrderID;
@@ -218,7 +218,7 @@ namespace SDP_SE1A_Group2.Customer
                             };
                             db.order_detail.Add(orderdetail);
                             db.SaveChanges();
-                            var orderde = db.showcaseitems.SingleOrDefault(a => a.itemid == itemid);
+                            var orderde = db.showcaseitem.SingleOrDefault(a => a.itemid == itemid);
                             if (orderde != null)
                             {
                                 orderde.availableQty -= int.Parse(quantity);

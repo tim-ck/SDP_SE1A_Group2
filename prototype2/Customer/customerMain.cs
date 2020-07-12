@@ -60,7 +60,7 @@ namespace SDP_SE1A_Group2.Customer
         {
             using (var db = new sdpEntities())
             {
-                var userAcct = from list in db.customers
+                var userAcct = from list in db.customer
                                where list.customerID.Equals(userId)
                                select list;
                 foreach (var user in userAcct.ToList())
