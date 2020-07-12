@@ -1,4 +1,4 @@
-﻿using SDP_SE1A_Group2.Customer;
+﻿using SDP_SE1A_Group2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,9 +33,21 @@ namespace SDP_SE1A_Group2.Staff
             {
                 var showcaseList = from showcase in db.showcase
                                 orderby showcase.showcaseid ascending
-                                select new { showcase.showcaseid };
+                                select new { 
+                                    showcase.status,
+                                    showcase.showcaseid };
 
-                foreach (var i in showcaseList.ToList()) { listBoxShowcaseID.Items.Add(i.showcaseid); }
+                
+                //change color
+                foreach (var i in showcaseList.ToList()) {
+                    int x = 0;
+                    listBoxShowcaseID.Items.Add(i.showcaseid.ToString());
+                    if(i.status.Equals("o"))
+                    {
+                        listBoxShowcaseID.Items[x] = Color.Red;
+                    }
+                    x++;
+                }
             }
             
         }
@@ -209,6 +221,16 @@ namespace SDP_SE1A_Group2.Staff
         }
 
         private void dataGridViewItem_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void listBoxShowcaseID_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

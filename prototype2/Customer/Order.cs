@@ -38,7 +38,7 @@ namespace SDP_SE1A_Group2.Customer
             listBoxOrderID.Items.Clear();
             using(var db = new sdpEntities())
             {
-                var orderList = from order in db.order
+                var orderList = from order in db.orders
                                 where order.customerID.Equals(cusID)
                                 orderby order.orderID ascending
                                 select new { order.orderID};
@@ -52,10 +52,10 @@ namespace SDP_SE1A_Group2.Customer
             dataGridView2.Rows.Clear();
             using (var db = new sdpEntities())
             {
-                var orderList = from order in db.order
+                var orderList = from order in db.orders
                                 from orderDetail in db.order_detail
-                                from itemDetail in db.item
-                                from store in db.store
+                                from itemDetail in db.items
+                                from store in db.stores
                                 where order.orderID.Equals(orderID) && order.orderID == orderDetail.orderID && itemDetail.itemID == orderDetail.itemID&& store.storeID == order.storeID
                                 orderby order.orderID ascending
                                 select new { order.orderID, store.storeAddress, order.orderDate, orderDetail.itemID, itemDetail.itemName,itemDetail.itemDesc, itemDetail.unitPrice, orderDetail.qty, orderDetail.totalPrice, order.orderTotalPrice };

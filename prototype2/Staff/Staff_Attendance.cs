@@ -21,7 +21,7 @@ namespace SDP_SE1A_Group2
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            string id = txtStaffID.Text;
+            string id = txtStaffID.Text.Trim();
             string month = dtpMonth.Value.ToString("yyyy-MM");
 
             using (sdpEntities db = new sdpEntities())
@@ -40,7 +40,11 @@ namespace SDP_SE1A_Group2
                 {
                     MessageBox.Show("Staff ID not found");
                 }
+                //update salary
+                updateTextBox();
             }
+
+
         }
 
         private void Staff_Attendance_Load(object sender, EventArgs e)
@@ -50,7 +54,7 @@ namespace SDP_SE1A_Group2
         public void updateDate()
         {
             dataGridView1.Rows.Clear();
-            using (sdpEntities print = new  sdpEntities())
+            using (sdpEntities print = new sdpEntities())
             {
                 var atten = (from list in print.attendence
                              select list);    // select * from attendence
@@ -63,5 +67,34 @@ namespace SDP_SE1A_Group2
         }
 
 
+
+        private void txtStaffID_TextChanged(object sender, EventArgs e)
+        {
+
+            updateTextBox();
+
+        }
+        public void updateTextBox()
+        {
+            string id = txtStaffID.Text.Trim();
+            using (sdpEntities db = new sdpEntities())
+            {
+                var result = db.staff.SingleOrDefault(b => b.staffID == id);
+                if (result != null)
+                {
+                    txtStaffType.Text = result.staffType;
+
+                    float salary = result.salary;
+
+                    var checkHour = db.attendence.SingleOrDefault(c => c.staffID == id);
+                    if (checkHour != null)
+                    {
+                        double total = salary * checkHour.hour;
+                        txtSalary.Text = total.ToString();
+                    }
+                }
+
+            }
+        }
     }
 }

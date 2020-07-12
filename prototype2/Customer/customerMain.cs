@@ -26,6 +26,7 @@ namespace SDP_SE1A_Group2.Customer
         CartPage cartPage;
         BrowseItems browseItemForm;
         Order orderForm;
+        CustomerAccountSetting setting;
         Bitmap cart_P = Properties.Resources.cart_P;
         Bitmap cart_S = Properties.Resources.cart_S;
         Bitmap cart_hvItem_P = Properties.Resources.cart_hvItem_P;
@@ -45,7 +46,7 @@ namespace SDP_SE1A_Group2.Customer
             cartPage = new CartPage(this, cusName, userId);
             browseItemForm = new BrowseItems(this, cusName);
             orderForm = new Order(this, cusName, userId);
-
+            setting = new CustomerAccountSetting(this,userId);
 
             //UI hide border
             this.Text = string.Empty;
@@ -59,7 +60,7 @@ namespace SDP_SE1A_Group2.Customer
         {
             using (var db = new sdpEntities())
             {
-                var userAcct = from list in db.customer
+                var userAcct = from list in db.customers
                                where list.customerID.Equals(userId)
                                select list;
                 foreach (var user in userAcct.ToList())
@@ -104,6 +105,8 @@ namespace SDP_SE1A_Group2.Customer
         public void UpdateCartHvItem(Boolean hvItem) { this.hvItem = hvItem; UpdateIcon(); }
         public void addItem(String itemID, String itemName, String description, int qty, int qtyRemain, int unitPrice, int totalPrice) { cartPage.AddItem(itemID, itemName, description, qty, qtyRemain, unitPrice, totalPrice); }
         public void ClearCart() { cartPage.ClearCart(); UpdateIcon(); }
+
+       
 
         public void UpdateIcon() {
             if (hvItem)
@@ -186,11 +189,17 @@ public void sendEmail(String subject, String message)
             panelChildForm.Controls.Add(childForm);
             childForm.Show();
         }
+        public void closeChildForm()
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            
+        }
 
-        
 
-//menu button click START
-        
+
+        //menu button click START
+
         private void btnProduct_Click(object sender, EventArgs e)
         {
             lblTitle.Text = "Product Page";
@@ -205,6 +214,8 @@ public void sendEmail(String subject, String message)
             else
                 btnCart.Image = cart_P;
             btnCart.ForeColor = Color.FromArgb(182, 182, 182);
+            btnAccountSetting.Image = Properties.Resources.setting;
+            btnAccountSetting.ForeColor = Color.FromArgb(182, 182, 182);
         }
 
         private void btnCart_Click(object sender, EventArgs e)
@@ -221,7 +232,9 @@ public void sendEmail(String subject, String message)
             else
                 btnCart.Image = cart_S;
             btnCart.ForeColor = Color.FromArgb(236, 236, 236);
-          
+
+            btnAccountSetting.Image = Properties.Resources.setting;
+            btnAccountSetting.ForeColor = Color.FromArgb(182, 182, 182);
         }
         private void btnOrder_Click_1(object sender, EventArgs e)
         {
@@ -237,17 +250,19 @@ public void sendEmail(String subject, String message)
             else
                 btnCart.Image = cart_P;
             btnCart.ForeColor = Color.FromArgb(182, 182, 182);
-            
+
+            btnAccountSetting.Image = Properties.Resources.setting;
+            btnAccountSetting.ForeColor = Color.FromArgb(182, 182, 182);
         }
 
       
+        
 
 
-
-        private void btnSetting_Click(object sender, EventArgs e)
+        private void btnAccountSetting_Click(object sender, EventArgs e)
         {
             
-            openChildForm(browseItemForm);
+            openChildForm(setting);
             //UI
             btnProduct.Image = Properties.Resources.item_P;
             btnProduct.ForeColor = Color.FromArgb(182, 182, 182);
@@ -258,7 +273,10 @@ public void sendEmail(String subject, String message)
             else
                 btnCart.Image = cart_P;
             btnCart.ForeColor = Color.FromArgb(182, 182, 182);
-            
+            btnAccountSetting.Image = Properties.Resources.setting_s;
+            btnAccountSetting.ForeColor = Color.FromArgb(236, 236, 236);
+
+
         }
 
         private void lblMinBtn_Click(object sender, EventArgs e)
@@ -278,43 +296,15 @@ public void sendEmail(String subject, String message)
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+            logout();
+        }
+
+        internal void logout()
+        {
             this.Close();
             opener.Show();
         }
-//menu button End
-
-//top bar START(if needed)
-        /*private void btnTenantPage_Click(object sender, EventArgs e)
-        {
-            Boolean isTenant = false;
-            using (var notSoImportantVariable = new classicmodelsEntities())
-            {
-                var acct =  from list in notSoImportantVariable.Tenant
-                                where Tenant.
-                                select new { list.TenantID };
-
-                foreach (var l in acct.ToList())
-                {
-                    if (username == l.CustomerID.ToString())
-                    {
-                        Verify = true;
-                        this.Hide();
-                        Customer.CustomerMain cus = new Customer.CustomerMain(username); //!!!!!!!!!!!!!!!!!!!!!
-                        cus.Show();
-                        return;
-                    }
-                }
-            }
-            if(Verify == false)
-                txtErrMsg.Text = "The Username / Password is incorrect";
-            else{
-            this.Close();
-            Tenant_Main tm = new Tenant_Main(opener,orderId, item); //!!!!!!!!!!!!!!!!!!!!!
-            tm.Show();
-            Sample s = new Sample();
-            s.Show();
-        }*/
-//top bar end
+        
 
     }
 }

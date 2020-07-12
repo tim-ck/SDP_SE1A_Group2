@@ -1,55 +1,22 @@
-﻿using SDP_SE1A_Group2.Staff;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SDP_SE1A_Group2.Staff;
 
 namespace SDP_SE1A_Group2
 {
     public partial class Staff_main : Form
     {
-        Form opener;
-        public Staff_main(Form parentForm)
+        public Staff_main()
         {
             InitializeComponent();
-            opener = parentForm;
-            this.Text = string.Empty;
-            this.ControlBox = false;
         }
-
-        //Drag From Control 
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-
-        //Title bar END
-        private void lblCloseBtn_Click_1(object sender, EventArgs e)
-        {
-            opener.Close();
-            this.Close();
-        }
-
-        private void lblMinBtn_Click_1(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-
-        }
-
 
         private void btnPOS_Click(object sender, EventArgs e)
         {
@@ -82,8 +49,8 @@ namespace SDP_SE1A_Group2
 
         private void btnReserve_Click(object sender, EventArgs e)
         {
-            Staff_Reserve staff_reserve = new Staff_Reserve();
-            openForm(staff_reserve);
+            Staff_showcaseManagment showcasemanagement = new Staff_showcaseManagment();
+            openForm(showcasemanagement);
         }
 
         private void btnSalesRecord_Click(object sender, EventArgs e)
@@ -97,18 +64,6 @@ namespace SDP_SE1A_Group2
 
         }
 
-        private void btnShowcase_Click(object sender, EventArgs e)
-        {
-            Staff_showcaseManagment showcase = new Staff_showcaseManagment();
-            openForm(showcase);
-
-
-        }
-     
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            opener.Show();
-        }
+        
     }
 }

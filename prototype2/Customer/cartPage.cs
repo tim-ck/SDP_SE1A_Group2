@@ -78,6 +78,13 @@ namespace SDP_SE1A_Group2.Customer
         public void AddItem(String itemID, String itemName, String description, int quantity, int qtyRemain, int unitPrice, int totalPrice) {
             if (itemsCount == 0)
                opener.UpdateCartHvItem(true);
+            for (int i = 0; i < itemsCount; i++)
+            {
+                if (itemID == dataGridView1.Rows[i].Cells["cart_itemID"].Value.ToString())
+                {
+                    return;
+                }
+            }
             ++itemsCount;
             dataGridView1.Rows.Add(itemID, itemName, description, unitPrice);
             
@@ -161,7 +168,7 @@ namespace SDP_SE1A_Group2.Customer
                     int orderCount ;
                     using (var db = new sdpEntities())
                     {
-                        var id = from a in db.order
+                        var id = from a in db.orders
                                  select a;
                         orderCount = id.Count() + 1;
                         String newOrderID = orderCount.ToString("D3");
@@ -177,7 +184,7 @@ namespace SDP_SE1A_Group2.Customer
                             
 
                         };
-                        db.order.Add(order);
+                        db.orders.Add(order);
                        
                         var culture = new CultureInfo("en-GB");
                         String subject = "Order Detail for your order #" + newOrderID;
@@ -211,7 +218,7 @@ namespace SDP_SE1A_Group2.Customer
                             };
                             db.order_detail.Add(orderdetail);
                             db.SaveChanges();
-                            var orderde = db.showcaseitem.SingleOrDefault(a => a.itemid == itemid);
+                            var orderde = db.showcaseitems.SingleOrDefault(a => a.itemid == itemid);
                             if (orderde != null)
                             {
                                 orderde.availableQty -= int.Parse(quantity);

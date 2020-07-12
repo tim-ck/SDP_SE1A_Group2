@@ -74,8 +74,8 @@ namespace SDP_SE1A_Group2.Customer
             dataGridView1.Rows[0].Cells["qty"].Value = "0";*/
             using (var db = new sdpEntities())
             {
-                var item = from items in db.item
-                           from showcaseItem in db.showcaseitem
+                var item = from items in db.items
+                           from showcaseItem in db.showcaseitems
                            where showcaseItem.showcaseid.Contains(storeName) && items.itemID == showcaseItem.itemid && showcaseItem.availableQty>0
                            select new
                            {

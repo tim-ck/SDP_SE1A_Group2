@@ -33,6 +33,7 @@ namespace SDP_SE1A_Group2
         {
             id = txtItemID.Text.ToString();
             qt = int.Parse(txtQT.Text);
+            string selectedItem = cmbLocation.Items[cmbLocation.SelectedIndex].ToString();
 
             using (sdpEntities db = new sdpEntities())
             {
@@ -84,16 +85,12 @@ namespace SDP_SE1A_Group2
             using (sdpEntities show = new sdpEntities())
             {
                 id = txtItemID.Text;
-                if (id != null)
+                var result = show.item.SingleOrDefault(b => b.itemID == id);
+                if (result != null)
                 {
-                    var result = show.item.SingleOrDefault(b => b.itemID == id);
-                    if (result != null)
-                    {
-                        float x = result.unitPrice;
-                        txtPrice.Text = x.ToString();
-                    }
+                    float x = result.unitPrice;
+                    txtPrice.Text = x.ToString();
                 }
-                
             }
         }
 
@@ -123,14 +120,14 @@ namespace SDP_SE1A_Group2
             qt = int.Parse(txtQT.Text);
             String date = System.DateTime.Now.ToString("f");
             String name = "";
-            float unitprice = 0;
+            int unitprice = 0;
             using (sdpEntities db = new sdpEntities())
             {
                 var result = db.item.SingleOrDefault(b => b.itemID == id);
                 if (result != null)
                 {
                     name = result.itemName;
-                    unitprice = result.unitPrice;
+                    unitprice = (int)result.unitPrice;
                 }
             }
             MessageBox.Show("Stock in Date:"+ date+"\r\n"+"Product Name:"+name + "\r\n"+"Unit Price:"+unitprice + "\r\n"+"Qty:"+qt + "\r\n"+"Total Price:"+ totalPrice);
