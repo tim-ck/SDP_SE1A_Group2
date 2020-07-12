@@ -20,6 +20,7 @@ namespace SDP_SE1A_Group2
 
         private int calValidDay(DateTime sDate, int duration, int month, int year)
         {
+            
             //Lease period should at least covers 1 st of selected month
             if (sDate.AddDays(duration) >= new DateTime(year, month, 01))
             {
@@ -35,10 +36,10 @@ namespace SDP_SE1A_Group2
                     MessageBox.Show("3 called");
                     int endDayOfMonth = DateTime.DaysInMonth(year, month);
                     //Case3.1: The last day end before the end of the month
-                    if (sDate.AddDays(duration).Month > month)
+                    if (sDate.AddDays(duration).Month == month)
                     {
                         MessageBox.Show("Case3.1: The last day end by the end-day of the month(the whole period crossing month) ");
-                        return sDate.AddDays(duration).Day;
+                        return sDate.AddDays(duration).Day -1;
                     }
                     //Case3.2: Lease period crosses the selected month
                     //else if (sDate.AddDays(duration).Day < endDayOfMonth && sDate.AddDays(duration).Month > month)
@@ -65,6 +66,10 @@ namespace SDP_SE1A_Group2
                 MessageBox.Show("No renting record in this month:" + month + "/" + year);
                 return 0;
             }
+
+
+
+
         }
             
               
@@ -163,7 +168,8 @@ namespace SDP_SE1A_Group2
                               lsOrder.orderID,
                               lsOrder.orderDate,
                               lsOrderDetail.itemID,
-                              lsOrderDetail.qty
+                              lsOrderDetail.qty,
+                              lsOrder.storeID
                           };
 
                 var rs2 = from lsItem in db.item
@@ -172,19 +178,58 @@ namespace SDP_SE1A_Group2
                           select lsItem;
 
 
-                foreach (var row in rs1.ToList())
+                double salecwb = 0;
+                double salekwf = 0;
+                double salemka = 0;
+                double salemkb = 0;
+                double salesht = 0;
+
+
+
+
+
+                foreach (var row1 in rs1.ToList())
                 {
-                    if (row.orderDate.Month == selectedMonth)
+                    if (row1.orderDate.Month == selectedMonth)
                     {
                         foreach (var row2 in rs2.ToList())
                         {
-                            if (row2.itemID == row.itemID)
+                            if (row2.itemID == row1.itemID)
                             {
-                                revenue += row2.unitPrice * row.qty;
+                                revenue += row2.unitPrice * row1.qty;
+                                //SD
+                                if (row1.storeID.Equals("cwb"))
+                                {
+                                    salecwb += row2.unitPrice * row1.qty;
+                                }else if (row1.storeID.Equals("kwf"))
+                                {
+                                    salekwf += row2.unitPrice * row1.qty;
+                                }else if (row1.storeID.Equals("mka"))
+                                {
+                                    salemka += row2.unitPrice * row1.qty;
+                                }else if (row1.storeID.Equals("mkb"))
+                                {
+                                    salemkb += row2.unitPrice * row1.qty;
+                                }
+                                else
+                                {
+                                    salesht += row2.unitPrice * row1.qty;
+                                }
                             }
                         }
                     }
                 }
+                //SD
+                if (revenue > 0)
+                {
+                    lblCwbSD.Text = (salecwb / revenue * 100).ToString();
+                    lblMkaSD.Text = (salemka / revenue * 100).ToString();
+                    lblMkbSD.Text = (salemkb / revenue * 100).ToString();
+                    lblShtSD.Text = (salesht / revenue * 100).ToString();
+                    lblKwfSD.Text = (salekwf / revenue * 100).ToString();
+                }
+                
+
                 lblRevenue.Text = revenue.ToString();
                 //Load Overview: Profit
                 lblProfit.Text = (float.Parse(lblRevenue.Text) - float.Parse(lblRental.Text)).ToString();
@@ -245,6 +290,71 @@ namespace SDP_SE1A_Group2
                 lblMkaQty.Text = numMKA.ToString();
                 lblMkbQty.Text = numMKB.ToString();
                 lblShtQty.Text = numSHT.ToString();
+
+
+                //Load dgv --> showcas, item, order, order detail
+                var rs4 = from lsShowcaseItem in db.showcaseitem
+                          join lsItem in db.item on lsShowcaseItem.itemid equals lsItem.itemID
+                          where lsItem.tenantID.Contains(TenantMain.tenantID)
+
+                          
+
+
+                          
+                          select new
+                          {
+                              lsShowcaseItem.showcaseid,
+                              
+                              lsItem.itemID,
+                              lsItem.tenantID,
+                              lsItem.itemName
+                          };
+
+                var rs5 = from lsOrder in db.order
+                          join lsOrderDetail in db.order_detail on lsOrder.orderID equals lsOrderDetail.orderID
+                          select new
+                          {
+                              lsOrderDetail.unitPrice,
+                              lsOrderDetail.qty,
+                              lsOrder.orderDate,
+                          };
+
+
+                int index;
+                string location;
+                string showcaseid;
+                string itemid;
+                string itemname;
+                double unitprice;
+                int qty;
+                double subtotal;
+                DateTime solddate;
+
+                foreach(var row in rs4.ToList())
+                {
+                    foreach(var row2 in rs5.ToList())
+                    {
+                        if (row2.orderDate.Month == int.Parse(cboMonth.Text))
+                        {
+                            index = dataGridView1.Rows.Count + 1;
+                            location = row.showcaseid.Substring(0, 3);
+                            showcaseid = row.showcaseid;
+                            itemid = row.itemID;
+                            itemname = row.itemName;
+                            unitprice = row2.unitPrice;
+                            qty = row2.qty;
+                            subtotal = unitprice * qty;
+                            solddate = row2.orderDate;
+
+                            dataGridView1.Rows.Add(index, location, showcaseid, itemid, itemname,
+                                 unitprice, qty, subtotal, solddate);
+                        }
+                    }
+                    
+                    
+                }
+
+
             }
 
         }
