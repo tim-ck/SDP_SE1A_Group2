@@ -101,10 +101,10 @@
     <Compile Include="Customer\Order.Designer.cs">
       <DependentUpon>Order.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditTenantInfo.cs">
+    <Compile Include="Tenant\Edit\EditTenantInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditTenantInfo.designer.cs">
+    <Compile Include="Tenant\Edit\EditTenantInfo.designer.cs">
       <DependentUpon>EditTenantInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="item.cs">
@@ -289,7 +289,7 @@
     <EmbeddedResource Include="Customer\Order.resx">
       <DependentUpon>Order.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditTenantInfo.resx">
+    <EmbeddedResource Include="Tenant\Edit\EditTenantInfo.resx">
       <DependentUpon>EditTenantInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
@@ -414,7 +414,6 @@
     <None Include="Resources\setting-s.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Edit\" />
     <Folder Include="Resources\nav\" />
   </ItemGroup>
   <ItemGroup>

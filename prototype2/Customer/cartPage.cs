@@ -158,6 +158,11 @@ namespace SDP_SE1A_Group2.Customer
             }
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void btnShowShopItem_Click(object sender, EventArgs e)
         {
             if (opener.CartHvItem())

@@ -30,6 +30,19 @@ namespace SDP_SE1A_Group2
             this.ControlBox = false;
 
         }
+
+        public void closeForm()
+        {
+            if (activeForm != null)
+                activeForm.Close();
+        }
+
+        public void logout()
+        {
+            this.Close();
+            opener.Show();
+        }
+
         //Drag From Control 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -160,8 +173,8 @@ namespace SDP_SE1A_Group2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            EditTenant
-            openChildForm()
+            EditTenantInfo editTenantInfo = new EditTenantInfo(this, tenantID);
+            openChildForm(editTenantInfo);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace SDP_SE1A_Group2.Staff
+﻿namespace SDP_SE1A_Group2
 {
     partial class EditTenantInfo
     {
@@ -31,6 +31,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnComfirm = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDelAccount = new System.Windows.Forms.Button();
             this.txtErrMsg = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.lbluserName = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnDelAccount = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -62,7 +62,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(12, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(304, 37);
+            this.label2.Size = new System.Drawing.Size(387, 46);
             this.label2.TabIndex = 114;
             this.label2.Text = "Edit Tenant Account Info";
             // 
@@ -99,6 +99,27 @@
             this.panel1.Size = new System.Drawing.Size(1214, 201);
             this.panel1.TabIndex = 113;
             // 
+            // btnDelAccount
+            // 
+            this.btnDelAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnDelAccount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelAccount.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnDelAccount.FlatAppearance.BorderSize = 2;
+            this.btnDelAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(180)))), ((int)(((byte)(240)))));
+            this.btnDelAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(195)))), ((int)(((byte)(245)))));
+            this.btnDelAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelAccount.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.btnDelAccount.Location = new System.Drawing.Point(924, 92);
+            this.btnDelAccount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDelAccount.Name = "btnDelAccount";
+            this.btnDelAccount.Size = new System.Drawing.Size(268, 78);
+            this.btnDelAccount.TabIndex = 96;
+            this.btnDelAccount.Tag = "85, 195, 245";
+            this.btnDelAccount.Text = "Delete Account";
+            this.btnDelAccount.UseVisualStyleBackColor = false;
+            this.btnDelAccount.Click += new System.EventHandler(this.btnDelAccount_Click);
+            // 
             // txtErrMsg
             // 
             this.txtErrMsg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
@@ -120,7 +141,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(46, 391);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(63, 28);
+            this.label9.Size = new System.Drawing.Size(80, 35);
             this.label9.TabIndex = 112;
             this.label9.Text = "Email:";
             // 
@@ -141,7 +162,7 @@
             this.txtEmail.Location = new System.Drawing.Point(51, 422);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(497, 36);
+            this.txtEmail.Size = new System.Drawing.Size(497, 45);
             this.txtEmail.TabIndex = 110;
             this.txtEmail.Text = "Email(abc@example.com)";
             this.txtEmail.Click += new System.EventHandler(this.txtEmail_Click);
@@ -164,7 +185,7 @@
             this.label6.ForeColor = System.Drawing.Color.IndianRed;
             this.label6.Location = new System.Drawing.Point(611, 105);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(373, 28);
+            this.label6.Size = new System.Drawing.Size(480, 35);
             this.label6.TabIndex = 108;
             this.label6.Text = "Username  (Cannot change once created):";
             // 
@@ -175,7 +196,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(46, 242);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(148, 28);
+            this.label5.Size = new System.Drawing.Size(189, 35);
             this.label5.TabIndex = 107;
             this.label5.Text = "Phone Numebr:";
             // 
@@ -186,7 +207,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(43, 100);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 28);
+            this.label1.Size = new System.Drawing.Size(144, 35);
             this.label1.TabIndex = 106;
             this.label1.Text = "Your Name:";
             // 
@@ -207,7 +228,7 @@
             this.txtPhoneNumber.Location = new System.Drawing.Point(51, 274);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(497, 36);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(497, 45);
             this.txtPhoneNumber.TabIndex = 104;
             this.txtPhoneNumber.Text = "Phone Numebr(8-digit number)";
             this.txtPhoneNumber.Click += new System.EventHandler(this.txtPhoneNumber_Click);
@@ -229,7 +250,7 @@
             this.txtFirstName.Location = new System.Drawing.Point(51, 122);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(489, 36);
+            this.txtFirstName.Size = new System.Drawing.Size(489, 45);
             this.txtFirstName.TabIndex = 102;
             this.txtFirstName.Text = "Your full Name";
             this.txtFirstName.Click += new System.EventHandler(this.txtFirstName_Click);
@@ -244,7 +265,7 @@
             this.txtPassword.Location = new System.Drawing.Point(678, 343);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(432, 36);
+            this.txtPassword.Size = new System.Drawing.Size(432, 45);
             this.txtPassword.TabIndex = 100;
             this.txtPassword.TabStop = false;
             this.txtPassword.Text = "Password";
@@ -287,7 +308,7 @@
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.ReadOnly = true;
-            this.txtUsername.Size = new System.Drawing.Size(448, 43);
+            this.txtUsername.Size = new System.Drawing.Size(448, 52);
             this.txtUsername.TabIndex = 97;
             this.txtUsername.Text = "Username";
             // 
@@ -302,30 +323,9 @@
             this.pictureBox2.TabIndex = 96;
             this.pictureBox2.TabStop = false;
             // 
-            // btnDelAccount
-            // 
-            this.btnDelAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnDelAccount.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelAccount.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.btnDelAccount.FlatAppearance.BorderSize = 2;
-            this.btnDelAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(180)))), ((int)(((byte)(240)))));
-            this.btnDelAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(195)))), ((int)(((byte)(245)))));
-            this.btnDelAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelAccount.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.btnDelAccount.Location = new System.Drawing.Point(924, 92);
-            this.btnDelAccount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnDelAccount.Name = "btnDelAccount";
-            this.btnDelAccount.Size = new System.Drawing.Size(268, 78);
-            this.btnDelAccount.TabIndex = 96;
-            this.btnDelAccount.Tag = "85, 195, 245";
-            this.btnDelAccount.Text = "Delect Account";
-            this.btnDelAccount.UseVisualStyleBackColor = false;
-            this.btnDelAccount.Click += new System.EventHandler(this.btnDelAccount_Click);
-            // 
             // EditTenantInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(1214, 800);
