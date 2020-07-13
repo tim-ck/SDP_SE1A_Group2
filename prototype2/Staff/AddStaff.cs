@@ -45,7 +45,7 @@ namespace SDP_SE1A_Group2.Staff
                         salary = float.Parse(txtSalary.Text)
 
                     };
-                    db.staffs.Add(acct);
+                    db.staff.Add(acct);
                     db.SaveChanges();
                 }
             }

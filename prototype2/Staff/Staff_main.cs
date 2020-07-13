@@ -40,7 +40,7 @@ namespace SDP_SE1A_Group2
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
@@ -48,7 +48,7 @@ namespace SDP_SE1A_Group2
 
 
         //Title bar END
-        private void lblCloseBtn_Click_1(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
             opener.Close();
             this.Close();
@@ -103,13 +103,7 @@ namespace SDP_SE1A_Group2
 
         }
 
-        private void btnShowcase_Click(object sender, EventArgs e)
-        {
-            Staff_showcaseManagment showcase = new Staff_showcaseManagment();
-            openForm(showcase);
-
-
-        }
+        
         //Peter start
 
 
@@ -118,13 +112,13 @@ namespace SDP_SE1A_Group2
             Staff_POS staff_pos = new Staff_POS(this);
             openForm(staff_pos);
         }
-        private void btnAddstaff_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             AddStaff addStaff = new AddStaff();
             openForm(addStaff);
         }
 
-        private void btnAcctSetting_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             editStaffInfo setting = new editStaffInfo(this, staffID);
             openForm(setting);
@@ -146,6 +140,8 @@ namespace SDP_SE1A_Group2
 
             logout();
         }
+
+       
 
         public void logout()
         {

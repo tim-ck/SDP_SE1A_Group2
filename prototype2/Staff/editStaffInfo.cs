@@ -30,7 +30,7 @@ namespace SDP_SE1A_Group2.Staff
         {
             using (var db = new sdpEntities())
             {
-                var userAcct = from list in db.staffs
+                var userAcct = from list in db.staff
                                where list.staffID.Equals(userID)
                                select list;
                 foreach (var user in userAcct.ToList())
@@ -79,7 +79,7 @@ namespace SDP_SE1A_Group2.Staff
                 }*/
                 using (var db = new sdpEntities())
                 {
-                    var acct = db.staffs.SingleOrDefault(a => a.staffID == userID);
+                    var acct = db.staff.SingleOrDefault(a => a.staffID == userID);
                     if (acct != null)
                     {
                         if (txtPassword.Text != "Password" && txtPassword.Text != "")
@@ -157,10 +157,13 @@ namespace SDP_SE1A_Group2.Staff
             {
                 using (var db = new sdpEntities())
                 {
-                    var acct = db.staffs.SingleOrDefault(a => a.staffID == userID);
-                    db.staffs.Remove(acct);
-                    MessageBox.Show("account Permanently removed. ");
+                    var acct = db.staff.SingleOrDefault(a => a.staffID == userID);
+                    var a = db.staff.Remove(acct);
+                    db.SaveChanges();
+                    if(a!=null)
+                         MessageBox.Show("account Permanently removed. ");
                     opener.logout();
+
                 }
             }
         }
