@@ -31,11 +31,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSalesRecord = new System.Windows.Forms.Button();
             this.btnReserve = new System.Windows.Forms.Button();
             this.btnAttendence = new System.Windows.Forms.Button();
             this.btnPOS = new System.Windows.Forms.Button();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.btnSalesRecord = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -48,7 +48,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1449, 108);
+            this.panel1.Size = new System.Drawing.Size(1439, 108);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -71,21 +71,8 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 108);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 756);
+            this.panel2.Size = new System.Drawing.Size(200, 751);
             this.panel2.TabIndex = 1;
-            // 
-            // btnSalesRecord
-            // 
-            this.btnSalesRecord.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnSalesRecord.Font = new System.Drawing.Font("PMingLiU", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnSalesRecord.ForeColor = System.Drawing.Color.White;
-            this.btnSalesRecord.Location = new System.Drawing.Point(-27, 170);
-            this.btnSalesRecord.Name = "btnSalesRecord";
-            this.btnSalesRecord.Size = new System.Drawing.Size(237, 93);
-            this.btnSalesRecord.TabIndex = 6;
-            this.btnSalesRecord.Text = "SalesRecord";
-            this.btnSalesRecord.UseVisualStyleBackColor = false;
-            this.btnSalesRecord.Click += new System.EventHandler(this.btnSalesRecord_Click);
             // 
             // btnReserve
             // 
@@ -133,14 +120,27 @@
             this.panelChildForm.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.panelChildForm.Location = new System.Drawing.Point(200, 108);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1249, 756);
+            this.panelChildForm.Size = new System.Drawing.Size(1239, 751);
             this.panelChildForm.TabIndex = 2;
+            // 
+            // btnSalesRecord
+            // 
+            this.btnSalesRecord.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnSalesRecord.Font = new System.Drawing.Font("PMingLiU", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnSalesRecord.ForeColor = System.Drawing.Color.White;
+            this.btnSalesRecord.Location = new System.Drawing.Point(-27, 170);
+            this.btnSalesRecord.Name = "btnSalesRecord";
+            this.btnSalesRecord.Size = new System.Drawing.Size(237, 93);
+            this.btnSalesRecord.TabIndex = 6;
+            this.btnSalesRecord.Text = "SalesRecord";
+            this.btnSalesRecord.UseVisualStyleBackColor = false;
+            this.btnSalesRecord.Click += new System.EventHandler(this.btnSalesRecord_Click);
             // 
             // Staff_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1449, 864);
+            this.ClientSize = new System.Drawing.Size(1439, 859);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -158,11 +158,11 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnSalesRecord;
         private System.Windows.Forms.Button btnReserve;
         private System.Windows.Forms.Button btnAttendence;
         private System.Windows.Forms.Button btnPOS;
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnSalesRecord;
     }
 }
