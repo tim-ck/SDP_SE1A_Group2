@@ -101,6 +101,18 @@
     <Compile Include="Customer\Order.Designer.cs">
       <DependentUpon>Order.cs</DependentUpon>
     </Compile>
+    <Compile Include="Staff\AddStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff\AddStaff.designer.cs">
+      <DependentUpon>AddStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\editStaffInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff\editStaffInfo.designer.cs">
+      <DependentUpon>editStaffInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tenant\Edit\EditTenantInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,6 +300,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\Order.resx">
       <DependentUpon>Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff\AddStaff.resx">
+      <DependentUpon>AddStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff\editStaffInfo.resx">
+      <DependentUpon>editStaffInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tenant\Edit\EditTenantInfo.resx">
       <DependentUpon>EditTenantInfo.cs</DependentUpon>
