@@ -234,5 +234,10 @@ namespace SDP_SE1A_Group2.Staff
         {
 
         }
+
+        private void Staff_showcaseManagment_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
