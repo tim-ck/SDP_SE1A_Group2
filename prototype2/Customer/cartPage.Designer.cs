@@ -117,7 +117,7 @@
             this.txtTotalPrice.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.txtTotalPrice.Location = new System.Drawing.Point(891, 638);
             this.txtTotalPrice.Name = "txtTotalPrice";
-            this.txtTotalPrice.Size = new System.Drawing.Size(207, 41);
+            this.txtTotalPrice.Size = new System.Drawing.Size(207, 34);
             this.txtTotalPrice.TabIndex = 17;
             this.txtTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -128,7 +128,7 @@
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.textBox2.Location = new System.Drawing.Point(799, 638);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(99, 41);
+            this.textBox2.Size = new System.Drawing.Size(99, 34);
             this.textBox2.TabIndex = 18;
             this.textBox2.Text = "Total Price:";
             // 
@@ -139,7 +139,7 @@
             this.txtStoreID.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.txtStoreID.Location = new System.Drawing.Point(12, 50);
             this.txtStoreID.Name = "txtStoreID";
-            this.txtStoreID.Size = new System.Drawing.Size(222, 41);
+            this.txtStoreID.Size = new System.Drawing.Size(222, 34);
             this.txtStoreID.TabIndex = 19;
             this.txtStoreID.Text = "StoreID:";
             // 
@@ -150,7 +150,7 @@
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.lblTitle.Location = new System.Drawing.Point(5, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(789, 48);
+            this.lblTitle.Size = new System.Drawing.Size(631, 38);
             this.lblTitle.TabIndex = 20;
             this.lblTitle.Text = "Welcome Customer (customer name)!";
             // 
@@ -201,7 +201,6 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.RowHeadersWidth = 51;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(130)))), ((int)(((byte)(147)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 15F);
@@ -214,50 +213,42 @@
             this.dataGridView1.Size = new System.Drawing.Size(1086, 540);
             this.dataGridView1.TabIndex = 21;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellEndEdit);
             // 
             // itemID
             // 
             this.itemID.HeaderText = "ItemID";
-            this.itemID.MinimumWidth = 6;
             this.itemID.Name = "itemID";
             this.itemID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // itemName
             // 
             this.itemName.HeaderText = "Item Name";
-            this.itemName.MinimumWidth = 6;
             this.itemName.Name = "itemName";
             // 
             // description
             // 
             this.description.HeaderText = "Descriptioon";
-            this.description.MinimumWidth = 6;
             this.description.Name = "description";
             // 
             // UnitPrice
             // 
             this.UnitPrice.HeaderText = "Unit Price";
-            this.UnitPrice.MinimumWidth = 6;
             this.UnitPrice.Name = "UnitPrice";
             // 
             // qty
             // 
             this.qty.HeaderText = "Quantity";
-            this.qty.MinimumWidth = 6;
             this.qty.Name = "qty";
             // 
             // totalPrice
             // 
             this.totalPrice.HeaderText = "Total Price";
-            this.totalPrice.MinimumWidth = 6;
             this.totalPrice.Name = "totalPrice";
             // 
             // btnRemoveItem
             // 
             this.btnRemoveItem.HeaderText = "Remove form Cart";
-            this.btnRemoveItem.MinimumWidth = 6;
             this.btnRemoveItem.Name = "btnRemoveItem";
             this.btnRemoveItem.ReadOnly = true;
             this.btnRemoveItem.Text = "Remove";
@@ -270,13 +261,13 @@
             this.txtStoreAddress.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.txtStoreAddress.Location = new System.Drawing.Point(234, 50);
             this.txtStoreAddress.Name = "txtStoreAddress";
-            this.txtStoreAddress.Size = new System.Drawing.Size(664, 41);
+            this.txtStoreAddress.Size = new System.Drawing.Size(664, 34);
             this.txtStoreAddress.TabIndex = 22;
             this.txtStoreAddress.Text = "Store address:";
             // 
             // CartPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(75)))), ((int)(((byte)(142)))));
             this.ClientSize = new System.Drawing.Size(1114, 800);

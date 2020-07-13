@@ -33,27 +33,6 @@ namespace SDP_SE1A_Group2.Customer
 
         }
 
-      
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            String orderID = listBoxOrderID.SelectedItem.ToString();
-
-            
-            using (var db = new sdpEntities())
-            {
-                int noOfRowDeleted = db.Database.ExecuteSqlCommand("Delete from order_detail where orderID = "+ orderID);
-                var acct = db.order.SingleOrDefault(a => a.orderID == orderID);
-                db.order.Remove(acct);
-                
-             
-                db.SaveChanges();
-                MessageBox.Show("removed");
-            }
-            updateOrderIdList();
-            dataGridView2.Rows.Clear();
-        }
-
         public void updateOrderIdList()
         {
             listBoxOrderID.Items.Clear();

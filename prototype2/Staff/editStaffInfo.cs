@@ -158,9 +158,9 @@ namespace SDP_SE1A_Group2.Staff
                 using (var db = new sdpEntities())
                 {
                     var acct = db.staff.SingleOrDefault(a => a.staffID == userID);
-                    var a = db.staff.Remove(acct);
+                    var b = db.staff.Remove(acct);
                     db.SaveChanges();
-                    if(a!=null)
+                    if(b!=null)
                          MessageBox.Show("account Permanently removed. ");
                     opener.logout();
 

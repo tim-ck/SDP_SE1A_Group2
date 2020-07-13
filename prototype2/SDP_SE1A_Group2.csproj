@@ -83,11 +83,11 @@
     <Compile Include="Customer\BrowseItems.designer.cs">
       <DependentUpon>BrowseItems.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer\CartPage.cs">
+    <Compile Include="Customer\cartPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer\CartPage.Designer.cs">
-      <DependentUpon>CartPage.cs</DependentUpon>
+    <Compile Include="Customer\cartPage.designer.cs">
+      <DependentUpon>cartPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer\customerMain.cs">
       <SubType>Form</SubType>
@@ -98,7 +98,7 @@
     <Compile Include="Customer\Order.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer\Order.Designer.cs">
+    <Compile Include="Customer\Order.designer.cs">
       <DependentUpon>Order.cs</DependentUpon>
     </Compile>
     <Compile Include="Staff\AddStaff.cs">
@@ -293,7 +293,7 @@
       <DependentUpon>BrowseItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\cartPage.resx">
-      <DependentUpon>CartPage.cs</DependentUpon>
+      <DependentUpon>cartPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\customerMain.resx">
       <DependentUpon>customerMain.cs</DependentUpon>
