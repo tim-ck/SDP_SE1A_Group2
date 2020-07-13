@@ -157,5 +157,11 @@ namespace SDP_SE1A_Group2
             this.Close();
             opener.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            EditTenant
+            openChildForm()
+        }
     }
 }

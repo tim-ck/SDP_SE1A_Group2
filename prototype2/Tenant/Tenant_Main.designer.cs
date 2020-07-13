@@ -54,6 +54,7 @@
             this.lblMinBtn = new System.Windows.Forms.Label();
             this.lblCloseBtn = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.panelLogOut.SuspendLayout();
             this.panelRecordSubMenu.SuspendLayout();
@@ -123,6 +124,7 @@
             // 
             this.panelSideMenu.AutoScroll = true;
             this.panelSideMenu.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelSideMenu.Controls.Add(this.button1);
             this.panelSideMenu.Controls.Add(this.panelLogOut);
             this.panelSideMenu.Controls.Add(this.panelRecordSubMenu);
             this.panelSideMenu.Controls.Add(this.btnRecord);
@@ -371,7 +373,7 @@
             this.lblMinBtn.ForeColor = System.Drawing.Color.White;
             this.lblMinBtn.Location = new System.Drawing.Point(1066, -1);
             this.lblMinBtn.Name = "lblMinBtn";
-            this.lblMinBtn.Size = new System.Drawing.Size(35, 32);
+            this.lblMinBtn.Size = new System.Drawing.Size(42, 41);
             this.lblMinBtn.TabIndex = 8;
             this.lblMinBtn.Text = "__";
             this.lblMinBtn.Click += new System.EventHandler(this.lblMinBtn_Click);
@@ -385,7 +387,7 @@
             this.lblCloseBtn.ForeColor = System.Drawing.Color.White;
             this.lblCloseBtn.Location = new System.Drawing.Point(1107, -1);
             this.lblCloseBtn.Name = "lblCloseBtn";
-            this.lblCloseBtn.Size = new System.Drawing.Size(29, 32);
+            this.lblCloseBtn.Size = new System.Drawing.Size(36, 41);
             this.lblCloseBtn.TabIndex = 7;
             this.lblCloseBtn.Text = "X";
             this.lblCloseBtn.Click += new System.EventHandler(this.lblCloseBtn_Click);
@@ -399,13 +401,31 @@
             this.lblWelcome.Location = new System.Drawing.Point(0, 0);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
-            this.lblWelcome.Size = new System.Drawing.Size(220, 57);
+            this.lblWelcome.Size = new System.Drawing.Size(271, 69);
             this.lblWelcome.TabIndex = 1;
             this.lblWelcome.Text = "Welcome ";
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("PMingLiU", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button1.ForeColor = System.Drawing.Color.LightGray;
+            this.button1.Location = new System.Drawing.Point(0, 557);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(250, 45);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Edit Account";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // TenantMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1384, 811);
             this.Controls.Add(this.panelConent);
@@ -456,6 +476,7 @@
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.Label lblMinBtn;
         private System.Windows.Forms.Label lblCloseBtn;
+        private System.Windows.Forms.Button button1;
     }
 }
 
