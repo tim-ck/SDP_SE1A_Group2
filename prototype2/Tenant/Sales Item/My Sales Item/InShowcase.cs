@@ -51,6 +51,7 @@ namespace SDP_SE1A_Group2
         private void InShowcase_Load(object sender, EventArgs e)
         {
             loadDgv();
+            cbLocation.SelectedIndex = 0;
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -60,6 +61,25 @@ namespace SDP_SE1A_Group2
 
             UpdateShowcaseItem updateShowcaseItem = new UpdateShowcaseItem(itemID, this);
             updateShowcaseItem.Show();
+        }
+
+
+
+        private void cbLocation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            clearDgv();
+            loadDgv();
+
+            if (cbLocation.SelectedIndex != 0)
+            {
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (!row.Cells["Location"].Value.ToString().Equals(cbLocation.SelectedItem.ToString().ToLower()))
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
         }
     }
 }

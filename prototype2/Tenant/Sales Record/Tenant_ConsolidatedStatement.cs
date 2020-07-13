@@ -18,6 +18,10 @@ namespace SDP_SE1A_Group2
             InitializeComponent();
         }
 
+        private void dgvClear()
+        {
+            dataGridView1.Rows.Clear();
+        }
         private int calValidDay(DateTime sDate, int duration, int month, int year)
         {
             
@@ -27,43 +31,35 @@ namespace SDP_SE1A_Group2
                 //Case1: Just rented in the current month (The statement will update daily within the selected month)
                 if (sDate.Month == month && sDate.Year == year && sDate.AddDays(duration) > now)
                 {
-                    MessageBox.Show("Called case1: Just rented in the current month (The statement will update daily within the selected month)");
                     return now.Day;
                 }
                 //Case3: Lease period crossing months
                 else if (sDate <= new DateTime(year, month, 01) && sDate.AddDays(duration).Month >= month)
                 {
-                    MessageBox.Show("3 called");
                     int endDayOfMonth = DateTime.DaysInMonth(year, month);
                     //Case3.1: The last day end before the end of the month
                     if (sDate.AddDays(duration).Month == month)
                     {
-                        MessageBox.Show("Case3.1: The last day end by the end-day of the month(the whole period crossing month) ");
                         return sDate.AddDays(duration).Day -1;
                     }
                     //Case3.2: Lease period crosses the selected month
-                    //else if (sDate.AddDays(duration).Day < endDayOfMonth && sDate.AddDays(duration).Month > month)
                     else
                     {
-                        MessageBox.Show("Case3.2: Lease period crosses the selected month");
                         return DateTime.DaysInMonth(year, month);
                     }
                 }
                 //Case2: Lease start and end in the same month
                 else if (sDate.Month == month && sDate.Year == year)
                 {
-                    MessageBox.Show("Case2: Lease start and end in the same month");
                     return sDate.AddDays(duration).Day - 1;
                 }
                 else
                 {
-                    MessageBox.Show("Have showcase but..");
                     return 0;
                 }
             }
             else
             {
-                MessageBox.Show("No renting record in this month:" + month + "/" + year);
                 return 0;
             }
 
@@ -106,7 +102,8 @@ namespace SDP_SE1A_Group2
 
         private bool isRenting(DateTime sDate, int duration, int month, int year)
         {
-            return ((sDate.Month == month && sDate.Year == year) || (sDate.AddDays(duration).Month == month && sDate.Year == year));
+            // return ((sDate.Month == month && sDate.Year == year) || (sDate.AddDays(duration).Month == month && sDate.Year == year));
+            return (sDate.AddDays(duration) >= new DateTime(year, month, 1));
         }
 
         private void cboYear_SelectedIndexChanged(object sender, EventArgs e)
@@ -131,6 +128,7 @@ namespace SDP_SE1A_Group2
             int selectedYear = int.Parse(cboYear.Text);
             int selectedMonth = int.Parse(cboMonth.Text);
 
+            lblDate.Text = selectedMonth + "/" + selectedYear;
 
             //Load Overview: Rental
             using (var db = new sdpEntities())
@@ -260,7 +258,6 @@ namespace SDP_SE1A_Group2
                     {
                         if (row.storeID.Equals("cwb"))
                         {
-                            MessageBox.Show("Add CWB");
                             numCWB++;
                         }
                         else if (row.storeID.Equals("kwf"))
@@ -292,72 +289,9 @@ namespace SDP_SE1A_Group2
                 lblShtQty.Text = numSHT.ToString();
 
 
-                //Load dgv --> showcas, item, order, order detail
-
+                //Load dgv
+                dgvClear();
                 
-                var rs4 = from lsShowcaseItem in db.showcaseitem
-                          join lsItem in db.item on lsShowcaseItem.itemid equals lsItem.itemID
-                          where lsItem.tenantID.Contains(TenantMain.tenantID)
-
-                          
-
-
-                          
-                          select new
-                          {
-                              lsShowcaseItem.showcaseid,
-                              
-                              lsItem.itemID,
-                              lsItem.tenantID,
-                              lsItem.itemName
-                          };
-
-                var rs5 = from lsOrder in db.order
-                          join lsOrderDetail in db.order_detail on lsOrder.orderID equals lsOrderDetail.orderID
-                          select new
-                          {
-                              lsOrderDetail.unitPrice,
-                              lsOrderDetail.qty,
-                              lsOrder.orderDate,
-                          };
-
-
-                int index;
-                string location;
-                string showcaseid;
-                string itemid;
-                string itemname;
-                double unitprice;
-                int qty;
-                double subtotal;
-                DateTime solddate;
-
-                foreach(var row in rs4.ToList())
-                {
-                    foreach(var row2 in rs5.ToList())
-                    {
-                        if (row2.orderDate.Month == int.Parse(cboMonth.Text))
-                        {
-                            index = dataGridView1.Rows.Count + 1;
-                            location = row.showcaseid.Substring(0, 3);
-                            showcaseid = row.showcaseid;
-                            itemid = row.itemID;
-                            itemname = row.itemName;
-                            unitprice = row2.unitPrice;
-                            qty = row2.qty;
-                            subtotal = unitprice * qty;
-                            solddate = row2.orderDate;
-
-                            dataGridView1.Rows.Add(index, location, showcaseid, itemid, itemname,
-                                 unitprice, qty, subtotal, solddate);
-                        }
-                    }
-                    
-                    
-                }
-                
-
-                /*
                 int index;
                 string location;
                 string showcaseid;
@@ -381,10 +315,15 @@ namespace SDP_SE1A_Group2
                           };
 
                 var rs5 = from lsItem in db.item
-                          from lsShowcaseItem in db.showcaseitem
                           join lsTenant in db.tenant on lsItem.tenantID equals lsTenant.tenantID
+                          join lsShowcaaseItem in db.showcaseitem on lsItem.itemID equals lsShowcaaseItem.itemid
                           where lsItem.tenantID.Contains(TenantMain.tenantID)
-                          select lsItem;
+                          select new
+                          {
+                              lsItem.itemID,
+                              lsItem.itemName,
+                              lsShowcaaseItem.showcaseid,
+                          };
 
 
 
@@ -397,8 +336,14 @@ namespace SDP_SE1A_Group2
                             if (row2.itemID == row1.itemID)
                             {
                                 index = dataGridView1.Rows.Count + 1;
-                                location = row1.
-
+                                location = row2.showcaseid.Substring(0,3).ToUpper();
+                                showcaseid = row2.showcaseid;
+                                itemid = row1.itemID;
+                                itemname = row2.itemName;
+                                unitprice = Math.Round(row1.unitPrice, 1);
+                                qty = row1.qty;
+                                subtotal = Math.Round(unitprice * qty,1);
+                                solddate = row1.orderDate;
 
 
                                 dataGridView1.Rows.Add(index, location, showcaseid, itemid, itemname,
@@ -408,7 +353,7 @@ namespace SDP_SE1A_Group2
                         }
                     }
                 }
-                */
+                
 
 
             }

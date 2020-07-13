@@ -512,9 +512,9 @@
             this.label28.ForeColor = System.Drawing.SystemColors.Control;
             this.label28.Location = new System.Drawing.Point(3, 3);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(97, 17);
+            this.label28.Size = new System.Drawing.Size(98, 17);
             this.label28.TabIndex = 24;
-            this.label28.Text = "Monk Kok 2:";
+            this.label28.Text = "Monk Kok B:";
             // 
             // panel10
             // 
@@ -556,9 +556,9 @@
             this.label25.ForeColor = System.Drawing.SystemColors.Control;
             this.label25.Location = new System.Drawing.Point(3, 3);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(97, 17);
+            this.label25.Size = new System.Drawing.Size(98, 17);
             this.label25.TabIndex = 24;
-            this.label25.Text = "Monk Kok 1:";
+            this.label25.Text = "Monk Kok A:";
             // 
             // panel9
             // 
