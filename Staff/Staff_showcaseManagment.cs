@@ -239,5 +239,10 @@ namespace SDP_SE1A_Group2.Staff
         {
 
         }
+
+        private void btnRentPage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

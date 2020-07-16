@@ -175,6 +175,7 @@
             this.btnRentPage.TabIndex = 30;
             this.btnRentPage.Text = "Rent";
             this.btnRentPage.UseVisualStyleBackColor = false;
+            this.btnRentPage.Click += new System.EventHandler(this.btnRentPage_Click);
             // 
             // txtShowCaseID
             // 
